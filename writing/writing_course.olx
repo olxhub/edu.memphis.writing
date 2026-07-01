@@ -1,0 +1,21 @@
+<!--
+---
+description: Introductory writing course with surveys and reflective journals
+category: writing
+index: 0
+lang: en-Latn-US
+authors:
+  - J Elliott Casal
+  - Katherine Fredlund
+  - Paul Deane
+  - Piotr Mitros
+license: AGPL
+---
+-->
+
+<Course id="writing_course" title="Writing" launchable="course">
+  <Use ref="writing_survey_1" />
+  <Use ref="writing_process_journal_1" />
+  <Use ref="writing_survey_2" />
+  <Use ref="writing_process_journal_2" />
+</Course>
