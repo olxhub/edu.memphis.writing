@@ -4,7 +4,7 @@
 # and licensing/attribution from LICENSE.TXT / CONTRIBUTORS.TXT. This file is
 # ONLY for fields those conventions don't cover.
 #
-# NOT a deployment manifest — routes/namespace live in writing/manifest.yaml.
+# NOT a deployment manifest — routes/namespace live in the per-course manifest.yaml files.
 
 title: Memphis Introductory Writing
 discipline: Writing

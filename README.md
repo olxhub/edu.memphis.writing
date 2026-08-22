@@ -20,4 +20,4 @@ the `edu.memphis.writing` namespace.
 The author catalog reads this README for the repository description (git
 conventions first; `lo.yaml` covers only beyond-git fields like discipline).
 Licensing and attribution live in `LICENSE.TXT`, `NOTICE.TXT`, and
-`CONTRIBUTORS.TXT`. The courseware itself is under `writing/`.
+`CONTRIBUTORS.TXT`. The original survey-format journals (Likert + LLM analysis) are under `survey-journals/`; the fall 2026 SBA-format Writing Journals are under `sba-journals/`.
