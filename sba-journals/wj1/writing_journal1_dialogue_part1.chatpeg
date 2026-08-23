@@ -1,0 +1,189 @@
+title: Writing Journal 1 — Who Am I As a Writer?
+authors: Writing Journal 1 SBA, built in lo-blocks
+description: A first-year ENGL 1010 student, unsure they count as a writer at all, is invited by Alma to the Writers' Circle, which meets in person on the library's second floor. The student arrives mid-conversation, meets Lee and Richard, learns the group's habit of describing themselves by "writer orientation," watches Alma talk through her own Writer Board, then builds their own (what they write and how often), works out why they write each kind, and meets an AI-generated writer profile they are invited to argue with.
+~~~~
+
+The Invitation
+--------------
+wj1_sidebar <- wj1_welcome
+
+You: hey — you took 1010 last year right [face=smile]
+
+You: what did you even do for the "who am i as a writer" journal. i've been staring at it all week
+
+Alma: ha. i stared at it for three days [face=cheeky]
+
+Alma: come to Writers' Circle on Thursday — 4pm, library, second floor [face=smile]
+
+Alma: it's just students who get together every so often to talk about writing. what they're working on, what's been tripping them up. no pressure, come see [face=calm]
+
+Thursday, 4:02
+--------------
+
+Lee: —and I didn't figure out what the paper was even about until I was two pages in. which is every time. that's just how it goes. [face=cheeky]
+
+Richard: you say that like it's news. that's been every paper since last fall. [face=serious]
+
+Lee: it's a process. [face=cheeky]
+
+Richard: it's the absence of one. [face=serious]
+
+Alma: okay, be nice — we've got a guest. everyone, this is our friend from Ellington's 1010 this semester. [face=smile]
+
+Richard: ah. so you got the "who am I as a writer" journal. [face=serious]
+
+You: yeah. I've been kind of stuck on it. [face=calm]
+
+Lee: everyone's stuck on that one. it's a strange question the first time somebody asks it out loud. [face=concerned]
+
+The Introductions
+-----------------
+wj1_sidebar <- wj1_orientations
+
+Alma: actually — before anything, we should do the introductions properly. not names. the other thing. [face=explaining]
+
+Richard: there's a set of writer types this group uses. nobody takes them too seriously. they're a shorthand. [face=serious]
+
+Alma: I'm a community writer 🤝 — which mostly means everything I write is pointed at another person. [face=smile]
+
+Lee: explorer 🧭. I write to find out what I think about things. [face=cheeky]
+
+Richard: technician 🔧. I write so things get done properly the first time. [face=serious]
+
+Lee: you don't have to pick one, by the way. you get given one at the end. [face=cheeky]
+
+You: given one? [face=calm]
+
+Richard: guessed. it guesses. then you tell it where it's wrong — which is the useful part. [face=serious]
+
+The Board Comes Up
+------------------
+
+Lee: oh — Richard, the thing I was going to tell you. that assignment I turned in Tuesday? I was completely stuck on the opening. sat there an hour. [face=concerned]
+
+Richard: and? [face=serious]
+
+Lee: and I pulled up my writer board for some reason, and I'd forgotten I had "long replies in group chats" on there. which is exactly what the opening needed to sound like — someone explaining something to a person they already know. wrote it like that, took twenty minutes. [face=awe]
+
+Richard: that is the first genuinely useful thing that board has done for anybody. [face=serious]
+
+Lee: it's bailed me out plenty of times, actually. [face=cheeky]
+
+Alma: wait — have you ever made a writer board? [face=explaining]
+
+You: I don't think so. what is it? [face=calm]
+
+Alma: oh, then this is good timing. here — it's faster if I just show you mine. [face=smile]
+
+wj1_sidebar <- wj1_alma_board
+
+Alma: so it's just everything you write, laid out. mine's — okay. texting, obviously. every day, outside school. the roommate group chat, which is ninety percent negotiating whose turn it is to buy paper towels. [face=explaining]
+
+Richard: gripping. [face=serious]
+
+Alma: it's still writing. emails go on the school side — professors, work, a couple times a week. discussion posts, weekly, and I resent every one of them. captions when I post something. comments on shared docs when we're doing group projects, which honestly adds up to a lot of— [face=explaining]
+
+Alma: huh. I always forget how much ends up on here. [face=awe]
+
+Lee: everyone forgets. [face=cheeky]
+
+Alma: no, but the first time I did this I put down three things. essays, emails, texting. I thought that was the list. [face=concerned]
+
+Richard: and now? [face=serious]
+
+Alma: now it doesn't fit on one screen. [face=smile]
+
+Your Turn — Build Your Board
+----------------------------
+wj1_sidebar <- wj1_board
+
+Alma: okay, your turn. it doesn't have to be complete or organized — just put down what you actually do. there's a side for school and a side for everything else. [face=smile]
+
+Lee: and count the stuff you don't think counts. that's the whole trick. [face=cheeky]
+
+There It Is
+-----------
+wj1_sidebar <- wj1_board_noticing
+
+Lee: there it is. [face=cheeky]
+
+Alma: okay, real question — did anything end up on there that you wouldn't have called writing before you sat down? there's a spot on the right. [face=explaining]
+
+Richard: that's the part that gets everybody. I had grocery lists on mine for about a year before I'd admit they counted. [face=serious]
+
+Lee: they don't count. [face=cheeky]
+
+Richard: they absolutely count. [face=serious]
+
+wj1_board_ready <- go
+
+Alma: oh — and your whole board just saved itself up top under **My Journal**. you can peek at the whole thing in one spot whenever. [face=smile]
+
+Does That Even Count?
+---------------------
+
+Richard: for the record — the grocery list thing. that's still writing. [face=serious]
+
+Lee: Richard. it's a list of nouns. [face=cheeky]
+
+Richard: it's a list of nouns that does a job. [face=serious]
+
+Lee: by that standard my phone's autocomplete is a writer. [face=cheeky]
+
+Alma: okay, but how would you two ever settle it? you're both looking at the same word on the same board. nothing on there tells either of you who's right. [face=explaining]
+
+Richard: …no, it does, though. not the item. the reason. I write a list so the thing gets done. if you wrote the exact same list because it makes your head quieter — that's not the same activity. it just looks the same from outside. [face=thinking]
+
+Lee: huh. [face=awe]
+
+Richard: don't do that. [face=serious]
+
+Lee: no — that's why the board actually worked for me on Tuesday. I didn't use "long replies in group chats." I used the fact that I write those to explain something to someone I already know. that was the part I needed. the entry on its own would've told me nothing. [face=thinking]
+
+Alma: which is the thing about a board. any board. it's a list of what. it can't tell you whether any of it counts, or what a single piece of it is for. [face=explaining]
+
+Alma: so — go back through yours and put the why on it. [face=smile]
+
+wj1_sidebar <- wj1_why
+
+--- wait @wj1_why_reflect.value ---
+
+Enough to Run It
+----------------
+
+Alma: okay. so now you've got what you write and why you write it. that's enough to run the thing. [face=smile]
+
+You: what thing? [face=calm]
+
+Lee: the profile. it reads your board and your reasons and tells you what kind of writer you are. [face=cheeky]
+
+Richard: guesses what kind of writer you are. [face=serious]
+
+Lee: it got me right. [face=cheeky]
+
+Richard: it gave you explorer, which is what it gives everyone who won't outline. [face=serious]
+
+Alma: mine came back community writer the first time. I agreed with most of it — not all of it. there was a whole part about collaboration that just wasn't me. that's fine. you're supposed to argue with it. [face=calm]
+
+Your Writer Profile
+-------------------
+wj1_sidebar <- wj1_profile
+wj1_types_ready <- go
+
+Lee: so? does it fit? [face=cheeky]
+
+Alma: either way, say why. agreeing with it is fine — just say which part made you agree. [face=explaining]
+
+Richard: and if it missed something, name it. it's working off twenty minutes of data. you've had your whole life. [face=serious]
+
+Lee: oh, and the whole list of writer types is up under the **Writer Types** tab now — kind of fun to see where yours lands next to the rest. [face=cheeky]
+
+--- wait @wj1_profile_reflect.value ---
+
+Wrapping Up
+-----------
+wj1_sidebar <- wj1_completion_page
+
+Alma: here's the thing to take with you — none of this is a verdict. it's a snapshot of what you write and why, today. the writing you're about to do in this class will keep changing the picture. [face=calm]
+
+Alma: when you're happy with it, confirm you're done on the right, then use Export as PDF at the top of the activity pane to save everything and hand it in. really glad you came. [face=smile]

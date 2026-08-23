@@ -1,0 +1,96 @@
+<!-- Writing Journal 1: Who Am I As a Writer? — ENGL 1010 SBA -->
+<Vertical id="wj1_sba_root">
+
+<!--
+---
+description: "Writing Journal 1: Who Am I As a Writer? The first journal in a first-year ENGL 1010 unit on writer identity. Professor Ellington assigns the journal; the student, unsure they count as a writer at all, is invited by Alma to the in-person Writers' Circle, where they meet Lee and Richard. The student watches Alma talk through her own Writer Board, then builds their own — a Frequently/Sometimes/Never inventory of what they write and how often, for school and outside it — works out why they do different kinds of writing, and generates a writer type computed deterministically from their two biggest reasons (no LLM). Same three peers as Writing Journal 2."
+category: writing_journal1
+index: 94
+lang: en-Latn-US
+---
+-->
+
+<Cast cast="characters.cast" id="wj1_sba_part1"
+      title="Writing Journal 1: Who Am I As a Writer?"
+      launchable="true">
+  <Tabs id="wj1_sba_tabs">
+
+    <!-- Tab 1: the Writers' Circle meeting, with the activity for each step on the right -->
+    <Vertical id="wj1_circle_tab" title="The Circle">
+      <!-- Flags the chat flips to unlock gated content:
+             wj1_board_ready: the board view in the My Journal tab
+             wj1_types_ready: the Writer Types tab -->
+      <Hidden>
+        <LineInput id="wj1_board_ready" />
+        <LineInput id="wj1_types_ready" />
+      </Hidden>
+
+      <SplitPanel id="wj1_sba_split" sizes="38, 62">
+        <LeftPane>
+          <Chat id="wj1_chat"
+                src="writing_journal1_dialogue_part1.chatpeg"
+                height="460px" />
+        </LeftPane>
+        <RightPane>
+          <Vertical id="wj1_current_activity" title="Current Activity">
+            <UseHistory id="wj1_sidebar" initial="wj1_welcome" />
+          </Vertical>
+        </RightPane>
+      </SplitPanel>
+    </Vertical>
+
+    <!-- Tab 2: the running record of the student's work -->
+    <Vertical id="wj1_journal_tab" title="My Journal">
+      <Use ref="wj1_artifact" />
+    </Vertical>
+
+    <!-- Tab 3: the people in the Circle -->
+    <Vertical id="wj1_people_tab" title="The Group">
+      <Use ref="wj1_circle_members" />
+    </Vertical>
+
+    <!-- Tab 4: reference — all eight writer types. Tabs can't appear conditionally, so the tab is
+         always present but its CONTENT stays gated until the student reaches the profile step
+         (wj1_types_ready is set from the chat, which also announces the tab in dialogue). -->
+    <Vertical id="wj1_types_tab" title="Writer Types">
+      <IntakeGate ready="@wj1_types_ready.value === 'go'">
+        <Markdown>*You'll unlock the full set of writer types once you meet your own — keep going in **The Circle**.*</Markdown>
+        <Use ref="wj1_writer_types" />
+      </IntakeGate>
+    </Vertical>
+
+  </Tabs>
+</Cast>
+
+<!-- ============================================================
+     REFERENCED CONTENT BLOCKS
+     ============================================================ -->
+
+<!-- Who's in the Writers' Circle (reads the cast) -->
+<TeamDirectory id="wj1_circle_members" title="Who's in the Writers' Circle"/>
+
+<!-- Reference: all eight writer types, for the "Writer Types" tab -->
+<Markdown id="wj1_writer_types">
+## The Eight Writer Types
+
+At the end of the session, the Circle's tool matches you to one of these. Three of them are how Alma,
+Lee, and Richard describe themselves — but there are eight in all, and most writers are a mix.
+
+| | Writer type | What drives them | A growth edge |
+|---|---|---|---|
+| 🤝 | **Community Writer** *(Alma)* | Connection — writing to reach and stay close to people. | Take feedback without becoming dependent on it. |
+| 🧭 | **Explorer** *(Lee)* | Curiosity — writing to find out what they think. | Decide when a piece needs to land somewhere. |
+| 🔧 | **Technician** *(Richard)* | Getting it done, and getting it right. | The parts of writing beyond correctness. |
+| 🌿 | **Hobbyist** | Personal fulfillment — writing for the enjoyment of it. | Protect the joy while pushing to grow. |
+| 💭 | **Dreamer** | Expression — putting an inner life into words. | Finish and share some of it. |
+| 🔁 | **Practitioner** | Steady practice — a regular, useful habit. | Let some of it become writing for its own sake. |
+| 🏁 | **Finisher** | Completion — ending up with something real. | Treat finishing as a beginning, not a test. |
+| 🎯 | **Pragmatist** | Audience and impact — reaching people. | Keep your own voice alongside the goal. |
+
+*It's a shorthand, not a verdict — and where you are today isn't where you have to stay.*
+</Markdown>
+
+<!-- Pull in the running-record artifact -->
+<Use ref="wj1_artifact" src="artifact.olx"/>
+
+</Vertical>

@@ -1,0 +1,34 @@
+<!-- My Writing Journal (running artifact) for Writing Journal 2 -->
+<Vertical id="wj2_artifact">
+
+  <Markdown id="wj2_artifact_intro">
+## My Writing Journal — Entry 2
+
+This tab gathers your work in one place as you go, so you can see the whole journal at a glance — your
+quiz results, your reflection on where you landed, the story you told, and what the Circle heard in it.
+Come back any time to review what you have built, and use **Export as PDF** to save and submit it.
+  </Markdown>
+
+  <Collapsible id="wj2_artifact_take" title="Where I started: is writer's block real?">
+    <Markdown>**My first take, before the quiz:**</Markdown>
+    <Ref id="wj2_art_take" target="wj2_block_take" />
+  </Collapsible>
+
+  <Collapsible id="wj2_artifact_results" title="1. My writing personality — three continuums">
+    <Markdown>**Where the quiz placed me:**</Markdown>
+    <Ref id="wj2_art_results" target="wj2_results_feedback" />
+  </Collapsible>
+
+  <Collapsible id="wj2_artifact_reflect" title="2. Does it fit? My reflection">
+    <Ref id="wj2_art_reflect" target="wj2_placement_text" />
+  </Collapsible>
+
+  <Collapsible id="wj2_artifact_story" title="3. My story — an experience that shaped me as a writer">
+    <Ref id="wj2_art_story" target="wj2_story_text" />
+  </Collapsible>
+
+  <Collapsible id="wj2_artifact_response" title="4. What Alma heard in my story">
+    <Ref id="wj2_art_response" target="wj2_response_feedback" />
+  </Collapsible>
+
+</Vertical>

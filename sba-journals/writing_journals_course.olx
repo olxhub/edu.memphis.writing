@@ -1,0 +1,26 @@
+<!--
+---
+description: ENGL 1010 writer-identity unit — the two SBA-format Writing Journals as one course
+category: writing
+index: 0
+lang: en-Latn-US
+authors:
+  - J Elliott Casal
+  - Katherine Fredlund
+  - Paul Deane
+  - Piotr Mitros
+license: AGPL
+---
+-->
+
+<!-- Top-level wrapper tying the two SBA Writing Journals into one course.
+
+     The journals themselves live in wj1/ and wj2/; this file only
+     sequences them. The refs are bare (no namespace prefix): everything
+     under sba-journals/ parses as the one namespace declared in
+     manifest.yaml. -->
+
+<Course id="wj_course" title="Writing Journals" launchable="course">
+  <Use ref="wj1_sba_part1" />
+  <Use ref="wj2_sba_part1" />
+</Course>

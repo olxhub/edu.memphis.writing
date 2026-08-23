@@ -1,0 +1,25 @@
+# manifest.yaml — Memphis ENGL 1010 writer-identity unit (SBA-format journals).
+#
+# Used by: scripts/build-static.ts --manifest <this file>
+#
+# Deploys the two Writing Journals as one course. This is the only manifest
+# under sba-journals/: everything here — writing_journals_course.olx plus
+# wj1/ and wj2/ — parses as this single namespace.
+
+title: Writing Journals
+namespace: edu.memphis.writing.sba
+content_root: .
+# The event websocket is enabled via PMSS (.static { websocket: true; }) at
+# deploy time; the client connects to the same-origin /wsapi/ endpoint. Set
+# eventServerUrl only to point somewhere else.
+classes:
+  - no-translanguaging       # JIT translanguaging needs a server; disable for static
+content_notice: >
+  Course content Copyright &copy; 2026 by J Elliott Casal, Katherine Fredlund,
+  Paul Deane, and Piotr Mitros. Licensed under
+  [AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html). Source available on
+  [GitHub](https://github.com/olxhub/edu.memphis.writing).
+routes:
+  "/": edu.memphis.writing.sba/wj_course
+  "/wj1": edu.memphis.writing.sba/wj1_sba_part1
+  "/wj2": edu.memphis.writing.sba/wj2_sba_part1

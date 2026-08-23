@@ -1,0 +1,112 @@
+title: Writing Journal 2 — How Do You Really Feel About Writing
+authors: Writing Journal 2 SBA, built in lo-blocks
+description: A first-year ENGL 1010 student is in a group chat with three members of the Writers' Circle who are arguing about whether writer's block is real. A peer shares a playful writing-attitudes quiz that plots the student on three attitude continuums. Later the group gathers in the student lounge, each reads the story of an experience that shaped them as a writer, and the student tells their own.
+~~~~
+
+A Group Chat, Blowing Up
+------------------------
+wj2_sidebar <- wj2_welcome
+
+Lee: ok not to be dramatic but I have literally been staring at this literacy narrative prompt for 40 minutes and I have zero words. writer's block is destroying me rn [face=worried]
+
+Richard: see, this is where I always disagree with people — I don't think writer's block is actually a thing. you just probably haven't sorted out what you want to say yet, ijs [face=serious]
+
+Lee: nah bro, it's more than me having nothing to say. it's like my brain just refuses to come up with ideas or words. it's happened to me since like 7th grade [face=concerned]
+
+Alma: ok honestly, I used to think like Richard. but then I got that essay back in 9th grade covered in red ink, and I swear I have not been able to draft anything without freezing up since. so I don't think it's about not planning or willpower — I think it's about what happened to you before you even sat down to write [face=calm]
+
+Lee: wait, that's actually really relatable. I think my "block" is more like anxiety about how to begin, or fear of writing something wrong, than actually not having ideas [face=concerned]
+
+So... Is It Real?
+-----------------
+wj2_sidebar <- wj2_debate_react
+
+Alma: right?? ok this is going to sound random, but I found this quiz online that's basically "what's your writing personality" and it actually gets kind of real about this stuff. takes like 5 min, no wrong answers, sending the link now → [face=smile]
+
+Lee: ok, a quiz that might actually explain my own brain to me? say less, I'm in [face=cheeky]
+
+Richard: lmao fine, I'll bite. still not sure about this writer's block stuff though [face=suspicious]
+
+Alma: before we dive in, though — what's YOUR take? is writer's block a real thing, or not? ever had it? there's no wrong answer, just tap what feels true on the right [face=explaining]
+
+--- wait @wj2_block_take.value ---
+
+Take the Quiz
+-------------
+wj2_sidebar <- wj2_survey
+
+Alma: ok, it's on the right now. it gives you one statement at a time — just go with your gut, first instinct, don't overthink it. work through all of them and it'll unlock the next part [face=explaining]
+
+Richard: fine. going in skeptical, but going in [face=suspicious]
+
+Lee: ok this is weirdly kind of fun. some of these are calling me out lol [face=cheeky]
+
+--- wait @s26.value ---
+
+What Makes Good Writing?
+------------------------
+wj2_sidebar <- wj2_good_1_screen
+
+Alma: ok, part 2 — now it's not about how you feel, it's about what you think makes writing actually good. drag the four into order on the right, most to least important, then hit Submit [face=explaining]
+
+Richard: finally, a section for people who care about doing it right [face=serious]
+
+--- wait @wj2_good_1_grader.submitCount > 0 ---
+
+One More Set
+------------
+wj2_sidebar <- wj2_good_2_screen
+
+Lee: of course ranking is your favorite part, Richard [face=cheeky]
+
+Alma: two more sets — same deal, drag them into order and Submit [face=smile]
+
+--- wait @wj2_good_2_grader.submitCount > 0 ---
+
+Last Set
+--------
+wj2_sidebar <- wj2_good_3_screen
+
+Alma: last one, then I'll show you where you land [face=smile]
+
+--- wait @wj2_good_3_grader.submitCount > 0 ---
+
+Your Writing Vibe
+-----------------
+wj2_sidebar <- wj2_vibe_explainer
+
+Alma: ok before it shows you your personal results, it explains the three big "writing vibes" everyone has some mix of. read it on the right — I promise it's a fun one [face=smile]
+
+Lee: I already know I'm going to be the dramatic self-expression one [face=cheeky]
+
+Your Results
+------------
+wj2_sidebar <- wj2_results
+
+Alma: ok, moment of truth — hit the button on the right and it'll show you where you land on all three. it's three spectrums, not a label. nobody's "good" or "bad" [face=explaining]
+
+Lee: mine leaned all the way toward "avoidance" and honestly? fair [face=concerned]
+
+Richard: mine said I write to get it correct. shocking, I know [face=serious]
+
+Does It Fit?
+------------
+wj2_sidebar <- wj2_placement_reflect
+
+Alma: so — does it actually fit you? that's the real question. take a few sentences right here and think it through — see if you can put your finger on a moment that explains where you landed [face=explaining]
+
+::wj2_placement_text
+
+--- wait wordcount(@wj2_placement_text.value) >= 20 ---
+
+Alma: that's exactly the kind of thinking this was for [face=smile]
+
+Heading to the Meeting
+----------------------
+Alma: honestly, this is a real conversation — let's not have it over text. the Writers' Circle is meeting in person this week, in the student lounge. come through and we'll pick it up there [face=smile]
+
+Alma: tap Continue when you're ready and I'll see you at the meeting [face=smile]
+
+--- pause ---
+
+wj2_phase <- meeting

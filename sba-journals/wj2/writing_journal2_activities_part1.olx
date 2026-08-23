@@ -1,0 +1,954 @@
+<!--
+---
+description: "Writing Journal 2: How Do You Really Feel About Writing? (activity bank). The group chat and the in-person Writers' Circle meeting pull each screen below into the right-hand pane as the conversation advances. A first-year composition student weighs in on a debate about writer's block, takes a playful writing-attitudes quiz, sees where the Circle's tool plots them on three attitude continuums, reflects on that placement, listens to three peers' stories about experiences that shaped them as writers, and then tells their own — the real journal entry — which the tool then reflects back against their placement."
+category: writing_journal2
+index: 93
+lang: en-Latn-US
+---
+-->
+
+<!--
+  Writing Journal 2 — ENGL 1010 First-Year Composition SBA (Activity bank)
+
+  The conversation (writing_journal2_dialogue_part1.chatpeg) pulls each screen
+  below into the right-hand pane via `wj2_sidebar -> <id>` arrows. Read-only /
+  framing screens are wrapped in IntakeGate so they page through with NEXT and
+  drop out of the final PDF; the student's own work stays.
+
+  Flow (from the SBA_Writing_Journal2_RevisedMBain design document + the
+  reviewer comments in it):
+    intro slide
+    -> writer's-block debate: your quick take (activates prior experience)
+    -> TASK 1a: "How do you really feel about writing?" quiz (26 statements, 3 rounds)
+    -> TASK 1b: "What makes a good writer?" priorities (3 rounds)
+    -> RESULTS: the Circle's tool plots you on three attitude continuums
+    -> reflect on your placement (does it fit? a moment that explains it? a year from now?)
+    -- move from the phone chat to the in-person meeting --
+    -> listen to three peers' stories (receptive / modeling)
+    -> TASK 2: your turn — write OR record the story of an experience that shaped you
+    -> the tool reflects your story back and builds on your attitude profile
+    -> completion + export.
+
+  Reviewer comments addressed:
+    C7  give the student the option to write OR record  -> optional freewrite warm-up + a
+        written entry, with a note on recording (no audio-capture block exists in lo-blocks).
+    C8  characters model the kind of story first        -> the three peer stories precede the share.
+    C9  peers turn to the student conversationally       -> "What about you?" turn in the chat + prompt.
+    C10 the elaborate microphone simulation may be
+        unnecessary                                     -> dropped; the stories are simply spoken in
+        the chat and shown as reference cards, and the entry is a plain written share.
+    C11 after the student submits, the tool analyzes the
+        story and builds on the writing profile          -> the "circle reflects back" LLM step.
+-->
+
+<Vertical id="wj2_activities_part1" title="Writing Journal 2 — Activities" launchable="true">
+
+  <!-- The Export-as-PDF button now lives in the meeting's completion area (wj2_meeting),
+       so it is visible full-width when the student finishes. -->
+
+  <!-- ===================================================================
+       INTRO SLIDE
+       =================================================================== -->
+
+  <IntakeGate ready="!@wj2_completion_page.value">
+    <Markdown> </Markdown>
+    <Markdown id="wj2_welcome">
+## Writing Journal 2: How Do You *Really* Feel About Writing?
+
+It's the middle of your first-year writing unit, and your group chat with the **Writers' Circle** is
+blowing up. **Lee** is stuck on the Literacy Narrative assignment and calling it writer's block.
+**Richard** says writer's block isn't even real. **Alma** isn't so sure — something happened to her in
+ninth grade that she's never quite shaken.
+
+You don't have to have the answer. This journal is a chance to notice something most writers never stop
+to name: **how you actually feel about writing, and where those feelings came from.**
+
+> **The big idea for this journal:** writing is influenced by our identities and prior experiences
+> (Wardle and Downs). In other words, how you feel when you sit down to write isn't proof that you're
+> "a writer" or "not a writer" — it's a *tendency*, shaped by things that happened to you, and
+> tendencies can change.
+
+**By the end of this journal you will have:**
+
+- taken a quick, no-wrong-answers quiz about **how you feel about writing** and **what you think makes
+  writing good**;
+- seen where the Circle's tool places you on three **attitude continuums** — and decided for yourself
+  how accurate that feels;
+- listened to three peers tell the story of a moment that shaped them as writers; and
+- told **your own story** — the real journal entry — about an experience that shaped how you feel about
+  yourself as a writer.
+
+There are no wrong answers and no grade for feeling one way or another about writing. What counts is
+honesty. Work through the conversation on the left — each step opens an activity here on the right.
+    </Markdown>
+  </IntakeGate>
+
+  <!-- ===================================================================
+       THE DEBATE: YOUR QUICK TAKE  (activates prior experience; low friction)
+       =================================================================== -->
+
+  <Vertical id="wj2_debate_react">
+    <Markdown>
+## What's Your Take on Writer's Block?
+
+Lee, Richard, and Alma can't agree, and there's no official answer. Before you take the quiz with them,
+weigh in: **Do you think writer's block is a real thing — and have you ever experienced it?**
+
+Pick the one that rings most true today. Whatever your view, there's no wrong answer — just go with what
+feels natural. (You can always feel differently tomorrow — that's kind of the point.)
+    </Markdown>
+    <ChoiceInput id="wj2_block_take">
+      <Key value="It's real, and I've felt it — my brain just freezes, even when I have ideas">It's real, and I've felt it — my brain just freezes up, even when I have ideas</Key>
+      <Key value="It's real for me, but it feels more like anxiety or fear of writing it wrong">It's real for me, but it feels more like anxiety or fear of getting it wrong</Key>
+      <Key value="Richard's kind of right — I don't think it's real, I just haven't started yet">Richard's kind of right — I'm not sure it's real; I just haven't started yet</Key>
+      <Key value="It depends entirely on what I'm being asked to write">It depends completely on what I'm being asked to write</Key>
+      <Key value="I'm honestly not sure yet">I'm honestly not sure yet</Key>
+    </ChoiceInput>
+    <Markdown>
+*Alma's hunch is that the answer has less to do with willpower and more to do with what happened to you
+**before** you ever sat down to write. Hold onto your answer — you'll come back to it.*
+    </Markdown>
+  </Vertical>
+
+  <!-- ===================================================================
+       TASK 1a — "HOW DO YOU REALLY FEEL ABOUT WRITING?"  (26 statements)
+       Buzzfeed-style attitudes quiz, ONE STATEMENT AT A TIME. Each item is an
+       emoji ChoiceInput; item N is when-gated on the previous item having a
+       value, so the next statement only appears once this one is answered.
+       A character progress bar ("Question N of 26") sits above each item.
+       The chat gates advancing on @s26.value (all 26 answered) so the quiz
+       cannot be skipped. Each sNN value is the chosen agreement label, read
+       by the results tool against the s01-s26 legend it carries.
+       =================================================================== -->
+
+  <Vertical id="wj2_survey">
+    <Markdown>
+## ✏️ The Quiz — Part 1: How Do You Really Feel About Writing?
+
+*No wrong answers, promise. Just go with your gut — this one's for you.*
+
+Pick your emoji response for each statement and we'll reveal where your attitude falls on a writing
+spectrum. Are you more about **expression** or **performance**? Each new statement appears once you
+answer the one before it.
+    </Markdown>
+
+  <Vertical id="wj2_item_01">
+    <Markdown>
+**Question 1 of 26**  `█░░░░░░░░░░░░░░░░░░░░░░░░░`
+
+Writing is a skill I want to get better at.
+    </Markdown>
+    <ChoiceInput id="s01">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_02" when="@s01.value">
+    <Markdown>
+**Question 2 of 26**  `██░░░░░░░░░░░░░░░░░░░░░░░░`
+
+It is frustrating to have to write about a subject I did not choose.
+    </Markdown>
+    <ChoiceInput id="s02">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_03" when="@s02.value">
+    <Markdown>
+**Question 3 of 26**  `███░░░░░░░░░░░░░░░░░░░░░░░`
+
+Writing is usually boring for me.
+    </Markdown>
+    <ChoiceInput id="s03">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_04" when="@s03.value">
+    <Markdown>
+**Question 4 of 26**  `████░░░░░░░░░░░░░░░░░░░░░░`
+
+I worry that other people will criticize my writing.
+    </Markdown>
+    <ChoiceInput id="s04">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_05" when="@s04.value">
+    <Markdown>
+**Question 5 of 26**  `█████░░░░░░░░░░░░░░░░░░░░░`
+
+I like to write outside of school.
+    </Markdown>
+    <ChoiceInput id="s05">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_06" when="@s05.value">
+    <Markdown>
+**Question 6 of 26**  `██████░░░░░░░░░░░░░░░░░░░░`
+
+It upsets me when I get low grades on a writing assignment.
+    </Markdown>
+    <ChoiceInput id="s06">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_07" when="@s06.value">
+    <Markdown>
+**Question 7 of 26**  `███████░░░░░░░░░░░░░░░░░░░`
+
+I am too impatient to spend a lot of time writing.
+    </Markdown>
+    <ChoiceInput id="s07">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_08" when="@s07.value">
+    <Markdown>
+**Question 8 of 26**  `████████░░░░░░░░░░░░░░░░░░`
+
+I get so involved in my writing that I often lose track of time.
+    </Markdown>
+    <ChoiceInput id="s08">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_09" when="@s08.value">
+    <Markdown>
+**Question 9 of 26**  `█████████░░░░░░░░░░░░░░░░░`
+
+Writing helps me learn.
+    </Markdown>
+    <ChoiceInput id="s09">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_10" when="@s09.value">
+    <Markdown>
+**Question 10 of 26**  `██████████░░░░░░░░░░░░░░░░`
+
+I feel it is important to know how to write well.
+    </Markdown>
+    <ChoiceInput id="s10">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_11" when="@s10.value">
+    <Markdown>
+**Question 11 of 26**  `███████████░░░░░░░░░░░░░░░`
+
+I prefer writing when it isn't required.
+    </Markdown>
+    <ChoiceInput id="s11">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_12" when="@s11.value">
+    <Markdown>
+**Question 12 of 26**  `████████████░░░░░░░░░░░░░░`
+
+I like getting lots of shares or likes when I post something I have written.
+    </Markdown>
+    <ChoiceInput id="s12">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_13" when="@s12.value">
+    <Markdown>
+**Question 13 of 26**  `█████████████░░░░░░░░░░░░░`
+
+There are some subjects that I really enjoy writing about.
+    </Markdown>
+    <ChoiceInput id="s13">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_14" when="@s13.value">
+    <Markdown>
+**Question 14 of 26**  `██████████████░░░░░░░░░░░░`
+
+I dislike writing.
+    </Markdown>
+    <ChoiceInput id="s14">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_15" when="@s14.value">
+    <Markdown>
+**Question 15 of 26**  `███████████████░░░░░░░░░░░`
+
+I find it difficult to communicate my ideas through writing.
+    </Markdown>
+    <ChoiceInput id="s15">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_16" when="@s15.value">
+    <Markdown>
+**Question 16 of 26**  `████████████████░░░░░░░░░░`
+
+I like it when people compliment my writing skills.
+    </Markdown>
+    <ChoiceInput id="s16">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_17" when="@s16.value">
+    <Markdown>
+**Question 17 of 26**  `█████████████████░░░░░░░░░`
+
+I feel confident when I am writing.
+    </Markdown>
+    <ChoiceInput id="s17">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_18" when="@s17.value">
+    <Markdown>
+**Question 18 of 26**  `██████████████████░░░░░░░░`
+
+It is important that I get a good grade on a writing assignment.
+    </Markdown>
+    <ChoiceInput id="s18">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_19" when="@s18.value">
+    <Markdown>
+**Question 19 of 26**  `███████████████████░░░░░░░`
+
+When I write, I create content that I can be proud of.
+    </Markdown>
+    <ChoiceInput id="s19">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_20" when="@s19.value">
+    <Markdown>
+**Question 20 of 26**  `████████████████████░░░░░░`
+
+Writing feels really hard.
+    </Markdown>
+    <ChoiceInput id="s20">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_21" when="@s20.value">
+    <Markdown>
+**Question 21 of 26**  `█████████████████████░░░░░`
+
+I usually enjoy writing in school.
+    </Markdown>
+    <ChoiceInput id="s21">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_22" when="@s21.value">
+    <Markdown>
+**Question 22 of 26**  `██████████████████████░░░░`
+
+I find writing interesting.
+    </Markdown>
+    <ChoiceInput id="s22">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_23" when="@s22.value">
+    <Markdown>
+**Question 23 of 26**  `███████████████████████░░░`
+
+I enjoy writing most when I get to decide what to write about.
+    </Markdown>
+    <ChoiceInput id="s23">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_24" when="@s23.value">
+    <Markdown>
+**Question 24 of 26**  `████████████████████████░░`
+
+I understand things better when I write about them.
+    </Markdown>
+    <ChoiceInput id="s24">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_25" when="@s24.value">
+    <Markdown>
+**Question 25 of 26**  `█████████████████████████░`
+
+There are some kinds of writing that I really like.
+    </Markdown>
+    <ChoiceInput id="s25">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_26" when="@s25.value">
+    <Markdown>
+**Question 26 of 26**  `██████████████████████████`
+
+I like it when I can focus and my writing flows.
+    </Markdown>
+    <ChoiceInput id="s26">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+    <Markdown when="@s26.value">
+**That's all 26 — nice work.** Head back to the chat on the left to keep going.
+    </Markdown>
+  </Vertical>
+
+  <!-- ===================================================================
+       TASK 1b — "WHAT MAKES A GOOD WRITER?"  (drag-to-rank; 3 sets, ONE PER
+       SCREEN). Each set is its own screen; the chat reveals the next set only
+       after the previous CapaProblem is submitted (wait @<grader>.submitCount).
+       Submit button relabeled via submitLabel="Submit". The three inputs
+       (wj2_good_1/2/3) keep their ids so the results tool still reads them.
+       =================================================================== -->
+
+  <Vertical id="wj2_good_1_screen">
+    <Markdown>
+## 🏆 The Quiz — Part 2: What Makes a Good Writer?
+
+**Set 1 of 3**  `█░░`
+
+Trust your gut — there are no right or wrong answers here, since these are genuinely a matter of
+opinion. Being honest gives you the most accurate writing profile.
+    </Markdown>
+    <CapaProblem id="wj2_good_1_problem" title="What makes a good writer? (Set 1)" showanswer="never" submitLabel="Submit">
+      <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+      <SortableGrader id="wj2_good_1_grader" algorithm="survey">
+        <SortableInput id="wj2_good_1" dragMode="whole">
+          <Markdown>Taking the time to understand an assignment before starting to write.</Markdown>
+          <Markdown>Expressing one's ideas accurately.</Markdown>
+          <Markdown>Making sure to write something that is long enough for the task.</Markdown>
+          <Markdown>Finishing writing tasks quickly.</Markdown>
+        </SortableInput>
+      </SortableGrader>
+    </CapaProblem>
+  </Vertical>
+
+  <Vertical id="wj2_good_2_screen">
+    <Markdown>
+## 🏆 The Quiz — Part 2: What Makes a Good Writer?
+
+**Set 2 of 3**  `██░`
+
+Trust your gut — there are no right or wrong answers here, since these are genuinely a matter of
+opinion. Being honest gives you the most accurate writing profile.
+    </Markdown>
+    <CapaProblem id="wj2_good_2_problem" title="What makes a good writer? (Set 2)" showanswer="never" submitLabel="Submit">
+      <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+      <SortableGrader id="wj2_good_2_grader" algorithm="survey">
+        <SortableInput id="wj2_good_2" dragMode="whole">
+          <Markdown>Figuring out what one really thinks about a topic before writing.</Markdown>
+          <Markdown>Taking time to research a topic before writing about it.</Markdown>
+          <Markdown>Free-writing to brainstorm ideas.</Markdown>
+          <Markdown>Using correct spelling and punctuation.</Markdown>
+        </SortableInput>
+      </SortableGrader>
+    </CapaProblem>
+  </Vertical>
+
+  <Vertical id="wj2_good_3_screen">
+    <Markdown>
+## 🏆 The Quiz — Part 2: What Makes a Good Writer?
+
+**Set 3 of 3**  `███`
+
+Trust your gut — there are no right or wrong answers here, since these are genuinely a matter of
+opinion. Being honest gives you the most accurate writing profile.
+    </Markdown>
+    <CapaProblem id="wj2_good_3_problem" title="What makes a good writer? (Set 3)" showanswer="never" submitLabel="Submit">
+      <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+      <SortableGrader id="wj2_good_3_grader" algorithm="survey">
+        <SortableInput id="wj2_good_3" dragMode="whole">
+          <Markdown>Coming up with a clear understanding of the ideas one wants to express.</Markdown>
+          <Markdown>Completing more than one draft.</Markdown>
+          <Markdown>Avoiding grammar and usage errors.</Markdown>
+          <Markdown>Using well-chosen words that make writing interesting.</Markdown>
+        </SortableInput>
+      </SortableGrader>
+    </CapaProblem>
+  </Vertical>
+
+
+  <!-- ===================================================================
+       "WHAT YOUR WRITING VIBE SAYS ABOUT YOU"  (revised design doc: a playful
+       explainer of the three writing relationships, shown after the quiz and
+       BEFORE the personalized results. Read-only framing -> IntakeGate.)
+       =================================================================== -->
+
+  <IntakeGate ready="!@wj2_completion_page.value">
+    <Markdown> </Markdown>
+    <Markdown id="wj2_vibe_explainer">
+## What Your Writing Vibe Says About You ✍️✨
+
+Before you see your personal results, here's the key. There are three big ways people relate to writing —
+most of us are a mix of all three.
+
+### 🎨 Writing as Self-Expression
+**Your mantra:** *"I write to figure out what I actually think."*
+For you, writing isn't about jumping through hoops or getting an A — it's about **identity, creativity,
+and connection**. The page is a safe space to process your thoughts and show the world who you are.
+- **Your superpower:** Authenticity. Your writing has a real voice people want to read.
+- **Your kryptonite:** You might get frustrated when rigid rules feel like they're suffocating your vibe.
+
+### 🌱 Writing as Growth
+**Your mantra:** *"I write to get sharper, every single draft."*
+You view writing as a muscle to build, not a test to pass. It's about **learning, improvement, and
+mastery**. You don't expect a perfect first draft — you enjoy tweaking, learning, and leveling up.
+- **Your superpower:** Resilience. Feedback doesn't crush you; it's fuel for draft number two.
+- **Your kryptonite:** Don't get so caught up chasing perfection that you forget to enjoy the ride.
+
+### 🏆 Writing as Performance
+**Your mantra:** *"I write to hit the target and nail the rubric."*
+You understand the game and know how to play it. Writing is about **evaluation, clear standards, and
+results**. You deliver exactly what a prompt is looking for and keep your eye on the goal.
+- **Your superpower:** Efficiency and clarity. You structure an argument that hits every benchmark.
+- **Your kryptonite:** The pressure to perform can trigger writer's block if you're scared to get it
+  "wrong" on the first try.
+
+> **The plot twist:** Nobody fits in just one box forever. Most of us dial these up or down depending on
+> the day, the class, or the prompt. Recognizing *where you're writing from* is the first step to making
+> writing work for you — which is exactly what your results are about to show you.
+    </Markdown>
+  </IntakeGate>
+
+  <!-- ===================================================================
+       RESULTS — THREE ATTITUDE CONTINUUMS  (computer-generated placement)
+       The Circle's tool reads the whole quiz and places the student on each of
+       the three continuums from the design document, as a spectrum rather than
+       a single score or label. It reinforces the threshold concept: these are
+       tendencies shaped by experience, not fixed traits.
+       =================================================================== -->
+
+  <Vertical id="wj2_results">
+    <Markdown>
+## Your Writing Personality — On Three Continuums
+
+Ready? Press the button and the Circle's tool will read your whole quiz and show you where you land on
+three continuums. Remember: these are **spectrums, not labels.** There's no good or bad end — just a
+picture of how you relate to writing *right now*.
+    </Markdown>
+    <LLMFeedback id="wj2_results_feedback" render="markdown" />
+    <ActionButton id="wj2_results_btn" label="Show me my results">
+      <LLMAction id="wj2_results_action" target="wj2_results_feedback">
+        You are the Writers' Circle quiz tool. A first-year college composition student just finished a
+        playful, Buzzfeed-style writing-attitudes quiz. Your job is to place them on THREE continuums and
+        reflect it back warmly, like a personality-quiz result — never clinical, never a grade.
+
+        HOW THE QUIZ DATA IS ENCODED:
+        Part 1 answers arrive as one value per statement id (s01-s26): the student's chosen agreement
+        level, one of "Strongly agree", "Agree", "Disagree", or "Strongly disagree" (blank = not answered).
+        Part 2 answers are drag-to-rank orderings. Each arrives as {"arrangement": [i, j, k, l]}, a list of
+        item indices in the order the student ranked them, HIGHEST priority first and LOWEST priority last.
+        Each set has its own item legend below (index 0-3 = the item as originally listed). So if a set's
+        arrangement is [2,0,3,1], the student ranked item 2 highest, then item 0, then item 3, and item 1
+        lowest. An empty arrangement (or one still in default order) means they have not really ranked it.
+
+        PART 1 STATEMENTS (id -- statement -- which continuum end AGREEING pulls toward):
+        s01 want to get better -> Growth. s02 frustrated writing on assigned topics -> Avoidance.
+        s03 writing is boring -> Avoidance. s04 worry others will criticize -> Avoidance (and Evaluation).
+        s05 like to write outside school -> Engagement. s06 upset by low grades -> Evaluation.
+        s07 too impatient to spend time writing -> Avoidance. s08 lose track of time writing -> Engagement.
+        s09 writing helps me learn -> Expression. s10 important to know how to write well -> Growth.
+        s11 prefer writing when it isn't required -> Engagement/Expression. s12 like shares/likes on posts -> Evaluation.
+        s13 enjoy some subjects to write about -> Engagement. s14 dislike writing -> Avoidance.
+        s15 hard to communicate ideas in writing -> Avoidance. s16 like compliments on my writing -> Evaluation/Performance.
+        s17 feel confident when writing -> (confidence; the opposite of anxiety-driven Avoidance).
+        s18 important to get a good grade -> Evaluation. s19 create content I'm proud of -> Expression.
+        s20 writing feels really hard -> Avoidance. s21 usually enjoy writing in school -> Engagement.
+        s22 find writing interesting -> Engagement. s23 enjoy writing most when I choose the topic -> Engagement/Expression.
+        s24 understand things better when I write -> Expression. s25 some kinds of writing I really like -> Engagement.
+        s26 like it when I focus and writing flows -> Engagement.
+
+        THE THREE CONTINUUMS:
+        1. EXPRESSION vs. EVALUATION. Expression = writing to think, learn, communicate, and make
+           something you're proud of. Evaluation = writing mainly to satisfy teachers, get grades, and
+           earn reactions/approval. (Expression signals: s09, s19, s24, s11, s23. Evaluation signals:
+           s06, s12, s16, s18, s04.)
+        2. GROWTH vs. PERFORMANCE. Growth = writing to improve over time; you believe skill is built.
+           Performance = writing mainly to demonstrate competence and be seen as good. (Growth signals:
+           s01, s10, and generally valuing practice/drafting in Part 2. Performance signals: s16, s12,
+           s06, and valuing being correct/finished over improving.)
+        3. ENGAGEMENT vs. AVOIDANCE. Engagement = writing as enjoyable involvement (flow, interest,
+           losing track of time). Avoidance = writing tangled up with anxiety, difficulty, or dislike
+           you'd rather manage or escape. (Engagement signals: s05, s08, s13, s21, s22, s25, s26, s17.
+           Avoidance signals: s02, s03, s04, s07, s14, s15, s20.)
+
+        WHAT PART 2 ("what makes a good writer") TELLS YOU:
+        Ranking meaning-focused skills HIGHEST -- understanding the assignment, expressing ideas
+        accurately, figuring out what you think, researching, brainstorming, multiple drafts, well-chosen
+        words -- leans toward Expression and Growth. Ranking surface/compliance skills highest -- finishing
+        quickly, writing long enough, correct spelling, avoiding grammar errors -- leans toward Evaluation
+        and Performance. Use this as a secondary signal that should agree with or gently complicate Part 1.
+
+        PART 2 ITEM LEGENDS (index -> item; lower/higher position in the student's arrangement = higher/
+        lower priority):
+        Set 1: 0 = understand the assignment before writing (meaning/Growth); 1 = express ideas accurately
+        (Expression); 2 = write something long enough for the task (surface/Evaluation); 3 = finish tasks
+        quickly (surface/Performance).
+        Set 2: 0 = figure out what you really think before writing (Expression/Growth); 1 = research the
+        topic before writing (Growth); 2 = free-write to brainstorm ideas (Expression); 3 = correct
+        spelling and punctuation (surface/Evaluation).
+        Set 3: 0 = a clear understanding of the ideas you want to express (Expression); 1 = complete more
+        than one draft (Growth); 2 = avoid grammar and usage errors (surface/Evaluation); 3 = well-chosen
+        words that make writing interesting (Expression/craft).
+
+        THE STUDENT'S QUIZ:
+        Part 1 answers (statement id = chosen agreement level):
+        s01 = <Ref target="s01" />
+        s02 = <Ref target="s02" />
+        s03 = <Ref target="s03" />
+        s04 = <Ref target="s04" />
+        s05 = <Ref target="s05" />
+        s06 = <Ref target="s06" />
+        s07 = <Ref target="s07" />
+        s08 = <Ref target="s08" />
+        s09 = <Ref target="s09" />
+        s10 = <Ref target="s10" />
+        s11 = <Ref target="s11" />
+        s12 = <Ref target="s12" />
+        s13 = <Ref target="s13" />
+        s14 = <Ref target="s14" />
+        s15 = <Ref target="s15" />
+        s16 = <Ref target="s16" />
+        s17 = <Ref target="s17" />
+        s18 = <Ref target="s18" />
+        s19 = <Ref target="s19" />
+        s20 = <Ref target="s20" />
+        s21 = <Ref target="s21" />
+        s22 = <Ref target="s22" />
+        s23 = <Ref target="s23" />
+        s24 = <Ref target="s24" />
+        s25 = <Ref target="s25" />
+        s26 = <Ref target="s26" />
+        Part 2, set 1 ranking (arrangement): <Ref id="wj2_res_ref_g1" target="wj2_good_1" />
+        Part 2, set 2 ranking (arrangement): <Ref id="wj2_res_ref_g2" target="wj2_good_2" />
+        Part 2, set 3 ranking (arrangement): <Ref id="wj2_res_ref_g3" target="wj2_good_3" />
+
+        DIRECTIONS:
+        If the student left the entire quiz blank (no answers anywhere), say in one friendly line that
+        there are no answers to read yet and invite them to take the quiz, then stop.
+        Otherwise, address the student as "you" and write Markdown with this exact shape:
+        - A short warm opening line (one sentence) that nods to the three "writing vibes" they just read
+          about (Self-Expression 🎨, Growth 🌱, Performance 🏆) before showing where they land.
+        - Then a "### " subheading for each of the three continuums, in this order: "### Expression ↔
+          Evaluation", "### Growth ↔ Performance", "### Engagement ↔ Avoidance". Under each:
+            * One line showing the spectrum as a simple text track with a star marking where they land,
+              with the two poles labeled at the ends, for example:
+              `Expression ────────★──── Evaluation`
+              Move the ★ left or right to match how strongly they lean (near the middle if their answers
+              are mixed).
+            * Then in **bold**, name the lean plainly, e.g. "**You lean toward Expression, fairly
+              strongly.**" or "**You're close to the middle, tilting slightly toward Avoidance.**"
+            * Then one or two sentences explaining the placement by quoting a couple of the student's
+              OWN answers (e.g., that they strongly agreed writing helps them learn, or disagreed that
+              writing is boring). Only cite statements whose id actually appears in the data above with a
+              value; NEVER attribute an answer to a statement they did not answer, and never invent or
+              assume a response. If a statement is absent from the data, they did not answer it.
+        - Then a short paragraph beginning "**What you seem to value in good writing:**" drawing on their
+          Part 2 priorities in one or two sentences (again, only the ones they actually ranked).
+        - If the student answered only a few statements overall, keep every placement tentative and say
+          so in plain language (e.g., "with only a few answers in, this is just a rough first read").
+        - End with two sentences reminding them that these are tendencies shaped by experience, not fixed
+          traits — that where they are today is not where they have to stay — and inviting them to think
+          about a specific moment that might explain where they landed (which is what they'll do next).
+        Keep it playful, kind, and specific. Do NOT give a single overall label like "good writer" or
+        "bad writer." Do NOT rank them against other people. Do NOT tell them any placement is the
+        "right" one.
+      </LLMAction>
+    </ActionButton>
+  </Vertical>
+
+  <!-- ===================================================================
+       REFLECT ON YOUR PLACEMENT  (the design document's reflection prompt)
+       =================================================================== -->
+
+  <Vertical id="wj2_placement_reflect">
+    <Markdown>
+## Does This Feel Accurate?
+
+Look back at where the quiz placed you on each line. This is the first piece of real reflective writing
+in this journal — a few honest sentences are plenty.
+
+- Does the placement **feel accurate**? Where does it fit, and where does it miss?
+- Can you think of a **specific moment** — a comment from a teacher, a grade, a piece of writing you were
+  proud of — that might explain why you landed where you did?
+- **A year from now**, where would you *like* to be on each line, and what would need to change to get
+  you there?
+    </Markdown>
+    <Collapsible id="wj2_reflect_results_reminder" title="Show my results again">
+      <Use ref="wj2_results_feedback" />
+    </Collapsible>
+  </Vertical>
+
+  <!-- The reflection TextArea is embedded INLINE in the chat (::wj2_placement_text) and gated on
+       a word count, so it is defined here as a standalone block (not inside a right-pane screen). -->
+  <TextArea id="wj2_placement_text" rows="6" placeholder="The part that feels most accurate is... One moment that might explain it is... A year from now I'd like to..." />
+
+  <!-- ===================================================================
+       TASK 2 — THE WRITERS' CIRCLE MEETING  (PHASE 2, full width, no chat)
+       The whole meeting is ONE screen. The shell shows it full-width (via
+       <Use ref="wj2_meeting">) once the phone chat hands off with the
+       `wj2_sidebar <- meeting` set-command, so there is no chat column here and
+       nothing is duplicated between panes. The scene, the three peers' stories,
+       the student's own story, Alma's response, and the wrap-up all live here in
+       one self-paced flow.
+       =================================================================== -->
+
+  <Vertical id="wj2_meeting">
+
+    <!-- The scene + the three stories (C8: peers model the kind of story first) -->
+    <Markdown id="wj2_meeting_intro">
+## The Writers' Circle — In Person
+
+A few days after the group chat, the Writers' Circle meets **in person, in the student lounge.** You find
+a seat as Alma waves you in.
+
+> **Alma:** *"You came — welcome, everybody! Our group chat got me thinking about how our own experiences
+> shape the way we feel about writing, and I wanted to actually sit with that together. I asked Lee and
+> Richard to start us off, since they had so much to say in the chat."*
+
+One by one, each person reads the story of a moment that shaped how they feel about writing.
+
+> 🗣️ **Lee** — *"In sixth grade my teacher told our class that some people are just born writers and
+> some aren't, and I remember thinking, well, I guess I know which one I am. Ever since then, every time
+> I sit down to write, I hear that line in my head before I've written a single word. It's not that I
+> don't have ideas. It's that I freeze before I let myself try."*
+
+> 🗣️ **Richard** — *"Honestly, I used to keep a notebook where I'd write one paragraph every single day
+> about whatever happened, even boring stuff, just because my older cousin did it and I thought it was
+> cool. I never waited for inspiration. That's why I don't think writing has to be this big emotional
+> struggle — for me it was just a habit, like brushing my teeth. I'm starting to realize, though, that
+> not everyone's habit started the same way mine did."*
+
+> 🗣️ **Alma** — *"My starting point was tangled up with navigating writing in two languages and figuring
+> out where I fit. In ninth grade I turned in an essay I was actually proud of, and it came back covered
+> edge to edge in red pen — comments like 'this doesn't make sense' next to sentences I'd rewritten five
+> times. I didn't write anything I wasn't required to for almost two years. What finally changed things
+> wasn't a teacher telling me I was good — it was a friend asking to read something I'd written for fun."*
+
+Notice what these stories have in common: none of them is really about talent. Each one is about an
+**experience** — a comment, a grade, a habit, a friend — that shaped how the writer feels today. That's
+the kind of story you're about to tell.
+    </Markdown>
+
+    <!-- Your turn (C9: the group turns to the student) -->
+    <Markdown id="wj2_share_prompt">
+## Your Turn: Tell Your Story
+
+Alma turns to you. *"So I want to open the floor — what about you? Can you think of an experience that
+shaped how you feel about yourself as a writer, or how you feel about writing itself?"*
+
+Tell the story of **a moment, an experience, or a piece of feedback about writing that made you feel like
+you were a good or a bad writer.** In your own words:
+
+- What happened? Tell it like a story, not a summary.
+- How did it shape the way you felt about yourself as a writer?
+- Do you think people are **naturally** good or bad writers — or can everyone learn to write well? What
+  makes you say that?
+
+There's no length requirement and no wrong answer. Say the true thing.
+    </Markdown>
+    <Collapsible id="wj2_freewrite_warmup" title="Staring at a blank box? Try a 2-minute warm-up first.">
+      <Markdown id="wj2_freewrite_intro">
+Lee freezes up before writing a single word — and there's a classic trick for exactly that. Write
+without stopping and without deleting for a couple of minutes. Don't worry about whether it's good; just
+keep your hand moving. When you stop, you'll usually find you've already started your story. (This is
+Peter Elbow's *freewriting*, and it's one of the best-known cures for the blank page.)
+      </Markdown>
+      <Freewrite id="wj2_freewrite" nodelete="true" counter="true" reveal="true" rows="5"
+                 placeholder="Just start typing about any writing memory — don't stop, don't fix it..." />
+    </Collapsible>
+    <Markdown>**Your story:**</Markdown>
+    <TextArea id="wj2_story_text" rows="10" placeholder="Tell the story of a moment that shaped how you feel about writing. What happened? How did it change the way you saw yourself as a writer? Do you think writers are born or made?" />
+
+    <!-- Alma responds (C11: analyzes the story, builds on the attitude profile) -->
+    <Markdown id="wj2_response_intro">
+## What Alma Hears in Your Story
+
+When you're happy with your story, press the button. **Alma** — who kicked off the whole conversation —
+will read your story alongside your quiz results and reflect back what she notices, connecting your
+experience to where you landed on the continuums. She won't rewrite your story or grade it; she just
+listens closely and asks one question back, the way a good writing group would.
+    </Markdown>
+    <LLMFeedback id="wj2_response_feedback" render="markdown" />
+    <ActionButton id="wj2_response_btn" label="Hear what Alma noticed in my story">
+      <LLMAction id="wj2_response_action" target="wj2_response_feedback">
+        You are Alma, a warm, perceptive peer in a first-year college Writers' Circle, responding to a
+        fellow student who just read aloud the story of an experience that shaped how they feel about
+        writing. (You are the one who started this whole conversation in the group chat and who shared
+        your own story about red-pen feedback and writing in two languages.) The whole point of this
+        journal is the threshold concept that writing attitudes are shaped by identity and prior
+        experience, not by a fixed "born writer" trait. Your job is to listen closely and build on the
+        writing profile the quiz started — NOT to rewrite, grade, correct, or praise generically.
+
+        WHAT YOU KNOW ABOUT THIS WRITER:
+        Their earlier quick take on writer's block: <Ref id="wj2_resp_ref_take" target="wj2_block_take" />
+        The results the quiz tool gave them (their placement on three attitude continuums):
+        <Ref id="wj2_resp_ref_results" target="wj2_results_feedback" />
+        Their reflection on that placement: <Ref id="wj2_resp_ref_reflect" target="wj2_placement_text" />
+        THEIR STORY (the most important thing — weight it heavily and quote from it):
+        <Ref id="wj2_resp_ref_story" target="wj2_story_text" />
+
+        DIRECTIONS:
+        FIRST decide whether a real story is present. Only if THEIR STORY above is blank or just a
+        fragment (roughly under 15 words) should you gently invite them to tell the whole story and then
+        stop. If they have written a real story, respond to it directly — do NOT open with any line
+        suggesting you are still waiting to hear it ("I'd love to hear the whole story", "whenever you're
+        ready", etc.); they have already shared it, so react to what they actually wrote.
+        When a real story is present, address the writer as "you" and write 4-6 sentences of warm Markdown that:
+        - Name one specific, concrete thing from THEIR story and quote a few of their own words back to
+          them, so they know they were truly heard.
+        - Point out how the EXPERIENCE in their story seems to have shaped an attitude toward writing —
+          explicitly connecting it to where the quiz placed them (for example, an experience that could
+          explain a lean toward Avoidance, or toward Expression). If their story complicates or
+          contradicts their quiz placement, say so honestly and with interest; that tension is valuable,
+          not a problem.
+        - Reinforce the threshold concept in plain language: that this feeling was learned from an
+          experience, which means it isn't fixed — attitudes can shift with new experiences and practice.
+        - End with exactly ONE genuine, open question that invites them to think further (for example,
+          about what experience might start to shift the feeling, or about their own answer to whether
+          writers are born or made). Do not stack multiple questions.
+        Never tell them they are a good or bad writer. Never rewrite their story or suggest edits. Never
+        invent details they didn't share. Speak in your own warm, first-person voice as Alma, a fellow
+        writer in the circle — not as an evaluator or a grader.
+      </LLMAction>
+    </ActionButton>
+
+    <!-- ===================================================================
+         COMPLETION + EXPORT  (inside the meeting, full width)
+         =================================================================== -->
+
+    <CheckboxInput id="wj2_completion_page">
+      <Markdown>**When you're happy with your entry, confirm you're done.**</Markdown>
+      <Key id="wj2_finished">I don't need to make any more changes.</Key>
+    </CheckboxInput>
+
+    <Markdown id="wj2_complete_md" when="@wj2_completion_page.value.length > 0">
+## Journal Complete
+
+In this journal you noticed something writers rarely stop to name: **how you actually feel about writing,
+and where those feelings came from.** You took the quiz, saw where you landed on three attitude
+continuums, weighed the placement against your own sense of yourself, listened to how experience shaped
+three other writers, and told the story of an experience that shaped *you.*
+
+Hold onto the big idea: these are **tendencies shaped by experience, not fixed traits** — which means
+they can change. That's the groundwork for the writing you'll do next in this course.
+
+**Use the Export as PDF button below to save everything, then upload the PDF to your course system.**
+    </Markdown>
+
+    <ActionButton id="wj2_print_btn" label="Export as PDF" when="@wj2_completion_page.value.length > 0">
+      <PrintAction id="wj2_print_action" />
+    </ActionButton>
+
+  </Vertical>
+  <!-- end wj2_meeting -->
+
+</Vertical>

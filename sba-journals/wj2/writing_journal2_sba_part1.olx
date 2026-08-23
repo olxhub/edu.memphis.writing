@@ -1,0 +1,89 @@
+<!-- Writing Journal 2: How Do You Really Feel About Writing? — ENGL 1010 SBA -->
+<Vertical id="wj2_sba_root">
+
+<!--
+---
+description: "Writing Journal 2: How Do You Really Feel About Writing? The second journal in a first-year ENGL 1010 unit on writer identity. It opens in a phone group chat where three Writers' Circle peers argue about whether writer's block is real — the hook for the threshold concept that writing is shaped by identity and prior experience, not a fixed 'born writer' trait. A peer shares a playful writing-attitudes quiz; the Circle's tool plots the student on three attitude continuums (Expression–Evaluation, Growth–Performance, Engagement–Avoidance). The group then meets in person, each shares the story of an experience that shaped them as a writer, and the student tells (writes or records) their own — the real journal entry."
+category: writing_journal2
+index: 92
+lang: en-Latn-US
+---
+-->
+
+<Cast cast="characters.cast" id="wj2_sba_part1"
+      title="Writing Journal 2: How Do You Really Feel About Writing?"
+      launchable="true">
+  <Tabs id="wj2_sba_tabs">
+
+    <!-- Tab 1: two phases in one flow.
+         PHASE 1 — the phone group chat: a two-pane view (chat left, activity right),
+         shown until the chat hands off to the in-person meeting.
+         PHASE 2 — the in-person Writers' Circle meeting: the chat drops away and the
+         meeting content takes the whole width. The handoff is a chat set-command
+         (`wj2_phase <- meeting`); each region renders only when its `when=` holds. -->
+    <Vertical id="wj2_circle_tab" title="The Circle">
+
+      <!-- PHASE FLAG: an always-mounted, invisible holder the chat flips at the meeting
+           handoff (`wj2_phase <- meeting`). It must live OUTSIDE both gated regions so it
+           never unmounts — reusing a value from inside the hidden SplitPanel is unreliable
+           (its state can reset when the pane unmounts). -->
+      <Hidden>
+        <LineInput id="wj2_phase" />
+      </Hidden>
+
+      <!-- PHASE 1: phone group chat (two-pane) -->
+      <SplitPanel id="wj2_sba_split" sizes="38, 62" when="@wj2_phase.value !== 'meeting'">
+        <LeftPane>
+          <Chat id="wj2_chat"
+                src="writing_journal2_dialogue_part1.chatpeg"
+                height="460px" />
+        </LeftPane>
+        <RightPane>
+          <Vertical id="wj2_current_activity" title="Current Activity">
+            <UseHistory id="wj2_sidebar" initial="wj2_welcome" />
+          </Vertical>
+        </RightPane>
+      </SplitPanel>
+
+      <!-- PHASE 2: in-person meeting (full width, no chat).
+           The when= must sit on a block the tab holds directly (a <Use>'s own when=
+           is dropped when it resolves to its target), so wrap the meeting in a gated
+           Vertical here. wj2_meeting itself stays ungated so it still prints in the
+           activities appendix. src= must NOT go on this rendered <Use> (it leaks onto the
+           inlined Vertical → "Invalid attributes: src"); the trailing loader below pulls the
+           activities file into scope so this bare ref resolves instead of 404-ing. -->
+      <Vertical id="wj2_meeting_region" when="@wj2_phase.value === 'meeting'">
+        <Use ref="wj2_meeting" />
+      </Vertical>
+
+    </Vertical>
+
+    <!-- Tab 2: the running record of the student's work -->
+    <Vertical id="wj2_journal_tab" title="My Journal">
+      <Use ref="wj2_artifact" />
+    </Vertical>
+
+    <!-- Tab 3: the people in the Circle -->
+    <Vertical id="wj2_people_tab" title="The Group">
+      <Use ref="wj2_circle_members" />
+    </Vertical>
+
+  </Tabs>
+</Cast>
+
+<!-- ============================================================
+     REFERENCED CONTENT BLOCKS
+     ============================================================ -->
+
+<!-- Who's in the group chat / Circle (reads the cast) -->
+<TeamDirectory id="wj2_circle_members" title="Who's in the Writers' Circle"/>
+
+<!-- Pull in the running-record artifact -->
+<Use ref="wj2_artifact" src="artifact.olx"/>
+
+<!-- Loader: pull the activities file into scope so the meeting region's bare
+     <Use ref="wj2_meeting"/> resolves (this loader carries the src; the rendered
+     Use must not). Mirrors the artifact loader above. -->
+<Use ref="wj2_meeting" src="writing_journal2_activities_part1.olx"/>
+
+</Vertical>

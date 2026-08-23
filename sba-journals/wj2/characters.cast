@@ -1,0 +1,74 @@
+# Writing Journal 2 — "How Do You Really Feel About Writing?" — ENGL 1010 SBA Cast
+#
+# Characters for the second Writing Journal in a first-year composition unit on
+# writer identity. It opens in a phone GROUP CHAT with three members of the
+# Writers' Circle, who are arguing about whether "writer's block" is even real.
+# That argument is the hook: it surfaces the threshold concept that writing is
+# shaped by our identities and prior experiences, not by a fixed "born writer"
+# trait. Alma shares a playful writing-attitudes quiz; later the group meets in
+# person and each shares the story of an experience that shaped them as a writer,
+# before turning the question to the student.
+#
+# Peer-driven by design: there is no instructor at the front of the room. The
+# thinking happens among writers. Avatars use Open Peeps.
+#   https://www.dicebear.com/styles/open-peeps/#options
+
+You:
+  openPeeps:
+    face: smile
+    head: bangs
+    skinColor: ae5d29
+  profile:
+    role: Reflective Writer (you)
+    bio: A first-year student in ENGL 1010 at the University of Memphis, part of the same Writers' Circle group chat. You are working on the Literacy Narrative assignment and, like everyone else, you have feelings about writing you have not fully put into words. In this journal you take a quick writing-attitudes quiz, see where it places you, and then tell the story of an experience that shaped how you feel about yourself as a writer.
+    groups:
+      - you
+
+Alma:
+  name: Alma
+  openPeeps:
+    face: smile
+    head: long
+    skinColor: edb98a
+  profile:
+    role: Peer — has felt the block, offers empathy
+    bio: A member of the Writers' Circle who used to think writer's block was just an excuse, until a ninth-grade essay came back covered in red pen and she froze up for a long time afterward. Her relationship with writing is also bound up with navigating two languages and figuring out where she fits. She now believes writing struggles come from what happened to you before you sat down to write, not from a lack of willpower. She shares a lighthearted "what's your writing personality" quiz with the group, welcomes everyone to the in-person meeting in the student lounge, and gives each writer feedback on their story.
+    experience: Learned that attitudes toward writing come from lived experience, writing across two languages
+    skills:
+      - Reflecting on writing history
+      - Encouraging other writers
+    groups:
+      - circle
+
+Lee:
+  name: Lee
+  openPeeps:
+    face: cheeky
+    head: mohawk
+    skinColor: 8d5524
+  profile:
+    role: Peer — stuck on the assignment
+    bio: Right now Lee is staring at the Literacy Narrative prompt with zero words written and calling it writer's block. For Lee the problem is not a lack of ideas but a brain that freezes up before the words come out, something that has happened since seventh grade. Lee's frustration is what kicks off the whole conversation about whether writer's block is real.
+    experience: Has struggled to get started on writing since middle school
+    skills:
+      - Naming the writing struggle honestly
+      - Ideas without a way onto the page
+    groups:
+      - circle
+
+Richard:
+  name: Richard
+  openPeeps:
+    face: serious
+    head: short1
+    accessories: glasses
+    skinColor: f8d25c
+  profile:
+    role: Peer — the skeptic
+    bio: Richard does not believe writer's block is a real thing. To him it is just not having anything to say yet, and the fix is to start typing something, anything. He kept a one-paragraph-a-day notebook as a kid, so writing has always felt like a plain habit to him rather than an emotional struggle. His skepticism gives the group someone to push against, and he is slowly realizing that not everyone's writing habit started the way his did.
+    experience: Built an everyday writing habit early and rarely felt stuck
+    skills:
+      - Just starting and keeping going
+      - Treating writing as a routine
+    groups:
+      - circle

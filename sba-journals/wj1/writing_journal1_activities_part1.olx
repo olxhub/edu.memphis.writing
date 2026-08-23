@@ -1,0 +1,605 @@
+<!--
+---
+description: "Writing Journal 1: Who Am I As a Writer? (activity bank). The in-person Writers' Circle meeting pulls each screen below into the right-hand pane as the conversation advances. A first-year composition student, unsure they count as a writer, watches Alma talk through her own Writer Board, then builds their own — marking how often (Frequently / Sometimes / Never) they do each kind of writing, FOR SCHOOL and OUTSIDE SCHOOL — works out WHY they do different kinds of writing, and finally generates a writer type computed deterministically from their two biggest reasons."
+category: writing_journal1
+index: 95
+lang: en-Latn-US
+---
+-->
+
+<!--
+  Writing Journal 1 — ENGL 1010 First-Year Composition SBA (Activity bank)
+
+  The conversation (writing_journal1_dialogue_part1.chatpeg) pulls each screen
+  below into the right-hand pane via `wj1_sidebar <- <id>` set commands. Read-only
+  / framing screens are wrapped in IntakeGate so they page through with NEXT and
+  drop out of the final PDF; the student's own work stays.
+
+  Flow (from Design_docs/Writing_Lab/Aug5_update/Writing_journal_1_revised.docx):
+    intro slides (the assignment; the invitation; Thursday at the Circle)
+    -> orientations card (community / explorer / technician — read first as shorthand)
+    -> Alma's board (worked example; the student learns the activity by watching)
+    -> TASK 1: build your Writer Board  (Frequently/Sometimes/Never grid; what & how often)
+    -> the noticing question (optional one-line open response; ungraded)
+    -> TASK 2: Why I Write  (assign a reason to each cluster; name your top two; reflect)
+    -> TASK 3: Your Writer Type  (deterministic type from the two biggest reasons; reflect with a story)
+    -> completion + export.
+
+  Design-doc fidelity notes (kept out of the student's view):
+    * TASK 1 (the Writer Board) is realized as TWO TabularMCQ grids (For school /
+      Outside school): rows = kinds of writing, columns = Frequently / Sometimes /
+      Never. (An earlier version used drag-to-rank SortableInputs, but a ranking
+      can't distinguish "never" from "least often," so the instructor asked for an
+      explicit Frequently/Sometimes/Never choice; lo-blocks has no drag-into-columns
+      block, so a radio-grid TabularMCQ is the fit.) Task 1 asks only WHAT and HOW
+      OFTEN — never WHY — so the group runs into the real gap that opens Task 2.
+    * TASK 2's clusters are a fixed set (the doc's example clusters) rather than
+      generated from each student's board, because the board items are authored, not
+      free text. The fixed reason list keeps responses mappable to the Task 3 profiles.
+    * TASK 3 (Your Writer Type) is deterministic — NO LLM. The student's two biggest
+      reasons (wj1_why_top2) select one or two of the eight authored writer-type cards
+      via IntakeGate `in` conditions, revealed by a "Generate your writer profile"
+      button (SetFieldAction -> wj1_generate_flag). The assessed output is the
+      story-based reflection the student then writes.
+-->
+
+<Vertical id="wj1_activities_part1" title="Writing Journal 1 — Activities" launchable="true">
+
+  <ActionButton id="wj1_print_btn" label="Export as PDF">
+    <PrintAction id="wj1_print_action" />
+  </ActionButton>
+
+  <!-- ===================================================================
+       INTRO SLIDES  (the assignment; the invitation; Thursday at the Circle)
+       Read-only framing -> IntakeGate so it drops from the exported PDF.
+       =================================================================== -->
+
+  <IntakeGate ready="!@wj1_completion_page.value">
+    <Markdown> </Markdown>
+    <Markdown id="wj1_welcome">
+## Writing Journal 1: Who Am I As a Writer?
+
+It's the first week of your First-Year Composition course, and **Professor Ellington** has just assigned
+your first Writing Journal:
+
+> **Who am I as a writer?**
+>
+> Start noticing the writing you already do — not only papers and assignments, but *all* of it — and
+> think about what it says about you as a writer.
+
+Here's the thing: you've never really thought of yourself as a writer. You write constantly — messages,
+notes, posts, replies — but almost none of it feels like the kind of writing the assignment means. You're
+not sure any of it counts.
+
+So when **Alma**, who took 1010 last year, texts you to come to the **Writers' Circle** — a few students
+who meet on the library's second floor to talk about what they're writing and what's tripping them up —
+you go. It's Thursday, 4:02 pm. Lee and Richard are already mid-conversation.
+
+**By the end of this journal you will have:**
+
+- built a **Writer Board** — a map of the kinds of writing you actually do, for school and outside it,
+  and how often;
+- worked out **why** you do different kinds of writing — the part a list of *what* can't tell you;
+- seen your whole board come together, and the **writer type** your two biggest reasons point to; and
+- worked out for yourself **how well it describes you as a writer.**
+
+There are no wrong answers here and no grade for being one kind of writer or another. Work through the conversation on the left — each step opens an activity here on the right.
+    </Markdown>
+  </IntakeGate>
+
+  <!-- ===================================================================
+       THE ORIENTATIONS  (read first, as the group's shorthand — so the
+       vocabulary is in place before the profile arrives). Read-only framing.
+       =================================================================== -->
+
+  <IntakeGate ready="!@wj1_completion_page.value">
+    <Markdown> </Markdown>
+    <Markdown id="wj1_orientations">
+## The Circle's Shorthand: Writer Orientations
+
+The writer's circle has seen a lot of different writers and noticed that they tend to fall into general
+types. They've developed shorthand to name the writer types they've noticed.
+
+| | Orientation | In their words |
+|---|---|---|
+| 🤝 | **Community writer** *(Alma)* | "Almost everything I write is pointed at another person." |
+| 🧭 | **Explorer** *(Lee)* | "I write to find out what I think about things." |
+| 🔧 | **Technician** *(Richard)* | "I write so things get done properly the first time." |
+
+You don't have to pick one. At the end of the session, the Circle's tool will use your board and your reasons to choose which profile it thinks best represents you as a writer — and then, as Richard puts it, *you tell it where it's wrong. That's the
+useful part.*
+
+Those three are just the ones Alma, Lee, and Richard use. **There are eight writer types in all** — and
+at the end, the tool will match you to one of them:
+
+| | Writer type | In a nutshell |
+|---|---|---|
+| 🤝 | **Community Writer** | Writes to connect with people *(Alma)* |
+| 🧭 | **Explorer** | Writes to find out what they think *(Lee)* |
+| 🔧 | **Technician** | Writes to get things done clearly and correctly *(Richard)* |
+| 🌿 | **Hobbyist** | Writes for the enjoyment of it |
+| 💭 | **Dreamer** | Writes to express an inner life |
+| 🔁 | **Practitioner** | Writes steadily, as a practical habit |
+| 🏁 | **Finisher** | Writes to finish something real |
+| 🎯 | **Pragmatist** | Writes to reach and affect an audience |
+    </Markdown>
+  </IntakeGate>
+
+  <!-- ===================================================================
+       ALMA'S BOARD  (worked example / scaffolding. The student learns the
+       activity by watching Alma build hers — and watching her be surprised by
+       it — rather than by reading instructions.) Read-only framing.
+       =================================================================== -->
+
+  <IntakeGate ready="!@wj1_completion_page.value">
+    <Markdown> </Markdown>
+    <Markdown id="wj1_alma_board">
+## Alma's Writer Board
+
+*"It's just everything you write, laid out. Here — it's faster if I show you mine."*
+
+| Alma writes… | For school / outside | How often |
+|---|---|---|
+| Texting | Outside | Every day |
+| The roommate group chat | Outside | Every day |
+| Emails (professors, work) | For school | A couple times a week |
+| Discussion posts | For school | Weekly *("and I resent every one")* |
+| Captions when she posts something | Outside | A few times a week |
+| Comments on shared docs (group projects) | Both | Adds up fast |
+
+> *Alma stops partway down.* **"Huh. I always forget how much ends up on here."**
+>
+> *"The first time I did this I put down three things — essays, emails, texting. I thought that was the
+> list. Now it doesn't fit on one screen."*
+
+Notice what happened: Alma didn't set out to prove anything. She just listed what she actually writes,
+and the **volume** surprised her — and some of it (the group chat, the captions) she wouldn't have called
+"writing" at all. **That's what you're about to do next.**
+    </Markdown>
+  </IntakeGate>
+
+  <!-- ===================================================================
+       TASK 1 — BUILD YOUR WRITER BOARD  (GENUINE DRAG-AND-DROP)
+       Two drag-and-drop boards = the doc's two drop zones (For school /
+       Outside school). Within each board the student drags the kinds of
+       writing into order, most often (top) -> rarely or never (bottom):
+       that ordering is how the doc's per-item "frequency" is captured.
+       Each board is a TabularMCQ radio grid (Frequently / Sometimes / Never).
+       The board asks only WHAT and HOW OFTEN — never WHY.
+       =================================================================== -->
+
+  <Vertical id="wj1_board">
+    <Markdown>
+## Your Writer Board
+
+Your turn. This is just an **inventory** of the writing you actually do — it doesn't have to be complete
+or tidy, and it isn't asking *why* yet. Just be honest about **what** you write and **how often.**
+
+Your board has **two sides**: the writing you do **for school**, and the writing you do **outside
+school.** For each kind of writing, mark whether you do it **Frequently, Sometimes, or Never** — on each
+side.
+
+- The same kind of writing can be different on the two sides — that's normal.
+- And **count the stuff you don't think counts.** Group chats, captions, lists — Alma almost left those
+  off, and they turned out to be most of her board.
+    </Markdown>
+
+    <Markdown>### 🏫 Writing I do **FOR SCHOOL**</Markdown>
+    <Markdown>*How often do you do each of these **for school**?*</Markdown>
+    <TabularMCQ id="wj1_board_school">
+cols: Frequently, Sometimes, Never
+rows:
+  - 💬 Texting and DMs
+  - 👥 Group chat messages
+  - ✉️ Emails
+  - 📝 Class notes
+  - 🗂️ Lists, planners, and reminders
+  - 📱 Social posts, captions, and comments
+  - 📄 Essays, papers, and reports
+  - 🎨 Creative writing (stories, poems, song lyrics)
+    </TabularMCQ>
+    <Markdown>**Anything else you write for school** that isn't a row above? Add it here.</Markdown>
+    <LineInput id="wj1_board_school_other" placeholder="e.g. lab reports, messages in another language, prompts to AI tools..." />
+
+    <Markdown>### 🌙 Writing I do **OUTSIDE SCHOOL**</Markdown>
+    <Markdown>*How often do you do each of these **outside school**?*</Markdown>
+    <TabularMCQ id="wj1_board_outside">
+cols: Frequently, Sometimes, Never
+rows:
+  - 💬 Texting and DMs
+  - 👥 Group chat messages
+  - ✉️ Emails
+  - 📝 Notes to myself
+  - 🗂️ Lists, planners, and reminders
+  - 📱 Social posts, captions, and comments
+  - 📄 Longer writing (blogs, fan fiction, reviews)
+  - 🎨 Creative writing (stories, poems, song lyrics)
+    </TabularMCQ>
+    <Markdown>**Anything else you write outside school** that isn't a row above? Add it here.</Markdown>
+    <LineInput id="wj1_board_outside_other" placeholder="e.g. messages to family, texts in another language, journaling, gaming chat..." />
+  </Vertical>
+
+  <!-- ===================================================================
+       CLOSING TASK 1 — THE NOTICING QUESTION
+       Optional one-line open response. Ungraded. The student does the
+       noticing, so the system does not have to predict anything.
+       =================================================================== -->
+
+  <Vertical id="wj1_board_noticing">
+    <Markdown>
+## One Thing You Noticed
+
+*Alma leans over:* **"Did anything end up on there that you wouldn't have called writing before you sat
+down?"**
+
+You don't have to answer — but if something jumped out, name it.
+    </Markdown>
+    <TextArea id="wj1_board_noticing_text" rows="2" placeholder="The thing I almost didn't count as writing was..." />
+  </Vertical>
+
+  <!-- ===================================================================
+       TASK 2 — WHY I WRITE
+       The board is a list of WHAT. This task adds the WHY. The student assigns
+       a reason (fixed list + open option) to each cluster of their writing,
+       names the two reasons that come up most, and writes a short reflection.
+       =================================================================== -->
+
+  <Vertical id="wj1_why">
+    <Markdown>
+## Why I Write
+
+Here's the thing a board can't tell you. Two people can write the exact same grocery list — one to get
+the shopping done, one because it quiets a busy mind. Same item, completely different activity. *It only
+looks the same from outside.*
+
+So go back through your writing and put the **why** on it. For each group below, pick the reason that fits
+best. There's no right answer — pick what's true for **you.**
+    </Markdown>
+
+    <Collapsible id="wj1_why_board_reminder" title="Remind me what's on my board">
+      <Markdown>*Here's the board you built — most often at the top. You can even nudge it here if you left something out.*</Markdown>
+      <Markdown>**🏫 For school:**</Markdown>
+      <Use ref="wj1_board_school" />
+      <Markdown>**🌙 Outside school:**</Markdown>
+      <Use ref="wj1_board_outside" />
+    </Collapsible>
+
+    <Markdown>### 💬 Messaging &amp; staying in touch *(texts, DMs, group chats)*</Markdown>
+    <DropdownInput id="wj1_why_messaging" placeholder="Mostly, I do this…">
+      I don't really do this sort of writing
+      To stay in touch with people I care about
+      To be part of a group or community
+      To figure out what I think
+      To try something out and see what happens
+      To get something done or stay organized
+      To remember something
+      To make something I'm proud of
+      Because I enjoy it
+      To work out how I'm feeling
+      To persuade someone or make a point
+      Because a class or a job requires it
+      Something else (I'll describe it below)
+    </DropdownInput>
+
+    <Markdown>### 🎓 Coursework &amp; class writing *(essays, papers, discussion posts, reports)*</Markdown>
+    <DropdownInput id="wj1_why_coursework" placeholder="Mostly, I do this…">
+      I don't really do this sort of writing
+      To stay in touch with people I care about
+      To be part of a group or community
+      To figure out what I think
+      To try something out and see what happens
+      To get something done or stay organized
+      To remember something
+      To make something I'm proud of
+      Because I enjoy it
+      To work out how I'm feeling
+      To persuade someone or make a point
+      Because a class or a job requires it
+      Something else (I'll describe it below)
+    </DropdownInput>
+
+    <Markdown>### 🗂️ Notes, lists &amp; organizing *(class notes, to-do lists, planners, reminders)*</Markdown>
+    <DropdownInput id="wj1_why_organizing" placeholder="Mostly, I do this…">
+      I don't really do this sort of writing
+      To stay in touch with people I care about
+      To be part of a group or community
+      To figure out what I think
+      To try something out and see what happens
+      To get something done or stay organized
+      To remember something
+      To make something I'm proud of
+      Because I enjoy it
+      To work out how I'm feeling
+      To persuade someone or make a point
+      Because a class or a job requires it
+      Something else (I'll describe it below)
+    </DropdownInput>
+
+    <Markdown>### 📣 Posting &amp; sharing publicly *(social posts, captions, comments, reviews)*</Markdown>
+    <DropdownInput id="wj1_why_posting" placeholder="Mostly, I do this…">
+      I don't really do this sort of writing
+      To stay in touch with people I care about
+      To be part of a group or community
+      To figure out what I think
+      To try something out and see what happens
+      To get something done or stay organized
+      To remember something
+      To make something I'm proud of
+      Because I enjoy it
+      To work out how I'm feeling
+      To persuade someone or make a point
+      Because a class or a job requires it
+      Something else (I'll describe it below)
+    </DropdownInput>
+
+    <Markdown>### 🎨 Creative &amp; personal writing *(stories, poems, lyrics, journaling)*</Markdown>
+    <DropdownInput id="wj1_why_creative" placeholder="Mostly, I do this…">
+      I don't really do this sort of writing
+      To stay in touch with people I care about
+      To be part of a group or community
+      To figure out what I think
+      To try something out and see what happens
+      To get something done or stay organized
+      To remember something
+      To make something I'm proud of
+      Because I enjoy it
+      To work out how I'm feeling
+      To persuade someone or make a point
+      Because a class or a job requires it
+      Something else (I'll describe it below)
+    </DropdownInput>
+
+    <Markdown>*If you chose **"Something else"** for any group above, describe it in your own words:*</Markdown>
+    <LineInput id="wj1_why_other" placeholder="Something else I write for, and what it is..." />
+
+    <Markdown>
+### Your two biggest reasons for writing
+
+Looking at the **whole board**, tick the **two** reasons that come up most often across everything you
+write.
+    </Markdown>
+    <CheckboxInput id="wj1_why_top2">
+      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
+      <Key value="community">To be part of a group or community</Key>
+      <Key value="figure_out">To figure out what I think</Key>
+      <Key value="try_out">To try something out and see what happens</Key>
+      <Key value="get_done">To get something done or stay organized</Key>
+      <Key value="remember">To remember something</Key>
+      <Key value="proud">To make something I'm proud of</Key>
+      <Key value="enjoy">Because I enjoy it</Key>
+      <Key value="feelings">To work out how I'm feeling</Key>
+      <Key value="persuade">To persuade someone or make a point</Key>
+      <Key value="required">Because a class or a job requires it</Key>
+      <Key value="something_else">Something else</Key>
+    </CheckboxInput>
+
+    <Markdown>
+### One short reflection
+
+A few honest sentences:
+
+- Was there a reason you **expected** to pick and didn't?
+- Or one that showed up **more than you thought** it would?
+    </Markdown>
+    <TextArea id="wj1_why_reflect" rows="6" placeholder="I expected to pick... but what actually came up most was... which surprised me because..." />
+  </Vertical>
+
+  <!-- ===================================================================
+       TASK 3 — YOUR WRITER BOARD, ALL TOGETHER  (DETERMINISTIC; NO LLM)
+       The culminating screen combines the student's Writer Board and their
+       reasons into (1) a structured read-back of what/where/how-often + why
+       (built straight from their own inputs via Ref), and (2) a writer-type
+       card (or two) chosen DETERMINISTICALLY from the two biggest reasons the
+       student named: each of the 8 authored profile cards is revealed by an
+       IntakeGate gated on the relevant reason(s). No AI, no button, no LLM
+       backend — the result is transparent, reproducible, and works in a
+       server-free static export.
+
+       Reason -> writer-type map (each reason triggers exactly one card):
+         stay_in_touch, community  -> 🤝 Community Writer
+         figure_out, try_out       -> 🧭 Explorer
+         get_done, required        -> 🔧 Technician
+         remember                  -> 🔁 Practitioner
+         proud                     -> 🏁 Finisher
+         enjoy                     -> 🌿 Hobbyist
+         feelings                  -> 💭 Dreamer
+         persuade                  -> 🎯 Pragmatist
+       (something_else triggers no card.) Two reasons show one or two cards —
+       the doc's "primary + a close second" without an opaque AI ranking.
+       The reflection is refocused (per instructor) from "what did the guess
+       get wrong" to "what does your board show about you as a writer?"
+       =================================================================== -->
+
+  <Vertical id="wj1_profile">
+    <Markdown>
+## Your Writer Type
+
+You built your **Writer Board** and worked out **why** you do different kinds of writing. Based on the
+**two biggest reasons** you named, the Circle's tool can suggest the writer type it thinks best represents
+you. The Circle uses eight of these — the same shorthand Alma, Lee, and Richard use. Remember Alma's rule:
+it's a **shorthand, not a verdict.** You know things about yourself it can't.
+    </Markdown>
+
+    <ActionButton id="wj1_generate_btn" label="Generate your writer profile">
+      <SetFieldAction target="wj1_generate_flag" field="value" value="go" />
+    </ActionButton>
+    <Hidden>
+      <LineInput id="wj1_generate_flag" />
+    </Hidden>
+
+    <IntakeGate ready="@wj1_generate_flag.value === 'go'">
+      <Markdown> </Markdown>
+      <Vertical id="wj1_type_result">
+
+        <!-- 🤝 Community Writer  <- stay_in_touch, community -->
+        <IntakeGate ready="'stay_in_touch' in @wj1_why_top2.value || 'community' in @wj1_why_top2.value">
+          <Markdown> </Markdown>
+          <Markdown>
+| 🤝 The Community Writer | Core motivation: connection |
+| :-- | :-- |
+| **What it looks like** | You write to reach other people — messages, group chats, replies, shared docs — and you get sharper through back-and-forth with real readers. |
+| **Why you're seeing it** | One of your two biggest reasons was *staying in touch* or *being part of a group.* |
+| **A growth edge** | Take in feedback without becoming dependent on it. |
+          </Markdown>
+        </IntakeGate>
+
+        <!-- 🧭 Explorer  <- figure_out, try_out -->
+        <IntakeGate ready="'figure_out' in @wj1_why_top2.value || 'try_out' in @wj1_why_top2.value">
+          <Markdown> </Markdown>
+          <Markdown>
+| 🧭 The Explorer | Core motivation: curiosity |
+| :-- | :-- |
+| **What it looks like** | You write to find out what you think — often not knowing where a piece is going until you're in it. Writing is a way of thinking, and you like to experiment. *(Lee's type.)* |
+| **Why you're seeing it** | One of your two biggest reasons was *figuring out what you think* or *trying something out.* |
+| **A growth edge** | Decide when exploring is the goal and when a piece needs to land somewhere. |
+          </Markdown>
+        </IntakeGate>
+
+        <!-- 🔧 Technician  <- get_done, required -->
+        <IntakeGate ready="'get_done' in @wj1_why_top2.value || 'required' in @wj1_why_top2.value">
+          <Markdown> </Markdown>
+          <Markdown>
+| 🔧 The Technician | Core motivation: getting it done, and right |
+| :-- | :-- |
+| **What it looks like** | You write to accomplish a task cleanly — clear, organized, no wasted motion — and you like doing it properly the first time. *(Richard's type.)* |
+| **Why you're seeing it** | One of your two biggest reasons was *getting something done / staying organized* or *because a class or job requires it.* |
+| **A growth edge** | The parts of writing beyond correctness — voice, surprise, the reader's experience. |
+          </Markdown>
+        </IntakeGate>
+
+        <!-- 🔁 Practitioner  <- remember -->
+        <IntakeGate ready="'remember' in @wj1_why_top2.value">
+          <Markdown> </Markdown>
+          <Markdown>
+| 🔁 The Practitioner | Core motivation: steady practice |
+| :-- | :-- |
+| **What it looks like** | You write regularly and usefully — to keep track, to remember, to stay on top of things. You trust the habit more than inspiration, and it adds up. |
+| **Why you're seeing it** | One of your two biggest reasons was *to remember something.* |
+| **A growth edge** | Let some of that steady practice become writing you do for its own sake. |
+          </Markdown>
+        </IntakeGate>
+
+        <!-- 🏁 Finisher  <- proud -->
+        <IntakeGate ready="'proud' in @wj1_why_top2.value">
+          <Markdown> </Markdown>
+          <Markdown>
+| 🏁 The Finisher | Core motivation: finishing something real |
+| :-- | :-- |
+| **What it looks like** | You write to end up with a finished thing — something you can point to and say *I made that.* You have, or are building, the persistence to see a piece through. |
+| **Why you're seeing it** | One of your two biggest reasons was *making something you're proud of.* |
+| **A growth edge** | Treat finishing as the start of a writing life, not a one-time test. |
+          </Markdown>
+        </IntakeGate>
+
+        <!-- 🌿 Hobbyist  <- enjoy -->
+        <IntakeGate ready="'enjoy' in @wj1_why_top2.value">
+          <Markdown> </Markdown>
+          <Markdown>
+| 🌿 The Hobbyist | Core motivation: personal fulfillment |
+| :-- | :-- |
+| **What it looks like** | You write because you *like* it. You don't necessarily need a big audience or a grade — the writing itself is the point, seen or not. |
+| **Why you're seeing it** | One of your two biggest reasons was *because you enjoy it.* |
+| **A growth edge** | Protect the joy of it even as you push to grow. |
+          </Markdown>
+        </IntakeGate>
+
+        <!-- 💭 Dreamer  <- feelings -->
+        <IntakeGate ready="'feelings' in @wj1_why_top2.value">
+          <Markdown> </Markdown>
+          <Markdown>
+| 💭 The Dreamer | Core motivation: expression |
+| :-- | :-- |
+| **What it looks like** | You write to get what's inside into words — to work out how you feel and make sense of things. There's an inner life your writing reaches for, polished or not. |
+| **Why you're seeing it** | One of your two biggest reasons was *to work out how you're feeling.* |
+| **A growth edge** | Turn some of that inner material into pieces you finish and share. |
+          </Markdown>
+        </IntakeGate>
+
+        <!-- 🎯 Pragmatist  <- persuade -->
+        <IntakeGate ready="'persuade' in @wj1_why_top2.value">
+          <Markdown> </Markdown>
+          <Markdown>
+| 🎯 The Pragmatist | Core motivation: audience &amp; impact |
+| :-- | :-- |
+| **What it looks like** | You write to *reach* people — to make a point, change a mind, get a result. You think about the reader on the other end, not just the words on the page. |
+| **Why you're seeing it** | One of your two biggest reasons was *to persuade someone or make a point.* |
+| **A growth edge** | Keep your own voice and purpose alongside the goal of landing with an audience. |
+          </Markdown>
+        </IntakeGate>
+
+        <!-- fallback: no type-triggering reason selected -->
+        <IntakeGate ready="!('stay_in_touch' in @wj1_why_top2.value || 'community' in @wj1_why_top2.value || 'figure_out' in @wj1_why_top2.value || 'try_out' in @wj1_why_top2.value || 'get_done' in @wj1_why_top2.value || 'required' in @wj1_why_top2.value || 'remember' in @wj1_why_top2.value || 'proud' in @wj1_why_top2.value || 'enjoy' in @wj1_why_top2.value || 'feelings' in @wj1_why_top2.value || 'persuade' in @wj1_why_top2.value)">
+          <Markdown> </Markdown>
+          <Markdown>*It looks like you haven't picked your **two biggest reasons** yet. Head back to **Why I Write**, tick your two, then come back and generate again.*</Markdown>
+        </IntakeGate>
+
+      </Vertical>
+    </IntakeGate>
+
+    <Markdown>
+Once you've read it, think about how well it fits your actual writing practices and answer the below
+questions.
+    </Markdown>
+
+    <Collapsible id="wj1_type_lookback" title="Remind me what I said about why I write">
+      <Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
+      <Ref id="wj1_readback_msg" target="wj1_why_messaging" />
+      <Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
+      <Ref id="wj1_readback_course" target="wj1_why_coursework" />
+      <Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
+      <Ref id="wj1_readback_org" target="wj1_why_organizing" />
+      <Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
+      <Ref id="wj1_readback_post" target="wj1_why_posting" />
+      <Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
+      <Ref id="wj1_readback_creative" target="wj1_why_creative" />
+    </Collapsible>
+
+    <Markdown>### Does this feel like you?</Markdown>
+    <ChoiceInput id="wj1_fit">
+      <Key value="Yes">Yes — that's me</Key>
+      <Key value="Partly">Partly</Key>
+      <Key value="Not really">Not really</Key>
+    </ChoiceInput>
+
+    <Markdown>
+### Your reflection
+
+If you **agree** with your writer profile, think of and write a story from your writing life that
+illustrates how this profile fits you.
+
+If you **disagree** with your writer profile, think of a story from your writing life that illustrates why
+this profile doesn't best capture your writing practices, and tell that story.
+
+Your story should tell it what it couldn't know from your previous answers.
+    </Markdown>
+    <TextArea id="wj1_profile_reflect" rows="9" placeholder="Here's a story from my writing life..." />
+  </Vertical>
+
+  <!-- ===================================================================
+       COMPLETION + EXPORT
+       =================================================================== -->
+
+  <CheckboxInput id="wj1_completion_page">
+    <Markdown>**Confirm that you are done with this journal entry.**</Markdown>
+    <Key id="wj1_finished">I don't need to make any more changes.</Key>
+    <Markdown> </Markdown>
+    <IntakeGate ready="'wj1_finished' in @wj1_completion_page.value">
+      <Markdown> </Markdown>
+      <Markdown id="wj1_complete_md">
+## Journal Complete
+
+In this journal you did the thing the assignment was really asking for: you stopped and **noticed the
+writing you already do.** You built a **Writer Board** — for school and outside it — put the **why** on
+it, saw the **writer type** your reasons point to, and then did the most important part: you said **what
+your board shows about you as a writer.**
+
+Hold onto Alma's point: a writer type is a **snapshot, not a verdict.** The writing you're about to do in
+this course will keep changing the picture — which is exactly why it was worth mapping where you're
+starting from.
+
+## PLEASE CLICK CONTINUE TO REVIEW YOUR RESPONSES AND SAVE THEM TO A PDF. THEN UPLOAD THE PDF TO YOUR COURSE SYSTEM.
+      </Markdown>
+    </IntakeGate>
+  </CheckboxInput>
+
+</Vertical>

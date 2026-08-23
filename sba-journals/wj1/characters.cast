@@ -1,0 +1,76 @@
+# Writing Journal 1 — "Who Am I As a Writer?" — ENGL 1010 SBA Cast
+#
+# Characters for the FIRST Writing Journal in a first-year composition unit on
+# writer identity. Professor Ellington assigns the journal ("Who am I as a
+# writer?"); the student, unsure they count as a writer at all, is invited by
+# Alma to the Writers' Circle, which meets in person on the library's second
+# floor. There the student meets Lee and Richard mid-conversation.
+#
+# These are the SAME three peers the student will meet again in Writing Journal
+# 2 — same faces, same voices. The group has a running habit of describing
+# themselves not by name but by "writer orientation": Alma is a community
+# writer, Lee an explorer, Richard a technician. Nobody takes the labels too
+# seriously; they're a shorthand. Peer-driven by design — there is no instructor
+# at the table. Avatars use Open Peeps and match the Writing Journal 2 cast
+# exactly so students recognize the same people across both journals.
+#   https://www.dicebear.com/styles/open-peeps/#options
+
+You:
+  openPeeps:
+    face: smile
+    head: bangs
+    skinColor: ae5d29
+  profile:
+    role: Reflective Writer (you)
+    bio: A first-year student in ENGL 1010 at the University of Memphis. Professor Ellington has just assigned your first Writing Journal — "Who am I as a writer?" — and you're stuck, because you've never really thought of yourself as a writer. You write constantly (messages, notes, posts, replies), but almost none of it feels like "the kind of writing the assignment means." Alma invites you to the Writers' Circle, where you build your first Writer Board, work out why you write the things you write, and meet an AI-generated writer profile you're invited to argue with.
+    groups:
+      - you
+
+Alma:
+  name: Alma
+  openPeeps:
+    face: smile
+    head: long
+    skinColor: edb98a
+  profile:
+    role: Peer — the community writer (🤝)
+    bio: A member of the Writers' Circle who invites the student in. Alma describes herself as a community writer — almost everything she writes is pointed at another person, and her relationship with writing is bound up with navigating two languages and figuring out where she fits. She learns by keeping a Writer Board and is always a little startled by how much writing ends up on it. Warm, encouraging, and the one who keeps the group honest about the fact that a profile is something you argue with, not a verdict you accept.
+    experience: Keeps a Writer Board; writes across two languages; connects through everyday communication
+    skills:
+      - Making other writers feel welcome
+      - Noticing how much everyday writing really adds up
+    groups:
+      - circle
+
+Lee:
+  name: Lee
+  openPeeps:
+    face: cheeky
+    head: mohawk
+    skinColor: 8d5524
+  profile:
+    role: Peer — the explorer (🧭)
+    bio: Lee writes to find out what he thinks — he rarely knows what a paper is about until he's two pages into it, and treats that as a process rather than a problem. Playful, quick to poke at Richard, and honest about freezing on openings. This week his own Writer Board unexpectedly rescued him — an entry he'd forgotten was on it turned out to be exactly the register a stuck assignment needed.
+    experience: Discovers ideas by drafting; recently used his own Writer Board to unstick a paper
+    skills:
+      - Writing his way into an idea
+      - Keeping the mood light
+    groups:
+      - circle
+
+Richard:
+  name: Richard
+  openPeeps:
+    face: serious
+    head: short1
+    accessories: glasses
+    skinColor: f8d25c
+  profile:
+    role: Peer — the technician (🔧)
+    bio: Richard writes so things get done properly the first time — clear, structured, no wasted motion. Dry, precise, and skeptical, he's the one who pushes the group to say exactly what they mean. He kept up a one-item-a-day writing habit for years, so writing has always felt like plain routine to him. It's Richard who works out, mid-argument, that what a piece of writing is FOR — not what it is — decides whether it counts.
+    experience: Built an everyday writing habit early; values clarity and getting it right
+    skills:
+      - Saying precisely what he means
+      - Pressing an argument until it holds
+    groups:
+      - circle

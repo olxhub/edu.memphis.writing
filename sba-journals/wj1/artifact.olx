@@ -1,0 +1,56 @@
+<!-- My Writing Journal (running artifact) for Writing Journal 1 -->
+<Vertical id="wj1_artifact">
+
+  <Markdown id="wj1_artifact_intro">
+## My Writing Journal — Entry 1
+
+This tab gathers your work in one place as you go, so you can see the whole journal at a glance — your
+Writer Board, why you write what you write, the writer type your reasons point to, and your reflection on
+it. Come back any time to review what you've built, and use **Export as PDF** to save and submit it.
+  </Markdown>
+
+  <Collapsible id="wj1_artifact_board" title="1. My Writer Board">
+    <IntakeGate ready="@wj1_board_ready.value === 'go'">
+      <Markdown>*Your board will appear here once you've built it over in **The Circle**.*</Markdown>
+      <Vertical id="wj1_art_board_inner">
+        <Markdown>**🏫 For school** — how often I do each kind of writing:</Markdown>
+        <Use ref="wj1_board_school" />
+        <Markdown>**Also, for school:**</Markdown>
+        <Ref id="wj1_art_board_school_other" target="wj1_board_school_other" />
+        <Markdown>**🌙 Outside school** — how often I do each kind:</Markdown>
+        <Use ref="wj1_board_outside" />
+        <Markdown>**Also, outside school:**</Markdown>
+        <Ref id="wj1_art_board_outside_other" target="wj1_board_outside_other" />
+        <Markdown>**Something I almost didn't count as writing:**</Markdown>
+        <Ref id="wj1_art_noticing" target="wj1_board_noticing_text" />
+      </Vertical>
+    </IntakeGate>
+  </Collapsible>
+
+  <Collapsible id="wj1_artifact_why" title="2. Why I write">
+    <Markdown>**Messaging &amp; staying in touch:**</Markdown>
+    <Ref id="wj1_art_why_msg" target="wj1_why_messaging" />
+    <Markdown>**Coursework &amp; class writing:**</Markdown>
+    <Ref id="wj1_art_why_course" target="wj1_why_coursework" />
+    <Markdown>**Notes, lists &amp; organizing:**</Markdown>
+    <Ref id="wj1_art_why_org" target="wj1_why_organizing" />
+    <Markdown>**Posting &amp; sharing publicly:**</Markdown>
+    <Ref id="wj1_art_why_post" target="wj1_why_posting" />
+    <Markdown>**Creative &amp; personal writing:**</Markdown>
+    <Ref id="wj1_art_why_creative" target="wj1_why_creative" />
+    <Markdown>**What surprised me:**</Markdown>
+    <Ref id="wj1_art_why_reflect" target="wj1_why_reflect" />
+  </Collapsible>
+
+  <Collapsible id="wj1_artifact_profile" title="3. My writer type">
+    <Markdown>*The writer type your two biggest reasons point to is shown as a card on the **The Circle** tab
+and in your export.*</Markdown>
+    <Markdown>**Does the type feel like me?**</Markdown>
+    <Ref id="wj1_art_fit" target="wj1_fit" />
+  </Collapsible>
+
+  <Collapsible id="wj1_artifact_reflect" title="4. My reflection — a story from my writing life">
+    <Ref id="wj1_art_profile_reflect" target="wj1_profile_reflect" />
+  </Collapsible>
+
+</Vertical>
