@@ -787,9 +787,14 @@ in this journal — a few honest sentences are plenty.
     </Collapsible>
   </Vertical>
 
-  <!-- The reflection TextArea is embedded INLINE in the chat (::wj2_placement_text) and gated on
-       a word count, so it is defined here as a standalone block (not inside a right-pane screen). -->
-  <TextArea id="wj2_placement_text" rows="6" placeholder="The part that feels most accurate is... One moment that might explain it is... A year from now I'd like to..." />
+  <!-- The reflection TextArea is embedded INLINE in the chat (::wj2_placement_input) and gated on
+       a word count, so it is defined here as a standalone block (not inside a right-pane screen).
+       The live counter rides with the box: the chat's `wait wordcount(...) >= 20` renders nothing
+       while unsatisfied, so without it the student has no way to see why Continue hasn't appeared. -->
+  <Vertical id="wj2_placement_input">
+    <TextArea id="wj2_placement_text" rows="6" placeholder="The part that feels most accurate is... One moment that might explain it is... A year from now I'd like to..." />
+    <Markdown id="wj2_placement_count">*{{wordcount(@wj2_placement_text.value)}} words (20 minimum)*</Markdown>
+  </Vertical>
 
   <!-- ===================================================================
        TASK 2 — THE WRITERS' CIRCLE MEETING  (PHASE 2, full width, no chat)
@@ -862,8 +867,18 @@ without stopping and without deleting for a couple of minutes. Don't worry about
 keep your hand moving. When you stop, you'll usually find you've already started your story. (This is
 Peter Elbow's *freewriting*, and it's one of the best-known cures for the blank page.)
       </Markdown>
-      <Freewrite id="wj2_freewrite" nodelete="true" counter="true" reveal="true" rows="5"
-                 placeholder="Just start typing about any writing memory — don't stop, don't fix it..." />
+      <!-- The prose above promises two minutes, so a TimedContainer has to supply them:
+           on expiry it marks its content inert, which locks the box. `reveal` was removed
+           because Reveal only makes sense with `invisible` — it un-hides hidden text and
+           ends the exercise. Without `invisible` there was nothing to reveal, so the
+           button read as an arbitrary "stop writing now" control. -->
+      <TimedContainer id="wj2_freewrite_timer" duration="2 minutes" hideuntilstart="true"
+                      label="Start the two minutes"
+                      before="Two minutes, no stopping and no deleting. When the time is up the box locks, and whatever is in it is yours to use."
+                      after="Time's up. Anything in there can go straight into your story below.">
+        <Freewrite id="wj2_freewrite" nodelete="true" counter="true" rows="5"
+                   placeholder="Just start typing about any writing memory — don't stop, don't fix it..." />
+      </TimedContainer>
     </Collapsible>
     <Markdown>**Your story:**</Markdown>
     <TextArea id="wj2_story_text" rows="10" placeholder="Tell the story of a moment that shaped how you feel about writing. What happened? How did it change the way you saw yourself as a writer? Do you think writers are born or made?" />

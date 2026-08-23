@@ -95,7 +95,7 @@ wj2_sidebar <- wj2_placement_reflect
 
 Alma: so — does it actually fit you? that's the real question. take a few sentences right here and think it through — see if you can put your finger on a moment that explains where you landed [face=explaining]
 
-::wj2_placement_text
+::wj2_placement_input
 
 --- wait wordcount(@wj2_placement_text.value) >= 20 ---
 
