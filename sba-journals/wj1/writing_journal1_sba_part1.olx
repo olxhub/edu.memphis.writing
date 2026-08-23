@@ -26,7 +26,11 @@ lang: en-Latn-US
       </Hidden>
 
       <SplitPanel id="wj1_sba_split" sizes="38, 62">
-        <LeftPane>
+        <!-- print="false" keeps the chat transcript out of the exported PDF.
+             SplitPanel's print stylesheet linearizes the two panes (stacking them
+             instead of side-by-side), so without this the whole conversation would
+             land in the submission on top of the student's work. -->
+        <LeftPane print="false">
           <Chat id="wj1_chat"
                 src="writing_journal1_dialogue_part1.chatpeg"
                 height="460px" />

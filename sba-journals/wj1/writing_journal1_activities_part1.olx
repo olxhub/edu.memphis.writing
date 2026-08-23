@@ -11,9 +11,13 @@ lang: en-Latn-US
   Writing Journal 1 — ENGL 1010 First-Year Composition SBA (Activity bank)
 
   The conversation (writing_journal1_dialogue_part1.chatpeg) pulls each screen
-  below into the right-hand pane via `wj1_sidebar <- <id>` set commands. Read-only
-  / framing screens are wrapped in IntakeGate so they page through with NEXT and
-  drop out of the final PDF; the student's own work stays.
+  below into the right-hand pane via `wj1_sidebar <- <id>` set commands. Each set
+  command names a screen's own id, and UseHistory resolves it directly, so a screen
+  renders on its own — independent of whatever wraps it here.
+
+  What gets submitted is the wj1_review screen at the bottom of this file, which
+  gathers the student's work by reference. Nothing else needs to hide itself from
+  the PDF; see the comment on wj1_review for the constraints that screen must meet.
 
   Flow (from Design_docs/Writing_Lab/Aug5_update/Writing_journal_1_revised.docx):
     intro slides (the assignment; the invitation; Thursday at the Circle)
@@ -45,18 +49,16 @@ lang: en-Latn-US
 
 <Vertical id="wj1_activities_part1" title="Writing Journal 1 — Activities" launchable="true">
 
-  <ActionButton id="wj1_print_btn" label="Export as PDF">
-    <PrintAction id="wj1_print_action" />
-  </ActionButton>
+  <!-- The Export as PDF button lives on the wj1_review screen at the bottom of this
+       file, NOT here. The right-hand pane is a UseHistory that renders one child id at
+       a time, so a button parked on this parent Vertical never reaches the screen. -->
 
   <!-- ===================================================================
        INTRO SLIDES  (the assignment; the invitation; Thursday at the Circle)
-       Read-only framing -> IntakeGate so it drops from the exported PDF.
+       Read-only framing.
        =================================================================== -->
 
-  <IntakeGate ready="!@wj1_completion_page.value">
-    <Markdown> </Markdown>
-    <Markdown id="wj1_welcome">
+  <Markdown id="wj1_welcome">
 ## Writing Journal 1: Who Am I As a Writer?
 
 It's the first week of your First-Year Composition course, and **Professor Ellington** has just assigned
@@ -84,17 +86,14 @@ you go. It's Thursday, 4:02 pm. Lee and Richard are already mid-conversation.
 - worked out for yourself **how well it describes you as a writer.**
 
 There are no wrong answers here and no grade for being one kind of writer or another. Work through the conversation on the left — each step opens an activity here on the right.
-    </Markdown>
-  </IntakeGate>
+  </Markdown>
 
   <!-- ===================================================================
        THE ORIENTATIONS  (read first, as the group's shorthand — so the
        vocabulary is in place before the profile arrives). Read-only framing.
        =================================================================== -->
 
-  <IntakeGate ready="!@wj1_completion_page.value">
-    <Markdown> </Markdown>
-    <Markdown id="wj1_orientations">
+  <Markdown id="wj1_orientations">
 ## The Circle's Shorthand: Writer Orientations
 
 The writer's circle has seen a lot of different writers and noticed that they tend to fall into general
@@ -122,8 +121,7 @@ at the end, the tool will match you to one of them:
 | 🔁 | **Practitioner** | Writes steadily, as a practical habit |
 | 🏁 | **Finisher** | Writes to finish something real |
 | 🎯 | **Pragmatist** | Writes to reach and affect an audience |
-    </Markdown>
-  </IntakeGate>
+  </Markdown>
 
   <!-- ===================================================================
        ALMA'S BOARD  (worked example / scaffolding. The student learns the
@@ -131,9 +129,7 @@ at the end, the tool will match you to one of them:
        it — rather than by reading instructions.) Read-only framing.
        =================================================================== -->
 
-  <IntakeGate ready="!@wj1_completion_page.value">
-    <Markdown> </Markdown>
-    <Markdown id="wj1_alma_board">
+  <Markdown id="wj1_alma_board">
 ## Alma's Writer Board
 
 *"It's just everything you write, laid out. Here — it's faster if I show you mine."*
@@ -155,8 +151,7 @@ at the end, the tool will match you to one of them:
 Notice what happened: Alma didn't set out to prove anything. She just listed what she actually writes,
 and the **volume** surprised her — and some of it (the group chat, the captions) she wouldn't have called
 "writing" at all. **That's what you're about to do next.**
-    </Markdown>
-  </IntakeGate>
+  </Markdown>
 
   <!-- ===================================================================
        TASK 1 — BUILD YOUR WRITER BOARD  (GENUINE DRAG-AND-DROP)
@@ -576,16 +571,107 @@ Your story should tell it what it couldn't know from your previous answers.
   </Vertical>
 
   <!-- ===================================================================
-       COMPLETION + EXPORT
+       COMPLETION + EXPORT  —  THE SUBMISSION SCREEN
+       The last screen the chat pulls in (`wj1_sidebar <- wj1_review`). This is
+       the ONLY thing that gets printed, so everything in it must be mounted at
+       print time: window.print() photographs the live DOM, and a block that
+       React never rendered cannot be recovered by a print stylesheet.
+
+       Two consequences, both load-bearing — do not "tidy" them away:
+         * NO <Collapsible> on this screen. Collapsible renders children only
+           when expanded, so a collapsed section exports as a bare heading.
+         * NO <UseHistory> / other screens. UseHistory shows one target at a
+           time, which is why the old button (parked on the parent Vertical,
+           where nothing ever rendered it) could not have worked anyway.
+       <IntakeGate> is fine and is used deliberately below: it mounts the branch
+       the student earned, so the writer-type card prints as theirs alone.
+
+       <Use> is a DAG reference, not a copy — the grids and the type card here
+       are the SAME nodes as on the working screens, so they always agree.
        =================================================================== -->
 
-  <CheckboxInput id="wj1_completion_page">
-    <Markdown>**Confirm that you are done with this journal entry.**</Markdown>
-    <Key id="wj1_finished">I don't need to make any more changes.</Key>
-    <Markdown> </Markdown>
-    <IntakeGate ready="'wj1_finished' in @wj1_completion_page.value">
-      <Markdown> </Markdown>
-      <Markdown id="wj1_complete_md">
+  <Vertical id="wj1_review">
+
+    <Markdown>
+## Review and Submit
+
+Here is your whole journal in one place. Read it over — if you want to change an answer, go back to that
+step in the conversation, edit it, and return here. Everything below updates to match.
+    </Markdown>
+
+    <CheckboxInput id="wj1_completion_page">
+      <Markdown>**Confirm that you are done with this journal entry.**</Markdown>
+      <Key id="wj1_finished">I don't need to make any more changes.</Key>
+    </CheckboxInput>
+
+    <!-- Gated on the confirm box, matching WJ2 (writing_journal2_activities_part1.olx).
+         ActionButtons are hidden from print output by print.css, so this never
+         appears in the PDF itself. -->
+    <ActionButton id="wj1_print_btn" label="Export as PDF"
+                  when="'wj1_finished' in @wj1_completion_page.value">
+      <PrintAction id="wj1_print_action" />
+    </ActionButton>
+
+    <Markdown when="'wj1_finished' in @wj1_completion_page.value">
+*Click **Export as PDF** above, save the file, and upload it to your course system.*
+    </Markdown>
+
+    <Markdown>
+---
+
+### 1. My Writer Board
+
+**🏫 Writing I do for school:**
+    </Markdown>
+    <Use ref="wj1_board_school" />
+    <Markdown>**Also, for school:** {{@wj1_board_school_other.value}}</Markdown>
+
+    <Markdown>**🌙 Writing I do outside school:**</Markdown>
+    <Use ref="wj1_board_outside" />
+    <Markdown>**Also, outside school:** {{@wj1_board_outside_other.value}}</Markdown>
+
+    <Markdown>
+**Something I almost didn't count as writing:**
+{{@wj1_board_noticing_text.value}}
+
+---
+
+### 2. Why I Write
+
+- **Messaging &amp; staying in touch:** {{@wj1_why_messaging.value}}
+- **Coursework &amp; class writing:** {{@wj1_why_coursework.value}}
+- **Notes, lists &amp; organizing:** {{@wj1_why_organizing.value}}
+- **Posting &amp; sharing publicly:** {{@wj1_why_posting.value}}
+- **Creative &amp; personal writing:** {{@wj1_why_creative.value}}
+- **Something else:** {{@wj1_why_other.value}}
+
+**My two biggest reasons for writing:**
+    </Markdown>
+    <Use ref="wj1_why_top2" />
+
+    <Markdown>
+**What surprised me:**
+{{@wj1_why_reflect.value}}
+
+---
+
+### 3. My Writer Type
+    </Markdown>
+    <Use ref="wj1_type_result" />
+
+    <Markdown>
+**Does this feel like me?** {{@wj1_fit.value}}
+
+---
+
+### 4. My Reflection — a story from my writing life
+
+{{@wj1_profile_reflect.value}}
+    </Markdown>
+
+    <Markdown when="'wj1_finished' in @wj1_completion_page.value">
+---
+
 ## Journal Complete
 
 In this journal you did the thing the assignment was really asking for: you stopped and **noticed the
@@ -596,10 +682,8 @@ your board shows about you as a writer.**
 Hold onto Alma's point: a writer type is a **snapshot, not a verdict.** The writing you're about to do in
 this course will keep changing the picture — which is exactly why it was worth mapping where you're
 starting from.
+    </Markdown>
 
-## PLEASE CLICK CONTINUE TO REVIEW YOUR RESPONSES AND SAVE THEM TO A PDF. THEN UPLOAD THE PDF TO YOUR COURSE SYSTEM.
-      </Markdown>
-    </IntakeGate>
-  </CheckboxInput>
+  </Vertical>
 
 </Vertical>
