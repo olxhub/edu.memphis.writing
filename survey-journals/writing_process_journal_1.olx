@@ -265,7 +265,7 @@ lang: en-Latn-US
              <Markdown>
                  ## What the Computer Said
              </Markdown>
-            <Use id="wpj1_ref17" ref="wpj1_writing_habits_analysis" />
+            <Use ref="wpj1_writing_habits_analysis" />
          </LeftPane>
          <RightPane>
              <Markdown>
@@ -283,7 +283,7 @@ lang: en-Latn-US
              <Markdown>
                  ## What the Computer Said
              </Markdown>
-               <Use id="wpj_ref18" ref="wpj1_writing_habits_analysis" />
+               <Use ref="wpj1_writing_habits_analysis" />
         </LeftPane>
         <RightPane>
             <Markdown>
@@ -311,47 +311,47 @@ lang: en-Latn-US
 
 ## Questions 1-5
         </Markdown>
-        <Use id="wpj_ref19" ref="wpj1_writing_frequency_1" />
+        <Use ref="wpj1_writing_frequency_1" />
         <Markdown>
 ## Questions 6-10
         </Markdown>
-        <Use id="wpj_ref20" ref="wpj1_writing_frequency_2" />
+        <Use ref="wpj1_writing_frequency_2" />
         <Markdown>
 ## Questions 11-15
         </Markdown>
-        <Use id="wpj_ref21" ref="wpj1_writing_frequency_3" />
+        <Use ref="wpj1_writing_frequency_3" />
         <Markdown>
 ## Questions 16-20
         </Markdown>
-        <Use id="wpj_ref22" ref="wpj1_writing_frequency_4" />
+        <Use ref="wpj1_writing_frequency_4" />
         <Markdown>
 ## Questions 21-25
         </Markdown>
-        <Use id="wpj_ref23" ref="wpj1_writing_frequency_5" />
+        <Use ref="wpj1_writing_frequency_5" />
         <Markdown>
 ## Questions 26-30
         </Markdown>
-        <Use id="wpj_ref24" ref="wpj1_writing_frequency_6" />
+        <Use ref="wpj1_writing_frequency_6" />
         <Markdown>
 ## Questions 31-35
         </Markdown>
-        <Use id="wpj_ref25" ref="wpj1_writing_frequency_7" />
+        <Use ref="wpj1_writing_frequency_7" />
         <Markdown>
 ## Questions 36-40
         </Markdown>
-        <Use id="wpj_ref28" ref="wpj1_writing_frequency_8" />
+        <Use ref="wpj1_writing_frequency_8" />
         <Markdown>
 ## AI Analysis
         </Markdown>
-        <Use id="wpj_ref29" ref="wpj1_writing_habits_analysis" />
+        <Use ref="wpj1_writing_habits_analysis" />
         <Markdown>
 ## What I agree with
         </Markdown>
-        <Use id="wpj_ref29" ref="wpj1_agree" />
+        <Use ref="wpj1_agree" />
         <Markdown>
 ## What I disagree with
         </Markdown>
-        <Use id="wpj_ref29" ref="wpj1_disagree" />
-        <Use id="wpj_ref30" ref="wpj1_complete" />
+        <Use ref="wpj1_disagree" />
+        <Use ref="wpj1_complete" />
     </Vertical>
 </Sequential>
