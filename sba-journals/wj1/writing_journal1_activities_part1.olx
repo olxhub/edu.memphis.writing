@@ -261,109 +261,109 @@ best. There's no right answer — pick what's true for **you.**
 
     <Markdown>### 💬 Messaging &amp; staying in touch *(texts, DMs, group chats)*</Markdown>
     <DropdownInput id="wj1_why_messaging" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing
-      To stay in touch with people I care about
-      To be part of a group or community
-      To figure out what I think
-      To try something out and see what happens
-      To get something done or stay organized
-      To remember something
-      To make something I'm proud of
-      Because I enjoy it
-      To work out how I'm feeling
-      To persuade someone or make a point
-      Because a class or a job requires it
-      Something else (I'll describe it below)
+      I don't really do this sort of writing    | dont_do
+      To stay in touch with people I care about | stay_in_touch
+      To be part of a group or community        | community
+      To figure out what I think                | figure_out
+      To try something out and see what happens | try_out
+      To get something done or stay organized   | get_done
+      To remember something                     | remember
+      To make something I'm proud of            | proud
+      Because I enjoy it                        | enjoy
+      To work out how I'm feeling               | feelings
+      To persuade someone or make a point       | persuade
+      Because a class or a job requires it      | required
+      Something else (I'll describe it below)   | something_else
     </DropdownInput>
     <!-- The "Something else" box for each group is gated on that group's own
-         dropdown, so it opens right where the student made the choice. The
-         condition matches the option TEXT, because an option with no explicit
-         `text | value` takes its text as its value (dropdown.pegjs). -->
-    <Vertical id="wj1_why_messaging_other_box" when="@wj1_why_messaging.value === 'Something else (I\'ll describe it below)'">
+         dropdown, so it opens right where the student made the choice. Every
+         option carries an explicit `text | value` (dropdown.pegjs), so the
+         condition matches the stored CODE and survives copy edits to the prose. -->
+    <Vertical id="wj1_why_messaging_other_box" when="@wj1_why_messaging.value === 'something_else'">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_messaging_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>### 🎓 Coursework &amp; class writing *(essays, papers, discussion posts, reports)*</Markdown>
     <DropdownInput id="wj1_why_coursework" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing
-      To stay in touch with people I care about
-      To be part of a group or community
-      To figure out what I think
-      To try something out and see what happens
-      To get something done or stay organized
-      To remember something
-      To make something I'm proud of
-      Because I enjoy it
-      To work out how I'm feeling
-      To persuade someone or make a point
-      Because a class or a job requires it
-      Something else (I'll describe it below)
+      I don't really do this sort of writing    | dont_do
+      To stay in touch with people I care about | stay_in_touch
+      To be part of a group or community        | community
+      To figure out what I think                | figure_out
+      To try something out and see what happens | try_out
+      To get something done or stay organized   | get_done
+      To remember something                     | remember
+      To make something I'm proud of            | proud
+      Because I enjoy it                        | enjoy
+      To work out how I'm feeling               | feelings
+      To persuade someone or make a point       | persuade
+      Because a class or a job requires it      | required
+      Something else (I'll describe it below)   | something_else
     </DropdownInput>
-    <Vertical id="wj1_why_coursework_other_box" when="@wj1_why_coursework.value === 'Something else (I\'ll describe it below)'">
+    <Vertical id="wj1_why_coursework_other_box" when="@wj1_why_coursework.value === 'something_else'">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_coursework_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>### 🗂️ Notes, lists &amp; organizing *(class notes, to-do lists, planners, reminders)*</Markdown>
     <DropdownInput id="wj1_why_organizing" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing
-      To stay in touch with people I care about
-      To be part of a group or community
-      To figure out what I think
-      To try something out and see what happens
-      To get something done or stay organized
-      To remember something
-      To make something I'm proud of
-      Because I enjoy it
-      To work out how I'm feeling
-      To persuade someone or make a point
-      Because a class or a job requires it
-      Something else (I'll describe it below)
+      I don't really do this sort of writing    | dont_do
+      To stay in touch with people I care about | stay_in_touch
+      To be part of a group or community        | community
+      To figure out what I think                | figure_out
+      To try something out and see what happens | try_out
+      To get something done or stay organized   | get_done
+      To remember something                     | remember
+      To make something I'm proud of            | proud
+      Because I enjoy it                        | enjoy
+      To work out how I'm feeling               | feelings
+      To persuade someone or make a point       | persuade
+      Because a class or a job requires it      | required
+      Something else (I'll describe it below)   | something_else
     </DropdownInput>
-    <Vertical id="wj1_why_organizing_other_box" when="@wj1_why_organizing.value === 'Something else (I\'ll describe it below)'">
+    <Vertical id="wj1_why_organizing_other_box" when="@wj1_why_organizing.value === 'something_else'">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_organizing_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>### 📣 Posting &amp; sharing publicly *(social posts, captions, comments, reviews)*</Markdown>
     <DropdownInput id="wj1_why_posting" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing
-      To stay in touch with people I care about
-      To be part of a group or community
-      To figure out what I think
-      To try something out and see what happens
-      To get something done or stay organized
-      To remember something
-      To make something I'm proud of
-      Because I enjoy it
-      To work out how I'm feeling
-      To persuade someone or make a point
-      Because a class or a job requires it
-      Something else (I'll describe it below)
+      I don't really do this sort of writing    | dont_do
+      To stay in touch with people I care about | stay_in_touch
+      To be part of a group or community        | community
+      To figure out what I think                | figure_out
+      To try something out and see what happens | try_out
+      To get something done or stay organized   | get_done
+      To remember something                     | remember
+      To make something I'm proud of            | proud
+      Because I enjoy it                        | enjoy
+      To work out how I'm feeling               | feelings
+      To persuade someone or make a point       | persuade
+      Because a class or a job requires it      | required
+      Something else (I'll describe it below)   | something_else
     </DropdownInput>
-    <Vertical id="wj1_why_posting_other_box" when="@wj1_why_posting.value === 'Something else (I\'ll describe it below)'">
+    <Vertical id="wj1_why_posting_other_box" when="@wj1_why_posting.value === 'something_else'">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_posting_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>### 🎨 Creative &amp; personal writing *(stories, poems, lyrics, journaling)*</Markdown>
     <DropdownInput id="wj1_why_creative" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing
-      To stay in touch with people I care about
-      To be part of a group or community
-      To figure out what I think
-      To try something out and see what happens
-      To get something done or stay organized
-      To remember something
-      To make something I'm proud of
-      Because I enjoy it
-      To work out how I'm feeling
-      To persuade someone or make a point
-      Because a class or a job requires it
-      Something else (I'll describe it below)
+      I don't really do this sort of writing    | dont_do
+      To stay in touch with people I care about | stay_in_touch
+      To be part of a group or community        | community
+      To figure out what I think                | figure_out
+      To try something out and see what happens | try_out
+      To get something done or stay organized   | get_done
+      To remember something                     | remember
+      To make something I'm proud of            | proud
+      Because I enjoy it                        | enjoy
+      To work out how I'm feeling               | feelings
+      To persuade someone or make a point       | persuade
+      Because a class or a job requires it      | required
+      Something else (I'll describe it below)   | something_else
     </DropdownInput>
-    <Vertical id="wj1_why_creative_other_box" when="@wj1_why_creative.value === 'Something else (I\'ll describe it below)'">
+    <Vertical id="wj1_why_creative_other_box" when="@wj1_why_creative.value === 'something_else'">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_creative_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
@@ -572,17 +572,20 @@ Once you've read it, think about how well it fits your actual writing practices 
 questions.
     </Markdown>
 
+    <!-- <Use>, not <Ref>: a Ref renders the STORED value, which is now a code
+         like `figure_out`. <Use> re-renders the dropdown itself, so the student
+         reads their own sentence back (and can nudge it, as on the board). -->
     <Collapsible id="wj1_type_lookback" title="Remind me what I said about why I write">
       <Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
-      <Ref id="wj1_readback_msg" target="wj1_why_messaging" />
+      <Use ref="wj1_why_messaging" />
       <Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
-      <Ref id="wj1_readback_course" target="wj1_why_coursework" />
+      <Use ref="wj1_why_coursework" />
       <Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
-      <Ref id="wj1_readback_org" target="wj1_why_organizing" />
+      <Use ref="wj1_why_organizing" />
       <Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
-      <Ref id="wj1_readback_post" target="wj1_why_posting" />
+      <Use ref="wj1_why_posting" />
       <Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
-      <Ref id="wj1_readback_creative" target="wj1_why_creative" />
+      <Use ref="wj1_why_creative" />
     </Collapsible>
 
     <Markdown>### Does this feel like you?</Markdown>
@@ -673,30 +676,38 @@ step in the conversation, edit it, and return here. Everything below updates to 
 ---
 
 ### 2. Why I Write
-
-- **Messaging &amp; staying in touch:** {{@wj1_why_messaging.value}}
-- **Coursework &amp; class writing:** {{@wj1_why_coursework.value}}
-- **Notes, lists &amp; organizing:** {{@wj1_why_organizing.value}}
-- **Posting &amp; sharing publicly:** {{@wj1_why_posting.value}}
-- **Creative &amp; personal writing:** {{@wj1_why_creative.value}}
     </Markdown>
+
+    <!-- {{@wj1_why_*.value}} would print the stored CODE (`figure_out`), so the
+         reasons come back as <Use> of the dropdowns themselves — the same nodes
+         as on the working screen, showing the student's own sentence. -->
+    <Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
+    <Use ref="wj1_why_messaging" />
+    <Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
+    <Use ref="wj1_why_coursework" />
+    <Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
+    <Use ref="wj1_why_organizing" />
+    <Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
+    <Use ref="wj1_why_posting" />
+    <Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
+    <Use ref="wj1_why_creative" />
 
     <!-- The per-group "Something else" descriptions, each shown only if that
          group's dropdown is on "Something else". when= mounts the branch, so
          whatever the student earned is in the DOM at print time. -->
-    <Markdown when="@wj1_why_messaging.value === 'Something else (I\'ll describe it below)'">
+    <Markdown when="@wj1_why_messaging.value === 'something_else'">
 - **Messaging &amp; staying in touch — in my own words:** {{@wj1_why_messaging_other.value}}
     </Markdown>
-    <Markdown when="@wj1_why_coursework.value === 'Something else (I\'ll describe it below)'">
+    <Markdown when="@wj1_why_coursework.value === 'something_else'">
 - **Coursework &amp; class writing — in my own words:** {{@wj1_why_coursework_other.value}}
     </Markdown>
-    <Markdown when="@wj1_why_organizing.value === 'Something else (I\'ll describe it below)'">
+    <Markdown when="@wj1_why_organizing.value === 'something_else'">
 - **Notes, lists &amp; organizing — in my own words:** {{@wj1_why_organizing_other.value}}
     </Markdown>
-    <Markdown when="@wj1_why_posting.value === 'Something else (I\'ll describe it below)'">
+    <Markdown when="@wj1_why_posting.value === 'something_else'">
 - **Posting &amp; sharing publicly — in my own words:** {{@wj1_why_posting_other.value}}
     </Markdown>
-    <Markdown when="@wj1_why_creative.value === 'Something else (I\'ll describe it below)'">
+    <Markdown when="@wj1_why_creative.value === 'something_else'">
 - **Creative &amp; personal writing — in my own words:** {{@wj1_why_creative_other.value}}
     </Markdown>
 
