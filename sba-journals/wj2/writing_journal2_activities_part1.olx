@@ -1007,7 +1007,7 @@ it to your course system.
 
       <CheckboxInput id="wj2_completion_page">
         <Markdown>**When you're happy with your entry, confirm you're done.**</Markdown>
-        <Key id="wj2_finished">I don't need to make any more changes.</Key>
+        <Key id="wj2_finished" value="wj2_finished">I don't need to make any more changes.</Key>
       </CheckboxInput>
 
       <ActionButton id="wj2_print_btn" label="Export as PDF" when="@wj2_completion_page.value.length > 0">

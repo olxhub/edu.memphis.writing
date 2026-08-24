@@ -657,7 +657,7 @@ it to your course system.
 
       <CheckboxInput id="wj1_completion_page">
         <Markdown>**Confirm that you are done with this journal entry.**</Markdown>
-        <Key id="wj1_finished">I don't need to make any more changes.</Key>
+        <Key id="wj1_finished" value="wj1_finished">I don't need to make any more changes.</Key>
       </CheckboxInput>
 
       <!-- Gated on the confirm box, matching WJ2. ActionButtons are hidden from
