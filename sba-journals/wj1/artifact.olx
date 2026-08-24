@@ -70,9 +70,9 @@ you're done and export your PDF.*
   </Collapsible>
 
   <Collapsible id="wj1_artifact_profile" title="3. My writer type">
-    <Markdown>*The writer type your two biggest reasons point to is shown as a card on the **The Circle** tab
-and in your export.*</Markdown>
-    <Markdown>**Does the type feel like me?**</Markdown>
+    <Markdown>*The writer type — or types, if your two reasons point in different directions — that your
+answers point to are shown as cards on the **The Circle** tab and in your export.*</Markdown>
+    <Markdown>**Does that feel like me?**</Markdown>
     <Ref id="wj1_art_fit" target="wj1_fit" />
   </Collapsible>
 
