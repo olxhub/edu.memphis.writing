@@ -132,335 +132,17 @@ spectrum. Are you more about **expression** or **performance**? Each new stateme
 answer the one before it.
     </Markdown>
 
-  <Vertical id="wj2_item_01">
-    <Markdown>
-**Question 1 of 26**  `█░░░░░░░░░░░░░░░░░░░░░░░░░`
-
-Writing is a skill I want to get better at.
+    <Markdown when="@s26.value">
+**That's all 26 — nice work.** Head back to the chat on the left to keep going.
     </Markdown>
-    <ChoiceInput id="s01">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
 
-  <Vertical id="wj2_item_02" when="@s01.value">
+  <Vertical id="wj2_item_26" when="@s25.value">
     <Markdown>
-**Question 2 of 26**  `██░░░░░░░░░░░░░░░░░░░░░░░░`
+**Question 26 of 26**  `██████████████████████████`
 
-It is frustrating to have to write about a subject I did not choose.
+I like it when I can focus and my writing flows.
     </Markdown>
-    <ChoiceInput id="s02">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_03" when="@s02.value">
-    <Markdown>
-**Question 3 of 26**  `███░░░░░░░░░░░░░░░░░░░░░░░`
-
-Writing is usually boring for me.
-    </Markdown>
-    <ChoiceInput id="s03">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_04" when="@s03.value">
-    <Markdown>
-**Question 4 of 26**  `████░░░░░░░░░░░░░░░░░░░░░░`
-
-I worry that other people will criticize my writing.
-    </Markdown>
-    <ChoiceInput id="s04">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_05" when="@s04.value">
-    <Markdown>
-**Question 5 of 26**  `█████░░░░░░░░░░░░░░░░░░░░░`
-
-I like to write outside of school.
-    </Markdown>
-    <ChoiceInput id="s05">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_06" when="@s05.value">
-    <Markdown>
-**Question 6 of 26**  `██████░░░░░░░░░░░░░░░░░░░░`
-
-It upsets me when I get low grades on a writing assignment.
-    </Markdown>
-    <ChoiceInput id="s06">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_07" when="@s06.value">
-    <Markdown>
-**Question 7 of 26**  `███████░░░░░░░░░░░░░░░░░░░`
-
-I am too impatient to spend a lot of time writing.
-    </Markdown>
-    <ChoiceInput id="s07">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_08" when="@s07.value">
-    <Markdown>
-**Question 8 of 26**  `████████░░░░░░░░░░░░░░░░░░`
-
-I get so involved in my writing that I often lose track of time.
-    </Markdown>
-    <ChoiceInput id="s08">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_09" when="@s08.value">
-    <Markdown>
-**Question 9 of 26**  `█████████░░░░░░░░░░░░░░░░░`
-
-Writing helps me learn.
-    </Markdown>
-    <ChoiceInput id="s09">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_10" when="@s09.value">
-    <Markdown>
-**Question 10 of 26**  `██████████░░░░░░░░░░░░░░░░`
-
-I feel it is important to know how to write well.
-    </Markdown>
-    <ChoiceInput id="s10">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_11" when="@s10.value">
-    <Markdown>
-**Question 11 of 26**  `███████████░░░░░░░░░░░░░░░`
-
-I prefer writing when it isn't required.
-    </Markdown>
-    <ChoiceInput id="s11">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_12" when="@s11.value">
-    <Markdown>
-**Question 12 of 26**  `████████████░░░░░░░░░░░░░░`
-
-I like getting lots of shares or likes when I post something I have written.
-    </Markdown>
-    <ChoiceInput id="s12">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_13" when="@s12.value">
-    <Markdown>
-**Question 13 of 26**  `█████████████░░░░░░░░░░░░░`
-
-There are some subjects that I really enjoy writing about.
-    </Markdown>
-    <ChoiceInput id="s13">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_14" when="@s13.value">
-    <Markdown>
-**Question 14 of 26**  `██████████████░░░░░░░░░░░░`
-
-I dislike writing.
-    </Markdown>
-    <ChoiceInput id="s14">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_15" when="@s14.value">
-    <Markdown>
-**Question 15 of 26**  `███████████████░░░░░░░░░░░`
-
-I find it difficult to communicate my ideas through writing.
-    </Markdown>
-    <ChoiceInput id="s15">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_16" when="@s15.value">
-    <Markdown>
-**Question 16 of 26**  `████████████████░░░░░░░░░░`
-
-I like it when people compliment my writing skills.
-    </Markdown>
-    <ChoiceInput id="s16">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_17" when="@s16.value">
-    <Markdown>
-**Question 17 of 26**  `█████████████████░░░░░░░░░`
-
-I feel confident when I am writing.
-    </Markdown>
-    <ChoiceInput id="s17">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_18" when="@s17.value">
-    <Markdown>
-**Question 18 of 26**  `██████████████████░░░░░░░░`
-
-It is important that I get a good grade on a writing assignment.
-    </Markdown>
-    <ChoiceInput id="s18">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_19" when="@s18.value">
-    <Markdown>
-**Question 19 of 26**  `███████████████████░░░░░░░`
-
-When I write, I create content that I can be proud of.
-    </Markdown>
-    <ChoiceInput id="s19">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_20" when="@s19.value">
-    <Markdown>
-**Question 20 of 26**  `████████████████████░░░░░░`
-
-Writing feels really hard.
-    </Markdown>
-    <ChoiceInput id="s20">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_21" when="@s20.value">
-    <Markdown>
-**Question 21 of 26**  `█████████████████████░░░░░`
-
-I usually enjoy writing in school.
-    </Markdown>
-    <ChoiceInput id="s21">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_22" when="@s21.value">
-    <Markdown>
-**Question 22 of 26**  `██████████████████████░░░░`
-
-I find writing interesting.
-    </Markdown>
-    <ChoiceInput id="s22">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_23" when="@s22.value">
-    <Markdown>
-**Question 23 of 26**  `███████████████████████░░░`
-
-I enjoy writing most when I get to decide what to write about.
-    </Markdown>
-    <ChoiceInput id="s23">
-      <Key value="Strongly agree">💯 Strongly agree</Key>
-      <Key value="Agree">🙂 Agree</Key>
-      <Key value="Disagree">🤔 Disagree</Key>
-      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
-    </ChoiceInput>
-  </Vertical>
-
-  <Vertical id="wj2_item_24" when="@s23.value">
-    <Markdown>
-**Question 24 of 26**  `████████████████████████░░`
-
-I understand things better when I write about them.
-    </Markdown>
-    <ChoiceInput id="s24">
+    <ChoiceInput id="s26">
       <Key value="Strongly agree">💯 Strongly agree</Key>
       <Key value="Agree">🙂 Agree</Key>
       <Key value="Disagree">🤔 Disagree</Key>
@@ -482,13 +164,13 @@ There are some kinds of writing that I really like.
     </ChoiceInput>
   </Vertical>
 
-  <Vertical id="wj2_item_26" when="@s25.value">
+  <Vertical id="wj2_item_24" when="@s23.value">
     <Markdown>
-**Question 26 of 26**  `██████████████████████████`
+**Question 24 of 26**  `████████████████████████░░`
 
-I like it when I can focus and my writing flows.
+I understand things better when I write about them.
     </Markdown>
-    <ChoiceInput id="s26">
+    <ChoiceInput id="s24">
       <Key value="Strongly agree">💯 Strongly agree</Key>
       <Key value="Agree">🙂 Agree</Key>
       <Key value="Disagree">🤔 Disagree</Key>
@@ -496,9 +178,327 @@ I like it when I can focus and my writing flows.
     </ChoiceInput>
   </Vertical>
 
-    <Markdown when="@s26.value">
-**That's all 26 — nice work.** Head back to the chat on the left to keep going.
+  <Vertical id="wj2_item_23" when="@s22.value">
+    <Markdown>
+**Question 23 of 26**  `███████████████████████░░░`
+
+I enjoy writing most when I get to decide what to write about.
     </Markdown>
+    <ChoiceInput id="s23">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_22" when="@s21.value">
+    <Markdown>
+**Question 22 of 26**  `██████████████████████░░░░`
+
+I find writing interesting.
+    </Markdown>
+    <ChoiceInput id="s22">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_21" when="@s20.value">
+    <Markdown>
+**Question 21 of 26**  `█████████████████████░░░░░`
+
+I usually enjoy writing in school.
+    </Markdown>
+    <ChoiceInput id="s21">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_20" when="@s19.value">
+    <Markdown>
+**Question 20 of 26**  `████████████████████░░░░░░`
+
+Writing feels really hard.
+    </Markdown>
+    <ChoiceInput id="s20">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_19" when="@s18.value">
+    <Markdown>
+**Question 19 of 26**  `███████████████████░░░░░░░`
+
+When I write, I create content that I can be proud of.
+    </Markdown>
+    <ChoiceInput id="s19">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_18" when="@s17.value">
+    <Markdown>
+**Question 18 of 26**  `██████████████████░░░░░░░░`
+
+It is important that I get a good grade on a writing assignment.
+    </Markdown>
+    <ChoiceInput id="s18">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_17" when="@s16.value">
+    <Markdown>
+**Question 17 of 26**  `█████████████████░░░░░░░░░`
+
+I feel confident when I am writing.
+    </Markdown>
+    <ChoiceInput id="s17">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_16" when="@s15.value">
+    <Markdown>
+**Question 16 of 26**  `████████████████░░░░░░░░░░`
+
+I like it when people compliment my writing skills.
+    </Markdown>
+    <ChoiceInput id="s16">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_15" when="@s14.value">
+    <Markdown>
+**Question 15 of 26**  `███████████████░░░░░░░░░░░`
+
+I find it difficult to communicate my ideas through writing.
+    </Markdown>
+    <ChoiceInput id="s15">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_14" when="@s13.value">
+    <Markdown>
+**Question 14 of 26**  `██████████████░░░░░░░░░░░░`
+
+I dislike writing.
+    </Markdown>
+    <ChoiceInput id="s14">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_13" when="@s12.value">
+    <Markdown>
+**Question 13 of 26**  `█████████████░░░░░░░░░░░░░`
+
+There are some subjects that I really enjoy writing about.
+    </Markdown>
+    <ChoiceInput id="s13">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_12" when="@s11.value">
+    <Markdown>
+**Question 12 of 26**  `████████████░░░░░░░░░░░░░░`
+
+I like getting lots of shares or likes when I post something I have written.
+    </Markdown>
+    <ChoiceInput id="s12">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_11" when="@s10.value">
+    <Markdown>
+**Question 11 of 26**  `███████████░░░░░░░░░░░░░░░`
+
+I prefer writing when it isn't required.
+    </Markdown>
+    <ChoiceInput id="s11">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_10" when="@s09.value">
+    <Markdown>
+**Question 10 of 26**  `██████████░░░░░░░░░░░░░░░░`
+
+I feel it is important to know how to write well.
+    </Markdown>
+    <ChoiceInput id="s10">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_09" when="@s08.value">
+    <Markdown>
+**Question 9 of 26**  `█████████░░░░░░░░░░░░░░░░░`
+
+Writing helps me learn.
+    </Markdown>
+    <ChoiceInput id="s09">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_08" when="@s07.value">
+    <Markdown>
+**Question 8 of 26**  `████████░░░░░░░░░░░░░░░░░░`
+
+I get so involved in my writing that I often lose track of time.
+    </Markdown>
+    <ChoiceInput id="s08">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_07" when="@s06.value">
+    <Markdown>
+**Question 7 of 26**  `███████░░░░░░░░░░░░░░░░░░░`
+
+I am too impatient to spend a lot of time writing.
+    </Markdown>
+    <ChoiceInput id="s07">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_06" when="@s05.value">
+    <Markdown>
+**Question 6 of 26**  `██████░░░░░░░░░░░░░░░░░░░░`
+
+It upsets me when I get low grades on a writing assignment.
+    </Markdown>
+    <ChoiceInput id="s06">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_05" when="@s04.value">
+    <Markdown>
+**Question 5 of 26**  `█████░░░░░░░░░░░░░░░░░░░░░`
+
+I like to write outside of school.
+    </Markdown>
+    <ChoiceInput id="s05">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_04" when="@s03.value">
+    <Markdown>
+**Question 4 of 26**  `████░░░░░░░░░░░░░░░░░░░░░░`
+
+I worry that other people will criticize my writing.
+    </Markdown>
+    <ChoiceInput id="s04">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_03" when="@s02.value">
+    <Markdown>
+**Question 3 of 26**  `███░░░░░░░░░░░░░░░░░░░░░░░`
+
+Writing is usually boring for me.
+    </Markdown>
+    <ChoiceInput id="s03">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_02" when="@s01.value">
+    <Markdown>
+**Question 2 of 26**  `██░░░░░░░░░░░░░░░░░░░░░░░░`
+
+It is frustrating to have to write about a subject I did not choose.
+    </Markdown>
+    <ChoiceInput id="s02">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
+
+  <Vertical id="wj2_item_01">
+    <Markdown>
+**Question 1 of 26**  `█░░░░░░░░░░░░░░░░░░░░░░░░░`
+
+Writing is a skill I want to get better at.
+    </Markdown>
+    <ChoiceInput id="s01">
+      <Key value="Strongly agree">💯 Strongly agree</Key>
+      <Key value="Agree">🙂 Agree</Key>
+      <Key value="Disagree">🤔 Disagree</Key>
+      <Key value="Strongly disagree">🙅 Strongly disagree</Key>
+    </ChoiceInput>
+  </Vertical>
   </Vertical>
 
   <!-- ===================================================================
