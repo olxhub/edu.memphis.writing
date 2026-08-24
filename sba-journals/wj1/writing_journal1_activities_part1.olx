@@ -642,6 +642,23 @@ Your story should tell it what it couldn't know from your previous answers.
        are the SAME nodes as on the working screens, so they always agree.
        =================================================================== -->
 
+  <!-- The chat's final screen: a light wrap-up that points at the Print &
+       Submit tab. The full print page lives on the tab only; the button here
+       is the manual path if the student doesn't go on their own. -->
+  <Vertical id="wj1_wrapup">
+    <Markdown>
+## That's the Journal
+
+Your whole journal — the board, your reasons, your writer type, and your reflection — is gathered on the
+**Print &amp; Submit** tab up top. Give it a read. When you're happy with it, tick the confirm box there and
+export it as a PDF for your course system.
+    </Markdown>
+    <ActionButton id="wj1_open_print_btn" label="Open Print &amp; Submit">
+      <!-- activeTab is positional: 3 = Print &amp; Submit in wj1_sba_tabs. -->
+      <SetFieldAction id="wj1_open_print_set" target="wj1_sba_tabs" field="activeTab" value="3" />
+    </ActionButton>
+  </Vertical>
+
   <Vertical id="wj1_print">
 
     <!-- The controls: on screen only. print="false" -> class print-hide, so the
