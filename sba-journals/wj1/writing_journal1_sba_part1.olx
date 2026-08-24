@@ -54,7 +54,16 @@ lang: en-Latn-US
       <Use ref="wj1_circle_members" />
     </Vertical>
 
-    <!-- Tab 4: reference — all eight writer types. Tabs can't appear conditionally, so the tab is
+    <!-- Tab 4: print &amp; submit — the one page that gets exported. It is defined in the
+         activity bank (wj1_print) and the chat also parks it in the right-hand pane at
+         the end, so there are two doors to the same page and no duplicated state. Tabs
+         hide inactive panels with display:none, which print inherits, so whichever door
+         the student came through, the PDF carries exactly one copy. -->
+    <Vertical id="wj1_print_tab" title="Print &amp; Submit">
+      <Use ref="wj1_print" />
+    </Vertical>
+
+    <!-- Tab 5: reference — all eight writer types. Tabs can't appear conditionally, so the tab is
          always present but its CONTENT stays gated until the student reaches the profile step
          (wj1_types_ready is set from the chat, which also announces the tab in dialogue). -->
     <Vertical id="wj1_types_tab" title="Writer Types">

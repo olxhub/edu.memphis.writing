@@ -8,8 +8,8 @@ This tab gathers your work in one place as you go, so you can see the whole jour
 Writer Board, why you write what you write, the writer type your reasons point to, and your reflection on
 it. Come back any time to review what you've built.
 
-*Submitting is handled at the end of **The Circle**, on the final screen — that's where you'll confirm
-you're done and export your PDF.*
+*Submitting is handled on the **Print &amp; Submit** tab — that's where you'll confirm you're done and
+export your PDF.*
   </Markdown>
 
   <Collapsible id="wj1_artifact_board" title="1. My Writer Board">
@@ -72,7 +72,7 @@ you're done and export your PDF.*
 
   <Collapsible id="wj1_artifact_profile" title="3. My writer type">
     <Markdown>*The writer type — or types, if your two reasons point in different directions — that your
-answers point to are shown as cards on the **The Circle** tab and in your export.*</Markdown>
+answers point to are shown as cards on the **The Circle** tab and on **Print &amp; Submit**.*</Markdown>
     <Markdown>**Does that feel like me?**</Markdown>
     <Ref id="wj1_art_fit" target="wj1_fit" />
   </Collapsible>

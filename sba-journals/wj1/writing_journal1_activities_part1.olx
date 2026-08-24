@@ -15,9 +15,9 @@ lang: en-Latn-US
   command names a screen's own id, and UseHistory resolves it directly, so a screen
   renders on its own — independent of whatever wraps it here.
 
-  What gets submitted is the wj1_review screen at the bottom of this file, which
+  What gets submitted is the wj1_print page at the bottom of this file, which
   gathers the student's work by reference. Nothing else needs to hide itself from
-  the PDF; see the comment on wj1_review for the constraints that screen must meet.
+  the PDF; see the comment on wj1_print for the constraints that page must meet.
 
   Flow (from Design_docs/Writing_Lab/Aug5_update/Writing_journal_1_revised.docx):
     intro slides (the assignment; the invitation; Thursday at the Circle)
@@ -27,7 +27,7 @@ lang: en-Latn-US
     -> the noticing question (optional one-line open response; ungraded)
     -> TASK 2: Why I Write  (assign a reason to each cluster; name your top two; reflect)
     -> TASK 3: Your Writer Type  (deterministic type from the two biggest reasons; reflect with a story)
-    -> completion + export.
+    -> Print &amp; Submit (the print page: confirm, export, hand in).
 
   Design-doc fidelity notes (kept out of the student's view):
     * TASK 1 (the Writer Board) is realized as TWO TabularMCQ grids (For school /
@@ -49,7 +49,7 @@ lang: en-Latn-US
 
 <Vertical id="wj1_activities_part1" title="Writing Journal 1 — Activities" launchable="true">
 
-  <!-- The Export as PDF button lives on the wj1_review screen at the bottom of this
+  <!-- The Export as PDF button lives on the wj1_print page at the bottom of this
        file, NOT here. The right-hand pane is a UseHistory that renders one child id at
        a time, so a button parked on this parent Vertical never reaches the screen. -->
 
@@ -610,137 +610,64 @@ Your story should tell it what it couldn't know from your previous answers.
   </Vertical>
 
   <!-- ===================================================================
-       COMPLETION + EXPORT  —  THE SUBMISSION SCREEN
-       The last screen the chat pulls in (`wj1_sidebar <- wj1_review`). This is
-       the ONLY thing that gets printed, so everything in it must be mounted at
-       print time: window.print() photographs the live DOM, and a block that
-       React never rendered cannot be recovered by a print stylesheet.
+       PRINT &amp; SUBMIT  —  THE SUBMISSION PAGE
+       The one page that gets printed. It is mounted twice, and only ever one of
+       those mounts is visible: as the "Print &amp; Submit" tab of
+       writing_journal1_sba_part1.olx, and as the chat's final right-pane screen
+       (`wj1_sidebar <- wj1_print`). Tabs keep every panel mounted but hide the
+       inactive ones with display:none, which print inherits, so the PDF carries
+       exactly one copy.
 
-       Two consequences, both load-bearing — do not "tidy" them away:
-         * NO <Collapsible> on this screen. Collapsible renders children only
-           when expanded, so a collapsed section exports as a bare heading.
-         * NO <UseHistory> / other screens. UseHistory shows one target at a
-           time, which is why the old button (parked on the parent Vertical,
-           where nothing ever rendered it) could not have worked anyway.
-       <IntakeGate> is fine and is used deliberately below: it mounts the branch
-       the student earned, so the writer-type card prints as theirs alone.
+       Everything here must be MOUNTED at print time: window.print() photographs
+       the live DOM, and a block React never rendered cannot be recovered by a
+       print stylesheet. Three consequences, all load-bearing — do not "tidy"
+       them away:
+         * NO <Collapsible>. It renders children only when expanded, so a
+           collapsed section exports as a bare heading.
+         * NO <Tabs>, NO <UseHistory>. Both show one child at a time.
+         * <IntakeGate> and when= ARE fine, and are used deliberately: they
+           mount the branch the student earned, so the writer-type card prints
+           as theirs alone.
+
+       ORDER IS AN INVERTED TRIANGLE — what an instructor most needs to read
+       comes first: the controls (print-hidden), then everything the student
+       WROTE, then the structured answers, so the page can be scanned in a
+       couple of minutes without paging.
 
        <Use> is a DAG reference, not a copy — the grids and the type card here
        are the SAME nodes as on the working screens, so they always agree.
        =================================================================== -->
 
-  <Vertical id="wj1_review">
+  <Vertical id="wj1_print">
 
-    <Markdown>
-## Review and Submit
+    <!-- The controls: on screen only. print="false" -> class print-hide, so the
+         heading, the confirm box, the button and the how-to never reach the PDF. -->
+    <Vertical id="wj1_print_controls" print="false">
 
-Here is your whole journal in one place. Read it over — if you want to change an answer, go back to that
-step in the conversation, edit it, and return here. Everything below updates to match.
-    </Markdown>
+      <Markdown>
+## Print &amp; Submit
 
-    <CheckboxInput id="wj1_completion_page">
-      <Markdown>**Confirm that you are done with this journal entry.**</Markdown>
-      <Key id="wj1_finished">I don't need to make any more changes.</Key>
-    </CheckboxInput>
+Here is your whole journal on one page, in the order your instructor will read it — your writing first.
+Read it over; if you want to change an answer, go back to that step in the conversation, edit it, and come
+back. Everything below updates to match.
 
-    <!-- Gated on the confirm box, matching WJ2 (writing_journal2_activities_part1.olx).
-         ActionButtons are hidden from print output by print.css, so this never
-         appears in the PDF itself. -->
-    <ActionButton id="wj1_print_btn" label="Export as PDF"
-                  when="'wj1_finished' in @wj1_completion_page.value">
-      <PrintAction id="wj1_print_action" />
-    </ActionButton>
+When it looks right, tick the box and the **Export as PDF** button will appear. Save the file, then upload
+it to your course system.
+      </Markdown>
 
-    <Markdown when="'wj1_finished' in @wj1_completion_page.value">
-*Click **Export as PDF** above, save the file, and upload it to your course system.*
-    </Markdown>
+      <CheckboxInput id="wj1_completion_page">
+        <Markdown>**Confirm that you are done with this journal entry.**</Markdown>
+        <Key id="wj1_finished">I don't need to make any more changes.</Key>
+      </CheckboxInput>
 
-    <Markdown>
----
+      <!-- Gated on the confirm box, matching WJ2. ActionButtons are hidden from
+           print by print.css anyway; the wrapper above hides the rest. -->
+      <ActionButton id="wj1_print_btn" label="Export as PDF"
+                    when="'wj1_finished' in @wj1_completion_page.value">
+        <PrintAction id="wj1_print_action" />
+      </ActionButton>
 
-### 1. My Writer Board
-
-**🏫 Writing I do for school:**
-    </Markdown>
-    <Use ref="wj1_board_school" />
-    <Markdown>**Also, for school:** {{@wj1_board_school_other.value}}</Markdown>
-
-    <Markdown>**🌙 Writing I do outside school:**</Markdown>
-    <Use ref="wj1_board_outside" />
-    <Markdown>**Also, outside school:** {{@wj1_board_outside_other.value}}</Markdown>
-
-    <Markdown>
-**Something I almost didn't count as writing:**
-{{@wj1_board_noticing_text.value}}
-
----
-
-### 2. Why I Write
-    </Markdown>
-
-    <!-- {{@wj1_why_*.value}} would print the stored CODE (`figure_out`), so the
-         reasons come back as <Use> of the dropdowns themselves — the same nodes
-         as on the working screen, showing the student's own sentence. -->
-    <Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
-    <Use ref="wj1_why_messaging" />
-    <Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
-    <Use ref="wj1_why_coursework" />
-    <Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
-    <Use ref="wj1_why_organizing" />
-    <Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
-    <Use ref="wj1_why_posting" />
-    <Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
-    <Use ref="wj1_why_creative" />
-
-    <!-- The per-group "Something else" descriptions, each shown only if that
-         group's dropdown is on "Something else". when= mounts the branch, so
-         whatever the student earned is in the DOM at print time. -->
-    <Markdown when="@wj1_why_messaging.value === 'something_else'">
-- **Messaging &amp; staying in touch — in my own words:** {{@wj1_why_messaging_other.value}}
-    </Markdown>
-    <Markdown when="@wj1_why_coursework.value === 'something_else'">
-- **Coursework &amp; class writing — in my own words:** {{@wj1_why_coursework_other.value}}
-    </Markdown>
-    <Markdown when="@wj1_why_organizing.value === 'something_else'">
-- **Notes, lists &amp; organizing — in my own words:** {{@wj1_why_organizing_other.value}}
-    </Markdown>
-    <Markdown when="@wj1_why_posting.value === 'something_else'">
-- **Posting &amp; sharing publicly — in my own words:** {{@wj1_why_posting_other.value}}
-    </Markdown>
-    <Markdown when="@wj1_why_creative.value === 'something_else'">
-- **Creative &amp; personal writing — in my own words:** {{@wj1_why_creative_other.value}}
-    </Markdown>
-
-    <Markdown>
-**My two biggest reasons for writing:**
-    </Markdown>
-    <Use ref="wj1_why_top2" />
-
-    <Markdown>
-**What surprised me:**
-{{@wj1_why_reflect.value}}
-
----
-
-### 3. My Writer Type
-    </Markdown>
-    <Use ref="wj1_type_result" />
-
-    <!-- <Use>, not {{@wj1_fit.value}}: the stored value is a code (`not_really`). -->
-    <Markdown>**Does this feel like me?**</Markdown>
-    <Use ref="wj1_fit" />
-
-    <Markdown>
----
-
-### 4. My Reflection — a story from my writing life
-
-{{@wj1_profile_reflect.value}}
-    </Markdown>
-
-    <Markdown when="'wj1_finished' in @wj1_completion_page.value">
----
-
+      <Markdown when="'wj1_finished' in @wj1_completion_page.value">
 ## Journal Complete
 
 In this journal you did the thing the assignment was really asking for: you stopped and **noticed the
@@ -751,7 +678,99 @@ your board shows about you as a writer.**
 Hold onto Alma's point: a writer type is a **snapshot, not a verdict.** The writing you're about to do in
 this course will keep changing the picture — which is exactly why it was worth mapping where you're
 starting from.
+      </Markdown>
+
+    </Vertical>
+
+    <!-- ---------------------------------------------------------------
+         1. THE STUDENT'S WRITING  (what the instructor actually reads)
+         Longest and most considered first: the story, then the two shorter
+         reflections, then the open boxes that top up the structured items.
+         --------------------------------------------------------------- -->
+
+    <Markdown>
+# Writing Journal 1: Who Am I As a Writer?
+
+## My reflection — a story from my writing life
+
+{{@wj1_profile_reflect.value}}
+
+## What surprised me about why I write
+
+{{@wj1_why_reflect.value}}
+
+## Something I almost didn't count as writing
+
+{{@wj1_board_noticing_text.value}}
+
+## Other writing I do
+
+**For school:** {{@wj1_board_school_other.value}}
+
+**Outside school:** {{@wj1_board_outside_other.value}}
     </Markdown>
+
+    <!-- The per-group "Something else" descriptions, each shown only if that
+         group's dropdown is on "Something else". when= mounts the branch, so
+         whatever the student earned is in the DOM at print time. -->
+    <Markdown when="@wj1_why_messaging.value === 'something_else' || @wj1_why_coursework.value === 'something_else' || @wj1_why_organizing.value === 'something_else' || @wj1_why_posting.value === 'something_else' || @wj1_why_creative.value === 'something_else'">
+## Why I write — in my own words
+    </Markdown>
+    <Markdown when="@wj1_why_messaging.value === 'something_else'">
+**Messaging &amp; staying in touch:** {{@wj1_why_messaging_other.value}}
+    </Markdown>
+    <Markdown when="@wj1_why_coursework.value === 'something_else'">
+**Coursework &amp; class writing:** {{@wj1_why_coursework_other.value}}
+    </Markdown>
+    <Markdown when="@wj1_why_organizing.value === 'something_else'">
+**Notes, lists &amp; organizing:** {{@wj1_why_organizing_other.value}}
+    </Markdown>
+    <Markdown when="@wj1_why_posting.value === 'something_else'">
+**Posting &amp; sharing publicly:** {{@wj1_why_posting_other.value}}
+    </Markdown>
+    <Markdown when="@wj1_why_creative.value === 'something_else'">
+**Creative &amp; personal writing:** {{@wj1_why_creative_other.value}}
+    </Markdown>
+
+    <!-- ---------------------------------------------------------------
+         2. THE STRUCTURED ANSWERS  (skimmed, not read)
+         Text where a sane text rendering exists — the reason dropdowns and the
+         fit question store self-describing values, so a bullet list beats five
+         re-rendered widgets. Blocks where it doesn't: the two Writer Board
+         grids, the multi-select, and the writer-type cards come back as <Use>.
+         --------------------------------------------------------------- -->
+
+    <Markdown>
+---
+
+## Why I write, kind by kind
+
+- **Messaging &amp; staying in touch:** {{@wj1_why_messaging.value}}
+- **Coursework &amp; class writing:** {{@wj1_why_coursework.value}}
+- **Notes, lists &amp; organizing:** {{@wj1_why_organizing.value}}
+- **Posting &amp; sharing publicly:** {{@wj1_why_posting.value}}
+- **Creative &amp; personal writing:** {{@wj1_why_creative.value}}
+
+**My two biggest reasons for writing:**
+    </Markdown>
+    <!-- Multi-select: the stored value is a list, so it comes back as <Use>. -->
+    <Use ref="wj1_why_top2" />
+
+    <Markdown>
+## My writer type
+
+*Does this feel like me?* — **{{@wj1_fit.value}}**
+    </Markdown>
+    <Use ref="wj1_type_result" />
+
+    <Markdown>
+## My Writer Board
+
+**🏫 Writing I do for school:**
+    </Markdown>
+    <Use ref="wj1_board_school" />
+    <Markdown>**🌙 Writing I do outside school:**</Markdown>
+    <Use ref="wj1_board_outside" />
 
   </Vertical>
 
