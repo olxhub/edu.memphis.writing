@@ -963,6 +963,10 @@ When you're happy with your entry, open the **Print &amp; Submit** tab up top. I
 did in this journal — the group chat half and the meeting — onto one page to read over, confirm, and
 export as a PDF for your course system.
     </Markdown>
+    <ActionButton id="wj2_open_print_btn" label="Open Print &amp; Submit">
+      <!-- activeTab is positional: 3 = Print &amp; Submit in wj2b_sba_tabs. -->
+      <SetFieldAction id="wj2_open_print_set" target="wj2b_sba_tabs" field="activeTab" value="3" />
+    </ActionButton>
 
   </Vertical>
   <!-- end wj2_meeting -->
