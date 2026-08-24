@@ -31,16 +31,40 @@ you're done and export your PDF.*
   </Collapsible>
 
   <Collapsible id="wj1_artifact_why" title="2. Why I write">
+    <!-- Each group can also carry a "Something else" description; it shows here only
+         when that group's dropdown is on "Something else" (the condition matches the
+         option text, which is also its value). The gate has to be repeated here — a
+         <Use> of the activity's gated Vertical would drop it. -->
     <Markdown>**Messaging &amp; staying in touch:**</Markdown>
     <Ref id="wj1_art_why_msg" target="wj1_why_messaging" />
+    <Vertical id="wj1_art_why_msg_other_box" when="@wj1_why_messaging.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*In my own words:*</Markdown>
+      <Ref id="wj1_art_why_msg_other" target="wj1_why_messaging_other" />
+    </Vertical>
     <Markdown>**Coursework &amp; class writing:**</Markdown>
     <Ref id="wj1_art_why_course" target="wj1_why_coursework" />
+    <Vertical id="wj1_art_why_course_other_box" when="@wj1_why_coursework.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*In my own words:*</Markdown>
+      <Ref id="wj1_art_why_course_other" target="wj1_why_coursework_other" />
+    </Vertical>
     <Markdown>**Notes, lists &amp; organizing:**</Markdown>
     <Ref id="wj1_art_why_org" target="wj1_why_organizing" />
+    <Vertical id="wj1_art_why_org_other_box" when="@wj1_why_organizing.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*In my own words:*</Markdown>
+      <Ref id="wj1_art_why_org_other" target="wj1_why_organizing_other" />
+    </Vertical>
     <Markdown>**Posting &amp; sharing publicly:**</Markdown>
     <Ref id="wj1_art_why_post" target="wj1_why_posting" />
+    <Vertical id="wj1_art_why_post_other_box" when="@wj1_why_posting.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*In my own words:*</Markdown>
+      <Ref id="wj1_art_why_post_other" target="wj1_why_posting_other" />
+    </Vertical>
     <Markdown>**Creative &amp; personal writing:**</Markdown>
     <Ref id="wj1_art_why_creative" target="wj1_why_creative" />
+    <Vertical id="wj1_art_why_creative_other_box" when="@wj1_why_creative.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*In my own words:*</Markdown>
+      <Ref id="wj1_art_why_creative_other" target="wj1_why_creative_other" />
+    </Vertical>
     <Markdown>**What surprised me:**</Markdown>
     <Ref id="wj1_art_why_reflect" target="wj1_why_reflect" />
   </Collapsible>

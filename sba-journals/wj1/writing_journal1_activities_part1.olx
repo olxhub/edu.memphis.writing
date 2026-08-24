@@ -275,6 +275,14 @@ best. There's no right answer — pick what's true for **you.**
       Because a class or a job requires it
       Something else (I'll describe it below)
     </DropdownInput>
+    <!-- The "Something else" box for each group is gated on that group's own
+         dropdown, so it opens right where the student made the choice. The
+         condition matches the option TEXT, because an option with no explicit
+         `text | value` takes its text as its value (dropdown.pegjs). -->
+    <Vertical id="wj1_why_messaging_other_box" when="@wj1_why_messaging.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*Describe it in your own words:*</Markdown>
+      <TextArea id="wj1_why_messaging_other" rows="2" placeholder="Mostly, I do this writing to..." />
+    </Vertical>
 
     <Markdown>### 🎓 Coursework &amp; class writing *(essays, papers, discussion posts, reports)*</Markdown>
     <DropdownInput id="wj1_why_coursework" placeholder="Mostly, I do this…">
@@ -292,6 +300,10 @@ best. There's no right answer — pick what's true for **you.**
       Because a class or a job requires it
       Something else (I'll describe it below)
     </DropdownInput>
+    <Vertical id="wj1_why_coursework_other_box" when="@wj1_why_coursework.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*Describe it in your own words:*</Markdown>
+      <TextArea id="wj1_why_coursework_other" rows="2" placeholder="Mostly, I do this writing to..." />
+    </Vertical>
 
     <Markdown>### 🗂️ Notes, lists &amp; organizing *(class notes, to-do lists, planners, reminders)*</Markdown>
     <DropdownInput id="wj1_why_organizing" placeholder="Mostly, I do this…">
@@ -309,6 +321,10 @@ best. There's no right answer — pick what's true for **you.**
       Because a class or a job requires it
       Something else (I'll describe it below)
     </DropdownInput>
+    <Vertical id="wj1_why_organizing_other_box" when="@wj1_why_organizing.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*Describe it in your own words:*</Markdown>
+      <TextArea id="wj1_why_organizing_other" rows="2" placeholder="Mostly, I do this writing to..." />
+    </Vertical>
 
     <Markdown>### 📣 Posting &amp; sharing publicly *(social posts, captions, comments, reviews)*</Markdown>
     <DropdownInput id="wj1_why_posting" placeholder="Mostly, I do this…">
@@ -326,6 +342,10 @@ best. There's no right answer — pick what's true for **you.**
       Because a class or a job requires it
       Something else (I'll describe it below)
     </DropdownInput>
+    <Vertical id="wj1_why_posting_other_box" when="@wj1_why_posting.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*Describe it in your own words:*</Markdown>
+      <TextArea id="wj1_why_posting_other" rows="2" placeholder="Mostly, I do this writing to..." />
+    </Vertical>
 
     <Markdown>### 🎨 Creative &amp; personal writing *(stories, poems, lyrics, journaling)*</Markdown>
     <DropdownInput id="wj1_why_creative" placeholder="Mostly, I do this…">
@@ -343,9 +363,10 @@ best. There's no right answer — pick what's true for **you.**
       Because a class or a job requires it
       Something else (I'll describe it below)
     </DropdownInput>
-
-    <Markdown>*If you chose **"Something else"** for any group above, describe it in your own words:*</Markdown>
-    <LineInput id="wj1_why_other" placeholder="Something else I write for, and what it is..." />
+    <Vertical id="wj1_why_creative_other_box" when="@wj1_why_creative.value === 'Something else (I\'ll describe it below)'">
+      <Markdown>*Describe it in your own words:*</Markdown>
+      <TextArea id="wj1_why_creative_other" rows="2" placeholder="Mostly, I do this writing to..." />
+    </Vertical>
 
     <Markdown>
 ### Your two biggest reasons for writing
@@ -643,8 +664,28 @@ step in the conversation, edit it, and return here. Everything below updates to 
 - **Notes, lists &amp; organizing:** {{@wj1_why_organizing.value}}
 - **Posting &amp; sharing publicly:** {{@wj1_why_posting.value}}
 - **Creative &amp; personal writing:** {{@wj1_why_creative.value}}
-- **Something else:** {{@wj1_why_other.value}}
+    </Markdown>
 
+    <!-- The per-group "Something else" descriptions, each shown only if that
+         group's dropdown is on "Something else". when= mounts the branch, so
+         whatever the student earned is in the DOM at print time. -->
+    <Markdown when="@wj1_why_messaging.value === 'Something else (I\'ll describe it below)'">
+- **Messaging &amp; staying in touch — in my own words:** {{@wj1_why_messaging_other.value}}
+    </Markdown>
+    <Markdown when="@wj1_why_coursework.value === 'Something else (I\'ll describe it below)'">
+- **Coursework &amp; class writing — in my own words:** {{@wj1_why_coursework_other.value}}
+    </Markdown>
+    <Markdown when="@wj1_why_organizing.value === 'Something else (I\'ll describe it below)'">
+- **Notes, lists &amp; organizing — in my own words:** {{@wj1_why_organizing_other.value}}
+    </Markdown>
+    <Markdown when="@wj1_why_posting.value === 'Something else (I\'ll describe it below)'">
+- **Posting &amp; sharing publicly — in my own words:** {{@wj1_why_posting_other.value}}
+    </Markdown>
+    <Markdown when="@wj1_why_creative.value === 'Something else (I\'ll describe it below)'">
+- **Creative &amp; personal writing — in my own words:** {{@wj1_why_creative_other.value}}
+    </Markdown>
+
+    <Markdown>
 **My two biggest reasons for writing:**
     </Markdown>
     <Use ref="wj1_why_top2" />
