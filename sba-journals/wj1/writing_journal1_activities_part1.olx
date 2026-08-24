@@ -389,6 +389,10 @@ write.
       <Key value="something_else">Something else</Key>
     </CheckboxInput>
 
+    <Markdown when="@wj1_why_top2.value.length &lt; 2">*Tick **two** — the two that come up most across everything you write.*</Markdown>
+    <Markdown when="@wj1_why_top2.value.length &gt; 2">*That's more than two. Which **two** really come up most? Untick the rest.*</Markdown>
+    <Markdown when="@wj1_why_top2.value.length === 2">*Got them — those two are what the profile runs on.*</Markdown>
+
     <Markdown>
 ### One short reflection
 

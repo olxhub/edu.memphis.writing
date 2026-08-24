@@ -146,7 +146,7 @@ Alma: so — go back through yours and put the why on it. [face=smile]
 
 wj1_sidebar <- wj1_why
 
---- wait @wj1_why_reflect.value ---
+--- wait @wj1_why_reflect.value && @wj1_why_top2.value.length === 2 ---
 
 Enough to Run It
 ----------------
