@@ -1,6 +1,6 @@
-title: Writing Journal 2 — How Do You Really Feel About Writing
+title: Writing Journal 2a — The Group Chat
 authors: Writing Journal 2 SBA, built in lo-blocks
-description: A first-year ENGL 1010 student is in a group chat with three members of the Writers' Circle who are arguing about whether writer's block is real. A peer shares a playful writing-attitudes quiz that plots the student on three attitude continuums. Later the group gathers in the student lounge, each reads the story of an experience that shaped them as a writer, and the student tells their own.
+description: A first-year ENGL 1010 student is in a group chat with three members of the Writers' Circle who are arguing about whether writer's block is real. A peer shares a playful writing-attitudes quiz that plots the student on three attitude continuums, and the student weighs the placement against their own sense of themselves. The chat closes by inviting them to the Circle's in-person meeting, and hands the course over to Writing Journal 2b.
 ~~~~
 
 A Group Chat, Blowing Up
@@ -105,8 +105,8 @@ Heading to the Meeting
 ----------------------
 Alma: honestly, this is a real conversation — let's not have it over text. the Writers' Circle is meeting in person this week, in the student lounge. come through and we'll pick it up there [face=smile]
 
-Alma: tap Continue when you're ready and I'll see you at the meeting [face=smile]
+Alma: that's the end of this part — tap Continue and it'll take you straight to the meeting. see you there [face=smile]
 
 --- pause ---
 
-wj2_phase <- meeting
+wj_course.selectedChild <- edu.memphis.writing.sba/wj2b_sba_part1
