@@ -509,7 +509,11 @@ Writing is a skill I want to get better at.
        SCREEN). Each set is its own screen; the chat reveals the next set only
        after the previous CapaProblem is submitted (wait @<grader>.submitCount).
        Submit button relabeled via submitLabel="Submit". The three inputs
-       (wj2_good_1/2/3) keep their ids so the results tool still reads them.
+       (wj2_good_1/2/3) keep their ids so the results tool still reads them, and each
+       ranked item carries its own semantic id: SortableInput stores the arrangement as
+       indices into source order, but the item ids are what buildArrangementWithPositions
+       keys on (and what shows up in the event stream), so they must not be auto-generated
+       hashes of the prose. The prompt's index legend below names them alongside the index.
        =================================================================== -->
 
   <Vertical id="wj2_good_1_screen">
@@ -525,10 +529,10 @@ opinion. Being honest gives you the most accurate writing profile.
       <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
       <SortableGrader id="wj2_good_1_grader" algorithm="survey">
         <SortableInput id="wj2_good_1" dragMode="whole">
-          <Markdown>Taking the time to understand an assignment before starting to write.</Markdown>
-          <Markdown>Expressing one's ideas accurately.</Markdown>
-          <Markdown>Making sure to write something that is long enough for the task.</Markdown>
-          <Markdown>Finishing writing tasks quickly.</Markdown>
+          <Markdown id="wj2_good_1_understand_assignment"> Taking the time to understand an assignment before starting to write. </Markdown>
+          <Markdown id="wj2_good_1_express_accurately"   > Expressing one's ideas accurately.                                 </Markdown>
+          <Markdown id="wj2_good_1_long_enough"          > Making sure to write something that is long enough for the task.   </Markdown>
+          <Markdown id="wj2_good_1_finish_quickly"       > Finishing writing tasks quickly.                                   </Markdown>
         </SortableInput>
       </SortableGrader>
     </CapaProblem>
@@ -547,10 +551,10 @@ opinion. Being honest gives you the most accurate writing profile.
       <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
       <SortableGrader id="wj2_good_2_grader" algorithm="survey">
         <SortableInput id="wj2_good_2" dragMode="whole">
-          <Markdown>Figuring out what one really thinks about a topic before writing.</Markdown>
-          <Markdown>Taking time to research a topic before writing about it.</Markdown>
-          <Markdown>Free-writing to brainstorm ideas.</Markdown>
-          <Markdown>Using correct spelling and punctuation.</Markdown>
+          <Markdown id="wj2_good_2_figure_out_thinking"  > Figuring out what one really thinks about a topic before writing. </Markdown>
+          <Markdown id="wj2_good_2_research_topic"       > Taking time to research a topic before writing about it.          </Markdown>
+          <Markdown id="wj2_good_2_freewrite_ideas"      > Free-writing to brainstorm ideas.                                 </Markdown>
+          <Markdown id="wj2_good_2_spelling_punctuation" > Using correct spelling and punctuation.                           </Markdown>
         </SortableInput>
       </SortableGrader>
     </CapaProblem>
@@ -569,10 +573,10 @@ opinion. Being honest gives you the most accurate writing profile.
       <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
       <SortableGrader id="wj2_good_3_grader" algorithm="survey">
         <SortableInput id="wj2_good_3" dragMode="whole">
-          <Markdown>Coming up with a clear understanding of the ideas one wants to express.</Markdown>
-          <Markdown>Completing more than one draft.</Markdown>
-          <Markdown>Avoiding grammar and usage errors.</Markdown>
-          <Markdown>Using well-chosen words that make writing interesting.</Markdown>
+          <Markdown id="wj2_good_3_clear_ideas"    > Coming up with a clear understanding of the ideas one wants to express. </Markdown>
+          <Markdown id="wj2_good_3_multiple_drafts"> Completing more than one draft.                                        </Markdown>
+          <Markdown id="wj2_good_3_avoid_errors"   > Avoiding grammar and usage errors.                                     </Markdown>
+          <Markdown id="wj2_good_3_word_choice"    > Using well-chosen words that make writing interesting.                 </Markdown>
         </SortableInput>
       </SortableGrader>
     </CapaProblem>
@@ -690,17 +694,20 @@ picture of how you relate to writing *right now*.
         quickly, writing long enough, correct spelling, avoiding grammar errors -- leans toward Evaluation
         and Performance. Use this as a secondary signal that should agree with or gently complicate Part 1.
 
-        PART 2 ITEM LEGENDS (index -> item; lower/higher position in the student's arrangement = higher/
-        lower priority):
-        Set 1: 0 = understand the assignment before writing (meaning/Growth); 1 = express ideas accurately
-        (Expression); 2 = write something long enough for the task (surface/Evaluation); 3 = finish tasks
-        quickly (surface/Performance).
-        Set 2: 0 = figure out what you really think before writing (Expression/Growth); 1 = research the
-        topic before writing (Growth); 2 = free-write to brainstorm ideas (Expression); 3 = correct
-        spelling and punctuation (surface/Evaluation).
-        Set 3: 0 = a clear understanding of the ideas you want to express (Expression); 1 = complete more
-        than one draft (Growth); 2 = avoid grammar and usage errors (surface/Evaluation); 3 = well-chosen
-        words that make writing interesting (Expression/craft).
+        PART 2 ITEM LEGENDS (index -> item id -> item; lower/higher position in the student's arrangement
+        = higher/lower priority):
+        Set 1: 0 = wj2_good_1_understand_assignment, understand the assignment before writing
+        (meaning/Growth); 1 = wj2_good_1_express_accurately, express ideas accurately (Expression);
+        2 = wj2_good_1_long_enough, write something long enough for the task (surface/Evaluation);
+        3 = wj2_good_1_finish_quickly, finish tasks quickly (surface/Performance).
+        Set 2: 0 = wj2_good_2_figure_out_thinking, figure out what you really think before writing
+        (Expression/Growth); 1 = wj2_good_2_research_topic, research the topic before writing (Growth);
+        2 = wj2_good_2_freewrite_ideas, free-write to brainstorm ideas (Expression);
+        3 = wj2_good_2_spelling_punctuation, correct spelling and punctuation (surface/Evaluation).
+        Set 3: 0 = wj2_good_3_clear_ideas, a clear understanding of the ideas you want to express
+        (Expression); 1 = wj2_good_3_multiple_drafts, complete more than one draft (Growth);
+        2 = wj2_good_3_avoid_errors, avoid grammar and usage errors (surface/Evaluation);
+        3 = wj2_good_3_word_choice, well-chosen words that make writing interesting (Expression/craft).
 
         THE STUDENT'S QUIZ:
         Part 1 answers (statement id = chosen agreement level):
