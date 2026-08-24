@@ -13,14 +13,21 @@ license: AGPL
 ---
 -->
 
-<!-- Top-level wrapper tying the two SBA Writing Journals into one course.
+<!-- Top-level wrapper tying the SBA Writing Journals into one course.
 
      The journals themselves live in wj1/ and wj2/; this file only
      sequences them. The refs are bare (no namespace prefix): everything
      under sba-journals/ parses as the one namespace declared in
-     manifest.yaml. -->
+     manifest.yaml.
+
+     Writing Journal 2 is two parts, because it is two scenes: the phone
+     group chat (2a) and the in-person meeting a few days later (2b). The
+     nav labels come from each part's own title= attribute. At the end of
+     2a the chat moves the student here itself, by setting this Course's
+     `selectedChild` field to 2b's definition key. -->
 
 <Course id="wj_course" title="Writing Journals" launchable="course">
-  <Use ref="wj1_sba_part1" />
-  <Use ref="wj2_sba_part1" />
+  <Use ref="wj1_sba_part1"  />
+  <Use ref="wj2a_sba_part1" />
+  <Use ref="wj2b_sba_part1" />
 </Course>

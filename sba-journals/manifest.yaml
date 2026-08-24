@@ -22,4 +22,5 @@ content_notice: >
 routes:
   "/": edu.memphis.writing.sba/wj_course
   "/wj1": edu.memphis.writing.sba/wj1_sba_part1
-  "/wj2": edu.memphis.writing.sba/wj2_sba_part1
+  "/wj2a": edu.memphis.writing.sba/wj2a_sba_part1
+  "/wj2b": edu.memphis.writing.sba/wj2b_sba_part1
