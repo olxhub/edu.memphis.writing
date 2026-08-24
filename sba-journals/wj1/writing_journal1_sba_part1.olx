@@ -13,7 +13,9 @@ lang: en-Latn-US
 <Cast cast="characters.cast" id="wj1_sba_part1"
       title="Writing Journal 1: Who Am I As a Writer?"
       launchable="true">
-  <Tabs id="wj1_sba_tabs">
+  <!-- print="no-chrome": the print pages live in a tab, so the tab strip would
+       otherwise head every exported PDF. Screen behavior is unchanged. -->
+  <Tabs id="wj1_sba_tabs" print="no-chrome">
 
     <!-- Tab 1: the Writers' Circle meeting, with the activity for each step on the right -->
     <Vertical id="wj1_circle_tab" title="The Circle">
