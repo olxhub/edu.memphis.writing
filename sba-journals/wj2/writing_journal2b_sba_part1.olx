@@ -1,0 +1,51 @@
+<!-- Writing Journal 2b: The Circle Meets — ENGL 1010 SBA -->
+<Vertical id="wj2b_sba_root">
+
+<!--
+---
+description: "Writing Journal 2b: The Circle Meets — the in-person meeting. The second half of the second journal in a first-year ENGL 1010 unit on writer identity. A few days after the group chat of Writing Journal 2a, the Writers' Circle gathers in the student lounge and each member tells the story of an experience that shaped them as a writer. The student — after an optional two-minute freewrite warm-up — tells their own, the real journal entry, and Alma reads it back against the attitude profile the quiz produced. The journal ends with the completion check and the PDF export of the whole record."
+category: writing_journal2
+index: 92.5
+lang: en-Latn-US
+---
+-->
+
+<Cast cast="characters.cast" id="wj2b_sba_part1"
+      title="Writing Journal 2b: The Circle Meets"
+      launchable="true">
+  <Tabs id="wj2b_sba_tabs">
+
+    <!-- Tab 1: the meeting itself — full width, no chat column. The whole meeting is one
+         self-paced screen: the scene, the three peers' stories, the freewrite warm-up,
+         the student's own story, Alma's response, and the completion + export. -->
+    <Vertical id="wj2b_meeting_tab" title="The Meeting">
+      <Use ref="wj2_meeting" />
+    </Vertical>
+
+    <!-- Tab 2: the running record of the student's work, carried over from 2a and
+         completed here — this is what the export gathers. -->
+    <Vertical id="wj2b_journal_tab" title="My Journal">
+      <Use ref="wj2_artifact" />
+    </Vertical>
+
+    <!-- Tab 3: the people in the Circle -->
+    <Vertical id="wj2b_people_tab" title="The Group">
+      <Use ref="wj2_circle_members" />
+    </Vertical>
+
+  </Tabs>
+</Cast>
+
+<!-- ============================================================
+     REFERENCED CONTENT BLOCKS
+     ============================================================ -->
+
+<!-- Loader: pull the activities file into scope so the meeting tab's bare
+     <Use ref="wj2_meeting"/> resolves. src= must NOT go on the rendered <Use>
+     (it leaks onto the inlined Vertical -> "Invalid attributes: src"), so the
+     loader carries it here instead. wj2_circle_members and wj2_artifact are
+     defined in writing_journal2a_sba_part1.olx; everything under sba-journals/
+     is one namespace, so the bare refs above find them. -->
+<Use ref="wj2_meeting" src="writing_journal2_activities_part1.olx"/>
+
+</Vertical>

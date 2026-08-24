@@ -1,0 +1,63 @@
+<!-- Writing Journal 2a: The Group Chat — ENGL 1010 SBA -->
+<Vertical id="wj2a_sba_root">
+
+<!--
+---
+description: "Writing Journal 2a: How Do You Really Feel About Writing? — the group chat. The first half of the second journal in a first-year ENGL 1010 unit on writer identity. It opens in a phone group chat where three Writers' Circle peers argue about whether writer's block is real — the hook for the threshold concept that writing is shaped by identity and prior experience, not a fixed 'born writer' trait. A peer shares a playful writing-attitudes quiz; the Circle's tool plots the student on three attitude continuums (Expression–Evaluation, Growth–Performance, Engagement–Avoidance), and the student weighs the placement against their own sense of themselves. It ends with the Circle agreeing to finish the conversation in person, which is Writing Journal 2b."
+category: writing_journal2
+index: 92
+lang: en-Latn-US
+---
+-->
+
+<Cast cast="characters.cast" id="wj2a_sba_part1"
+      title="Writing Journal 2a: The Group Chat"
+      launchable="true">
+  <Tabs id="wj2a_sba_tabs">
+
+    <!-- Tab 1: the phone group chat — two panes, chat left, the current activity right.
+         The conversation runs from the welcome screen through the quiz, the results, and
+         the placement reflection, and ends by sending the student to the in-person
+         meeting (Writing Journal 2b). The chat makes that jump itself: its last set
+         command repoints the enclosing Course at wj2b_sba_part1. -->
+    <Vertical id="wj2_circle_tab" title="The Circle">
+      <SplitPanel id="wj2_sba_split" sizes="38, 62">
+        <LeftPane>
+          <Chat id="wj2_chat"
+                src="writing_journal2_dialogue_part1.chatpeg"
+                height="460px" />
+        </LeftPane>
+        <RightPane>
+          <Vertical id="wj2_current_activity" title="Current Activity">
+            <UseHistory id="wj2_sidebar" initial="wj2_welcome" />
+          </Vertical>
+        </RightPane>
+      </SplitPanel>
+    </Vertical>
+
+    <!-- Tab 2: the running record of the student's work -->
+    <Vertical id="wj2_journal_tab" title="My Journal">
+      <Use ref="wj2_artifact" />
+    </Vertical>
+
+    <!-- Tab 3: the people in the Circle -->
+    <Vertical id="wj2_people_tab" title="The Group">
+      <Use ref="wj2_circle_members" />
+    </Vertical>
+
+  </Tabs>
+</Cast>
+
+<!-- ============================================================
+     REFERENCED CONTENT BLOCKS
+     Defined here and shared with Writing Journal 2b, which refers to
+     both of them by bare ref (one namespace across sba-journals/).
+     ============================================================ -->
+
+<!-- Who's in the group chat / Circle (reads the cast) -->
+<TeamDirectory id="wj2_circle_members" title="Who's in the Writers' Circle"/>
+
+<!-- Pull in the running-record artifact -->
+<Use ref="wj2_artifact" src="artifact.olx"/>
+
+</Vertical>
