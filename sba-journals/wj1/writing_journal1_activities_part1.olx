@@ -663,6 +663,11 @@ it to your course system.
         <Markdown>**Confirm that you are done with this journal entry.**</Markdown>
         <Key id="wj1_finished" value="wj1_finished">I don't need to make any more changes.</Key>
       </CheckboxInput>
+      <!-- Ticking the confirm box brings the student to the print tab (once;
+           activeTab is positional: 3 = Print &amp; Submit in wj1_sba_tabs). -->
+      <Trigger id="wj1_finished_jump" watch="'wj1_finished' in @wj1_completion_page.value" mode="once">
+        <SetFieldAction id="wj1_finished_jump_set" target="wj1_sba_tabs" field="activeTab" value="3" />
+      </Trigger>
 
       <!-- Gated on the confirm box, matching WJ2. ActionButtons are hidden from
            print by print.css anyway; the wrapper above hides the rest. -->
