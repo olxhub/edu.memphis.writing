@@ -10,10 +10,13 @@ lang: en-Latn-US
 <!--
   Writing Journal 2 — ENGL 1010 First-Year Composition SBA (Activity bank)
 
-  The conversation (writing_journal2_dialogue_part1.chatpeg) pulls each screen
-  below into the right-hand pane via `wj2_sidebar -> <id>` arrows. Read-only /
-  framing screens are wrapped in IntakeGate so they page through with NEXT and
-  drop out of the final PDF; the student's own work stays.
+  This one file serves both halves of Writing Journal 2. In 2a (the group chat)
+  the conversation (writing_journal2_dialogue_part1.chatpeg) pulls each screen
+  below into the right-hand pane via `wj2_sidebar -> <id>` arrows. In 2b (the
+  in-person meeting) the single wj2_meeting screen at the bottom is shown
+  full-width, with no chat. Read-only / framing screens are wrapped in IntakeGate
+  so they page through with NEXT and drop out of the final PDF; the student's own
+  work stays.
 
   Flow (from the SBA_Writing_Journal2_RevisedMBain design document + the
   reviewer comments in it):
@@ -23,7 +26,7 @@ lang: en-Latn-US
     -> TASK 1b: "What makes a good writer?" priorities (3 rounds)
     -> RESULTS: the Circle's tool plots you on three attitude continuums
     -> reflect on your placement (does it fit? a moment that explains it? a year from now?)
-    -- move from the phone chat to the in-person meeting --
+    == end of Writing Journal 2a; the rest is Writing Journal 2b, in person ==
     -> listen to three peers' stories (receptive / modeling)
     -> TASK 2: your turn — write OR record the story of an experience that shaped you
     -> the tool reflects your story back and builds on your attitude profile
@@ -797,13 +800,12 @@ in this journal — a few honest sentences are plenty.
   </Vertical>
 
   <!-- ===================================================================
-       TASK 2 — THE WRITERS' CIRCLE MEETING  (PHASE 2, full width, no chat)
-       The whole meeting is ONE screen. The shell shows it full-width (via
-       <Use ref="wj2_meeting">) once the phone chat hands off with the
-       `wj2_sidebar <- meeting` set-command, so there is no chat column here and
-       nothing is duplicated between panes. The scene, the three peers' stories,
-       the student's own story, Alma's response, and the wrap-up all live here in
-       one self-paced flow.
+       TASK 2 — THE WRITERS' CIRCLE MEETING  (all of Writing Journal 2b)
+       The whole meeting is ONE screen, shown full-width by
+       writing_journal2b_sba_part1.olx (via <Use ref="wj2_meeting">), so there is
+       no chat column here and nothing is duplicated between panes. The scene, the
+       three peers' stories, the student's own story, Alma's response, and the
+       wrap-up all live here in one self-paced flow.
        =================================================================== -->
 
   <Vertical id="wj2_meeting">
