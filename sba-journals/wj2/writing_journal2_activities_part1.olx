@@ -53,8 +53,6 @@ lang: en-Latn-US
        INTRO SLIDE
        =================================================================== -->
 
-  <IntakeGate ready="!@wj2_completion_page.value">
-    <Markdown> </Markdown>
     <Markdown id="wj2_welcome">
 ## Writing Journal 2: How Do You *Really* Feel About Writing?
 
@@ -84,7 +82,6 @@ to name: **how you actually feel about writing, and where those feelings came fr
 There are no wrong answers and no grade for feeling one way or another about writing. What counts is
 honesty. Work through the conversation on the left — each step opens an activity here on the right.
     </Markdown>
-  </IntakeGate>
 
   <!-- ===================================================================
        THE DEBATE: YOUR QUICK TAKE  (activates prior experience; low friction)
@@ -598,8 +595,6 @@ opinion. Being honest gives you the most accurate writing profile.
        BEFORE the personalized results. Read-only framing -> IntakeGate.)
        =================================================================== -->
 
-  <IntakeGate ready="!@wj2_completion_page.value">
-    <Markdown> </Markdown>
     <Markdown id="wj2_vibe_explainer">
 ## What Your Writing Vibe Says About You ✍️✨
 
@@ -632,7 +627,6 @@ results**. You deliver exactly what a prompt is looking for and keep your eye on
 > the day, the class, or the prompt. Recognizing *where you're writing from* is the first step to making
 > writing work for you — which is exactly what your results are about to show you.
     </Markdown>
-  </IntakeGate>
 
   <!-- ===================================================================
        RESULTS — THREE ATTITUDE CONTINUUMS  (computer-generated placement)
