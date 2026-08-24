@@ -11,7 +11,9 @@ Come back any time to review what you have built, and use **Export as PDF** to s
 
   <Collapsible id="wj2_artifact_take" title="Where I started: is writer's block real?">
     <Markdown>**My first take, before the quiz:**</Markdown>
-    <Ref id="wj2_art_take" target="wj2_block_take" />
+    <!-- <Use>, not <Ref>: a Ref renders the stored value, which is a code like `freeze`;
+         <Use> re-renders the choices, showing the sentence the student picked. -->
+    <Use ref="wj2_block_take" />
   </Collapsible>
 
   <Collapsible id="wj2_artifact_results" title="1. My writing personality — three continuums">

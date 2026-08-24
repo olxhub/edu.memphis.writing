@@ -100,12 +100,16 @@ weigh in: **Do you think writer's block is a real thing — and have you ever ex
 Pick the one that rings most true today. Whatever your view, there's no wrong answer — just go with what
 feels natural. (You can always feel differently tomorrow — that's kind of the point.)
     </Markdown>
+    <!-- Short semantic values, not the sentences: the prose is display text and gets copy-edited,
+         so anything that stores or reads it drifts. Surfaces that show the student their own answer
+         (the artifact tab) <Use> this block to re-render the sentence; the LLM prompt that reads the
+         value carries a legend for the codes. -->
     <ChoiceInput id="wj2_block_take">
-      <Key value="It's real, and I've felt it — my brain just freezes, even when I have ideas">It's real, and I've felt it — my brain just freezes up, even when I have ideas</Key>
-      <Key value="It's real for me, but it feels more like anxiety or fear of writing it wrong">It's real for me, but it feels more like anxiety or fear of getting it wrong</Key>
-      <Key value="Richard's kind of right — I don't think it's real, I just haven't started yet">Richard's kind of right — I'm not sure it's real; I just haven't started yet</Key>
-      <Key value="It depends entirely on what I'm being asked to write">It depends completely on what I'm being asked to write</Key>
-      <Key value="I'm honestly not sure yet">I'm honestly not sure yet</Key>
+      <Key id="wj2_take_freeze"      value="freeze"     > It's real, and I've felt it — my brain just freezes up, even when I have ideas </Key>
+      <Key id="wj2_take_anxiety"     value="anxiety"    > It's real for me, but it feels more like anxiety or fear of getting it wrong   </Key>
+      <Key id="wj2_take_not_started" value="not_started"> Richard's kind of right — I'm not sure it's real; I just haven't started yet   </Key>
+      <Key id="wj2_take_depends"     value="depends"    > It depends completely on what I'm being asked to write                         </Key>
+      <Key id="wj2_take_unsure"      value="unsure"     > I'm honestly not sure yet                                                      </Key>
     </ChoiceInput>
     <Markdown>
 *Alma's hunch is that the answer has less to do with willpower and more to do with what happened to you
@@ -914,6 +918,10 @@ listens closely and asks one question back, the way a good writing group would.
 
         WHAT YOU KNOW ABOUT THIS WRITER:
         Their earlier quick take on writer's block: <Ref id="wj2_resp_ref_take" target="wj2_block_take" />
+        (that answer is coded: freeze = it's real and my brain freezes even when I have ideas;
+        anxiety = it's real for me, but more like anxiety or fear of getting it wrong;
+        not_started = not sure it's real, I just haven't started yet; depends = it depends completely on
+        what I'm asked to write; unsure = I'm honestly not sure yet; blank = they didn't answer.)
         The results the quiz tool gave them (their placement on three attitude continuums):
         <Ref id="wj2_resp_ref_results" target="wj2_results_feedback" />
         Their reflection on that placement: <Ref id="wj2_resp_ref_reflect" target="wj2_placement_text" />
