@@ -3,7 +3,7 @@
 
 <!--
 ---
-description: "Writing Journal 2b: The Circle Meets — the in-person meeting. The second half of the second journal in a first-year ENGL 1010 unit on writer identity. A few days after the group chat of Writing Journal 2a, the Writers' Circle gathers in the student lounge and each member tells the story of an experience that shaped them as a writer. The student — after an optional two-minute freewrite warm-up — tells their own, the real journal entry, and Alma reads it back against the attitude profile the quiz produced. The journal ends with the completion check and the PDF export of the whole record."
+description: "Writing Journal 2b: The Circle Meets — the in-person meeting. The second half of the second journal in a first-year ENGL 1010 unit on writer identity. A few days after the group chat of Writing Journal 2a, the Writers' Circle gathers in the student lounge and each member tells the story of an experience that shaped them as a writer. The student — after an optional two-minute freewrite warm-up — tells their own, the real journal entry, and Alma reads it back against the attitude profile the quiz produced. The journal ends on the Print &amp; Submit tab, which gathers both halves onto one page for the completion check and the PDF export."
 category: writing_journal2
 index: 92.5
 lang: en-Latn-US
@@ -23,7 +23,8 @@ lang: en-Latn-US
     </Vertical>
 
     <!-- Tab 2: the running record of the student's work, carried over from 2a and
-         completed here — this is what the export gathers. -->
+         completed here. Browsable, not printable: it is built from Collapsibles,
+         which is why the export lives on its own page (tab 4) instead. -->
     <Vertical id="wj2b_journal_tab" title="My Journal">
       <Use ref="wj2_artifact" />
     </Vertical>
