@@ -194,7 +194,7 @@ rows:
   - 🎨 Creative writing (stories, poems, song lyrics)
     </TabularMCQ>
     <Markdown>**Anything else you write for school** that isn't a row above? Add it here.</Markdown>
-    <LineInput id="wj1_board_school_other" placeholder="e.g. lab reports, messages in another language, prompts to AI tools..." />
+    <TextArea id="wj1_board_school_other" rows="3" placeholder="e.g. lab reports, messages in another language, prompts to AI tools..." />
 
     <Markdown>### 🌙 Writing I do **OUTSIDE SCHOOL**</Markdown>
     <Markdown>*How often do you do each of these **outside school**?*</Markdown>
