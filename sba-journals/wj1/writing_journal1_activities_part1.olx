@@ -590,9 +590,9 @@ questions.
 
     <Markdown>### Does this feel like you?</Markdown>
     <ChoiceInput id="wj1_fit">
-      <Key value="Yes">Yes — that's me</Key>
-      <Key value="Partly">Partly</Key>
-      <Key value="Not really">Not really</Key>
+      <Key value="yes"       > Yes — that's me </Key>
+      <Key value="partly"    > Partly          </Key>
+      <Key value="not_really"> Not really      </Key>
     </ChoiceInput>
 
     <Markdown>
@@ -726,9 +726,11 @@ step in the conversation, edit it, and return here. Everything below updates to 
     </Markdown>
     <Use ref="wj1_type_result" />
 
-    <Markdown>
-**Does this feel like me?** {{@wj1_fit.value}}
+    <!-- <Use>, not {{@wj1_fit.value}}: the stored value is a code (`not_really`). -->
+    <Markdown>**Does this feel like me?**</Markdown>
+    <Use ref="wj1_fit" />
 
+    <Markdown>
 ---
 
 ### 4. My Reflection — a story from my writing life
