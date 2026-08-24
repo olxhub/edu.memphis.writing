@@ -437,7 +437,21 @@ uses eight of these — the same shorthand Alma, Lee, and Richard use. Remember 
 it's a **shorthand, not a verdict.** You know things about yourself it can't.
     </Markdown>
 
-    <ActionButton id="wj1_generate_btn" label="Generate your writer profile">
+    <!-- The tool only reads two reasons, so the button waits until exactly two
+         are ticked back in Why I Write; the two nudges below say which way the
+         count is off. The zero-reason fallback card further down stays as a
+         second line of defense. -->
+    <Markdown when="@wj1_why_top2.value.length &lt; 2">
+*The tool works from **two** reasons. Pop back to **Why I Write**, tick the two that come up most across
+your board, and this will be waiting for you.*
+    </Markdown>
+    <Markdown when="@wj1_why_top2.value.length &gt; 2">
+*That's more than two — and Alma would say that's a good problem to have. Back in **Why I Write**, narrow it
+to **just two**: which two really come up most?*
+    </Markdown>
+
+    <ActionButton id="wj1_generate_btn" label="Generate your writer profile"
+                  when="@wj1_why_top2.value.length === 2">
       <SetFieldAction target="wj1_generate_flag" field="value" value="go" />
     </ActionButton>
     <Hidden>
