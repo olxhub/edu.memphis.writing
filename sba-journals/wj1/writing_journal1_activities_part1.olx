@@ -211,7 +211,7 @@ rows:
   - 🎨 Creative writing (stories, poems, song lyrics)
     </TabularMCQ>
     <Markdown>**Anything else you write outside school** that isn't a row above? Add it here.</Markdown>
-    <LineInput id="wj1_board_outside_other" placeholder="e.g. messages to family, texts in another language, journaling, gaming chat..." />
+    <TextArea id="wj1_board_outside_other" rows="3" placeholder="e.g. messages to family, texts in another language, journaling, gaming chat..." />
   </Vertical>
 
   <!-- ===================================================================
