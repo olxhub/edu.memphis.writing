@@ -33,6 +33,14 @@ lang: en-Latn-US
       <Use ref="wj2_circle_members" />
     </Vertical>
 
+    <!-- Tab 4: print &amp; submit — the one page that gets exported, covering both halves
+         of the journal. Defined in the activity bank as wj2_print. Tabs hide inactive
+         panels with display:none, which print inherits, so the PDF carries this page
+         alone — the meeting, the chat half and the running record stay out of it. -->
+    <Vertical id="wj2b_print_tab" title="Print &amp; Submit">
+      <Use ref="wj2_print" />
+    </Vertical>
+
   </Tabs>
 </Cast>
 

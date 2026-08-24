@@ -30,7 +30,7 @@ lang: en-Latn-US
     -> listen to three peers' stories (receptive / modeling)
     -> TASK 2: your turn — write OR record the story of an experience that shaped you
     -> the tool reflects your story back and builds on your attitude profile
-    -> completion + export.
+    -> Print &amp; Submit (the print page: confirm, export, hand in).
 
   Reviewer comments addressed:
     C7  give the student the option to write OR record  -> optional freewrite warm-up + a
@@ -46,8 +46,8 @@ lang: en-Latn-US
 
 <Vertical id="wj2_activities_part1" title="Writing Journal 2 — Activities" launchable="true">
 
-  <!-- The Export-as-PDF button now lives in the meeting's completion area (wj2_meeting),
-       so it is visible full-width when the student finishes. -->
+  <!-- The Export-as-PDF button lives on the wj2_print page at the bottom of this file,
+       which writing_journal2b_sba_part1.olx mounts as its "Print &amp; Submit" tab. -->
 
   <!-- ===================================================================
        INTRO SLIDE
@@ -960,16 +960,67 @@ listens closely and asks one question back, the way a good writing group would.
       </LLMAction>
     </ActionButton>
 
-    <!-- ===================================================================
-         COMPLETION + EXPORT  (inside the meeting, full width)
-         =================================================================== -->
+    <!-- The meeting ends by handing the student off to the print page; the confirm
+         box, the export button and the wrap-up all live there now (wj2_print). -->
+    <Markdown id="wj2_meeting_handoff">
+## That's the Journal
 
-    <CheckboxInput id="wj2_completion_page">
-      <Markdown>**When you're happy with your entry, confirm you're done.**</Markdown>
-      <Key id="wj2_finished">I don't need to make any more changes.</Key>
-    </CheckboxInput>
+When you're happy with your entry, open the **Print &amp; Submit** tab up top. It gathers everything you
+did in this journal — the group chat half and the meeting — onto one page to read over, confirm, and
+export as a PDF for your course system.
+    </Markdown>
 
-    <Markdown id="wj2_complete_md" when="@wj2_completion_page.value.length > 0">
+  </Vertical>
+  <!-- end wj2_meeting -->
+
+  <!-- ===================================================================
+       PRINT &amp; SUBMIT  —  THE SUBMISSION PAGE
+       The one page that gets printed, covering BOTH halves of Writing Journal 2:
+       the group chat (2a) and the meeting (2b). It is mounted as the "Print &amp;
+       Submit" tab of writing_journal2b_sba_part1.olx.
+
+       Everything here must be MOUNTED at print time: window.print() photographs
+       the live DOM, and a block React never rendered cannot be recovered by a
+       print stylesheet. So: NO <Collapsible> (renders children only when
+       expanded), NO <Tabs> or <UseHistory> (one child at a time). when= and
+       <IntakeGate> are fine — they mount the branch the student earned.
+
+       ORDER IS AN INVERTED TRIANGLE — what an instructor most needs to read
+       comes first: the controls (print-hidden), then everything the student
+       WROTE, then the structured quiz answers, then the two LLM responses at
+       the very bottom. Scannable in a couple of minutes.
+
+       <Use> is a DAG reference, not a copy — the ranking boards and the feedback
+       here are the SAME nodes as on the working screens, so they always agree.
+       =================================================================== -->
+
+  <Vertical id="wj2_print">
+
+    <!-- The controls: on screen only. print="false" -> class print-hide, so the
+         heading, the confirm box, the button and the how-to never reach the PDF. -->
+    <Vertical id="wj2_print_controls" print="false">
+
+      <Markdown>
+## Print &amp; Submit
+
+Here is your whole journal on one page — both halves, the group chat and the meeting — in the order your
+instructor will read it: your writing first. Read it over; if you want to change an answer, go back to
+that step and edit it, then come back. Everything below updates to match.
+
+When it looks right, tick the box and the **Export as PDF** button will appear. Save the file, then upload
+it to your course system.
+      </Markdown>
+
+      <CheckboxInput id="wj2_completion_page">
+        <Markdown>**When you're happy with your entry, confirm you're done.**</Markdown>
+        <Key id="wj2_finished">I don't need to make any more changes.</Key>
+      </CheckboxInput>
+
+      <ActionButton id="wj2_print_btn" label="Export as PDF" when="@wj2_completion_page.value.length > 0">
+        <PrintAction id="wj2_print_action" />
+      </ActionButton>
+
+      <Markdown id="wj2_complete_md" when="@wj2_completion_page.value.length > 0">
 ## Journal Complete
 
 In this journal you noticed something writers rarely stop to name: **how you actually feel about writing,
@@ -979,15 +1030,114 @@ three other writers, and told the story of an experience that shaped *you.*
 
 Hold onto the big idea: these are **tendencies shaped by experience, not fixed traits** — which means
 they can change. That's the groundwork for the writing you'll do next in this course.
+      </Markdown>
 
-**Use the Export as PDF button below to save everything, then upload the PDF to your course system.**
+    </Vertical>
+
+    <!-- ---------------------------------------------------------------
+         1. THE STUDENT'S WRITING  (what the instructor actually reads)
+         The journal entry itself first, then the placement reflection. The
+         freewrite is a warm-up, not an answer, so it prints only if the student
+         actually used it.
+         --------------------------------------------------------------- -->
+
+    <Markdown>
+# Writing Journal 2: How Do You *Really* Feel About Writing?
+
+## My story — an experience that shaped me as a writer
+
+{{@wj2_story_text.value}}
+
+## Does the quiz placement fit? My reflection
+
+{{@wj2_placement_text.value}}
     </Markdown>
 
-    <ActionButton id="wj2_print_btn" label="Export as PDF" when="@wj2_completion_page.value.length > 0">
-      <PrintAction id="wj2_print_action" />
-    </ActionButton>
+    <Markdown when="@wj2_freewrite.value">
+## My two-minute warm-up freewrite
+
+*Unedited, by design.*
+
+{{@wj2_freewrite.value}}
+    </Markdown>
+
+    <!-- ---------------------------------------------------------------
+         2. THE STRUCTURED ANSWERS  (skimmed, not read)
+         The 26 attitude statements print as a plain question -> answer list:
+         the stored values spell themselves out (strongly_agree / agree /
+         disagree / strongly_disagree), so no legend and no 26 re-rendered radio
+         groups. The two places with no sane text rendering — the writer's-block
+         choice, whose five options are whole sentences, and the three drag-to-
+         rank boards, whose value is a list of indices — come back as <Use>.
+         --------------------------------------------------------------- -->
+
+    <Markdown>
+---
+
+## Where I started: is writer's block real?
+    </Markdown>
+    <Use ref="wj2_block_take" />
+
+    <Markdown>
+## What makes a good writer — how I ranked them
+
+*Most important at the top of each set.*
+
+**Set 1:**
+    </Markdown>
+    <Use ref="wj2_good_1" />
+    <Markdown>**Set 2:**</Markdown>
+    <Use ref="wj2_good_2" />
+    <Markdown>**Set 3:**</Markdown>
+    <Use ref="wj2_good_3" />
+
+    <Markdown>
+## How I feel about writing — all 26 statements
+
+1. Writing is a skill I want to get better at. — **{{@s01.value}}**
+2. It is frustrating to have to write about a subject I did not choose. — **{{@s02.value}}**
+3. Writing is usually boring for me. — **{{@s03.value}}**
+4. I worry that other people will criticize my writing. — **{{@s04.value}}**
+5. I like to write outside of school. — **{{@s05.value}}**
+6. It upsets me when I get low grades on a writing assignment. — **{{@s06.value}}**
+7. I am too impatient to spend a lot of time writing. — **{{@s07.value}}**
+8. I get so involved in my writing that I often lose track of time. — **{{@s08.value}}**
+9. Writing helps me learn. — **{{@s09.value}}**
+10. I feel it is important to know how to write well. — **{{@s10.value}}**
+11. I prefer writing when it isn't required. — **{{@s11.value}}**
+12. I like getting lots of shares or likes when I post something I have written. — **{{@s12.value}}**
+13. There are some subjects that I really enjoy writing about. — **{{@s13.value}}**
+14. I dislike writing. — **{{@s14.value}}**
+15. I find it difficult to communicate my ideas through writing. — **{{@s15.value}}**
+16. I like it when people compliment my writing skills. — **{{@s16.value}}**
+17. I feel confident when I am writing. — **{{@s17.value}}**
+18. It is important that I get a good grade on a writing assignment. — **{{@s18.value}}**
+19. When I write, I create content that I can be proud of. — **{{@s19.value}}**
+20. Writing feels really hard. — **{{@s20.value}}**
+21. I usually enjoy writing in school. — **{{@s21.value}}**
+22. I find writing interesting. — **{{@s22.value}}**
+23. I enjoy writing most when I get to decide what to write about. — **{{@s23.value}}**
+24. I understand things better when I write about them. — **{{@s24.value}}**
+25. There are some kinds of writing that I really like. — **{{@s25.value}}**
+26. I like it when I can focus and my writing flows. — **{{@s26.value}}**
+    </Markdown>
+
+    <!-- ---------------------------------------------------------------
+         3. THE MACHINE'S SIDE OF IT  (last: generated, not written)
+         --------------------------------------------------------------- -->
+
+    <Markdown>
+---
+
+## Where the quiz placed me — three continuums
+    </Markdown>
+    <Use ref="wj2_results_feedback" />
+
+    <Markdown>
+## What Alma heard in my story
+    </Markdown>
+    <Use ref="wj2_response_feedback" />
 
   </Vertical>
-  <!-- end wj2_meeting -->
 
 </Vertical>
