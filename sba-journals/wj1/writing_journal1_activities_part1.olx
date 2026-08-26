@@ -102,10 +102,15 @@ There are no wrong answers here and no grade for being one kind of writer or ano
 
   <!-- ===================================================================
        THE ORIENTATIONS  (read first, as the group's shorthand — so the
-       vocabulary is in place before the profile arrives). Read-only framing.
+       vocabulary is in place before the profile arrives). Nothing to fill in,
+       so the <Done> at the bottom is what tells the chat the student has read
+       it — without it the conversation rolls straight past a screen they never
+       looked at. The screen id moves to the wrapping Vertical so the chat's
+       `wj1_sidebar <- wj1_orientations` and the pane's Flash still find it.
        =================================================================== -->
 
-  <Markdown id="wj1_orientations">
+  <Vertical id="wj1_orientations">
+  <Markdown>
 ## The Circle's Shorthand: Writer Orientations
 
 The writer's circle has seen a lot of different writers and noticed that they tend to fall into general
@@ -134,14 +139,18 @@ at the end, the tool will match you to **one (or more)** of them:
 | 🏁 | **Finisher** | Writes to finish something real |
 | 🎯 | **Pragmatist** | Writes to reach and affect an audience |
   </Markdown>
+  <Done id="wj1_orientations_done" />
+  </Vertical>
 
   <!-- ===================================================================
        ALMA'S BOARD  (worked example / scaffolding. The student learns the
        activity by watching Alma build hers — and watching her be surprised by
-       it — rather than by reading instructions.) Read-only framing.
+       it — rather than by reading instructions.) Nothing to fill in, so the
+       <Done> at the bottom is what tells the chat the student has read it.
        =================================================================== -->
 
-  <Markdown id="wj1_alma_board">
+  <Vertical id="wj1_alma_board">
+  <Markdown>
 ## Alma's Writer Board
 
 *"It's just everything you write, laid out. Here — it's faster if I show you mine."*
@@ -164,6 +173,8 @@ Notice what happened: Alma didn't set out to prove anything. She just listed wha
 and the **volume** surprised her — and some of it (the group chat, the captions) she wouldn't have called
 "writing" at all. **That's what you're about to do next.**
   </Markdown>
+  <Done id="wj1_alma_board_done" />
+  </Vertical>
 
   <!-- ===================================================================
        TASK 1 — BUILD YOUR WRITER BOARD  (GENUINE DRAG-AND-DROP)

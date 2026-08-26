@@ -26,8 +26,10 @@ lang: en-Latn-US
            changing and didn't know where to look, so every screen the chat opens gets
            a pulse (Flash) as it lands, and the screens with something to fill in also
            get the caret (FocusAction) — which scrolls the control into view for free.
-           Read-only screens get the pulse alone: FocusAction on a Markdown finds
-           nothing to focus and warns.
+           Reading screens get the pulse alone. The chat points at them in dialogue
+           instead (the arrow lead-ins in the chatpeg) and gates on their Done control,
+           and the caret is deliberately NOT parked on that Done: it's the thing you
+           press after reading, not before.
 
            These live HERE, outside the SplitPanel, and NOT inside the screens. A
            Trigger's prevValue is persisted component state; a Trigger mounted inside a

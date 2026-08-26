@@ -605,9 +605,15 @@ opinion. Being honest gives you the most accurate writing profile.
        "WHAT YOUR WRITING VIBE SAYS ABOUT YOU"  (revised design doc: a playful
        explainer of the three writing relationships, shown after the quiz and
        BEFORE the personalized results. Read-only framing -> IntakeGate.)
+       Nothing to fill in, so the <Done> at the bottom is what tells the chat
+       the student has read it — without it the conversation rolls straight
+       past a screen they never looked at. The screen id moves to the wrapping
+       Vertical so the chat's `wj2_sidebar <- wj2_vibe_explainer` and the
+       pane's Flash still find it.
        =================================================================== -->
 
-    <Markdown id="wj2_vibe_explainer">
+    <Vertical id="wj2_vibe_explainer">
+    <Markdown>
 ## What Your Writing Vibe Says About You ✍️✨
 
 Before you see your personal results, here's the key. There are three big ways people relate to writing —
@@ -639,6 +645,8 @@ results**. You deliver exactly what a prompt is looking for and keep your eye on
 > the day, the class, or the prompt. Recognizing *where you're writing from* is the first step to making
 > writing work for you — which is exactly what your results are about to show you.
     </Markdown>
+    <Done id="wj2_vibe_explainer_done" />
+    </Vertical>
 
   <!-- ===================================================================
        RESULTS — THREE ATTITUDE CONTINUUMS  (computer-generated placement)
