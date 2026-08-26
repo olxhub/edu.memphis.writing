@@ -89,6 +89,18 @@ There are no wrong answers here and no grade for being one kind of writer or ano
   </Markdown>
 
   <!-- ===================================================================
+       THE BLANK SCREEN
+       Parked in the right-hand pane during stretches where the conversation
+       has moved past the last activity and the next one hasn't opened yet.
+       An empty pane that says nothing reads as a bug; this reads as on
+       purpose, and sends the student back to the left where the talking is.
+       =================================================================== -->
+
+  <Markdown id="wj1_blank">
+*(nothing here right now — the Circle's talking it through on the left)*
+  </Markdown>
+
+  <!-- ===================================================================
        THE ORIENTATIONS  (read first, as the group's shorthand — so the
        vocabulary is in place before the profile arrives). Read-only framing.
        =================================================================== -->

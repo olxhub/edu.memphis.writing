@@ -84,6 +84,18 @@ honesty. Work through the conversation on the left — each step opens an activi
     </Markdown>
 
   <!-- ===================================================================
+       THE BLANK SCREEN
+       Parked in the right-hand pane during stretches where the conversation
+       has moved past the last activity and the next one hasn't opened yet.
+       An empty pane that says nothing reads as a bug; this reads as on
+       purpose, and sends the student back to the left where the talking is.
+       =================================================================== -->
+
+  <Markdown id="wj2_blank">
+*(nothing here right now — the conversation's on the left)*
+  </Markdown>
+
+  <!-- ===================================================================
        THE DEBATE: YOUR QUICK TAKE  (activates prior experience; low friction)
        =================================================================== -->
 
