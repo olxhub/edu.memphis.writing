@@ -58,7 +58,7 @@ You: given one? [face=calm]
 
 Richard: guessed. it guesses. then you tell it where it's wrong — which is the useful part. [face=serious]
 
-Richard: read it properly. there's a **Done** at the bottom for when you have. [face=serious]
+Richard: read it properly. there's a **Mark as read** at the bottom for when you have. [face=serious]
 
 --- wait @wj1_orientations_done.value ---
 
@@ -101,7 +101,7 @@ Richard: and now? [face=serious]
 
 Alma: now it doesn't fit on one screen. [face=smile]
 
-Lee: don't worry, there's no quiz on Alma's paper-towel negotiations. **Done** at the bottom whenever you've seen enough [face=cheeky]
+Lee: don't worry, there's no quiz on Alma's paper-towel negotiations. hit **Mark as read** whenever you've seen enough [face=cheeky]
 
 --- wait @wj1_alma_board_done.value ---
 
@@ -113,7 +113,7 @@ Alma: okay, your turn. it doesn't have to be complete or organized — just put 
 
 Lee: and count the stuff you don't think counts. that's the whole trick. [face=cheeky]
 
-Alma: no rush at all. **Done** is down at the bottom for whenever you're ready [face=calm]
+Alma: no rush at all. **Mark as complete** is down at the bottom for whenever you're ready [face=calm]
 
 --- wait @wj1_board_done.value ---
 
