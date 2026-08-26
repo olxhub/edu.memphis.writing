@@ -113,6 +113,10 @@ Alma: okay, your turn. it doesn't have to be complete or organized — just put 
 
 Lee: and count the stuff you don't think counts. that's the whole trick. [face=cheeky]
 
+Alma: take your time — when the board feels like yours, click **Done** under it and we'll take a look together [face=smile]
+
+--- wait @wj1_board_done.value ---
+
 There It Is
 -----------
 wj1_sidebar <- wj1_board_noticing
