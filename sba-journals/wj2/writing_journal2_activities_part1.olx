@@ -986,6 +986,7 @@ export as a PDF for your course system.
     <ActionButton id="wj2_open_print_btn" label="Open Print &amp; Submit">
       <!-- activeTab is positional: 3 = Print &amp; Submit in wj2b_sba_tabs. -->
       <SetFieldAction id="wj2_open_print_set" target="wj2b_sba_tabs" field="activeTab" value="3" />
+      <ScrollToAction id="wj2_open_print_scroll" target="wj2_print" />
     </ActionButton>
 
   </Vertical>

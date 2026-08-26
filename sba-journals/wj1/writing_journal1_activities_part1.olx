@@ -680,6 +680,7 @@ export it as a PDF for your course system.
     <ActionButton id="wj1_open_print_btn" label="Open Print &amp; Submit">
       <!-- activeTab is positional: 3 = Print &amp; Submit in wj1_sba_tabs. -->
       <SetFieldAction id="wj1_open_print_set" target="wj1_sba_tabs" field="activeTab" value="3" />
+      <ScrollToAction id="wj1_open_print_scroll" target="wj1_print" />
     </ActionButton>
   </Vertical>
 
@@ -708,6 +709,7 @@ it to your course system.
            activeTab is positional: 3 = Print &amp; Submit in wj1_sba_tabs). -->
       <Trigger id="wj1_finished_jump" watch="'wj1_finished' in @wj1_completion_page.value" mode="once">
         <SetFieldAction id="wj1_finished_jump_set" target="wj1_sba_tabs" field="activeTab" value="3" />
+        <ScrollToAction id="wj1_finished_jump_scroll" target="wj1_print" />
       </Trigger>
 
       <!-- Gated on the confirm box, matching WJ2. ActionButtons are hidden from

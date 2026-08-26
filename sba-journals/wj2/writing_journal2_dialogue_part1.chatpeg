@@ -87,7 +87,9 @@ Your Results
 ------------
 wj2_sidebar <- wj2_results
 
-Alma: ok, moment of truth — hit the button on the right and it'll show you where you land on all three. it's three spectrums, not a label. nobody's "good" or "bad" [face=explaining]
+Alma: ok, moment of truth — hit **Show me my results** on the right and it'll show you where you land on all three. it's three spectrums, not a label. nobody's "good" or "bad" [face=explaining]
+
+--- wait @wj2_results_feedback.value ---
 
 Lee: mine leaned all the way toward "avoidance" and honestly? fair [face=concerned]
 

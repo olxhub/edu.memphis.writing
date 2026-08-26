@@ -45,14 +45,14 @@ lang: en-Latn-US
       </Trigger>
 
       <Trigger id="wj2_debate_react_cue"  watch="@wj2_sidebar.value === 'wj2_debate_react'"  mode="each">
-        <Flash id="wj2_debate_react_flash"  target="wj2_debate_react" />
+        <Flash id="wj2_debate_react_flash"  target="wj2_block_take" />
         <FocusAction id="wj2_debate_react_focus" target="wj2_block_take" />
       </Trigger>
 
       <!-- The quiz is one statement at a time and the later items are when-gated out of
            the DOM entirely, so the caret goes to statement 1 by name. -->
       <Trigger id="wj2_survey_cue"        watch="@wj2_sidebar.value === 'wj2_survey'"        mode="each">
-        <Flash id="wj2_survey_flash"        target="wj2_survey" />
+        <Flash id="wj2_survey_flash"        target="s01" />
         <FocusAction id="wj2_survey_focus"  target="s01" />
       </Trigger>
 
@@ -61,15 +61,15 @@ lang: en-Latn-US
            these screens is the Submit button, and parking the caret there invites an
            Enter keypress that submits the default order. -->
       <Trigger id="wj2_good_1_cue"        watch="@wj2_sidebar.value === 'wj2_good_1_screen'" mode="each">
-        <Flash id="wj2_good_1_flash"        target="wj2_good_1_screen" />
+        <Flash id="wj2_good_1_flash"        target="wj2_good_1" />
       </Trigger>
 
       <Trigger id="wj2_good_2_cue"        watch="@wj2_sidebar.value === 'wj2_good_2_screen'" mode="each">
-        <Flash id="wj2_good_2_flash"        target="wj2_good_2_screen" />
+        <Flash id="wj2_good_2_flash"        target="wj2_good_2" />
       </Trigger>
 
       <Trigger id="wj2_good_3_cue"        watch="@wj2_sidebar.value === 'wj2_good_3_screen'" mode="each">
-        <Flash id="wj2_good_3_flash"        target="wj2_good_3_screen" />
+        <Flash id="wj2_good_3_flash"        target="wj2_good_3" />
       </Trigger>
 
       <Trigger id="wj2_vibe_explainer_cue" watch="@wj2_sidebar.value === 'wj2_vibe_explainer'" mode="each">
@@ -77,7 +77,7 @@ lang: en-Latn-US
       </Trigger>
 
       <Trigger id="wj2_results_cue"       watch="@wj2_sidebar.value === 'wj2_results'"       mode="each">
-        <Flash id="wj2_results_flash"       target="wj2_results" />
+        <Flash id="wj2_results_flash"       target="wj2_results_btn" />
         <FocusAction id="wj2_results_focus" target="wj2_results_btn" />
       </Trigger>
 

@@ -59,12 +59,12 @@ lang: en-Latn-US
 
       <!-- The board's first control is the top-left radio of the FOR SCHOOL grid. -->
       <Trigger id="wj1_board_cue"          watch="@wj1_sidebar.value === 'wj1_board'"          mode="each">
-        <Flash id="wj1_board_flash"          target="wj1_board" />
+        <Flash id="wj1_board_flash"          target="wj1_board_school" />
         <FocusAction id="wj1_board_focus"    target="wj1_board_school" />
       </Trigger>
 
       <Trigger id="wj1_board_noticing_cue" watch="@wj1_sidebar.value === 'wj1_board_noticing'" mode="each">
-        <Flash id="wj1_board_noticing_flash" target="wj1_board_noticing" />
+        <Flash id="wj1_board_noticing_flash" target="wj1_board_noticing_text" />
         <FocusAction id="wj1_board_noticing_focus" target="wj1_board_noticing_text" />
       </Trigger>
 
@@ -72,7 +72,7 @@ lang: en-Latn-US
            what's on my board" collapsible's toggle. The first real question is the
            messaging dropdown. -->
       <Trigger id="wj1_why_cue"            watch="@wj1_sidebar.value === 'wj1_why'"            mode="each">
-        <Flash id="wj1_why_flash"            target="wj1_why" />
+        <Flash id="wj1_why_flash"            target="wj1_why_messaging" />
         <FocusAction id="wj1_why_focus"      target="wj1_why_messaging" />
       </Trigger>
 
@@ -80,12 +80,12 @@ lang: en-Latn-US
            which is what the student is there to press. The chat only opens this screen
            after two reasons are ticked, so the button is mounted when the cue fires. -->
       <Trigger id="wj1_profile_cue"        watch="@wj1_sidebar.value === 'wj1_profile'"        mode="each">
-        <Flash id="wj1_profile_flash"        target="wj1_profile" />
+        <Flash id="wj1_profile_flash"        target="wj1_generate_btn" />
         <FocusAction id="wj1_profile_focus"  target="wj1_generate_btn" />
       </Trigger>
 
       <Trigger id="wj1_wrapup_cue"         watch="@wj1_sidebar.value === 'wj1_wrapup'"         mode="each">
-        <Flash id="wj1_wrapup_flash"         target="wj1_wrapup" />
+        <Flash id="wj1_wrapup_flash"         target="wj1_open_print_btn" />
         <FocusAction id="wj1_wrapup_focus"   target="wj1_open_print_btn" />
       </Trigger>
 
