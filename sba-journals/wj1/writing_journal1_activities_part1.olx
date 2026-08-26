@@ -371,7 +371,7 @@ best. There's no right answer — pick what's true for **you.**
     <Markdown>
 ### Your two biggest reasons for writing
 
-Looking at the **whole board**, tick the **two** reasons that come up most often across everything you
+Looking at the **whole board**, click the **two** reasons that come up most often across everything you
 write.
     </Markdown>
     <CheckboxInput id="wj1_why_top2">
@@ -389,8 +389,8 @@ write.
       <Key value="something_else">Something else</Key>
     </CheckboxInput>
 
-    <Markdown when="@wj1_why_top2.value.length &lt; 2">*Tick **two** — the two that come up most across everything you write.*</Markdown>
-    <Markdown when="@wj1_why_top2.value.length &gt; 2">*That's more than two. Which **two** really come up most? Untick the rest.*</Markdown>
+    <Markdown when="@wj1_why_top2.value.length &lt; 2">*Click **two** — the two that come up most across everything you write.*</Markdown>
+    <Markdown when="@wj1_why_top2.value.length &gt; 2">*That's more than two. Which **two** really come up most? Unclick the rest.*</Markdown>
     <Markdown when="@wj1_why_top2.value.length === 2">*Got them — those two are what the profile runs on.*</Markdown>
 
     <Markdown>
@@ -446,7 +446,7 @@ it's a **shorthand, not a verdict.** You know things about yourself it can't.
          count is off. The zero-reason fallback card further down stays as a
          second line of defense. -->
     <Markdown when="@wj1_why_top2.value.length &lt; 2">
-*The tool works from **two** reasons. Pop back to **Why I Write**, tick the two that come up most across
+*The tool works from **two** reasons. Pop back to **Why I Write**, click the two that come up most across
 your board, and this will be waiting for you.*
     </Markdown>
     <Markdown when="@wj1_why_top2.value.length &gt; 2">
@@ -565,7 +565,7 @@ to **just two**: which two really come up most?*
         <!-- fallback: no type-triggering reason selected -->
         <IntakeGate ready="!('stay_in_touch' in @wj1_why_top2.value || 'community' in @wj1_why_top2.value || 'figure_out' in @wj1_why_top2.value || 'try_out' in @wj1_why_top2.value || 'get_done' in @wj1_why_top2.value || 'required' in @wj1_why_top2.value || 'remember' in @wj1_why_top2.value || 'proud' in @wj1_why_top2.value || 'enjoy' in @wj1_why_top2.value || 'feelings' in @wj1_why_top2.value || 'persuade' in @wj1_why_top2.value)">
           <Markdown> </Markdown>
-          <Markdown>*It looks like you haven't picked your **two biggest reasons** yet. Head back to **Why I Write**, tick your two, then come back and generate again.*</Markdown>
+          <Markdown>*It looks like you haven't picked your **two biggest reasons** yet. Head back to **Why I Write**, click your two, then come back and generate again.*</Markdown>
         </IntakeGate>
 
       </Vertical>
@@ -650,7 +650,7 @@ Your story should tell it what it couldn't know from your previous answers.
 ## That's the Journal
 
 Your whole journal — the board, your reasons, your writer type, and your reflection — is gathered on the
-**Print &amp; Submit** tab up top. Give it a read. When you're happy with it, tick the confirm box there and
+**Print &amp; Submit** tab up top. Give it a read. When you're happy with it, click the confirm box there and
 export it as a PDF for your course system.
     </Markdown>
     <ActionButton id="wj1_open_print_btn" label="Open Print &amp; Submit">
@@ -672,7 +672,7 @@ Here is your whole journal on one page, in the order your instructor will read i
 Read it over; if you want to change an answer, go back to that step in the conversation, edit it, and come
 back. Everything below updates to match.
 
-When it looks right, tick the box and the **Export as PDF** button will appear. Save the file, then upload
+When it looks right, click the box and the **Export as PDF** button will appear. Save the file, then upload
 it to your course system.
       </Markdown>
 
