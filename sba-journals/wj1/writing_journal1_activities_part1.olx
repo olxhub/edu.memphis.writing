@@ -139,7 +139,7 @@ at the end, the tool will match you to **one (or more)** of them:
 | 🏁 | **Finisher** | Writes to finish something real |
 | 🎯 | **Pragmatist** | Writes to reach and affect an audience |
   </Markdown>
-  <Done id="wj1_orientations_done" />
+  <Done id="wj1_orientations_done" label="Mark as read" />
   </Vertical>
 
   <!-- ===================================================================
@@ -173,7 +173,7 @@ Notice what happened: Alma didn't set out to prove anything. She just listed wha
 and the **volume** surprised her — and some of it (the group chat, the captions) she wouldn't have called
 "writing" at all. **That's what you're about to do next.**
   </Markdown>
-  <Done id="wj1_alma_board_done" />
+  <Done id="wj1_alma_board_done" label="Mark as read" />
   </Vertical>
 
   <!-- ===================================================================
