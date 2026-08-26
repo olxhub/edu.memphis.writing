@@ -21,6 +21,74 @@ lang: en-Latn-US
          meeting (Writing Journal 2b). The chat makes that jump itself: its last set
          command repoints the enclosing Course at wj2b_sba_part1. -->
     <Vertical id="wj2_circle_tab" title="The Circle">
+
+      <!-- Attention cues. The TA reported that students didn't notice the right pane
+           changing and didn't know where to look, so every screen the chat opens gets
+           a pulse (Flash) as it lands, and the screens with something to fill in also
+           get the caret (FocusAction) — which scrolls the control into view for free.
+           Read-only screens get the pulse alone: FocusAction on a Markdown finds
+           nothing to focus and warns.
+
+           These live HERE, outside the SplitPanel, and NOT inside the screens. A
+           Trigger's prevValue is persisted component state; a Trigger mounted inside a
+           UseHistory screen is unmounted the moment the pane moves on, so it never
+           observes its own expression go false and never re-fires. Mounted out here it
+           stays alive for the whole session, so mode="each" means each visit.
+
+           FocusAction aims at the specific control, not the screen, so that a later
+           edit reordering a screen can't silently move the caret somewhere useless. -->
+
+      <Trigger id="wj2_welcome_cue"       watch="@wj2_sidebar.value === 'wj2_welcome'"       mode="each">
+        <Flash id="wj2_welcome_flash"       target="wj2_welcome" />
+      </Trigger>
+
+      <Trigger id="wj2_debate_react_cue"  watch="@wj2_sidebar.value === 'wj2_debate_react'"  mode="each">
+        <Flash id="wj2_debate_react_flash"  target="wj2_debate_react" />
+        <FocusAction id="wj2_debate_react_focus" target="wj2_block_take" />
+      </Trigger>
+
+      <!-- The quiz is one statement at a time and the later items are when-gated out of
+           the DOM entirely, so the caret goes to statement 1 by name. -->
+      <Trigger id="wj2_survey_cue"        watch="@wj2_sidebar.value === 'wj2_survey'"        mode="each">
+        <Flash id="wj2_survey_flash"        target="wj2_survey" />
+        <FocusAction id="wj2_survey_focus"  target="s01" />
+      </Trigger>
+
+      <!-- The three ranking sets get the pulse only. SortableInput is drag-only — its
+           items carry no tabindex and no handle button — so the sole focusable thing on
+           these screens is the Submit button, and parking the caret there invites an
+           Enter keypress that submits the default order. -->
+      <Trigger id="wj2_good_1_cue"        watch="@wj2_sidebar.value === 'wj2_good_1_screen'" mode="each">
+        <Flash id="wj2_good_1_flash"        target="wj2_good_1_screen" />
+      </Trigger>
+
+      <Trigger id="wj2_good_2_cue"        watch="@wj2_sidebar.value === 'wj2_good_2_screen'" mode="each">
+        <Flash id="wj2_good_2_flash"        target="wj2_good_2_screen" />
+      </Trigger>
+
+      <Trigger id="wj2_good_3_cue"        watch="@wj2_sidebar.value === 'wj2_good_3_screen'" mode="each">
+        <Flash id="wj2_good_3_flash"        target="wj2_good_3_screen" />
+      </Trigger>
+
+      <Trigger id="wj2_vibe_explainer_cue" watch="@wj2_sidebar.value === 'wj2_vibe_explainer'" mode="each">
+        <Flash id="wj2_vibe_explainer_flash" target="wj2_vibe_explainer" />
+      </Trigger>
+
+      <Trigger id="wj2_results_cue"       watch="@wj2_sidebar.value === 'wj2_results'"       mode="each">
+        <Flash id="wj2_results_flash"       target="wj2_results" />
+        <FocusAction id="wj2_results_focus" target="wj2_results_btn" />
+      </Trigger>
+
+      <!-- Pulse only: the reflection TextArea for this step is embedded in the CHAT
+           (::wj2_placement_input), not in the pane, so the only focusable thing on the
+           screen is the "Show my results again" collapsible toggle. -->
+      <Trigger id="wj2_placement_reflect_cue" watch="@wj2_sidebar.value === 'wj2_placement_reflect'" mode="each">
+        <Flash id="wj2_placement_reflect_flash" target="wj2_placement_reflect" />
+      </Trigger>
+
+      <!-- wj2_blank gets no cue on purpose: the point of that screen is that the pane
+           has gone quiet, and there is nothing on it to look at. -->
+
       <SplitPanel id="wj2_sba_split" sizes="38, 62">
         <LeftPane>
           <Chat id="wj2_chat"

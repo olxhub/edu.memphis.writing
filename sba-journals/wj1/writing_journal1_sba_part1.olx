@@ -27,6 +27,69 @@ lang: en-Latn-US
         <LineInput id="wj1_types_ready" />
       </Hidden>
 
+      <!-- Attention cues. The TA reported that students didn't notice the right pane
+           changing and didn't know where to look, so every screen the chat opens gets
+           a pulse (Flash) as it lands, and the screens with something to fill in also
+           get the caret (FocusAction) — which scrolls the control into view for free.
+           Read-only screens get the pulse alone: FocusAction on a Markdown finds
+           nothing to focus and warns.
+
+           These live HERE, beside the flag holders, and NOT inside the screens. A
+           Trigger's prevValue is persisted component state; a Trigger mounted inside a
+           UseHistory screen is unmounted the moment the pane moves on, so it never
+           observes its own expression go false and never re-fires. Mounted out here it
+           stays alive for the whole session, so mode="each" means each visit.
+
+           FocusAction aims at the specific control, not the screen, so that a later
+           edit reordering a screen can't silently move the caret somewhere useless. -->
+
+      <Trigger id="wj1_welcome_cue"        watch="@wj1_sidebar.value === 'wj1_welcome'"        mode="each">
+        <Flash id="wj1_welcome_flash"        target="wj1_welcome" />
+      </Trigger>
+
+      <Trigger id="wj1_orientations_cue"   watch="@wj1_sidebar.value === 'wj1_orientations'"   mode="each">
+        <Flash id="wj1_orientations_flash"   target="wj1_orientations" />
+      </Trigger>
+
+      <Trigger id="wj1_alma_board_cue"     watch="@wj1_sidebar.value === 'wj1_alma_board'"     mode="each">
+        <Flash id="wj1_alma_board_flash"     target="wj1_alma_board" />
+      </Trigger>
+
+      <!-- The board's first control is the top-left radio of the FOR SCHOOL grid. -->
+      <Trigger id="wj1_board_cue"          watch="@wj1_sidebar.value === 'wj1_board'"          mode="each">
+        <Flash id="wj1_board_flash"          target="wj1_board" />
+        <FocusAction id="wj1_board_focus"    target="wj1_board_school" />
+      </Trigger>
+
+      <Trigger id="wj1_board_noticing_cue" watch="@wj1_sidebar.value === 'wj1_board_noticing'" mode="each">
+        <Flash id="wj1_board_noticing_flash" target="wj1_board_noticing" />
+        <FocusAction id="wj1_board_noticing_focus" target="wj1_board_noticing_text" />
+      </Trigger>
+
+      <!-- Not the screen: the first focusable thing on Why I Write is the "Remind me
+           what's on my board" collapsible's toggle. The first real question is the
+           messaging dropdown. -->
+      <Trigger id="wj1_why_cue"            watch="@wj1_sidebar.value === 'wj1_why'"            mode="each">
+        <Flash id="wj1_why_flash"            target="wj1_why" />
+        <FocusAction id="wj1_why_focus"      target="wj1_why_messaging" />
+      </Trigger>
+
+      <!-- The profile screen's one control is the button that generates the profile,
+           which is what the student is there to press. The chat only opens this screen
+           after two reasons are ticked, so the button is mounted when the cue fires. -->
+      <Trigger id="wj1_profile_cue"        watch="@wj1_sidebar.value === 'wj1_profile'"        mode="each">
+        <Flash id="wj1_profile_flash"        target="wj1_profile" />
+        <FocusAction id="wj1_profile_focus"  target="wj1_generate_btn" />
+      </Trigger>
+
+      <Trigger id="wj1_wrapup_cue"         watch="@wj1_sidebar.value === 'wj1_wrapup'"         mode="each">
+        <Flash id="wj1_wrapup_flash"         target="wj1_wrapup" />
+        <FocusAction id="wj1_wrapup_focus"   target="wj1_open_print_btn" />
+      </Trigger>
+
+      <!-- wj1_blank gets no cue on purpose: the point of that screen is that the pane
+           has gone quiet, and there is nothing on it to look at. -->
+
       <SplitPanel id="wj1_sba_split" sizes="38, 62">
         <LeftPane>
           <!-- print="false" keeps the transcript out of the exported PDF; SplitPanel's
