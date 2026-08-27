@@ -1,6 +1,6 @@
 title: Writing Journal 1 — Who Am I As a Writer?
 authors: Writing Journal 1 SBA, built in lo-blocks
-description: A first-year ENGL 1010 student, unsure they count as a writer at all, is invited by Alma to the Writers' Circle, which meets in person on the library's second floor. The student arrives mid-conversation, meets Lee and Richard, learns the group's habit of describing themselves by "writer orientation," watches Alma talk through her own Writer Board, then builds their own (what they write and how often), works out why they write each kind, and meets an AI-generated writer profile they are invited to argue with.
+description: A first-year ENGL 1010 student, unsure they count as a writer at all, is invited by Alma to the Writers' Circle, which meets in person on the library's second floor. The student arrives mid-conversation, meets Lee and Richard, learns the group's habit of describing themselves by "writer orientation," watches Alma talk through her own Writer Board, then builds their own (what they write and how often), works out why they write each kind, and finally reads the Circle's deck of eight writer-type cards and chooses one — then has to defend the choice with a story from their own writing life.
 ~~~~
 
 The Invitation
@@ -52,11 +52,15 @@ Lee: explorer 🧭. I write to find out what I think about things. [face=cheeky]
 
 Richard: technician 🔧. I write so things get done properly the first time. [face=serious]
 
-Lee: you don't have to pick one, by the way. you get given one at the end. [face=cheeky]
+Lee: you don't have to pick one this second, by the way. there's a whole deck of them. you take one at the end. [face=cheeky]
 
-You: given one? [face=calm]
+You: I pick my own? [face=calm]
 
-Richard: guessed. it guesses. then you tell it where it's wrong — which is the useful part. [face=serious]
+Alma: you pick your own. we used to guess for people — Richard would read your board and hand you a card. [face=explaining]
+
+Richard: and then you'd tell me where I was wrong, which was the useful part. [face=serious]
+
+Richard: this is the honest version of that. you choose, and then you say what makes you sure. harder, and it's yours. [face=serious]
 
 Richard: read it properly. there's a **Mark as read** at the bottom for when you have. [face=serious]
 
@@ -168,32 +172,44 @@ wj1_sidebar <- wj1_why
 Enough to Run It
 ----------------
 
-Alma: okay. so now you've got what you write and why you write it. that's enough to run the thing. [face=smile]
+Alma: okay. so now you've got what you write and why you write it. that's enough to go to the deck. [face=smile]
 
-You: what thing? [face=calm]
+You: what deck? [face=calm]
 
-Lee: the profile. it reads your board and your reasons and tells you what kind of writer you are. [face=cheeky]
+Lee: the cards. eight of them, one per writer type. you read through and take the one that's you. [face=cheeky]
 
-Richard: guesses what kind of writer you are. [face=serious]
+Lee: took me about nine seconds. explorer. [face=cheeky]
 
-Lee: it got me right. [face=cheeky]
+Richard: you took explorer because it's the card that excuses not outlining. [face=serious]
 
-Richard: it gave you explorer, which is what it gives everyone who won't outline. [face=serious]
+Lee: and I was right, so. [face=cheeky]
 
-Alma: mine came back community writer the first time. I agreed with most of it — not all of it. there was a whole part about collaboration that just wasn't me. that's fine. you're supposed to argue with it. [face=calm]
+Richard: read all eight. people take the first one that flatters them and stop. [face=serious]
 
-Your Writer Profile
--------------------
+Alma: I sat with two of mine for a while — pragmatist was close. what settled it was remembering one specific night I rewrote a message to my sister four times before I sent it. [face=calm]
+
+Alma: that's the part that matters, honestly. not which card. the thing you remember that makes you sure. [face=smile]
+
+Your Writer Type
+----------------
 wj1_sidebar <- wj1_profile
 wj1_types_ready <- go
 
-Lee: so? does it fit? [face=cheeky]
+Alma: there it is on the right -------> the arrows move you through the deck. no rush, read all eight. [face=smile]
 
-Alma: either way, say why. agreeing with it is fine — just say which part made you agree. [face=explaining]
+Richard: **This one's me** is the button, on the card. and you can change it after — nothing locks. [face=serious]
 
-Richard: and if it missed something, name it. it's working off twenty minutes of data. you've had your whole life. [face=serious]
+Lee: oh, and the whole list is up under the **Writer Types** tab now if you want them side by side. [face=cheeky]
 
-Lee: oh, and the whole list of writer types is up under the **Writer Types** tab now — kind of fun to see where yours lands next to the rest. [face=cheeky]
+--- wait @wj1_type_choice.value ---
+
+Lee: that one? okay, I can see it. [face=cheeky]
+
+Richard: now the part that's actually work. you chose it — so you can defend it. tell the story. [face=serious]
+
+Richard: a real one. what you were writing, what happened, what it took. a card can't hold a story. that's the entire reason we ask for one. [face=serious]
+
+Alma: and if it only fits you three-quarters of the way, say that in the story too. the quarter that doesn't fit is usually the interesting part. [face=calm]
 
 --- wait @wj1_profile_reflect.value ---
 
