@@ -39,7 +39,7 @@ lang: en-Latn-US
         </LeftPane>
         <RightPane>
           <Vertical id="tut_current_activity" title="Current Activity">
-            <UseHistory id="tut_sidebar" initial="tut_welcome" />
+            <UseHistory id="tut_sidebar" initial="tut_blank" />
           </Vertical>
         </RightPane>
       </SplitPanel>
@@ -71,6 +71,10 @@ That's all. Head back to **Main Content** to pick up where you left off.
 <!-- ===================================================================
      THE RIGHT-PANE SCREENS — pulled in by the chat via tut_sidebar.
      =================================================================== -->
+
+<Markdown id="tut_blank">
+*(nothing here yet — the conversation on the left starts things off)*
+</Markdown>
 
 <Vertical id="tut_welcome">
   <Markdown>

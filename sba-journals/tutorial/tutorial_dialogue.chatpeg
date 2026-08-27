@@ -5,13 +5,13 @@ description: Professor Ellington spends two minutes showing the student how the 
 
 How This Works
 --------------
-tut_sidebar <- tut_welcome
-
 Ellington: before I hand you over to your first journal, give me two minutes to show you how this thing works. [face=calm]
 
 Ellington: this left side is a conversation. it moves when you click **Continue** below — which you've apparently already worked out. [face=smile]
 
-Ellington: the right side is where the work happens. read the card that just landed, then click **Mark as read** at the bottom of it. it's over there ---> [face=explaining]
+tut_sidebar <- tut_welcome
+
+Ellington: the right side is where the work happens. read the card that just landed, then click **Mark as read** at the bottom of it — **Continue** stays off until you do. it's over there ---> [face=explaining]
 
 --- wait @tut_welcome_done.value ---
 
