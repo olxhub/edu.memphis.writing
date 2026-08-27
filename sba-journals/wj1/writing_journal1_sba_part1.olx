@@ -76,12 +76,15 @@ lang: en-Latn-US
         <FocusAction id="wj1_why_focus"      target="wj1_why_messaging" />
       </Trigger>
 
-      <!-- The profile screen's one control is the button that generates the profile,
-           which is what the student is there to press. The chat only opens this screen
-           after two reasons are ticked, so the button is mounted when the cue fires. -->
+      <!-- The profile screen's first control is now the card deck itself: the student
+           browses eight writer types and picks one, so the pulse belongs on the whole
+           Carousel rather than on any single card's button (which card is on screen
+           depends on where they left off). The caret lands on the deck's first arrow —
+           wrap="true" keeps both arrows live at every position, so it never lands on a
+           disabled control, and focusing it scrolls the deck into view. -->
       <Trigger id="wj1_profile_cue"        watch="@wj1_sidebar.value === 'wj1_profile'"        mode="each">
-        <Flash id="wj1_profile_flash"        target="wj1_generate_btn" />
-        <FocusAction id="wj1_profile_focus"  target="wj1_generate_btn" />
+        <Flash id="wj1_profile_flash"        target="wj1_type_carousel" />
+        <FocusAction id="wj1_profile_focus"  target="wj1_type_carousel" />
       </Trigger>
 
       <Trigger id="wj1_wrapup_cue"         watch="@wj1_sidebar.value === 'wj1_wrapup'"         mode="each">

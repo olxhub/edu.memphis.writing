@@ -1,6 +1,6 @@
 <!--
 ---
-description: "Writing Journal 1: Who Am I As a Writer? (activity bank). The in-person Writers' Circle meeting pulls each screen below into the right-hand pane as the conversation advances. A first-year composition student, unsure they count as a writer, watches Alma talk through her own Writer Board, then builds their own — marking how often (Frequently / Sometimes / Never) they do each kind of writing, FOR SCHOOL and OUTSIDE SCHOOL — works out WHY they do different kinds of writing, and finally generates a writer type computed deterministically from their two biggest reasons."
+description: "Writing Journal 1: Who Am I As a Writer? (activity bank). The in-person Writers' Circle meeting pulls each screen below into the right-hand pane as the conversation advances. A first-year composition student, unsure they count as a writer, watches Alma talk through her own Writer Board, then builds their own — marking how often (Frequently / Sometimes / Never) they do each kind of writing, FOR SCHOOL and OUTSIDE SCHOOL — works out WHY they do different kinds of writing, and finally browses the Circle's eight writer-type cards in a carousel and CHOOSES the one that fits, then defends the choice with a story."
 category: writing_journal1
 index: 95
 lang: en-Latn-US
@@ -26,7 +26,7 @@ lang: en-Latn-US
     -> TASK 1: build your Writer Board  (Frequently/Sometimes/Never grid; what & how often)
     -> the noticing question (optional one-line open response; ungraded)
     -> TASK 2: Why I Write  (assign a reason to each cluster; name your top two; reflect)
-    -> TASK 3: Your Writer Type  (deterministic type from the two biggest reasons; reflect with a story)
+    -> TASK 3: Your Writer Type  (browse all eight cards in a carousel, CHOOSE one; reflect with a story)
     -> Print &amp; Submit (the print page: confirm, export, hand in).
 
   Design-doc fidelity notes (kept out of the student's view):
@@ -40,11 +40,12 @@ lang: en-Latn-US
     * TASK 2's clusters are a fixed set (the doc's example clusters) rather than
       generated from each student's board, because the board items are authored, not
       free text. The fixed reason list keeps responses mappable to the Task 3 profiles.
-    * TASK 3 (Your Writer Type) is deterministic — NO LLM. The student's two biggest
-      reasons (wj1_why_top2) select one or two of the eight authored writer-type cards
-      via IntakeGate `in` conditions, revealed by a "Generate your writer profile"
-      button (SetFieldAction -> wj1_generate_flag). The assessed output is the
-      story-based reflection the student then writes.
+    * TASK 3 (Your Writer Type) is STUDENT-SELECTED — no LLM, and (as of the Aug 2026
+      revision) no assignment by the tool either. The TA reported that being handed a
+      personality-quiz result felt limiting, so the eight authored cards are now browsed
+      in a <Carousel> and the student picks one. The assessed output is still the
+      story-based reflection — but the story now defends or complicates a choice the
+      student made, which is a stronger writing prompt than arguing with a machine.
 -->
 
 <Vertical id="wj1_activities_part1" title="Writing Journal 1 — Activities" launchable="true">
@@ -82,8 +83,8 @@ you go. It's Thursday, 4:02 pm. Lee and Richard are already mid-conversation.
 - built a **Writer Board** — a map of the kinds of writing you actually do, for school and outside it,
   and how often;
 - worked out **why** you do different kinds of writing — the part a list of *what* can't tell you;
-- seen your whole board come together, and the **writer type** your two biggest reasons point to; and
-- worked out for yourself **how well it describes you as a writer.**
+- read through the Circle's eight **writer types** and **chosen the one** that sounds most like you; and
+- told a story from your writing life that shows **why that type fits you — or where it doesn't quite.**
 
 There are no wrong answers here and no grade for being one kind of writer or another. Work through the conversation on the left — each step opens an activity here on the right.
   </Markdown>
@@ -122,11 +123,12 @@ types. They've developed shorthand to name the writer types they've noticed.
 | 🧭 | **Explorer** *(Lee)* | "I write to find out what I think about things." |
 | 🔧 | **Technician** *(Richard)* | "I write so things get done properly the first time." |
 
-You don't have to pick one. At the end of the session, the Circle's tool will use your board and your reasons to choose which profile it thinks best represents you as a writer — and then, as Richard puts it, *you tell it where it's wrong. That's the
+Nobody hands you one of these. At the end of the session you'll read through the whole deck and **pick the
+one that sounds most like you** — and then, as Richard puts it, *say what makes you sure. That's the
 useful part.*
 
-Those three are just the ones Alma, Lee, and Richard use. **There are eight writer types in all** — and
-at the end, the tool will match you to **one (or more)** of them:
+Those three are just the ones Alma, Lee, and Richard use. **There are eight writer types in all**, and at
+the end the deck is yours to browse and choose from:
 
 | | Writer type | In a nutshell |
 |---|---|---|
@@ -415,7 +417,7 @@ write.
 
     <Markdown when="@wj1_why_top2.value.length &lt; 2">*Click **two** — the two that come up most across everything you write.*</Markdown>
     <Markdown when="@wj1_why_top2.value.length &gt; 2">*That's more than two. Which **two** really come up most? Unclick the rest.*</Markdown>
-    <Markdown when="@wj1_why_top2.value.length === 2">*Got them — those two are what the profile runs on.*</Markdown>
+    <Markdown when="@wj1_why_top2.value.length === 2">*Got them. Hold onto those two — they may point toward a writer type when you get to the deck.*</Markdown>
 
     <Markdown>
 ### One short reflection
@@ -429,175 +431,251 @@ A few honest sentences:
   </Vertical>
 
   <!-- ===================================================================
-       TASK 3 — YOUR WRITER BOARD, ALL TOGETHER  (DETERMINISTIC; NO LLM)
-       The culminating screen combines the student's Writer Board and their
-       reasons into (1) a structured read-back of what/where/how-often + why
-       (built straight from their own inputs via Ref), and (2) a writer-type
-       card (or two) chosen DETERMINISTICALLY from the two biggest reasons the
-       student named: each of the 8 authored profile cards is revealed by an
-       IntakeGate gated on the relevant reason(s). No AI, no button, no LLM
-       backend — the result is transparent, reproducible, and works in a
-       server-free static export.
+       TASK 3 — YOUR WRITER TYPE  (STUDENT-SELECTED; NO LLM, NO ASSIGNMENT)
+       The culminating screen puts the Circle's whole card deck in front of the
+       student and lets them choose. Three pieces:
 
-       Reason -> writer-type map (each reason triggers exactly one card):
-         stay_in_touch, community  -> 🤝 Community Writer
-         figure_out, try_out       -> 🧭 Explorer
-         get_done, required        -> 🔧 Technician
-         remember                  -> 🔁 Practitioner
-         proud                     -> 🏁 Finisher
-         enjoy                     -> 🌿 Hobbyist
-         feelings                  -> 💭 Dreamer
-         persuade                  -> 🎯 Pragmatist
-       (something_else triggers no card.) Two reasons show one or two cards —
-       the doc's "primary + a close second" without an opaque AI ranking.
-       The reflection is refocused (per instructor) from "what did the guess
-       get wrong" to "what does your board show about you as a writer?"
+         1. wj1_type_cards — the eight authored cards, parked in <Hidden> so they
+            live in the OLX DOM as addressable blocks without rendering twice.
+            Each card is a Vertical with a `title` (the Carousel prints it in its
+            own header), the card table, and a "This one's me" ActionButton.
+         2. wj1_type_carousel — a <Carousel> over those eight ids. It shows ONE
+            card at a time with prev/next arrows; wrap="true" so the deck is a
+            loop rather than a dead end at either edge.
+         3. wj1_type_result — the confirmation. One IntakeGate per type on
+            @wj1_type_choice.value, so the chosen card is MOUNTED (not merely
+            visible) and therefore survives into the printed PDF, which is a
+            photograph of the live DOM. See the wj1_print comment below.
+
+       The Carousel's own `value` field tracks whichever card is on screen right
+       now — it changes every time an arrow is clicked, so it is a CURSOR, not a
+       choice. The student's actual selection is a separate, deliberate write:
+       each card's button fires SetFieldAction into wj1_type_choice (a Hidden
+       LineInput) with an explicit semantic code. Browsing on afterwards cannot
+       silently change what they picked; clicking a different card's button can,
+       which is what changing your mind should look like.
+
+       Card id -> stored code (kept 1:1 and semantic for the event stream):
+         wj1_card_community_writer -> community_writer   🤝
+         wj1_card_explorer         -> explorer           🧭
+         wj1_card_technician       -> technician         🔧
+         wj1_card_hobbyist         -> hobbyist           🌿
+         wj1_card_dreamer          -> dreamer            💭
+         wj1_card_practitioner     -> practitioner       🔁
+         wj1_card_finisher         -> finisher           🏁
+         wj1_card_pragmatist       -> pragmatist         🎯
+       Deck order matches the eight-row table on the orientations screen and the
+       Writer Types tab, so a student meets them in the same order everywhere.
+
+       HISTORY (Aug 2026): this screen used to ASSIGN a type — the two biggest
+       reasons (wj1_why_top2) revealed one or two cards behind a "Generate your
+       writer profile" button. The TA reported that landing on a personality-quiz
+       result felt limiting, so the assignment machinery (wj1_generate_btn,
+       wj1_generate_flag, the reason->card IntakeGates, and the "does this feel
+       like you" question wj1_fit) is gone. The two biggest reasons keep their
+       role as reflection back in Why I Write; they no longer gate anything here.
        =================================================================== -->
 
   <Vertical id="wj1_profile">
     <Markdown>
 ## Your Writer Type
 
-You built your **Writer Board** and worked out **why** you do different kinds of writing. Based on the
-**two biggest reasons** you named, the Circle's tool can suggest the writer type it thinks best represents
-you — and if your two reasons pull in different directions, it will show you **more than one.** The Circle
-uses eight of these — the same shorthand Alma, Lee, and Richard use. Remember Alma's rule:
-it's a **shorthand, not a verdict.** You know things about yourself it can't.
+You built your **Writer Board** and worked out **why** you do different kinds of writing. Now here's the
+Circle's whole deck — **eight writer types**, the same shorthand Alma, Lee, and Richard use.
+
+Read through them with the arrows. Your two biggest reasons may **point toward** one of these, but nothing
+here is deciding for you: **you pick.** When you find the one that sounds most like you, click **This one's
+me** on that card. You can keep browsing afterwards and change it if a later card fits better.
+
+Remember Alma's rule: it's a **shorthand, not a verdict.** You know things about yourself no card does.
     </Markdown>
 
-    <!-- The tool only reads two reasons, so the button waits until exactly two
-         are ticked back in Why I Write; the two nudges below say which way the
-         count is off. The zero-reason fallback card further down stays as a
-         second line of defense. -->
-    <Markdown when="@wj1_why_top2.value.length &lt; 2">
-*The tool works from **two** reasons. Pop back to **Why I Write**, click the two that come up most across
-your board, and this will be waiting for you.*
-    </Markdown>
-    <Markdown when="@wj1_why_top2.value.length &gt; 2">
-*That's more than two — and Alma would say that's a good problem to have. Back in **Why I Write**, narrow it
-to **just two**: which two really come up most?*
-    </Markdown>
+    <!-- The deck. Parked in <Hidden> so these eight blocks exist in the OLX DOM
+         and are addressable by id, but render only where the Carousel puts them
+         (Hidden renders its kids into the tree and returns null). Card text is
+         unchanged from the assigned-profile version except that the old "Why
+         you're seeing it" row is gone — nothing is being shown BECAUSE of
+         anything now. Each card's inner Markdown carries its own id so the
+         confirmation section below can <Use> the table without the button. -->
+    <Hidden id="wj1_type_cards">
 
-    <ActionButton id="wj1_generate_btn" label="Generate your writer profile"
-                  when="@wj1_why_top2.value.length === 2">
-      <SetFieldAction target="wj1_generate_flag" field="value" value="go" />
-    </ActionButton>
-    <Hidden>
-      <LineInput id="wj1_generate_flag" />
-    </Hidden>
-
-    <IntakeGate ready="@wj1_generate_flag.value === 'go'">
-      <Markdown> </Markdown>
-      <Vertical id="wj1_type_result">
-
-        <!-- 🤝 Community Writer  <- stay_in_touch, community -->
-        <IntakeGate ready="'stay_in_touch' in @wj1_why_top2.value || 'community' in @wj1_why_top2.value">
-          <Markdown> </Markdown>
-          <Markdown>
+      <Vertical id="wj1_card_community_writer" title="🤝 The Community Writer">
+        <Markdown id="wj1_card_community_writer_text">
 | 🤝 The Community Writer | Core motivation: connection |
 | :-- | :-- |
 | **What it looks like** | You write to reach other people — messages, group chats, replies, shared docs — and you get sharper through back-and-forth with real readers. |
-| **Why you're seeing it** | One of your two biggest reasons was *staying in touch* or *being part of a group.* |
 | **A growth edge** | Take in feedback without becoming dependent on it. |
-          </Markdown>
-        </IntakeGate>
+        </Markdown>
+        <ActionButton id="wj1_pick_community_writer" label="This one's me">
+          <SetFieldAction id="wj1_pick_community_writer_set" target="wj1_type_choice" field="value" value="community_writer" />
+        </ActionButton>
+      </Vertical>
 
-        <!-- 🧭 Explorer  <- figure_out, try_out -->
-        <IntakeGate ready="'figure_out' in @wj1_why_top2.value || 'try_out' in @wj1_why_top2.value">
-          <Markdown> </Markdown>
-          <Markdown>
+      <Vertical id="wj1_card_explorer" title="🧭 The Explorer">
+        <Markdown id="wj1_card_explorer_text">
 | 🧭 The Explorer | Core motivation: curiosity |
 | :-- | :-- |
 | **What it looks like** | You write to find out what you think — often not knowing where a piece is going until you're in it. Writing is a way of thinking, and you like to experiment. *(Lee's type.)* |
-| **Why you're seeing it** | One of your two biggest reasons was *figuring out what you think* or *trying something out.* |
 | **A growth edge** | Decide when exploring is the goal and when a piece needs to land somewhere. |
-          </Markdown>
-        </IntakeGate>
+        </Markdown>
+        <ActionButton id="wj1_pick_explorer" label="This one's me">
+          <SetFieldAction id="wj1_pick_explorer_set" target="wj1_type_choice" field="value" value="explorer" />
+        </ActionButton>
+      </Vertical>
 
-        <!-- 🔧 Technician  <- get_done, required -->
-        <IntakeGate ready="'get_done' in @wj1_why_top2.value || 'required' in @wj1_why_top2.value">
-          <Markdown> </Markdown>
-          <Markdown>
+      <Vertical id="wj1_card_technician" title="🔧 The Technician">
+        <Markdown id="wj1_card_technician_text">
 | 🔧 The Technician | Core motivation: getting it done, and right |
 | :-- | :-- |
 | **What it looks like** | You write to accomplish a task cleanly — clear, organized, no wasted motion — and you like doing it properly the first time. *(Richard's type.)* |
-| **Why you're seeing it** | One of your two biggest reasons was *getting something done / staying organized* or *because a class or job requires it.* |
 | **A growth edge** | The parts of writing beyond correctness — voice, surprise, the reader's experience. |
-          </Markdown>
-        </IntakeGate>
+        </Markdown>
+        <ActionButton id="wj1_pick_technician" label="This one's me">
+          <SetFieldAction id="wj1_pick_technician_set" target="wj1_type_choice" field="value" value="technician" />
+        </ActionButton>
+      </Vertical>
 
-        <!-- 🔁 Practitioner  <- remember -->
-        <IntakeGate ready="'remember' in @wj1_why_top2.value">
-          <Markdown> </Markdown>
-          <Markdown>
-| 🔁 The Practitioner | Core motivation: steady practice |
-| :-- | :-- |
-| **What it looks like** | You write regularly and usefully — to keep track, to remember, to stay on top of things. You trust the habit more than inspiration, and it adds up. |
-| **Why you're seeing it** | One of your two biggest reasons was *to remember something.* |
-| **A growth edge** | Let some of that steady practice become writing you do for its own sake. |
-          </Markdown>
-        </IntakeGate>
-
-        <!-- 🏁 Finisher  <- proud -->
-        <IntakeGate ready="'proud' in @wj1_why_top2.value">
-          <Markdown> </Markdown>
-          <Markdown>
-| 🏁 The Finisher | Core motivation: finishing something real |
-| :-- | :-- |
-| **What it looks like** | You write to end up with a finished thing — something you can point to and say *I made that.* You have, or are building, the persistence to see a piece through. |
-| **Why you're seeing it** | One of your two biggest reasons was *making something you're proud of.* |
-| **A growth edge** | Treat finishing as the start of a writing life, not a one-time test. |
-          </Markdown>
-        </IntakeGate>
-
-        <!-- 🌿 Hobbyist  <- enjoy -->
-        <IntakeGate ready="'enjoy' in @wj1_why_top2.value">
-          <Markdown> </Markdown>
-          <Markdown>
+      <Vertical id="wj1_card_hobbyist" title="🌿 The Hobbyist">
+        <Markdown id="wj1_card_hobbyist_text">
 | 🌿 The Hobbyist | Core motivation: personal fulfillment |
 | :-- | :-- |
 | **What it looks like** | You write because you *like* it. You don't necessarily need a big audience or a grade — the writing itself is the point, seen or not. |
-| **Why you're seeing it** | One of your two biggest reasons was *because you enjoy it.* |
 | **A growth edge** | Protect the joy of it even as you push to grow. |
-          </Markdown>
-        </IntakeGate>
+        </Markdown>
+        <ActionButton id="wj1_pick_hobbyist" label="This one's me">
+          <SetFieldAction id="wj1_pick_hobbyist_set" target="wj1_type_choice" field="value" value="hobbyist" />
+        </ActionButton>
+      </Vertical>
 
-        <!-- 💭 Dreamer  <- feelings -->
-        <IntakeGate ready="'feelings' in @wj1_why_top2.value">
-          <Markdown> </Markdown>
-          <Markdown>
+      <Vertical id="wj1_card_dreamer" title="💭 The Dreamer">
+        <Markdown id="wj1_card_dreamer_text">
 | 💭 The Dreamer | Core motivation: expression |
 | :-- | :-- |
 | **What it looks like** | You write to get what's inside into words — to work out how you feel and make sense of things. There's an inner life your writing reaches for, polished or not. |
-| **Why you're seeing it** | One of your two biggest reasons was *to work out how you're feeling.* |
 | **A growth edge** | Turn some of that inner material into pieces you finish and share. |
-          </Markdown>
-        </IntakeGate>
+        </Markdown>
+        <ActionButton id="wj1_pick_dreamer" label="This one's me">
+          <SetFieldAction id="wj1_pick_dreamer_set" target="wj1_type_choice" field="value" value="dreamer" />
+        </ActionButton>
+      </Vertical>
 
-        <!-- 🎯 Pragmatist  <- persuade -->
-        <IntakeGate ready="'persuade' in @wj1_why_top2.value">
-          <Markdown> </Markdown>
-          <Markdown>
+      <Vertical id="wj1_card_practitioner" title="🔁 The Practitioner">
+        <Markdown id="wj1_card_practitioner_text">
+| 🔁 The Practitioner | Core motivation: steady practice |
+| :-- | :-- |
+| **What it looks like** | You write regularly and usefully — to keep track, to remember, to stay on top of things. You trust the habit more than inspiration, and it adds up. |
+| **A growth edge** | Let some of that steady practice become writing you do for its own sake. |
+        </Markdown>
+        <ActionButton id="wj1_pick_practitioner" label="This one's me">
+          <SetFieldAction id="wj1_pick_practitioner_set" target="wj1_type_choice" field="value" value="practitioner" />
+        </ActionButton>
+      </Vertical>
+
+      <Vertical id="wj1_card_finisher" title="🏁 The Finisher">
+        <Markdown id="wj1_card_finisher_text">
+| 🏁 The Finisher | Core motivation: finishing something real |
+| :-- | :-- |
+| **What it looks like** | You write to end up with a finished thing — something you can point to and say *I made that.* You have, or are building, the persistence to see a piece through. |
+| **A growth edge** | Treat finishing as the start of a writing life, not a one-time test. |
+        </Markdown>
+        <ActionButton id="wj1_pick_finisher" label="This one's me">
+          <SetFieldAction id="wj1_pick_finisher_set" target="wj1_type_choice" field="value" value="finisher" />
+        </ActionButton>
+      </Vertical>
+
+      <Vertical id="wj1_card_pragmatist" title="🎯 The Pragmatist">
+        <Markdown id="wj1_card_pragmatist_text">
 | 🎯 The Pragmatist | Core motivation: audience &amp; impact |
 | :-- | :-- |
 | **What it looks like** | You write to *reach* people — to make a point, change a mind, get a result. You think about the reader on the other end, not just the words on the page. |
-| **Why you're seeing it** | One of your two biggest reasons was *to persuade someone or make a point.* |
 | **A growth edge** | Keep your own voice and purpose alongside the goal of landing with an audience. |
-          </Markdown>
+        </Markdown>
+        <ActionButton id="wj1_pick_pragmatist" label="This one's me">
+          <SetFieldAction id="wj1_pick_pragmatist_set" target="wj1_type_choice" field="value" value="pragmatist" />
+        </ActionButton>
+      </Vertical>
+
+    </Hidden>
+
+    <!-- The deck itself. wrap="true" so the eight cards are a loop: a student who
+         arrives undecided can go either direction and never hit a dead arrow. -->
+    <Carousel id="wj1_type_carousel" wrap="true">
+      wj1_card_community_writer, wj1_card_explorer, wj1_card_technician, wj1_card_hobbyist,
+      wj1_card_dreamer, wj1_card_practitioner, wj1_card_finisher, wj1_card_pragmatist
+    </Carousel>
+
+    <!-- The choice. A Hidden LineInput rather than the Carousel's own value,
+         which is a browsing cursor and moves with the arrows. -->
+    <Hidden id="wj1_type_choice_holder">
+      <LineInput id="wj1_type_choice" />
+    </Hidden>
+
+    <!-- The confirmation. The outer gate keeps the screen quiet until they've
+         chosen; the eight inner gates mount exactly one card, which is what the
+         print page picks up by reference. -->
+    <IntakeGate ready="@wj1_type_choice.value">
+      <Markdown>*Nothing picked yet — browse the deck above and click **This one's me** on the card that sounds most like you.*</Markdown>
+      <Vertical id="wj1_type_result">
+
+        <!-- The choice, spelled out. The stored value is a CODE
+             (`community_writer`), so a <Ref> would print machine text; these
+             when= lines mount the one human sentence that matches, and they
+             travel with wj1_type_result into the artifact tab and the PDF. -->
+        <Markdown when="@wj1_type_choice.value === 'community_writer'">**The type I chose:** 🤝 Community Writer</Markdown>
+        <Markdown when="@wj1_type_choice.value === 'explorer'"        >**The type I chose:** 🧭 Explorer</Markdown>
+        <Markdown when="@wj1_type_choice.value === 'technician'"      >**The type I chose:** 🔧 Technician</Markdown>
+        <Markdown when="@wj1_type_choice.value === 'hobbyist'"        >**The type I chose:** 🌿 Hobbyist</Markdown>
+        <Markdown when="@wj1_type_choice.value === 'dreamer'"         >**The type I chose:** 💭 Dreamer</Markdown>
+        <Markdown when="@wj1_type_choice.value === 'practitioner'"    >**The type I chose:** 🔁 Practitioner</Markdown>
+        <Markdown when="@wj1_type_choice.value === 'finisher'"        >**The type I chose:** 🏁 Finisher</Markdown>
+        <Markdown when="@wj1_type_choice.value === 'pragmatist'"      >**The type I chose:** 🎯 Pragmatist</Markdown>
+
+        <IntakeGate ready="@wj1_type_choice.value === 'community_writer'">
+          <Markdown> </Markdown>
+          <Use ref="wj1_card_community_writer_text" />
         </IntakeGate>
 
-        <!-- fallback: no type-triggering reason selected -->
-        <IntakeGate ready="!('stay_in_touch' in @wj1_why_top2.value || 'community' in @wj1_why_top2.value || 'figure_out' in @wj1_why_top2.value || 'try_out' in @wj1_why_top2.value || 'get_done' in @wj1_why_top2.value || 'required' in @wj1_why_top2.value || 'remember' in @wj1_why_top2.value || 'proud' in @wj1_why_top2.value || 'enjoy' in @wj1_why_top2.value || 'feelings' in @wj1_why_top2.value || 'persuade' in @wj1_why_top2.value)">
+        <IntakeGate ready="@wj1_type_choice.value === 'explorer'">
           <Markdown> </Markdown>
-          <Markdown>*It looks like you haven't picked your **two biggest reasons** yet. Head back to **Why I Write**, click your two, then come back and generate again.*</Markdown>
+          <Use ref="wj1_card_explorer_text" />
+        </IntakeGate>
+
+        <IntakeGate ready="@wj1_type_choice.value === 'technician'">
+          <Markdown> </Markdown>
+          <Use ref="wj1_card_technician_text" />
+        </IntakeGate>
+
+        <IntakeGate ready="@wj1_type_choice.value === 'hobbyist'">
+          <Markdown> </Markdown>
+          <Use ref="wj1_card_hobbyist_text" />
+        </IntakeGate>
+
+        <IntakeGate ready="@wj1_type_choice.value === 'dreamer'">
+          <Markdown> </Markdown>
+          <Use ref="wj1_card_dreamer_text" />
+        </IntakeGate>
+
+        <IntakeGate ready="@wj1_type_choice.value === 'practitioner'">
+          <Markdown> </Markdown>
+          <Use ref="wj1_card_practitioner_text" />
+        </IntakeGate>
+
+        <IntakeGate ready="@wj1_type_choice.value === 'finisher'">
+          <Markdown> </Markdown>
+          <Use ref="wj1_card_finisher_text" />
+        </IntakeGate>
+
+        <IntakeGate ready="@wj1_type_choice.value === 'pragmatist'">
+          <Markdown> </Markdown>
+          <Use ref="wj1_card_pragmatist_text" />
         </IntakeGate>
 
       </Vertical>
     </IntakeGate>
 
     <Markdown>
-Once you've read it, think about how well it fits your actual writing practices and answer the below
-questions.
+Once you've chosen, think about what makes you sure — and about the parts of the card that don't quite
+land — and answer the question below.
     </Markdown>
 
     <!-- <Use>, not <Ref>: a Ref renders the STORED value, which is now a code
@@ -616,23 +694,21 @@ questions.
       <Use ref="wj1_why_creative" />
     </Collapsible>
 
-    <Markdown>### Does this feel like you?</Markdown>
-    <ChoiceInput id="wj1_fit">
-      <Key value="yes"       > Yes — that's me </Key>
-      <Key value="partly"    > Partly          </Key>
-      <Key value="not_really"> Not really      </Key>
-    </ChoiceInput>
+    <!-- The old "Does this feel like you?" Yes/Partly/Not really question
+         (wj1_fit) was removed with the Aug 2026 revision: once the student picks
+         the card themselves, asking whether it feels like them answers itself.
+         The story below carries the whole weight now, and it is a better prompt
+         for it — defending a choice is writing; rating a machine's guess isn't. -->
 
     <Markdown>
 ### Your reflection
 
-If you **agree** with your writer profile, think of and write a story from your writing life that
-illustrates how this profile fits you.
+You picked that card. Now show your work: **tell a story from your writing life that shows why this type
+fits you — or where it doesn't quite.**
 
-If you **disagree** with your writer profile, think of a story from your writing life that illustrates why
-this profile doesn't best capture your writing practices, and tell that story.
-
-Your story should tell it what it couldn't know from your previous answers.
+A real moment, not a summary. What you were writing, what happened, what it took. If the card gets you
+mostly right but misses something, the story is the place to say so — the part it can't hold is often the
+most interesting thing about a writer.
     </Markdown>
     <TextArea id="wj1_profile_reflect" rows="9" placeholder="Here's a story from my writing life..." />
   </Vertical>
@@ -673,7 +749,7 @@ Your story should tell it what it couldn't know from your previous answers.
     <Markdown>
 ## That's the Journal
 
-Your whole journal — the board, your reasons, your writer type, and your reflection — is gathered on the
+Your whole journal — the board, your reasons, the writer type you chose, and your reflection — is gathered on the
 **Print &amp; Submit** tab up top. Give it a read. When you're happy with it, click the confirm box there and
 export it as a PDF for your course system.
     </Markdown>
@@ -724,8 +800,8 @@ it to your course system.
 
 In this journal you did the thing the assignment was really asking for: you stopped and **noticed the
 writing you already do.** You built a **Writer Board** — for school and outside it — put the **why** on
-it, saw the **writer type** your reasons point to, and then did the most important part: you said **what
-your board shows about you as a writer.**
+it, read the Circle's eight **writer types** and **chose** the one that sounds like you, and then did the
+most important part: you told the story that shows why.
 
 Hold onto Alma's point: a writer type is a **snapshot, not a verdict.** The writing you're about to do in
 this course will keep changing the picture — which is exactly why it was worth mapping where you're
@@ -786,10 +862,10 @@ starting from.
 
     <!-- ---------------------------------------------------------------
          2. THE STRUCTURED ANSWERS  (skimmed, not read)
-         Text where a sane text rendering exists — the reason dropdowns and the
-         fit question store self-describing values, so a bullet list beats five
-         re-rendered widgets. Blocks where it doesn't: the two Writer Board
-         grids, the multi-select, and the writer-type cards come back as <Use>.
+         Text where a sane text rendering exists — the reason dropdowns store
+         self-describing values, so a bullet list beats five re-rendered widgets.
+         Blocks where it doesn't: the two Writer Board grids, the multi-select,
+         and the chosen writer-type card come back as <Use>.
          --------------------------------------------------------------- -->
 
     <Markdown>
@@ -810,9 +886,10 @@ starting from.
 
     <Markdown>
 ## My writer type
-
-*Does this feel like me?* — **{{@wj1_fit.value}}**
     </Markdown>
+    <!-- The card the student CHOSE, plus the choice spelled out in words. Both
+         live inside wj1_type_result, whose per-type gates mount exactly one
+         branch — so the PDF carries their card and no one else's. -->
     <Use ref="wj1_type_result" />
 
     <Markdown>
