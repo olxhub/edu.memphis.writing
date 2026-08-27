@@ -21,6 +21,7 @@ content_notice: >
   [GitHub](https://github.com/olxhub/edu.memphis.writing).
 routes:
   "/": edu.memphis.writing.sba/wj_course
+  "/tutorial": edu.memphis.writing.sba/tut_sba_part1
   "/wj1": edu.memphis.writing.sba/wj1_sba_part1
   "/wj2a": edu.memphis.writing.sba/wj2a_sba_part1
   "/wj2b": edu.memphis.writing.sba/wj2b_sba_part1

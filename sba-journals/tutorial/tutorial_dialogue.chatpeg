@@ -1,0 +1,48 @@
+title: Tutorial — How This Works
+authors: Writing Journals tutorial, built in lo-blocks
+description: Professor Ellington spends two minutes showing the student how the tool works — the conversation advances on Continue, activities land in the right pane, work saves as you type, and the tabs collect everything — then sends them to the Writers' Circle for their first journal.
+~~~~
+
+How This Works
+--------------
+tut_sidebar <- tut_welcome
+
+Ellington: before I hand you over to your first journal, give me two minutes to show you how this thing works. [face=calm]
+
+Ellington: this left side is a conversation. it moves when you click **Continue** below — which you've apparently already worked out. [face=smile]
+
+Ellington: the right side is where the work happens. a card just landed over there -------> read it, then click **Mark as read** at the bottom of it. [face=explaining]
+
+--- wait @tut_welcome_done.value ---
+
+Try It Once
+-----------
+tut_sidebar <- tut_practice
+
+Ellington: good. now the other half. when there's something to *do*, it shows up on the right the same way — and the box should be trying to get your attention right now. [face=explaining]
+
+Ellington: type anything at all in it. one word is plenty. [face=smile]
+
+--- wait @tut_practice_text.value ---
+
+Ellington: notice you never clicked "save" — there is no save button anywhere in here. every keystroke is kept as you go. you could close this tab mid-sentence and your half-sentence would be waiting when you came back. [face=calm]
+
+The Tabs
+--------
+tut_sidebar <- tut_tabs_note
+
+Ellington: last thing. the tabs along the top collect everything in one place — in the journals that's your running work, the people you're talking to, and the page where you export a PDF to hand in at the end. [face=explaining]
+
+Ellington: the conversation will point you to a tab whenever it matters, and you can always come back — nothing locks behind you. try the **Tips** tab up top if you're curious, then come back to **Main Content**. [face=smile]
+
+That's Everything
+-----------------
+tut_sidebar <- tut_finish
+
+Ellington: that's the whole machine. conversation on the left, work on the right, tabs up top. [face=smile]
+
+Ellington: your first journal is called "Who Am I As a Writer?" — three students who call themselves the Writers' Circle are expecting you. tap **Continue** and I'll take you over. [face=calm]
+
+--- pause ---
+
+wj_course.selectedChild <- edu.memphis.writing.sba/wj1_sba_part1

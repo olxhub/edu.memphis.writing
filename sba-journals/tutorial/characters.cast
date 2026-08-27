@@ -1,0 +1,30 @@
+# Tutorial — How This Works — ENGL 1010 Cast
+#
+# The tutorial is Professor Ellington's two minutes: before the student meets
+# the Writers' Circle, the professor walks them through the interface itself —
+# conversation on the left, work on the right, tabs up top. Ellington is
+# NAMED throughout the journals (assigns them) but never appears in them;
+# giving the professor the tutorial keeps the Circle's cold-open intact.
+# Avatar uses Open Peeps like the journal casts.
+#   https://www.dicebear.com/styles/open-peeps/#options
+
+You:
+  openPeeps:
+    face: smile
+    head: bangs
+    skinColor: ae5d29
+  profile:
+    role: Reflective Writer (you)
+    bio: A first-year student in ENGL 1010 at the University of Memphis, about to start the Writing Journals. Professor Ellington takes two minutes to show you how the tool works before handing you over to the Writers' Circle.
+    groups:
+      - you
+
+Ellington:
+  name: Professor Ellington
+  openPeeps:
+    face: calm
+    head: grayShort
+    skinColor: d08b5b
+  profile:
+    role: Professor — ENGL 1010
+    bio: Teaches First-Year Composition and assigns the Writing Journals. Practical, warm, allergic to wasted minutes. Walks each student through the interface once, points them at the Writers' Circle, and gets out of the way.

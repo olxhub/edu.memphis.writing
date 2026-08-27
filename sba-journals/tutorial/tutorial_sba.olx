@@ -1,0 +1,123 @@
+<!-- Tutorial — How This Works — ENGL 1010 -->
+<Vertical id="tut_sba_root">
+
+<!--
+---
+description: "Tutorial: How This Works. Professor Ellington's two-minute walkthrough of the interface before the first Writing Journal: the conversation advances on Continue, activities land in the right pane (with the attention cues the journals use), work saves on every keystroke, and the tabs collect everything. Ends by moving the course to Writing Journal 1."
+category: tutorial
+index: 93
+lang: en-Latn-US
+---
+-->
+
+<Cast cast="characters.cast" id="tut_sba_part1"
+      title="Tutorial: How This Works"
+      launchable="true">
+  <Tabs id="tut_sba_tabs" print="no-chrome">
+
+    <Vertical id="tut_main_tab" title="Main Content">
+
+      <!-- Attention cues, mirroring the journals: flash the task, focus the
+           input. Mounted here (outside the screens) so they observe the
+           sidebar transitions. -->
+      <Trigger id="tut_welcome_cue"  watch="@tut_sidebar.value === 'tut_welcome'"  mode="each">
+        <Flash id="tut_welcome_flash"  target="tut_welcome" />
+      </Trigger>
+      <Trigger id="tut_practice_cue" watch="@tut_sidebar.value === 'tut_practice'" mode="each">
+        <Flash id="tut_practice_flash"  target="tut_practice_text" />
+        <FocusAction id="tut_practice_focus" target="tut_practice_text" />
+      </Trigger>
+      <Trigger id="tut_tabs_note_cue" watch="@tut_sidebar.value === 'tut_tabs_note'" mode="each">
+        <Flash id="tut_tabs_note_flash" target="tut_tabs_note" />
+      </Trigger>
+
+      <SplitPanel id="tut_sba_split" sizes="38, 62">
+        <LeftPane>
+          <Chat id="tut_chat" print="false"
+                src="tutorial_dialogue.chatpeg"
+                height="460px" />
+        </LeftPane>
+        <RightPane>
+          <Vertical id="tut_current_activity" title="Current Activity">
+            <UseHistory id="tut_sidebar" initial="tut_welcome" />
+          </Vertical>
+        </RightPane>
+      </SplitPanel>
+    </Vertical>
+
+    <Vertical id="tut_tips_tab" title="Tips">
+      <Markdown id="tut_tips">
+## Tips
+
+A few things worth knowing, in no particular order:
+
+- **Your work saves itself.** Every answer and every keystroke is kept as you
+  go — there is no save button, and closing the tab loses nothing.
+- **The conversation waits for you.** If **Continue** looks grayed out,
+  something on the right still wants your attention — a box to fill, a
+  ranking to submit, or a **Mark as read** at the bottom of a reading.
+- **You can always go back.** Scroll the conversation to reread it; revisit
+  any tab at any time. Nothing locks behind you.
+- **When something happens on the right, it glows** — a soft blue pulse means
+  a new card or task just arrived.
+
+That's all. Head back to **Main Content** to pick up where you left off.
+      </Markdown>
+    </Vertical>
+
+  </Tabs>
+</Cast>
+
+<!-- ===================================================================
+     THE RIGHT-PANE SCREENS — pulled in by the chat via tut_sidebar.
+     =================================================================== -->
+
+<Vertical id="tut_welcome">
+  <Markdown>
+## Welcome
+
+This is the **right pane** — activities, readings, and results land here as
+the conversation on the left calls for them.
+
+When a card like this one is just for reading, there's a **Mark as read**
+switch at the bottom. Flip it when you're done and the conversation moves on.
+  </Markdown>
+  <Done id="tut_welcome_done" label="Mark as read" />
+</Vertical>
+
+<Vertical id="tut_practice">
+  <Markdown>
+## Try It
+
+Type anything in the box — one word is plenty. This is just to show you how
+answering works. (Notice it glowed and the cursor is already in it.)
+  </Markdown>
+  <LineInput id="tut_practice_text" placeholder="Anything at all..." />
+</Vertical>
+
+<Vertical id="tut_tabs_note">
+  <Markdown>
+## The Tabs
+
+Look at the top of the page: **Main Content** is this — the conversation and
+its activities. The other tabs collect things — in the journals you'll find
+your running work, the people you're talking with, and at the end, a
+**Print &amp; Submit** page that gathers everything for a PDF you hand in.
+
+Feel free to peek at **Tips** now. This card will be right here when you get
+back.
+  </Markdown>
+</Vertical>
+
+<Vertical id="tut_finish">
+  <Markdown>
+## That's Everything
+
+Conversation on the left. Work on the right. Tabs up top. Your writing saves
+itself.
+
+The Writers' Circle is waiting.
+  </Markdown>
+</Vertical>
+
+</Vertical>
