@@ -5,8 +5,8 @@
 ## My Writing Journal — Entry 1
 
 This tab gathers your work in one place as you go, so you can see the whole journal at a glance — your
-Writer Board, why you write what you write, the writer type your reasons point to, and your reflection on
-it. Come back any time to review what you've built.
+Writer Board, why you write what you write, the writer type you chose, and your reflection on it. Come
+back any time to review what you've built.
 
 *Submitting is handled on the **Print &amp; Submit** tab — that's where you'll confirm you're done and
 export your PDF.*
@@ -71,10 +71,14 @@ export your PDF.*
   </Collapsible>
 
   <Collapsible id="wj1_artifact_profile" title="3. My writer type">
-    <Markdown>*The writer type — or types, if your two reasons point in different directions — that your
-answers point to are shown as cards on the **The Circle** tab and on **Print &amp; Submit**.*</Markdown>
-    <Markdown>**Does that feel like me?**</Markdown>
-    <Ref id="wj1_art_fit" target="wj1_fit" />
+    <!-- The card the student CHOSE, by reference. wj1_type_result carries both
+         the choice in words and the card itself, and its per-type gates mount
+         exactly one branch, so this is always their card and only theirs. The
+         "Does this feel like me?" question that used to sit here (wj1_fit) went
+         away when the type stopped being assigned — see the Task 3 comment in
+         writing_journal1_activities_part1.olx. -->
+    <Markdown>*You chose this one over on **The Circle** tab. Head back there to browse the deck again if you want to change it.*</Markdown>
+    <Use ref="wj1_type_result" />
   </Collapsible>
 
   <Collapsible id="wj1_artifact_reflect" title="4. My reflection — a story from my writing life">

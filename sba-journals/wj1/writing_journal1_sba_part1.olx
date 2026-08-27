@@ -3,7 +3,7 @@
 
 <!--
 ---
-description: "Writing Journal 1: Who Am I As a Writer? The first journal in a first-year ENGL 1010 unit on writer identity. Professor Ellington assigns the journal; the student, unsure they count as a writer at all, is invited by Alma to the in-person Writers' Circle, where they meet Lee and Richard. The student watches Alma talk through her own Writer Board, then builds their own — a Frequently/Sometimes/Never inventory of what they write and how often, for school and outside it — works out why they do different kinds of writing, and generates a writer type computed deterministically from their two biggest reasons (no LLM). Same three peers as Writing Journal 2."
+description: "Writing Journal 1: Who Am I As a Writer? The first journal in a first-year ENGL 1010 unit on writer identity. Professor Ellington assigns the journal; the student, unsure they count as a writer at all, is invited by Alma to the in-person Writers' Circle, where they meet Lee and Richard. The student watches Alma talk through her own Writer Board, then builds their own — a Frequently/Sometimes/Never inventory of what they write and how often, for school and outside it — works out why they do different kinds of writing, then browses the Circle's deck of eight writer-type cards in a carousel and chooses the one that fits (no LLM, and no type assigned by the tool), defending the choice with a story. Same three peers as Writing Journal 2."
 category: writing_journal1
 index: 94
 lang: en-Latn-US
@@ -138,7 +138,7 @@ lang: en-Latn-US
          (wj1_types_ready is set from the chat, which also announces the tab in dialogue). -->
     <Vertical id="wj1_types_tab" title="Writer Types">
       <IntakeGate ready="@wj1_types_ready.value === 'go'">
-        <Markdown>*You'll unlock the full set of writer types once you meet your own — keep going in **The Circle**.*</Markdown>
+        <Markdown>*You'll unlock the full set of writer types once the Circle brings out the deck — keep going in **The Circle**.*</Markdown>
         <Use ref="wj1_writer_types" />
       </IntakeGate>
     </Vertical>
@@ -157,8 +157,9 @@ lang: en-Latn-US
 <Markdown id="wj1_writer_types">
 ## The Eight Writer Types
 
-At the end of the session, the Circle's tool matches you to one — or more — of these. Three of them are how Alma,
-Lee, and Richard describe themselves — but there are eight in all, and most writers are a mix.
+This is the deck you'll choose from at the end of the session — you take the card that sounds most like you.
+Three of them are how Alma, Lee, and Richard describe themselves, and most writers are a mix, so read all eight
+before you settle.
 
 | | Writer type | What drives them | A growth edge |
 |---|---|---|---|
