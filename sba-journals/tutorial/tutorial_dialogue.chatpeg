@@ -54,23 +54,22 @@ Ellington: notice you never clicked "save" — there is no save button anywhere 
 
 Looking Back
 ------------
-// Taught by doing, like everything else here. Every card the chat opens is a
-// target embed, so it leaves a labelled button in the transcript at the moment
-// it arrived — that button is the thing being taught, because it is the one way
-// back that also tells you WHERE in the conversation the card belonged.
-// The gate is unchanged from the arrow version: clicking the **Welcome** marker
-// writes tut_sidebar the same way a ‹ click does, so either route opens it.
-// The UseHistory bar (‹ arrow, one dot per card seen, › arrow) is kept as a
-// one-line aside rather than a second exercise — one move per beat.
-Ellington: one more move, and it's the one people miss. remember that bookmark button? every card that lands on the right leaves one, right where it came up in our conversation. [face=explaining]
+// Taught by doing, like everything else here. BOTH ways back are taught as
+// equals (Piotr): the bookmark button in the transcript, and the history bar
+// at the top of the pane (‹ arrow, one dot per card seen, › arrow). The
+// exercise accepts either route — a marker click and a ‹ click write
+// tut_sidebar the same way, so the one gate covers both.
+Ellington: one more move, and it's the one people miss. there are two ways back to any card you've seen. remember that bookmark button? every card that lands on the right leaves one, right where it came up in our conversation. [face=explaining]
 
-Ellington: scroll our chat back up and click the **Welcome** one — the moment the first card arrived. [face=explaining]
+Ellington: and up at the very top of the right side there's a **‹** arrow, with one dot for each card so far — that walks back through them in order. [face=explaining]
+
+Ellington: try either one — bring back the first card. scroll up and click **Welcome**, or click **‹** up top. [face=explaining]
 
 --- wait @tut_sidebar.value === 'tut_welcome' ---
 
-Ellington: there it is, just as you left it. that's the way back to anything: find the moment in the conversation, click its button, and the card returns. looking back never undoes anything. [face=smile]
+Ellington: there it is, just as you left it. that's the way back to anything: the button at its moment in the conversation, or the arrows up top. looking back never undoes anything. [face=smile]
 
-Ellington: (the ‹ › arrows at the very top of the right side walk the same history, if you'd rather step through it.) click **Continue** and I'll bring you back to where we were. [face=calm]
+Ellington: click **Continue** and I'll bring you back to where we were. [face=calm]
 
 The Tabs
 --------
