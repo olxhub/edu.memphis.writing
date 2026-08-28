@@ -3,12 +3,49 @@ authors: Writing Journal 2 SBA, built in lo-blocks
 description: A first-year ENGL 1010 student, unsure they count as a writer at all, is invited by Alma to the Writers' Circle, which meets in person on the library's second floor. The student arrives mid-conversation, meets Lee and Richard, learns the group's habit of describing themselves by "writer orientation," watches Alma talk through her own Writer Board, then builds their own (what they write and how often), works out why they write each kind, and finally reads the Circle's deck of eight writer-type cards and chooses one — then has to defend the choice with a story from their own writing life.
 ~~~~
 
+// HOW THE ACTIVITY PANE IS DRIVEN.
+//
+// Every screen the conversation opens on the right is written as a TARGET EMBED:
+//
+//     ::wj1_board [display=target:wj1_sidebar label="Your writer board"]
+//
+// which does two things at once. It repoints the wj1_sidebar UseHistory at that
+// screen (once, the first time the line is revealed), and it leaves a small
+// labelled button sitting in the transcript at exactly the point in the
+// conversation where that activity happened. Clicking that button repoints the
+// pane there again.
+//
+// The marker is the reason for the form. A bare `wj1_sidebar <- x` set command
+// is invisible: the pane changes, and the record of WHY is only in the
+// surrounding dialogue. With a marker, a student scrolling back through a long
+// session can see where each activity sat in the conversation and reopen it.
+// The activities themselves still live in the pane — this is not an inline
+// embed, and the chat column stays a conversation. (Inline `::screen` embeds
+// with no [display=...] are a different thing, used for widgets that belong IN
+// the talk.)
+//
+// The arrows that remain are `wj1_sidebar <- wj1_blank` — parking the pane on a
+// blank screen isn't an activity, so there is nothing worth marking or going
+// back to — and the non-pane flag sets (`wj1_board_ready <- go`,
+// `wj1_types_ready <- go`), which unlock tabs rather than move the pane.
+//
+// Timing note: a set command executes while the reveal walks past it, without
+// stopping; an embed is content, so it is revealed as its own beat. The pane
+// therefore changes one Continue BEFORE the line that announces it, never
+// after — which is the order you want anyway.
+//
+// The Flash/FocusAction Triggers in writing_journal1_sba_part1.olx watch
+// @wj1_sidebar.value and are unaffected: an embed writes the same field with the
+// same values the arrows did.
+
 Introduction
 --------------
-wj1_sidebar <- wj1_intro
+::wj1_intro [display=target:wj1_sidebar label="How this works"]
 
 // wj1_intro is a new page; its text is Katie's, from notes-for-piotr.txt
 // ("wj1_intro [NEW PAGE]"), and now lives in writing_journal1_activities_part1.olx.
+// It is also the UseHistory `initial`, so the embed's repoint is a no-op on a
+// fresh session — it is here for the transcript marker.
 
 Alma: Hey, before we get started, read the text to the right. When you're done, come back and hit the blue continue button.
 
@@ -16,7 +53,7 @@ Alma: Hey, before we get started, read the text to the right. When you're done, 
 
 The Invitation
 --------------
-wj1_sidebar <- wj1_welcome
+::wj1_welcome [display=target:wj1_sidebar label="Who am I as a writer?"]
 
 // Writing Team: "We want them to click a 'next' button at the bottom of wj1_intro
 // before the chat can be advanced." Implemented above as the
@@ -69,7 +106,7 @@ Alma: actually, before anything, we should do the introductions properly. not na
 
 Richard: the writer personalities? nobody takes them too seriously. they're a shorthand. [face=serious]
 
-wj1_sidebar <- wj1_orientations
+::wj1_orientations [display=target:wj1_sidebar label="Writer personalities"]
 
 Alma: I've shared the list of personalities. Look right. ---> [face=smile]
 
@@ -113,7 +150,7 @@ You: I don't think so. what is it? [face=calm]
 
 Alma: oh, then this is good timing. here — it's faster if I just show you mine. [face=smile]
 
-wj1_sidebar <- wj1_alma_board
+::wj1_alma_board [display=target:wj1_sidebar label="Alma's writer board"]
 
 Alma: there it is, on the right ---> [face=smile]
 
@@ -143,7 +180,7 @@ Lee: don't worry, there's no quiz on Alma's toilet paper negotiations. hit **mar
 
 Your Turn — Build Your Board
 ----------------------------
-wj1_sidebar <- wj1_board
+::wj1_board [display=target:wj1_sidebar label="Your writer board"]
 
 Alma: okay, your turn. it doesn't have to be complete or organized — just put down what you actually do. there's a side for school and a side for everything else. [face=smile]
 
@@ -161,9 +198,10 @@ There It Is
 
 Lee: there it is. [face=cheeky]
 
-// Set-before-announce: Alma's next line is the announce ("there's a spot on the
-// right"), so the pane has to be showing wj1_board_noticing by the time she says it.
-wj1_sidebar <- wj1_board_noticing
+// Embed-before-announce: Alma's next line is the announce ("there's a spot on the
+// right"), so the marker sits above it — the pane is showing wj1_board_noticing by
+// the time she says it, and the marker records where in the talk it arrived.
+::wj1_board_noticing [display=target:wj1_sidebar label="One thing you noticed"]
 
 Alma: okay, real question — did anything end up on there that you wouldn't have called writing before you sat down? there's a spot on the right. [face=explaining]
 
@@ -203,7 +241,7 @@ Alma: which is the thing about a board. any board. it's a list of what. it can't
 // moved to the end. Wording unchanged.
 Alma: so — go back through yours and put the why on it. Once you've answered the questions on the right, we can get back to the chat [face=smile]
 
-wj1_sidebar <- wj1_why
+::wj1_why [display=target:wj1_sidebar label="Why I write"]
 
 // Lee's beat, restored from 66566b3: it enumerates the parts of the Why screen, so
 // the student knows how long it runs before they start it.
@@ -246,7 +284,7 @@ Richard: the personalities belong to whoever uses it. that includes you now. [fa
 
 Your Writer Type
 ----------------
-wj1_sidebar <- wj1_profile
+::wj1_profile [display=target:wj1_sidebar label="Your writer type"]
 wj1_types_ready <- go
 
 Alma: Check these out on the right side. The arrows move you through the personalities. there it is, on the right ---> [face=smile]
@@ -269,7 +307,7 @@ Alma: The story Richard's talking about should explain why you chose that person
 
 Wrapping Up
 -----------
-wj1_sidebar <- wj1_wrapup
+::wj1_wrapup [display=target:wj1_sidebar label="That's the journal"]
 
 Alma: here's the thing to take with you — none of this is a verdict. it's a snapshot of what you write and why. the writing you're about to do in this class will keep changing the picture. [face=calm]
 

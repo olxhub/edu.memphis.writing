@@ -32,9 +32,16 @@ lang: en-Latn-US
            a pulse (Flash) as it lands, and the screens with something to fill in also
            get the caret (FocusAction) — which scrolls the control into view for free.
            Reading screens get the pulse alone. The chat points at them in dialogue
-           instead (the arrow lead-ins in the chatpeg) and gates on their Done control,
-           and the caret is deliberately NOT parked on that Done: it's the thing you
-           press after reading, not before.
+           instead (the lead-in lines beside each target embed in the chatpeg) and
+           gates on their Done control, and the caret is deliberately NOT parked on
+           that Done: it's the thing you press after reading, not before.
+
+           The chat drives this pane with target embeds — `::wj1_board
+           [display=target:wj1_sidebar label="..."]` — rather than bare set arrows, so
+           each activity also leaves a clickable marker in the transcript at the point
+           it came up. That writes @wj1_sidebar.value exactly as the arrows did, so
+           every watch expression below is unchanged, and a marker click re-fires its
+           cue (mode="each") just like a fresh arrival.
 
            These live HERE, beside the flag holders, and NOT inside the screens. A
            Trigger's prevValue is persisted component state; a Trigger mounted inside a
