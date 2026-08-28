@@ -32,7 +32,7 @@ lang: en-Latn-US
     </Vertical>
 
     <!-- Tab 3: the people in the Circle -->
-    <Vertical id="wj2b_people_tab" title="The Group">
+    <Vertical id="wj2b_people_tab" title="Characters">
       <Use ref="wj2_circle_members" />
     </Vertical>
 

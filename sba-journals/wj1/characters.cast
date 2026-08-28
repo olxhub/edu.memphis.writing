@@ -74,3 +74,13 @@ Richard:
       - Pressing an argument until it holds
     groups:
       - circle
+
+Ellington:
+  name: Professor Ellington
+  openPeeps:
+    face: calm
+    head: grayShort
+    skinColor: d08b5b
+  profile:
+    role: Professor — ENGL 1010
+    bio: Teaches First-Year Composition and assigned this journal. Not a member of the Writers' Circle — the Circle is deliberately student-run — but the reason everyone here is thinking about who they are as writers.

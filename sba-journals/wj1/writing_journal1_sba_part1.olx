@@ -120,7 +120,7 @@ lang: en-Latn-US
     </Vertical>
 
     <!-- Tab 3: the people in the Circle -->
-    <Vertical id="wj1_people_tab" title="The Group">
+    <Vertical id="wj1_people_tab" title="Characters">
       <Use ref="wj1_circle_members" />
     </Vertical>
 
@@ -136,7 +136,7 @@ lang: en-Latn-US
     <!-- Tab 5: reference — all eight writer types. Tabs can't appear conditionally, so the tab is
          always present but its CONTENT stays gated until the student reaches the profile step
          (wj1_types_ready is set from the chat, which also announces the tab in dialogue). -->
-    <Vertical id="wj1_types_tab" title="Writer Types">
+    <Vertical id="wj1_types_tab" title="Writer Personalities">
       <IntakeGate ready="@wj1_types_ready.value === 'go'">
         <Markdown>*You'll unlock the full set of writer types once the Circle brings out the deck — keep going in **The Circle**.*</Markdown>
         <Use ref="wj1_writer_types" />
@@ -151,7 +151,7 @@ lang: en-Latn-US
      ============================================================ -->
 
 <!-- Who's in the Writers' Circle (reads the cast) -->
-<TeamDirectory id="wj1_circle_members" title="Who's in the Writers' Circle"/>
+<TeamDirectory id="wj1_circle_members" title="Characters"/>
 
 <!-- Reference: all eight writer types, for the "Writer Types" tab -->
 <Markdown id="wj1_writer_types">

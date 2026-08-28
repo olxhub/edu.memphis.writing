@@ -111,7 +111,7 @@ lang: en-Latn-US
     </Vertical>
 
     <!-- Tab 3: the people in the Circle -->
-    <Vertical id="wj2_people_tab" title="The Group">
+    <Vertical id="wj2_people_tab" title="Characters">
       <Use ref="wj2_circle_members" />
     </Vertical>
 
@@ -125,7 +125,7 @@ lang: en-Latn-US
      ============================================================ -->
 
 <!-- Who's in the group chat / Circle (reads the cast) -->
-<TeamDirectory id="wj2_circle_members" title="Who's in the Writers' Circle"/>
+<TeamDirectory id="wj2_circle_members" title="Characters"/>
 
 <!-- Pull in the running-record artifact -->
 <Use ref="wj2_artifact" src="artifact.olx"/>
