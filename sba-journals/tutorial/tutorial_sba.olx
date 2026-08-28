@@ -30,6 +30,9 @@ lang: en-Latn-US
       <Trigger id="tut_tabs_note_cue" watch="@tut_sidebar.value === 'tut_tabs_note'" mode="each">
         <Flash id="tut_tabs_note_flash" target="tut_tabs_note" />
       </Trigger>
+      <Trigger id="tut_finish_cue" watch="@tut_sidebar.value === 'tut_finish'" mode="each">
+        <Flash id="tut_finish_flash" target="tut_finish" />
+      </Trigger>
 
       <SplitPanel id="tut_sba_split" sizes="38, 62">
         <LeftPane>
