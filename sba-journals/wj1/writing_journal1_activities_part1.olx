@@ -326,9 +326,9 @@ that's true for you** — as many as fit. There's no right answer.
       <Key value="something_else">Something else (I'll describe it below)</Key>
     </CheckboxInput>
     <!-- The "Something else" box for each group is gated on that group's own
-         dropdown, so it opens right where the student made the choice. Every
-         option carries an explicit `text | value` (dropdown.pegjs), so the
-         condition matches the stored CODE and survives copy edits to the prose. -->
+         checkboxes, so it opens right where the student made the choice. Every
+         option carries an explicit <Key value="…">, so the condition matches
+         the stored CODE and survives copy edits to the prose. -->
     <Vertical id="wj1_why_messaging_other_box" when="'something_else' in @wj1_why_messaging.value">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_messaging_other" rows="2" placeholder="Mostly, I do this writing to..." />
