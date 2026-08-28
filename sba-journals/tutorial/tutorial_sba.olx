@@ -73,13 +73,13 @@ A few things worth knowing, in no particular order:
 - **The conversation waits for you.** If **Continue** looks grayed out,
   something on the right still wants your attention — a box to fill, a
   ranking to submit, or a **Mark as read** at the bottom of a reading.
-- **You can always go back — two ways.** Every card that lands on the right
+- **You can always go back — two ways.** Every page that lands on the right
   leaves a small button in the conversation where it arrived: scroll up and
-  click it to reopen that card. Or use the ‹ › arrows at the top of the right
-  pane, one dot per card, to walk the same history in order. Revisit any tab
+  click it to reopen that page. Or use the ‹ › arrows at the top of the right
+  pane, one dot per page, to walk the same history in order. Revisit any tab
   at any time. Nothing locks behind you.
 - **Watch for the soft blue pulse.** When something on the right glows,
-  a new card or task just arrived there.
+  a new page or task just arrived there.
 
 That's all. Head back to **Main Content** to pick up where you left off.
       </Markdown>
@@ -103,7 +103,7 @@ That's all. Head back to **Main Content** to pick up where you left off.
 This is the **right pane** — activities, readings, and results land here as
 the conversation on the left calls for them.
 
-When a card like this one is just for reading, there's a **Mark as read**
+When a page like this one is just for reading, there's a **Mark as read**
 switch at the bottom. Flip it when you're done and the conversation moves on.
   </Markdown>
   <Done id="tut_welcome_done" label="Mark as read" />
@@ -128,7 +128,7 @@ its activities. The other tabs collect things — in the journals you'll find
 your running work, the people you're talking with, and at the end, a
 **Print &amp; Submit** page that gathers everything for a PDF you hand in.
 
-Feel free to peek at **Tips** now. This card will be right here when you get
+Feel free to peek at **Tips** now. This page will be right here when you get
 back.
   </Markdown>
 </Vertical>

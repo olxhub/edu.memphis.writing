@@ -32,13 +32,13 @@ description: Professor Ellington spends two minutes showing the student how the 
 
 How This Works
 --------------
-Ellington: before I hand you over to your first online journal, give me two minutes to show you how this thing works. [face=calm]
+Ellington: before I hand you over to your first online journal, give me two minutes to show you around. [face=calm]
 
-Ellington: this left side is a conversation. it moves when you click **Continue** below — which you've apparently already worked out. [face=smile]
+Ellington: over here on the left of the screen is the chat where you are part of a conversation. it moves when you click the **Continue** button below — which you've apparently already worked out. [face=smile]
 
 ::tut_welcome [display=target:tut_sidebar label="Welcome"]
 
-Ellington: the right side is where the work happens. read the card that just landed, then click **Mark as read** at the bottom of it — **Continue** stays off until you do. it's over there ---> [face=explaining]
+Ellington: the right side is where the work happens. sometimes there will be text for you to read, sometimes we will ask you to interact with survey items, and sometimes you will do some writing over there. For now, read the text that just landed and then click **Mark as read** at the bottom when you are done. You will notice that the **Continue** button stays off (grey) until you do. The text is over there ---> [face=explaining]
 
 Ellington: (that little **Welcome** button that just appeared here in the chat is a bookmark to it. ignore it for now — I'll come back to it.) [face=calm]
 
@@ -48,11 +48,11 @@ Try It Once
 -----------
 ::tut_practice [display=target:tut_sidebar label="Try it"]
 
-Ellington: good. now the other half — when there's something to *do*, it shows up the same way, and it pulses to catch your eye. type anything at all in the box; one word is plenty. [face=explaining]
+Ellington: good. when there's something to *do*, it shows up on the right side the same way, and it pulses to catch your eye. type anything at all in the box; one word is plenty. [face=explaining]
 
 --- wait @tut_practice_text.value ---
 
-Ellington: notice you never clicked "save" — there is no save button anywhere in here. every keystroke is kept as you go. you could close this tab mid-sentence and your half-sentence would be waiting when you came back. [face=calm]
+Ellington: notice you never clicked "save." there is no save button anywhere here. every keystroke and mouse click is kept as you go. you could close this tab mid-sentence and your half-sentence would be waiting when you came back. [face=calm]
 
 Looking Back
 ------------
@@ -62,27 +62,25 @@ Looking Back
 // exercise accepts either route — a marker click and a ‹ click both write
 // tut_sidebar.value (the marker writes the QUALIFIED ref, the bar re-writes
 // whatever history holds), so the one DefinitionKey-normalized gate covers both.
-Ellington: one more move, and it's the one people miss. there are two ways back to any card you've seen. remember that bookmark button? every card that lands on the right leaves one, right where it came up in our conversation. [face=explaining]
+Ellington: one more move, and it's the one people miss. there are two ways back to any page you've seen. remember that bookmark button? every page that lands on the right leaves one, right where it came up in our conversation. [face=explaining]
 
-Ellington: and up at the very top of the right side there's a **‹** arrow, with one dot for each card so far — that walks back through them in order. [face=explaining]
+Ellington: also, see the small dots at the very top of the right side, between the two arrows? that's every page you've seen so far — the **‹** arrow walks back through them in order. [face=explaining]
 
-Ellington: try either one — bring back the first card. scroll up and click **Welcome**, or click **‹** up top. [face=explaining]
+Ellington: try either one — bring back the first page. scroll up and click **Welcome**, or click **‹** up top. [face=explaining]
 
 // HACK: DefinitionKey(...) here is NOT long-term stable — do not copy to other
 // courses. Same story as the cue triggers in tutorial_sba.olx; see bugs.md.
 --- wait DefinitionKey(@tut_sidebar.value) === DefinitionKey('tut_welcome') ---
 
-Ellington: there it is, just as you left it. that's the way back to anything: the button at its moment in the conversation, or the arrows up top. looking back never undoes anything. [face=smile]
-
-Ellington: click **Continue** and I'll bring you back to where we were. [face=calm]
+Ellington: the buttons, arrows, and dots let you revisit any earlier activity whenever you like, and looking back never undoes anything. click **Continue** and I'll bring you back to where we were. [face=smile]
 
 The Tabs
 --------
 ::tut_tabs_note [display=target:tut_sidebar label="The tabs"]
 
-Ellington: last thing. the tabs along the top collect everything in one place — in the journals that's your running work, the people you're talking to, and the page where you export a PDF to hand in at the end. [face=explaining]
+Ellington: last thing. the tabs along the top collect everything in one place and provide more information. in the writing journals, you can think of it like your 'running work'. it has information on the people you're talking to, important ideas that come up, and the page where you export a PDF to submit to your instructor at the end. [face=explaining]
 
-Ellington: the conversation will point you to a tab whenever it matters, and you can always come back — nothing locks behind you. try the **Tips** tab up top if you're curious, then come back to **Main Content**. [face=smile]
+Ellington: sometimes the conversation will point you to a tab that contains important information. but you can always come back to your work and you are free to click the tabs at any time. nothing 'locks' behind you. try the **Tips** tab up top if you're curious, then come back to **Main Content**. [face=smile]
 
 That's Everything
 -----------------
@@ -90,7 +88,7 @@ That's Everything
 
 Ellington: that's the whole machine. conversation on the left, work on the right, tabs up top. [face=smile]
 
-Ellington: you did your first writing journal on paper. from here they move online — the next one is called "Who Am I As a Writer?", and three students who call themselves the Writers' Circle are expecting you. tap **Continue** and I'll take you over. [face=calm]
+Ellington: you did your first writing journal on paper. from here they move online. the next one is called "Who Am I As a Writer?", and three students are expecting you. soon, they will invite you to join them in what they call the Writers' Circle. tap **Continue** and I'll take you over. [face=calm]
 
 --- pause ---
 
