@@ -251,7 +251,6 @@ rows:
     </TabularMCQ>
     <Markdown>**Anything else you write outside school** that isn't a row above? Add it here.</Markdown>
     <TextArea id="wj1_board_outside_other" rows="3" placeholder="e.g. messages to family, texts in another language, journaling, gaming chat..." />
-    <Done id="wj1_board_done" />
   </Vertical>
 
   <!-- ===================================================================

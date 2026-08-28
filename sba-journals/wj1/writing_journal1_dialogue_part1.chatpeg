@@ -149,9 +149,12 @@ Alma: okay, your turn. it doesn't have to be complete or organized — just put 
 
 Lee: and count the stuff you don't think counts. that's the whole trick. [face=cheeky]
 
-Alma: no rush at all. **Mark as complete** is down at the bottom for whenever you're ready [face=calm]
+Alma: no rush at all. once there's at least one thing on it, we'll take a look together — you can keep adding after. [face=calm]
 
---- wait @wj1_board_done.value ---
+// The gate is "has started", not "is finished": it exists so the board doesn't
+// get skipped, and Alma has just said the board doesn't have to be complete. A
+// Done button implied a finish line (and was ours, not the course team's).
+--- wait Object.keys(@wj1_board_school.value).length >= 1 || Object.keys(@wj1_board_outside.value).length >= 1 || @wj1_board_school_other.value || @wj1_board_outside_other.value ---
 
 There It Is
 -----------
