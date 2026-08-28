@@ -3,9 +3,45 @@ authors: Writing Journal 3 SBA, built in lo-blocks
 description: A first-year ENGL 1010 student is in a group chat with three members of the Writers' Circle who are arguing about whether writer's block is real. A peer shares a playful writing-attitudes quiz that plots the student on three attitude continuums, and the student weighs the placement against their own sense of themselves. The chat closes by inviting them to the Circle's in-person meeting, and hands the course over to Writing Journal 3b.
 ~~~~
 
+// HOW THE ACTIVITY PANE IS DRIVEN.
+//
+// Every screen the conversation opens on the right is written as a TARGET EMBED:
+//
+//     ::wj2_survey [display=target:wj2_sidebar label="The quiz — part 1"]
+//
+// which does two things at once. It repoints the wj2_sidebar UseHistory at that
+// screen (once, the first time the line is revealed), and it leaves a small
+// labelled button sitting in the transcript at exactly the point in the group
+// chat where that activity happened. Clicking that button repoints the pane
+// there again.
+//
+// The marker is the reason for the form. A bare `wj2_sidebar <- x` set command
+// is invisible: the pane changes, and the record of WHY is only in the
+// surrounding dialogue. With a marker, a student scrolling back can see where
+// each activity sat in the conversation and reopen it. The activities still
+// live in the pane — this is not an inline embed, and the chat column stays a
+// conversation. (The one inline `::wj2_placement_input` below, with no
+// [display=...], is deliberate: that box belongs IN the talk.)
+//
+// The arrow that remains is `wj2_sidebar <- wj2_blank` — parking the pane on a
+// blank screen isn't an activity, so there is nothing worth marking or going
+// back to — plus the course hand-off set at the very end.
+//
+// Timing note: a set command executes while the reveal walks past it, without
+// stopping; an embed is content, so it is revealed as its own beat. The pane
+// therefore changes one Continue BEFORE the line that announces it, never
+// after — which is the order you want anyway.
+//
+// The Flash/FocusAction Triggers in writing_journal2a_sba_part1.olx watch
+// @wj2_sidebar.value and are unaffected: an embed writes the same field with the
+// same values the arrows did.
+
 A Group Chat, Blowing Up
 ------------------------
-wj2_sidebar <- wj2_welcome
+::wj2_welcome [display=target:wj2_sidebar label="How do you really feel about writing?"]
+
+// wj2_welcome is also the UseHistory `initial`, so the repoint is a no-op on a
+// fresh session — the embed is here for the transcript marker.
 
 Lee: ok not to be dramatic but I have literally been staring at this literacy narrative prompt for 40 minutes and I have zero words. writer's block is destroying me rn [face=worried]
 
@@ -26,7 +62,7 @@ Lee: ok, a quiz that might actually explain my own brain to me? say less, I'm in
 
 Richard: lmao fine, I'll bite. still not sure about this writer's block stuff though [face=suspicious]
 
-wj2_sidebar <- wj2_debate_react
+::wj2_debate_react [display=target:wj2_sidebar label="What's your take on writer's block?"]
 
 Alma: before we dive in, though — what's YOUR take? is writer's block a real thing, or not? ever had it? there's no wrong answer, just tap what feels true on the right [face=explaining]
 
@@ -34,7 +70,7 @@ Alma: before we dive in, though — what's YOUR take? is writer's block a real t
 
 Take the Quiz
 -------------
-wj2_sidebar <- wj2_survey
+::wj2_survey [display=target:wj2_sidebar label="The quiz — part 1"]
 
 Alma: ok, it's on the right now. it gives you one statement at a time — just go with your gut, first instinct, don't overthink it. work through all of them and it'll unlock the next part [face=explaining]
 
@@ -46,7 +82,7 @@ Lee: ok this is weirdly kind of fun. some of these are calling me out lol [face=
 
 What Makes Good Writing?
 ------------------------
-wj2_sidebar <- wj2_good_1_screen
+::wj2_good_1_screen [display=target:wj2_sidebar label="What makes a good writer? — set 1"]
 
 Alma: ok, part 2 — now it's not about how you feel, it's about what you think makes writing actually good. drag the four into order on the right, most to least important, then hit Submit [face=explaining]
 
@@ -56,7 +92,7 @@ Richard: finally, a section for people who care about doing it right [face=serio
 
 One More Set
 ------------
-wj2_sidebar <- wj2_good_2_screen
+::wj2_good_2_screen [display=target:wj2_sidebar label="What makes a good writer? — set 2"]
 
 Lee: of course ranking is your favorite part, Richard [face=cheeky]
 
@@ -66,7 +102,7 @@ Alma: two more sets — same deal, drag them into order and Submit [face=smile]
 
 Last Set
 --------
-wj2_sidebar <- wj2_good_3_screen
+::wj2_good_3_screen [display=target:wj2_sidebar label="What makes a good writer? — set 3"]
 
 Alma: last one, then I'll show you where you land [face=smile]
 
@@ -74,7 +110,7 @@ Alma: last one, then I'll show you where you land [face=smile]
 
 Your Writing Vibe
 -----------------
-wj2_sidebar <- wj2_vibe_explainer
+::wj2_vibe_explainer [display=target:wj2_sidebar label="What your writing vibe says about you"]
 
 Alma: ok before it shows you your personal results, it explains the three big "writing vibes" everyone has some mix of. I promise it's a fun one — it's on the right now ---> [face=smile]
 
@@ -86,7 +122,7 @@ Richard: it's less ridiculous than I expected. **Mark as read** when you're thro
 
 Your Results
 ------------
-wj2_sidebar <- wj2_results
+::wj2_results [display=target:wj2_sidebar label="Your writing personality"]
 
 Alma: ok, moment of truth — hit **Show me my results** on the right and it'll show you where you land on all three. it's three spectrums, not a label. nobody's "good" or "bad" [face=explaining]
 
@@ -98,7 +134,7 @@ Richard: mine said I write to get it correct. shocking, I know [face=serious]
 
 Does It Fit?
 ------------
-wj2_sidebar <- wj2_placement_reflect
+::wj2_placement_reflect [display=target:wj2_sidebar label="Does this feel accurate?"]
 
 Alma: so — does it actually fit you? that's the real question. take a few sentences right here and think it through — see if you can put your finger on a moment that explains where you landed [face=explaining]
 
