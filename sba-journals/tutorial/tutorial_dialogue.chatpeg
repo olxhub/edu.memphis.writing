@@ -25,6 +25,18 @@ Ellington: good. now the other half — when there's something to *do*, it shows
 
 Ellington: notice you never clicked "save" — there is no save button anywhere in here. every keystroke is kept as you go. you could close this tab mid-sentence and your half-sentence would be waiting when you came back. [face=calm]
 
+Looking Back
+------------
+// The row at the top of the right pane is the UseHistory bar: ‹ arrow, one dot
+// per card seen, › arrow. Taught by doing, like everything else here. The gate
+// checks value === 'tut_welcome', which one ‹ click reaches from tut_practice.
+// (The first dot is tut_blank, so the cue names the arrow, not a dot.)
+Ellington: one more move. see the small dots at the very top of the right side, between the two arrows? that's every card you've seen so far. click the **‹** arrow up there to look back at the first one. [face=explaining]
+
+--- wait @tut_sidebar.value === 'tut_welcome' ---
+
+Ellington: there it is, just as you left it. the arrows and the dots let you revisit any earlier activity whenever you like — looking back never undoes anything. click **Continue** and I'll bring you back to where we were. [face=smile]
+
 The Tabs
 --------
 tut_sidebar <- tut_tabs_note
