@@ -108,7 +108,7 @@ lang: en-Latn-US
         </LeftPane>
         <RightPane>
           <Vertical id="wj1_current_activity" title="Current Activity">
-            <UseHistory id="wj1_sidebar" initial="wj1_welcome" />
+            <UseHistory id="wj1_sidebar" initial="wj1_intro" />
           </Vertical>
         </RightPane>
       </SplitPanel>

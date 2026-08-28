@@ -3,11 +3,29 @@ authors: Writing Journal 1 SBA, built in lo-blocks
 description: A first-year ENGL 1010 student, unsure they count as a writer at all, is invited by Alma to the Writers' Circle, which meets in person on the library's second floor. The student arrives mid-conversation, meets Lee and Richard, learns the group's habit of describing themselves by "writer orientation," watches Alma talk through her own Writer Board, then builds their own (what they write and how often), works out why they write each kind, and finally reads the Circle's deck of eight writer-type cards and chooses one — then has to defend the choice with a story from their own writing life.
 ~~~~
 
+Introduction
+--------------
+wj1_sidebar <- wj1_intro
+
+// wj1_intro is a new page; its text is Katie's, from notes-for-piotr.txt
+// ("wj1_intro [NEW PAGE]"), and now lives in writing_journal1_activities_part1.olx.
+
+Alma: Hey, before we get started, read the text to the right. When you're done, come back and hit the blue continue button.
+
+--- wait @wj1_intro_done.value ---
+
 The Invitation
 --------------
 wj1_sidebar <- wj1_welcome
 
+// Writing Team: "We want them to click a 'next' button at the bottom of wj1_intro
+// before the chat can be advanced." Implemented above as the
+// `--- wait @wj1_intro_done.value ---` gate in the Introduction section, backed by
+// <Done id="wj1_intro_done" label="Next" /> at the bottom of the wj1_intro page.
+
 You: hey — you took 1010 last year right [face=smile]
+
+wj1_sidebar <- wj1_blank
 
 You: what did you even do for the "who am i as a writer" journal. i've been staring at it all week
 
@@ -16,6 +34,14 @@ Alma: ha. i stared at it for three days [face=cheeky]
 Alma: come to Writers' Circle on Thursday — 4pm, library, second floor [face=smile]
 
 Alma: it's just students who get together every so often to talk about writing. what they're working on, what's been tripping them up. no pressure, come see [face=calm]
+
+Alma: let me add you to the group chat
+
+// Writing Team, verbatim: "You've been added to the Writing Circle Group Chat"
+// OPEN QUESTION (Fable/Piotr to decide): how should this render? Candidates are a
+// system/narrator message in the chat stream vs. a section header marking the move
+// from the 1:1 thread into the group chat. Left unimplemented deliberately — no
+// rendering invented here.
 
 Thursday, 4:02
 --------------
@@ -28,42 +54,42 @@ Lee: it's a process. [face=cheeky]
 
 Richard: it's the absence of one. [face=serious]
 
-Alma: okay, be nice — we've got a guest. everyone, this is our friend from Ellington's 1010 this semester. [face=smile]
+Alma: okay, be nice — I've added a new member. My friend is taking Ellington's 1010 this semester. [face=smile]
 
 Richard: ah. so you got the "who am I as a writer" journal. [face=serious]
 
 You: yeah. I've been kind of stuck on it. [face=calm]
 
-Lee: everyone's stuck on that one. it's a strange question the first time somebody asks it out loud. [face=concerned]
+Lee: everyone's stuck on that one. it's a strange question the first time somebody asks you. [face=concerned]
 
 The Introductions
 -----------------
 
-Alma: actually — before anything, we should do the introductions properly. not names. the other thing. [face=explaining]
+Alma: actually, before anything, we should do the introductions properly. not names. the other thing. [face=explaining]
 
-Richard: there's a set of writer types this group uses. nobody takes them too seriously. they're a shorthand. [face=serious]
+Richard: the writer personalities?. nobody takes them too seriously. they're a shorthand. [face=serious]
 
 wj1_sidebar <- wj1_orientations
 
-Alma: the whole shorthand just came up over on the right ---> [face=smile]
+Alma: I've shared the list of personalities. Look right. ---> [face=smile]
 
-Alma: I'm a community writer 🤝 — which mostly means everything I write is pointed at another person. [face=smile]
+Alma: I'm a community writer 🤝 — which means I write primarily to interact with and connect with other people. [face=smile]
 
-Lee: explorer 🧭. I write to find out what I think about things. [face=cheeky]
+Lee: explorer 🧭. I write to learn and find out what I think about things. [face=cheeky]
 
-Richard: technician 🔧. I write so things get done properly the first time. [face=serious]
+Richard: technician 🔧. I write to get things done; writing is a tool for me. [face=serious]
 
-Lee: you don't have to pick one this second, by the way. there's a whole deck of them. you take one at the end. [face=cheeky]
+Lee: you don't have to pick one yet, btw there's a whole list of them. you choose one at the end. [face=cheeky]
 
 You: I pick my own? [face=calm]
 
-Alma: you pick your own. we used to guess for people — Richard would read your board and hand you a card. [face=explaining]
+Alma: yup. we used to guess for people. Richard would read your board and sort you. [face=explaining]
 
-Richard: and then you'd tell me where I was wrong, which was the useful part. [face=serious]
+Richard: and then you'd tell me I was wrong, which was the useful part. [face=serious]
 
-Richard: this is the honest version of that. you choose, and then you say what makes you sure. harder, and it's yours. [face=serious]
+Richard: this is the honest version of that. you choose, and then you explain why. It is harder, but it's yours. [face=serious]
 
-Richard: read it properly. there's a **Mark as read** at the bottom for when you have. [face=serious]
+Richard: go ahead and read it. there's a **Mark as read** at the bottom. Click it and the chat will reopen. [face=serious]
 
 --- wait @wj1_orientations_done.value ---
 
@@ -71,11 +97,11 @@ The Board Comes Up
 ------------------
 wj1_sidebar <- wj1_blank
 
-Lee: oh — Richard, the thing I was going to tell you. that assignment I turned in Tuesday? I was completely stuck on the opening. sat there an hour. [face=concerned]
+Lee: oh — Richard, I was going to tell you. that assignment I turned in Tuesday? I was stuck on the opening. sat there an hour. [face=concerned]
 
 Richard: and? [face=serious]
 
-Lee: and I pulled up my writer board for some reason, and I'd forgotten I had "long replies in group chats" on there. which is exactly what the opening needed to sound like — someone explaining something to a person they already know. wrote it like that, took twenty minutes. [face=awe]
+Lee: I pulled up my writer board for some reason, and I'd forgotten I had "long replies in group chats" on there. which is exactly what the opening needed to sound like — someone explaining something to a person they already know. I wrote it like that, took twenty minutes. [face=awe]
 
 Richard: that is the first genuinely useful thing that board has done for anybody. [face=serious]
 
@@ -91,11 +117,11 @@ wj1_sidebar <- wj1_alma_board
 
 Alma: there it is, on the right ---> [face=smile]
 
-Alma: so it's just everything you write, laid out. mine's — okay. texting, obviously. every day, outside school. the roommate group chat, which is ninety percent negotiating whose turn it is to buy paper towels. [face=explaining]
+Alma: so it's just everything you write, laid out. mine's ... okay. texting, obviously every day, mostly outside school. the roommate group chat, which is ninety percent negotiating whose turn it is to buy toilet paper. [face=explaining]
 
 Richard: gripping. [face=serious]
 
-Alma: it's still writing. emails go on the school side — professors, work, a couple times a week. discussion posts, weekly, and I resent every one of them. captions when I post something. comments on shared docs when we're doing group projects, which honestly adds up to a lot of— [face=explaining]
+Alma: the point is, it's still writing. emails go on the school side — professors, work, a couple times a week. discussion posts weekly, and I resent every one of them. captions when I post something. comments on shared docs when we're doing group projects, which honestly adds up to a lot of... [face=explaining]
 
 Alma: huh. I always forget how much ends up on here. [face=awe]
 
@@ -107,9 +133,13 @@ Richard: and now? [face=serious]
 
 Alma: now it doesn't fit on one screen. [face=smile]
 
-Lee: don't worry, there's no quiz on Alma's paper-towel negotiations. hit **Mark as read** whenever you've seen enough [face=cheeky]
+Lee: don't worry, there's no quiz on Alma's toilet paper negotiations. hit **mark as read** when you're done [face=cheeky]
 
 --- wait @wj1_alma_board_done.value ---
+
+// PLATFORM/CONTENT REQUEST (later, not this merge) — Writing Team: "Each time we
+// display the 'mark as read' button, can we have text appear once they click it
+// that says 'go back to chat'?" Applies to every <Done> on the right-hand pages.
 
 Your Turn — Build Your Board
 ----------------------------
@@ -125,9 +155,12 @@ Alma: no rush at all. **Mark as complete** is down at the bottom for whenever yo
 
 There It Is
 -----------
-wj1_sidebar <- wj1_board_noticing
 
 Lee: there it is. [face=cheeky]
+
+// Set-before-announce: Alma's next line is the announce ("there's a spot on the
+// right"), so the pane has to be showing wj1_board_noticing by the time she says it.
+wj1_sidebar <- wj1_board_noticing
 
 Alma: okay, real question — did anything end up on there that you wouldn't have called writing before you sat down? there's a spot on the right. [face=explaining]
 
@@ -149,26 +182,35 @@ Richard: for the record — the grocery list thing. that's still writing. [face=
 
 Lee: Richard. it's a list of nouns. [face=cheeky]
 
-Richard: it's a list of nouns that does a job. [face=serious]
+Richard: it's a list of nouns, in a certain order, that does a job. [face=serious]
 
 Lee: by that standard my phone's autocomplete is a writer. [face=cheeky]
 
-Alma: okay, but how would you two ever settle it? you're both looking at the same word on the same board. nothing on there tells either of you who's right. [face=explaining]
-
-Richard: …no, it does, though. not the item. the reason. I write a list so the thing gets done. if you wrote the exact same list because it makes your head quieter — that's not the same activity. it just looks the same from outside. [face=thinking]
+Richard: not the item. the reason. I write a list to help me organize my thinking and accomplish a task. if you wrote the exact same list because it makes your head quieter, that's not the same activity. it just looks the same from outside. [face=thinking]
 
 Lee: huh. [face=awe]
 
 Richard: don't do that. [face=serious]
 
-Lee: no — that's why the board actually worked for me on Tuesday. I didn't use "long replies in group chats." I used the fact that I write those to explain something to someone I already know. that was the part I needed. the entry on its own would've told me nothing. [face=thinking]
+Lee: no, that's why the board actually worked for me on Tuesday. I didn't use "long replies in group chats." I used the fact that I write those to explain something to someone I already know. that was the part I needed. the entry on its own would've told me nothing. [face=thinking]
 
 Alma: which is the thing about a board. any board. it's a list of what. it can't tell you whether any of it counts, or what a single piece of it is for. [face=explaining]
 
-Alma: so — go back through yours and put the why on it. [face=smile]
+// Syntax: [face=...] must be the last thing on a dialogue line, so the face tag
+// moved to the end. Wording unchanged.
+Alma: so — go back through yours and put the why on it. Once you've answered the questions on the right, we can get back to the chat [face=smile]
 
 wj1_sidebar <- wj1_why
 
+// Lee's beat, restored from 66566b3: it enumerates the parts of the Why screen, so
+// the student knows how long it runs before they start it.
+// TWO TENSIONS for Fable/Piotr, both left as-is rather than resolved here:
+//   1. "the two that come up most" hard-codes the current wj1_why_top2 gate. If
+//      Katie's pick-up-to-4 change lands, this phrasing goes stale and so does the
+//      `@wj1_why_top2.value.length === 2` condition below.
+//   2. Alma's line above already ends "we can get back to the chat," which overlaps
+//      Lee's "we'll still be here." One of the two reassurances could go; the
+//      enumeration is the half that carries information.
 Lee: fair warning, it's a longer one — the reasons, then the two that come up most, then a few sentences at the end. we'll still be here. [face=cheeky]
 
 --- wait @wj1_why_reflect.value && @wj1_why_top2.value.length === 2 ---
@@ -177,58 +219,52 @@ Enough to Run It
 ----------------
 wj1_sidebar <- wj1_blank
 
-Alma: okay. so now you've got what you write and why you write it. that's enough to go to the deck. [face=smile]
-
-You: what deck? [face=calm]
-
-Lee: the cards. one per writer type. you read through them and you take the one that's you. [face=cheeky]
+Alma: okay. so now you've thought a bit more about what and why you write. Maybe lets look back at the writer personalities [face=smile]
 
 Lee: took me about nine seconds. explorer. [face=cheeky]
 
-Richard: nine seconds is not reading. you took explorer because it's the card that excuses not outlining. [face=serious]
+Richard: nine seconds is not reading. you chose explorer because it gives you an excuse to avoid outlining. [face=serious]
 
-Lee: and yet. correct. [face=cheeky]
+Lee: and yet, its correct. [face=cheeky]
 
-Lee: meanwhile Richard took technician, which stunned this room to its core. [face=cheeky]
+Lee: meanwhile Richard chose technician, which stunned this room to its core. [face=cheeky]
 
-Richard: I took it because it's accurate. I read every card first. twice. [face=serious]
+Richard: I took it because it's accurate. I read them all first. twice. [face=serious]
 
 Lee: he did read them all twice. I watched him do it. [face=cheeky]
 
-Richard: which is the actual advice. read all of them. people stop at the first card that flatters them and call that a decision. [face=serious]
+Richard: which is the actual advice. read all of them. people stop at the first personality that flatters them and call that a decision. [face=serious]
 
 Alma: mine took me a while — pragmatist was close, honestly. what settled it was remembering one specific night I rewrote a message to my sister four times before I sent it. [face=calm]
 
-Alma: that's the part that matters. not which card. the thing you remember that makes you sure. [face=smile]
-
 You: what if none of them are me? [face=calm]
 
-Alma: then you write one. there's a blank card at the back for exactly that. [face=smile]
+Alma: then you write one that describes you and name it. [face=smile]
 
-Lee: somebody made every card in that deck, you know. they didn't come down off a mountain. [face=cheeky]
+Lee: students like you wrote every personality in that list, you know. they didn't come down off a mountain. [face=cheeky]
 
-Richard: the shorthand belongs to whoever's using it. that includes you now. [face=serious]
+Richard: the personalities belong to whoever uses it. that includes you now. [face=serious]
 
 Your Writer Type
 ----------------
 wj1_sidebar <- wj1_profile
 wj1_types_ready <- go
 
-Alma: the first card's just the cover — the arrows move you through the deck. there it is, on the right ---> [face=smile]
+Alma: Check these out on the right side. The arrows move you through the personalities. there it is, on the right ---> [face=smile]
 
-Lee: oh, and the whole list is up under the **Writer Types** tab now if you want them side by side. [face=cheeky]
+// Beat order (from 66566b3): the reference beat first, then the action
+// instruction sitting adjacent to the gate it describes.
+Lee: oh, and the whole list is up under the **Writer Personalities** tab now if you want them side by side. [face=cheeky]
 
-Richard: **This one's me** is the button, on the card. we don't move on until one of them has it — and you can change it after, nothing locks. [face=serious]
+Richard: After you click through and read each personality (twice like me!) click the **This one's me** button on the personality that fits you the best, or make your own. We don't move on until one of them has it. And don't worry you can change it after. Nothing locks. [face=serious]
 
 --- wait @wj1_type_choice.value ---
 
-Lee: that one? okay, I can see it. [face=cheeky]
+Richard: Ok, so you chose it, now defend your choice. tell us a story. [face=serious]
 
-Richard: now the part that's actually work. you chose it — so you can defend it. tell the story. [face=serious]
+Richard: a real one. what you were writing, what happened, what it took. [face=serious]
 
-Richard: a real one. what you were writing, what happened, what it took. a card can't hold a story. that's the entire reason we ask for one. [face=serious]
-
-Alma: and if it only fits you three-quarters of the way, say that in the story too. the quarter that doesn't fit is usually the interesting part. [face=calm]
+Alma: The story Richard's talking about should explain why you chose that personality. If the personalist only fits you part way, use the story to show us that. It's ok if you need to tell us more than one story. The part that doesn't fit is usually the interesting part. [face=calm]
 
 --- wait @wj1_profile_reflect.value ---
 
@@ -236,6 +272,6 @@ Wrapping Up
 -----------
 wj1_sidebar <- wj1_wrapup
 
-Alma: here's the thing to take with you — none of this is a verdict. it's a snapshot of what you write and why, today. the writing you're about to do in this class will keep changing the picture. [face=calm]
+Alma: here's the thing to take with you — none of this is a verdict. it's a snapshot of what you write and why. the writing you're about to do in this class will keep changing the picture. [face=calm]
 
-Alma: your whole journal is gathered under **Print &amp; Submit**, up top — the button on the right will take you. give it a read, click the confirm box when you're happy, and export the PDF to hand in. really glad you came. [face=smile]
+Alma: Your whole journal is gathered under **Print &amp; Submit**, up top; the button on the right will take you there. Give it a read, click the confirm box when you're happy, and export the PDF so you can submit to your class. I'm really glad you came to the writer's circle. [face=smile]

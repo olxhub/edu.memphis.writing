@@ -59,6 +59,21 @@ lang: en-Latn-US
        Read-only framing.
        =================================================================== -->
 
+  <!-- The very first screen: how this activity works. Text is Katie's (see
+       notes-for-piotr.txt, "wj1_intro [NEW PAGE]"). Nothing to fill in, so the
+       <Done> at the bottom is what tells the chat the student has read it —
+       the chat waits on @wj1_intro_done.value before Alma goes on. -->
+
+  <Vertical id="wj1_intro">
+    <Markdown>
+Hello! In this activity you will interact with fictional characters in a scenario created to help you
+think about your writing process. There will be a chat on the left side of the screen that you can advance
+with the 'continue' button. Sometimes activities, prompts, and text will appear here on the right side.
+When this happens, please read and interact with it before advancing the chat.
+    </Markdown>
+    <Done id="wj1_intro_done" label="Next" />
+  </Vertical>
+
   <Markdown id="wj1_welcome">
 ## Writing Journal 1: Who Am I As a Writer?
 
