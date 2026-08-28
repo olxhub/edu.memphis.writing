@@ -552,13 +552,21 @@ Remember Alma's rule: it's a **shorthand, not a verdict.** You know things about
 
       <!-- Card 0: the cover. It carries no "This one's me" button, so the first
            thing the student lands on is not a choice — which is the whole job it
-           does. See the ORDER note in the comment above this screen. -->
+           does. See the ORDER note in the comment above this screen.
+           Deliberately NOT the two-column table the eight cards use: the cover
+           sits above the cards in the information hierarchy, and sharing their
+           format made it read as card one of nine. -->
       <Vertical id="wj1_card_cover" title="🃏 The Circle's Deck">
         <Markdown id="wj1_card_cover_text">
-| 🃏 The Circle's Deck | Nine cards. Not one of them is yours yet. |
-| :-- | :-- |
-| **How to read it** | Arrows move you through. Read **all** of them before you take one — Richard's standing complaint about this deck is that people stop at the first card that flatters them. |
-| **If none of them fit** | The last card is blank, and it's for writing your own. |
+# 🃏 The Circle's Deck
+
+*Nine cards. Not one of them is yours yet.*
+
+Arrows move you through. Read **all** of them before you take one — Richard's
+standing complaint about this deck is that people stop at the first card that
+flatters them.
+
+If none of them fit: the last card is blank, and it's for writing your own.
         </Markdown>
       </Vertical>
 
