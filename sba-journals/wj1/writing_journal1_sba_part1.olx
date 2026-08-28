@@ -39,9 +39,10 @@ lang: en-Latn-US
            The chat drives this pane with target embeds — `::wj1_board
            [display=target:wj1_sidebar label="..."]` — rather than bare set arrows, so
            each activity also leaves a clickable marker in the transcript at the point
-           it came up. That writes @wj1_sidebar.value exactly as the arrows did, so
-           every watch expression below is unchanged, and a marker click re-fires its
-           cue (mode="each") just like a fresh arrival.
+           it came up. That writes the QUALIFIED ref into @wj1_sidebar.value (arrows
+           wrote the bare name), so every watch expression below normalizes both
+           sides with DefinitionKey(...). A marker click re-writes the value, so it
+           re-fires its cue (mode="each") just like a fresh arrival.
 
            These live HERE, beside the flag holders, and NOT inside the screens. A
            Trigger's prevValue is persisted component state; a Trigger mounted inside a
@@ -52,25 +53,31 @@ lang: en-Latn-US
            FocusAction aims at the specific control, not the screen, so that a later
            edit reordering a screen can't silently move the caret somewhere useless. -->
 
-      <Trigger id="wj1_welcome_cue"        watch="@wj1_sidebar.value === 'wj1_welcome'"        mode="each">
+      <!-- HACK: the DefinitionKey(...) normalization in these watch expressions is
+           NOT long-term stable and should NOT be copied into other courses. It papers
+           over the arrow-era assumption that pane values are bare screen names; target
+           embeds write qualified refs. The intended fix is cues riding the embed itself
+           (flash=/focus= on the ::screen [display=target:...] line) so no pane-value
+           comparison exists at all — see bugs.md. We ship this and clean up later. -->
+      <Trigger id="wj1_welcome_cue"        watch="DefinitionKey(@wj1_sidebar.value) === DefinitionKey('wj1_welcome')"        mode="each">
         <Flash id="wj1_welcome_flash"        target="wj1_welcome" />
       </Trigger>
 
-      <Trigger id="wj1_orientations_cue"   watch="@wj1_sidebar.value === 'wj1_orientations'"   mode="each">
+      <Trigger id="wj1_orientations_cue"   watch="DefinitionKey(@wj1_sidebar.value) === DefinitionKey('wj1_orientations')"   mode="each">
         <Flash id="wj1_orientations_flash"   target="wj1_orientations" />
       </Trigger>
 
-      <Trigger id="wj1_alma_board_cue"     watch="@wj1_sidebar.value === 'wj1_alma_board'"     mode="each">
+      <Trigger id="wj1_alma_board_cue"     watch="DefinitionKey(@wj1_sidebar.value) === DefinitionKey('wj1_alma_board')"     mode="each">
         <Flash id="wj1_alma_board_flash"     target="wj1_alma_board" />
       </Trigger>
 
       <!-- The board's first control is the top-left radio of the FOR SCHOOL grid. -->
-      <Trigger id="wj1_board_cue"          watch="@wj1_sidebar.value === 'wj1_board'"          mode="each">
+      <Trigger id="wj1_board_cue"          watch="DefinitionKey(@wj1_sidebar.value) === DefinitionKey('wj1_board')"          mode="each">
         <Flash id="wj1_board_flash"          target="wj1_board_school" />
         <FocusAction id="wj1_board_focus"    target="wj1_board_school" />
       </Trigger>
 
-      <Trigger id="wj1_board_noticing_cue" watch="@wj1_sidebar.value === 'wj1_board_noticing'" mode="each">
+      <Trigger id="wj1_board_noticing_cue" watch="DefinitionKey(@wj1_sidebar.value) === DefinitionKey('wj1_board_noticing')" mode="each">
         <Flash id="wj1_board_noticing_flash" target="wj1_board_noticing_text" />
         <FocusAction id="wj1_board_noticing_focus" target="wj1_board_noticing_text" />
       </Trigger>
@@ -78,7 +85,7 @@ lang: en-Latn-US
       <!-- Not the screen: the first focusable thing on Why I Write is the "Remind me
            what's on my board" collapsible's toggle. The first real question is the
            messaging dropdown. -->
-      <Trigger id="wj1_why_cue"            watch="@wj1_sidebar.value === 'wj1_why'"            mode="each">
+      <Trigger id="wj1_why_cue"            watch="DefinitionKey(@wj1_sidebar.value) === DefinitionKey('wj1_why')"            mode="each">
         <Flash id="wj1_why_flash"            target="wj1_why_messaging" />
         <FocusAction id="wj1_why_focus"      target="wj1_why_messaging" />
       </Trigger>
@@ -89,12 +96,12 @@ lang: en-Latn-US
            depends on where they left off). The caret lands on the deck's first arrow —
            wrap="true" keeps both arrows live at every position, so it never lands on a
            disabled control, and focusing it scrolls the deck into view. -->
-      <Trigger id="wj1_profile_cue"        watch="@wj1_sidebar.value === 'wj1_profile'"        mode="each">
+      <Trigger id="wj1_profile_cue"        watch="DefinitionKey(@wj1_sidebar.value) === DefinitionKey('wj1_profile')"        mode="each">
         <Flash id="wj1_profile_flash"        target="wj1_type_carousel" />
         <FocusAction id="wj1_profile_focus"  target="wj1_type_carousel" />
       </Trigger>
 
-      <Trigger id="wj1_wrapup_cue"         watch="@wj1_sidebar.value === 'wj1_wrapup'"         mode="each">
+      <Trigger id="wj1_wrapup_cue"         watch="DefinitionKey(@wj1_sidebar.value) === DefinitionKey('wj1_wrapup')"         mode="each">
         <Flash id="wj1_wrapup_flash"         target="wj1_open_print_btn" />
         <FocusAction id="wj1_wrapup_focus"   target="wj1_open_print_btn" />
       </Trigger>

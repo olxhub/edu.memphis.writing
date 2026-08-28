@@ -35,8 +35,9 @@ description: A first-year ENGL 1010 student, unsure they count as a writer at al
 // after — which is the order you want anyway.
 //
 // The Flash/FocusAction Triggers in writing_journal1_sba_part1.olx watch
-// @wj1_sidebar.value and are unaffected: an embed writes the same field with the
-// same values the arrows did.
+// @wj1_sidebar.value. NOTE: an embed writes the QUALIFIED ref, not the bare
+// name an arrow wrote — comparisons on this value must normalize both sides
+// with DefinitionKey(...).
 
 Introduction
 --------------

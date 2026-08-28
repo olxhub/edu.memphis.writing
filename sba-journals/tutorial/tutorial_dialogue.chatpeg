@@ -24,9 +24,11 @@ description: Professor Ellington spends two minutes showing the student how the 
 // BEFORE the line that talks about it, which is the order you want. Ellington
 // glosses the button the first time one appears so it isn't unexplained noise.
 //
-// The Flash/FocusAction Triggers in tutorial_sba.olx watch @tut_sidebar.value
-// and are unaffected: an embed writes the same field with the same values the
-// arrows did — including on a marker click, so a revisit pulses too.
+// The Flash/FocusAction Triggers in tutorial_sba.olx watch @tut_sidebar.value.
+// NOTE: an embed writes the QUALIFIED ref (edu.memphis.writing.sba/tut_welcome),
+// not the bare name an arrow wrote — comparisons on this value must normalize
+// both sides with DefinitionKey(...). Marker clicks re-write the value, so a
+// revisit re-fires mode="each" cues.
 
 How This Works
 --------------
@@ -57,15 +59,18 @@ Looking Back
 // Taught by doing, like everything else here. BOTH ways back are taught as
 // equals (Piotr): the bookmark button in the transcript, and the history bar
 // at the top of the pane (‹ arrow, one dot per card seen, › arrow). The
-// exercise accepts either route — a marker click and a ‹ click write
-// tut_sidebar the same way, so the one gate covers both.
+// exercise accepts either route — a marker click and a ‹ click both write
+// tut_sidebar.value (the marker writes the QUALIFIED ref, the bar re-writes
+// whatever history holds), so the one DefinitionKey-normalized gate covers both.
 Ellington: one more move, and it's the one people miss. there are two ways back to any card you've seen. remember that bookmark button? every card that lands on the right leaves one, right where it came up in our conversation. [face=explaining]
 
 Ellington: and up at the very top of the right side there's a **‹** arrow, with one dot for each card so far — that walks back through them in order. [face=explaining]
 
 Ellington: try either one — bring back the first card. scroll up and click **Welcome**, or click **‹** up top. [face=explaining]
 
---- wait @tut_sidebar.value === 'tut_welcome' ---
+// HACK: DefinitionKey(...) here is NOT long-term stable — do not copy to other
+// courses. Same story as the cue triggers in tutorial_sba.olx; see bugs.md.
+--- wait DefinitionKey(@tut_sidebar.value) === DefinitionKey('tut_welcome') ---
 
 Ellington: there it is, just as you left it. that's the way back to anything: the button at its moment in the conversation, or the arrows up top. looking back never undoes anything. [face=smile]
 

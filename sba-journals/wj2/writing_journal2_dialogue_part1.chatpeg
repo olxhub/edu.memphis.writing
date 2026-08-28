@@ -33,8 +33,9 @@ description: A first-year ENGL 1010 student is in a group chat with three member
 // after — which is the order you want anyway.
 //
 // The Flash/FocusAction Triggers in writing_journal2a_sba_part1.olx watch
-// @wj2_sidebar.value and are unaffected: an embed writes the same field with the
-// same values the arrows did.
+// @wj2_sidebar.value. NOTE: an embed writes the QUALIFIED ref, not the bare
+// name an arrow wrote — comparisons on this value must normalize both sides
+// with DefinitionKey(...).
 
 A Group Chat, Blowing Up
 ------------------------
