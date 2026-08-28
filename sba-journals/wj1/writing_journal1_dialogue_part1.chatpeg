@@ -38,11 +38,12 @@ Lee: everyone's stuck on that one. it's a strange question the first time somebo
 
 The Introductions
 -----------------
-wj1_sidebar <- wj1_orientations
 
 Alma: actually — before anything, we should do the introductions properly. not names. the other thing. [face=explaining]
 
 Richard: there's a set of writer types this group uses. nobody takes them too seriously. they're a shorthand. [face=serious]
+
+wj1_sidebar <- wj1_orientations
 
 Alma: the whole shorthand just came up over on the right ---> [face=smile]
 
@@ -68,6 +69,7 @@ Richard: read it properly. there's a **Mark as read** at the bottom for when you
 
 The Board Comes Up
 ------------------
+wj1_sidebar <- wj1_blank
 
 Lee: oh — Richard, the thing I was going to tell you. that assignment I turned in Tuesday? I was completely stuck on the opening. sat there an hour. [face=concerned]
 
@@ -167,10 +169,13 @@ Alma: so — go back through yours and put the why on it. [face=smile]
 
 wj1_sidebar <- wj1_why
 
+Lee: fair warning, it's a longer one — the reasons, then the two that come up most, then a few sentences at the end. we'll still be here. [face=cheeky]
+
 --- wait @wj1_why_reflect.value && @wj1_why_top2.value.length === 2 ---
 
 Enough to Run It
 ----------------
+wj1_sidebar <- wj1_blank
 
 Alma: okay. so now you've got what you write and why you write it. that's enough to go to the deck. [face=smile]
 
@@ -211,9 +216,9 @@ wj1_types_ready <- go
 
 Alma: the first card's just the cover — the arrows move you through the deck. there it is, on the right ---> [face=smile]
 
-Richard: **This one's me** is the button, on the card. and you can change it after — nothing locks. [face=serious]
-
 Lee: oh, and the whole list is up under the **Writer Types** tab now if you want them side by side. [face=cheeky]
+
+Richard: **This one's me** is the button, on the card. we don't move on until one of them has it — and you can change it after, nothing locks. [face=serious]
 
 --- wait @wj1_type_choice.value ---
 
