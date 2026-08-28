@@ -192,9 +192,9 @@ eight is you:
 > *"The first time I did this I put down three things — essays, emails, texting. I thought that was the
 > list. Now it doesn't fit on one screen."*
 
-Notice what happened: Alma didn't set out to prove anything. She just listed what she actually writes,
-and the **volume** surprised her — and some of it (the group chat, the captions) she wouldn't have called
-"writing" at all. **That's what you're about to do next.**
+On her writer board, Alma just listed what she actually writes, and the **volume** surprised her — and
+some of it (the group chat, the captions) she wouldn't have called "writing" at all. **That's what you're
+about to do next.**
   </Markdown>
   <Done id="wj1_alma_board_done" label="Mark as read" />
   </Vertical>
@@ -801,12 +801,12 @@ land — and answer the question below.
     <Markdown>
 ### Your reflection
 
-You picked that card. Now show your work: **tell a story from your writing life that shows why this type
-fits you — or where it doesn't quite.**
+You picked (or wrote) a writing personality. Now explain your choice by telling us a story (or stories)
+that explains why this writing personality fits you.
 
-A real moment, not a summary. What you were writing, what happened, what it took. If the card gets you
-mostly right but misses something, the story is the place to say so — the part it can't hold is often the
-most interesting thing about a writer.
+This should be a real moment where you were writing something — but remember, it doesn't have to be about
+something you wrote for a class. Include details like what you were writing, why you were writing it, and
+how you wrote it. If the personality isn't a perfect fit, you can talk about that too.
     </Markdown>
     <TextArea id="wj1_profile_reflect" rows="9" placeholder="Here's a story from my writing life..." />
   </Vertical>
