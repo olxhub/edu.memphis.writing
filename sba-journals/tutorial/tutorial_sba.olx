@@ -19,7 +19,15 @@ lang: en-Latn-US
 
       <!-- Attention cues, mirroring the journals: flash the task, focus the
            input. Mounted here (outside the screens) so they observe the
-           sidebar transitions. -->
+           sidebar transitions.
+
+           The chat drives this pane with target embeds — `::tut_welcome
+           [display=target:tut_sidebar label="Welcome"]` — rather than bare set
+           arrows, so each card also leaves a clickable marker in the transcript
+           at the point it arrived. That marker is what the "Looking Back"
+           section teaches. It writes @tut_sidebar.value exactly as an arrow
+           did, so the watch expressions below are unchanged and a marker click
+           re-fires the cue (mode="each") like a fresh arrival. -->
       <Trigger id="tut_welcome_cue"  watch="@tut_sidebar.value === 'tut_welcome'"  mode="each">
         <Flash id="tut_welcome_flash"  target="tut_welcome" />
       </Trigger>
@@ -59,8 +67,10 @@ A few things worth knowing, in no particular order:
 - **The conversation waits for you.** If **Continue** looks grayed out,
   something on the right still wants your attention — a box to fill, a
   ranking to submit, or a **Mark as read** at the bottom of a reading.
-- **You can always go back.** Scroll the conversation to reread it; revisit
-  any tab at any time. Nothing locks behind you.
+- **You can always go back.** Every card that lands on the right leaves a
+  small button in the conversation where it arrived — scroll up and click it
+  to reopen that card. (The ‹ › arrows at the top of the right pane walk the
+  same history.) Revisit any tab at any time. Nothing locks behind you.
 - **Watch for the soft blue pulse.** When something on the right glows,
   a new card or task just arrived there.
 

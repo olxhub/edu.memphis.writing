@@ -3,21 +3,48 @@ authors: Writing Journals tutorial, built in lo-blocks
 description: Professor Ellington spends two minutes showing the student how the tool works — the conversation advances on Continue, activities land in the right pane, work saves as you type, and the tabs collect everything — then sends them to the Writers' Circle for their first journal.
 ~~~~
 
+// HOW THE ACTIVITY PANE IS DRIVEN.
+//
+// Every card the conversation opens on the right is written as a TARGET EMBED:
+//
+//     ::tut_welcome [display=target:tut_sidebar label="Welcome"]
+//
+// which repoints the tut_sidebar UseHistory at that screen (once, the first
+// time the line is revealed) AND leaves a small labelled button in the
+// transcript at the point in the conversation where the card arrived. Clicking
+// that button repoints the pane there again.
+//
+// In this tutorial that marker is not just plumbing — it is the lesson of the
+// "Looking Back" section: the way back to an earlier activity is to find the
+// moment in the conversation and click its button. The UseHistory arrows at the
+// top of the pane still do the same job and get a one-line mention.
+//
+// Timing note: a set command executes while the reveal walks past it; an embed
+// is content, so it is revealed as its own beat — the card lands one Continue
+// BEFORE the line that talks about it, which is the order you want. Ellington
+// glosses the button the first time one appears so it isn't unexplained noise.
+//
+// The Flash/FocusAction Triggers in tutorial_sba.olx watch @tut_sidebar.value
+// and are unaffected: an embed writes the same field with the same values the
+// arrows did — including on a marker click, so a revisit pulses too.
+
 How This Works
 --------------
 Ellington: before I hand you over to your first online journal, give me two minutes to show you how this thing works. [face=calm]
 
 Ellington: this left side is a conversation. it moves when you click **Continue** below — which you've apparently already worked out. [face=smile]
 
-tut_sidebar <- tut_welcome
+::tut_welcome [display=target:tut_sidebar label="Welcome"]
 
 Ellington: the right side is where the work happens. read the card that just landed, then click **Mark as read** at the bottom of it — **Continue** stays off until you do. it's over there ---> [face=explaining]
+
+Ellington: (that little **Welcome** button that just appeared here in the chat is a bookmark to it. ignore it for now — I'll come back to it.) [face=calm]
 
 --- wait @tut_welcome_done.value ---
 
 Try It Once
 -----------
-tut_sidebar <- tut_practice
+::tut_practice [display=target:tut_sidebar label="Try it"]
 
 Ellington: good. now the other half — when there's something to *do*, it shows up the same way, and it pulses to catch your eye. type anything at all in the box; one word is plenty. [face=explaining]
 
@@ -27,19 +54,27 @@ Ellington: notice you never clicked "save" — there is no save button anywhere 
 
 Looking Back
 ------------
-// The row at the top of the right pane is the UseHistory bar: ‹ arrow, one dot
-// per card seen, › arrow. Taught by doing, like everything else here. The gate
-// checks value === 'tut_welcome', which one ‹ click reaches from tut_practice.
-// (The first dot is tut_blank, so the cue names the arrow, not a dot.)
-Ellington: one more move. see the small dots at the very top of the right side, between the two arrows? that's every card you've seen so far. click the **‹** arrow up there to look back at the first one. [face=explaining]
+// Taught by doing, like everything else here. Every card the chat opens is a
+// target embed, so it leaves a labelled button in the transcript at the moment
+// it arrived — that button is the thing being taught, because it is the one way
+// back that also tells you WHERE in the conversation the card belonged.
+// The gate is unchanged from the arrow version: clicking the **Welcome** marker
+// writes tut_sidebar the same way a ‹ click does, so either route opens it.
+// The UseHistory bar (‹ arrow, one dot per card seen, › arrow) is kept as a
+// one-line aside rather than a second exercise — one move per beat.
+Ellington: one more move, and it's the one people miss. remember that bookmark button? every card that lands on the right leaves one, right where it came up in our conversation. [face=explaining]
+
+Ellington: scroll our chat back up and click the **Welcome** one — the moment the first card arrived. [face=explaining]
 
 --- wait @tut_sidebar.value === 'tut_welcome' ---
 
-Ellington: there it is, just as you left it. the arrows and the dots let you revisit any earlier activity whenever you like — looking back never undoes anything. click **Continue** and I'll bring you back to where we were. [face=smile]
+Ellington: there it is, just as you left it. that's the way back to anything: find the moment in the conversation, click its button, and the card returns. looking back never undoes anything. [face=smile]
+
+Ellington: (the ‹ › arrows at the very top of the right side walk the same history, if you'd rather step through it.) click **Continue** and I'll bring you back to where we were. [face=calm]
 
 The Tabs
 --------
-tut_sidebar <- tut_tabs_note
+::tut_tabs_note [display=target:tut_sidebar label="The tabs"]
 
 Ellington: last thing. the tabs along the top collect everything in one place — in the journals that's your running work, the people you're talking to, and the page where you export a PDF to hand in at the end. [face=explaining]
 
@@ -47,7 +82,7 @@ Ellington: the conversation will point you to a tab whenever it matters, and you
 
 That's Everything
 -----------------
-tut_sidebar <- tut_finish
+::tut_finish [display=target:tut_sidebar label="That's everything"]
 
 Ellington: that's the whole machine. conversation on the left, work on the right, tabs up top. [face=smile]
 
