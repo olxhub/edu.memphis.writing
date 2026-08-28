@@ -25,7 +25,7 @@ lang: en-Latn-US
     -> Alma's board (worked example; the student learns the activity by watching)
     -> TASK 1: build your Writer Board  (Frequently/Sometimes/Never grid; what & how often)
     -> the noticing question (optional one-line open response; ungraded)
-    -> TASK 2: Why I Write  (assign a reason to each cluster; name your top two; reflect)
+    -> TASK 2: Why I Write  (check every reason per cluster; name up to four that come up most; reflect)
     -> TASK 3: Your Writer Type  (browse all eight cards in a carousel, CHOOSE one; reflect with a story)
     -> Print &amp; Submit (the print page: confirm, export, hand in).
 
@@ -274,9 +274,18 @@ You don't have to answer — but if something jumped out, name it.
 
   <!-- ===================================================================
        TASK 2 — WHY I WRITE
-       The board is a list of WHAT. This task adds the WHY. The student assigns
-       a reason (fixed list + open option) to each cluster of their writing,
-       names the two reasons that come up most, and writes a short reflection.
+       The board is a list of WHAT. This task adds the WHY. The student checks
+       EVERY reason that applies (fixed list + open option) for each cluster of
+       their writing, names up to four reasons that come up most, and writes a
+       short reflection.
+
+       Aug 2026: the five per-cluster inputs were DropdownInputs (one reason
+       each) and became CheckboxInputs, because one reason per kind of writing
+       was the wrong model — people write the same thing for several reasons at
+       once. Katie asked for an "add another reason" repeatable input; lo-blocks
+       has no repeatable-input block, so a fixed checkbox list is the interim
+       shape. Ids and option codes are unchanged, so every downstream reference
+       still resolves; what changed is that each stored value is now a LIST.
        =================================================================== -->
 
   <Vertical id="wj1_why">
@@ -287,8 +296,8 @@ Here's the thing a board can't tell you. Two people can write the exact same gro
 the shopping done, one because it quiets a busy mind. Same item, completely different activity. *It only
 looks the same from outside.*
 
-So go back through your writing and put the **why** on it. For each group below, pick the reason that fits
-best. There's no right answer — pick what's true for **you.**
+So go back through your writing and put the **why** on it. For each group below, **check every reason
+that's true for you** — as many as fit. There's no right answer.
     </Markdown>
 
     <Collapsible id="wj1_why_board_reminder" title="Remind me what's on my board">
@@ -300,118 +309,123 @@ best. There's no right answer — pick what's true for **you.**
     </Collapsible>
 
     <Markdown>### 💬 Messaging &amp; staying in touch *(texts, DMs, group chats)*</Markdown>
-    <DropdownInput id="wj1_why_messaging" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing    | dont_do
-      To stay in touch with people I care about | stay_in_touch
-      To be part of a group or community        | community
-      To figure out what I think                | figure_out
-      To try something out and see what happens | try_out
-      To get something done or stay organized   | get_done
-      To remember something                     | remember
-      To make something I'm proud of            | proud
-      Because I enjoy it                        | enjoy
-      To work out how I'm feeling               | feelings
-      To persuade someone or make a point       | persuade
-      Because a class or a job requires it      | required
-      Something else (I'll describe it below)   | something_else
-    </DropdownInput>
+    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+    <CheckboxInput id="wj1_why_messaging">
+      <Key value="dont_do">I don't really do this sort of writing</Key>
+      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
+      <Key value="community">To be part of a group or community</Key>
+      <Key value="figure_out">To figure out what I think</Key>
+      <Key value="try_out">To try something out and see what happens</Key>
+      <Key value="get_done">To get something done or stay organized</Key>
+      <Key value="remember">To remember something</Key>
+      <Key value="proud">To make something I'm proud of</Key>
+      <Key value="enjoy">Because I enjoy it</Key>
+      <Key value="feelings">To work out how I'm feeling</Key>
+      <Key value="persuade">To persuade someone or make a point</Key>
+      <Key value="required">Because a class or a job requires it</Key>
+      <Key value="something_else">Something else (I'll describe it below)</Key>
+    </CheckboxInput>
     <!-- The "Something else" box for each group is gated on that group's own
          dropdown, so it opens right where the student made the choice. Every
          option carries an explicit `text | value` (dropdown.pegjs), so the
          condition matches the stored CODE and survives copy edits to the prose. -->
-    <Vertical id="wj1_why_messaging_other_box" when="@wj1_why_messaging.value === 'something_else'">
+    <Vertical id="wj1_why_messaging_other_box" when="'something_else' in @wj1_why_messaging.value">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_messaging_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>### 🎓 Coursework &amp; class writing *(essays, papers, discussion posts, reports)*</Markdown>
-    <DropdownInput id="wj1_why_coursework" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing    | dont_do
-      To stay in touch with people I care about | stay_in_touch
-      To be part of a group or community        | community
-      To figure out what I think                | figure_out
-      To try something out and see what happens | try_out
-      To get something done or stay organized   | get_done
-      To remember something                     | remember
-      To make something I'm proud of            | proud
-      Because I enjoy it                        | enjoy
-      To work out how I'm feeling               | feelings
-      To persuade someone or make a point       | persuade
-      Because a class or a job requires it      | required
-      Something else (I'll describe it below)   | something_else
-    </DropdownInput>
-    <Vertical id="wj1_why_coursework_other_box" when="@wj1_why_coursework.value === 'something_else'">
+    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+    <CheckboxInput id="wj1_why_coursework">
+      <Key value="dont_do">I don't really do this sort of writing</Key>
+      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
+      <Key value="community">To be part of a group or community</Key>
+      <Key value="figure_out">To figure out what I think</Key>
+      <Key value="try_out">To try something out and see what happens</Key>
+      <Key value="get_done">To get something done or stay organized</Key>
+      <Key value="remember">To remember something</Key>
+      <Key value="proud">To make something I'm proud of</Key>
+      <Key value="enjoy">Because I enjoy it</Key>
+      <Key value="feelings">To work out how I'm feeling</Key>
+      <Key value="persuade">To persuade someone or make a point</Key>
+      <Key value="required">Because a class or a job requires it</Key>
+      <Key value="something_else">Something else (I'll describe it below)</Key>
+    </CheckboxInput>
+    <Vertical id="wj1_why_coursework_other_box" when="'something_else' in @wj1_why_coursework.value">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_coursework_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>### 🗂️ Notes, lists &amp; organizing *(class notes, to-do lists, planners, reminders)*</Markdown>
-    <DropdownInput id="wj1_why_organizing" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing    | dont_do
-      To stay in touch with people I care about | stay_in_touch
-      To be part of a group or community        | community
-      To figure out what I think                | figure_out
-      To try something out and see what happens | try_out
-      To get something done or stay organized   | get_done
-      To remember something                     | remember
-      To make something I'm proud of            | proud
-      Because I enjoy it                        | enjoy
-      To work out how I'm feeling               | feelings
-      To persuade someone or make a point       | persuade
-      Because a class or a job requires it      | required
-      Something else (I'll describe it below)   | something_else
-    </DropdownInput>
-    <Vertical id="wj1_why_organizing_other_box" when="@wj1_why_organizing.value === 'something_else'">
+    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+    <CheckboxInput id="wj1_why_organizing">
+      <Key value="dont_do">I don't really do this sort of writing</Key>
+      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
+      <Key value="community">To be part of a group or community</Key>
+      <Key value="figure_out">To figure out what I think</Key>
+      <Key value="try_out">To try something out and see what happens</Key>
+      <Key value="get_done">To get something done or stay organized</Key>
+      <Key value="remember">To remember something</Key>
+      <Key value="proud">To make something I'm proud of</Key>
+      <Key value="enjoy">Because I enjoy it</Key>
+      <Key value="feelings">To work out how I'm feeling</Key>
+      <Key value="persuade">To persuade someone or make a point</Key>
+      <Key value="required">Because a class or a job requires it</Key>
+      <Key value="something_else">Something else (I'll describe it below)</Key>
+    </CheckboxInput>
+    <Vertical id="wj1_why_organizing_other_box" when="'something_else' in @wj1_why_organizing.value">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_organizing_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>### 📣 Posting &amp; sharing publicly *(social posts, captions, comments, reviews)*</Markdown>
-    <DropdownInput id="wj1_why_posting" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing    | dont_do
-      To stay in touch with people I care about | stay_in_touch
-      To be part of a group or community        | community
-      To figure out what I think                | figure_out
-      To try something out and see what happens | try_out
-      To get something done or stay organized   | get_done
-      To remember something                     | remember
-      To make something I'm proud of            | proud
-      Because I enjoy it                        | enjoy
-      To work out how I'm feeling               | feelings
-      To persuade someone or make a point       | persuade
-      Because a class or a job requires it      | required
-      Something else (I'll describe it below)   | something_else
-    </DropdownInput>
-    <Vertical id="wj1_why_posting_other_box" when="@wj1_why_posting.value === 'something_else'">
+    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+    <CheckboxInput id="wj1_why_posting">
+      <Key value="dont_do">I don't really do this sort of writing</Key>
+      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
+      <Key value="community">To be part of a group or community</Key>
+      <Key value="figure_out">To figure out what I think</Key>
+      <Key value="try_out">To try something out and see what happens</Key>
+      <Key value="get_done">To get something done or stay organized</Key>
+      <Key value="remember">To remember something</Key>
+      <Key value="proud">To make something I'm proud of</Key>
+      <Key value="enjoy">Because I enjoy it</Key>
+      <Key value="feelings">To work out how I'm feeling</Key>
+      <Key value="persuade">To persuade someone or make a point</Key>
+      <Key value="required">Because a class or a job requires it</Key>
+      <Key value="something_else">Something else (I'll describe it below)</Key>
+    </CheckboxInput>
+    <Vertical id="wj1_why_posting_other_box" when="'something_else' in @wj1_why_posting.value">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_posting_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>### 🎨 Creative &amp; personal writing *(stories, poems, lyrics, journaling)*</Markdown>
-    <DropdownInput id="wj1_why_creative" placeholder="Mostly, I do this…">
-      I don't really do this sort of writing    | dont_do
-      To stay in touch with people I care about | stay_in_touch
-      To be part of a group or community        | community
-      To figure out what I think                | figure_out
-      To try something out and see what happens | try_out
-      To get something done or stay organized   | get_done
-      To remember something                     | remember
-      To make something I'm proud of            | proud
-      Because I enjoy it                        | enjoy
-      To work out how I'm feeling               | feelings
-      To persuade someone or make a point       | persuade
-      Because a class or a job requires it      | required
-      Something else (I'll describe it below)   | something_else
-    </DropdownInput>
-    <Vertical id="wj1_why_creative_other_box" when="@wj1_why_creative.value === 'something_else'">
+    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+    <CheckboxInput id="wj1_why_creative">
+      <Key value="dont_do">I don't really do this sort of writing</Key>
+      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
+      <Key value="community">To be part of a group or community</Key>
+      <Key value="figure_out">To figure out what I think</Key>
+      <Key value="try_out">To try something out and see what happens</Key>
+      <Key value="get_done">To get something done or stay organized</Key>
+      <Key value="remember">To remember something</Key>
+      <Key value="proud">To make something I'm proud of</Key>
+      <Key value="enjoy">Because I enjoy it</Key>
+      <Key value="feelings">To work out how I'm feeling</Key>
+      <Key value="persuade">To persuade someone or make a point</Key>
+      <Key value="required">Because a class or a job requires it</Key>
+      <Key value="something_else">Something else (I'll describe it below)</Key>
+    </CheckboxInput>
+    <Vertical id="wj1_why_creative_other_box" when="'something_else' in @wj1_why_creative.value">
       <Markdown>*Describe it in your own words:*</Markdown>
       <TextArea id="wj1_why_creative_other" rows="2" placeholder="Mostly, I do this writing to..." />
     </Vertical>
 
     <Markdown>
-### Your two biggest reasons for writing
+### The reasons that come up most
 
-Looking at the **whole board**, click the **two** reasons that come up most often across everything you
+Looking at the **whole board**, tick **up to four** reasons that come up most across everything you
 write.
     </Markdown>
     <CheckboxInput id="wj1_why_top2">
@@ -429,19 +443,19 @@ write.
       <Key value="something_else">Something else</Key>
     </CheckboxInput>
 
-    <Markdown when="@wj1_why_top2.value.length &lt; 2">*Click **two** — the two that come up most across everything you write.*</Markdown>
-    <Markdown when="@wj1_why_top2.value.length &gt; 2">*That's more than two. Which **two** really come up most? Unclick the rest.*</Markdown>
-    <Markdown when="@wj1_why_top2.value.length === 2">*Got them. Hold onto those two — they may point toward a writer type when you get to the deck.*</Markdown>
+    <!-- id kept as wj1_why_top2 (it is referenced from the chat gate, the print
+         page and the artifact); the ask is now up to FOUR, not exactly two. -->
+    <Markdown when="@wj1_why_top2.value.length &lt; 1">*Pick at least one — the reasons that come up most across everything you write.*</Markdown>
+    <Markdown when="@wj1_why_top2.value.length &gt; 4">*That's more than four. Which ones really come up most? Unclick the rest.*</Markdown>
+    <Markdown when="@wj1_why_top2.value.length &gt;= 1 &amp;&amp; @wj1_why_top2.value.length &lt;= 4">*Got them. Hold onto those — they may point toward a writer personality when you get to the deck.*</Markdown>
 
     <Markdown>
 ### One short reflection
 
-A few honest sentences:
-
-- Was there a reason you **expected** to pick and didn't?
-- Or one that showed up **more than you thought** it would?
+Considering the reasons you chose for writing, write a few sentences about what you've learned about
+yourself as a writer, or about the reasons why you write.
     </Markdown>
-    <TextArea id="wj1_why_reflect" rows="6" placeholder="I expected to pick... but what actually came up most was... which surprised me because..." />
+    <TextArea id="wj1_why_reflect" rows="6" placeholder="What I've learned about myself as a writer is..." />
   </Vertical>
 
   <!-- ===================================================================
@@ -503,12 +517,12 @@ A few honest sentences:
        regardless, because a student who has decided none of the eight fits has
        already made the choice this screen asks for. Discourage, don't block.
 
-       HISTORY (Aug 2026): this screen used to ASSIGN a type — the two biggest
+       HISTORY (Aug 2026): this screen used to ASSIGN a type — the biggest
        reasons (wj1_why_top2) revealed one or two cards behind a "Generate your
        writer profile" button. The TA reported that landing on a personality-quiz
        result felt limiting, so the assignment machinery (wj1_generate_btn,
        wj1_generate_flag, the reason->card IntakeGates, and the "does this feel
-       like you" question wj1_fit) is gone. The two biggest reasons keep their
+       like you" question wj1_fit) is gone. Those reasons keep their
        role as reflection back in Why I Write; they no longer gate anything here.
        =================================================================== -->
 
@@ -520,7 +534,7 @@ You built your **Writer Board** and worked out **why** you do different kinds of
 Circle's whole deck — **eight writer types**, the same shorthand Alma, Lee, and Richard use, plus a **blank
 ninth card** for writing your own if none of the eight is you.
 
-Read through them with the arrows. Your two biggest reasons may **point toward** one of these, but nothing
+Read through them with the arrows. The reasons you picked may **point toward** one of these, but nothing
 here is deciding for you: **you pick.** When you find the one that sounds most like you, click **This one's
 me** on that card. You can keep browsing afterwards and change it if a later card fits better.
 
@@ -932,46 +946,50 @@ starting from.
     <!-- The per-group "Something else" descriptions, each shown only if that
          group's dropdown is on "Something else". when= mounts the branch, so
          whatever the student earned is in the DOM at print time. -->
-    <Markdown when="@wj1_why_messaging.value === 'something_else' || @wj1_why_coursework.value === 'something_else' || @wj1_why_organizing.value === 'something_else' || @wj1_why_posting.value === 'something_else' || @wj1_why_creative.value === 'something_else'">
+    <Markdown when="'something_else' in @wj1_why_messaging.value || 'something_else' in @wj1_why_coursework.value || 'something_else' in @wj1_why_organizing.value || 'something_else' in @wj1_why_posting.value || 'something_else' in @wj1_why_creative.value">
 ## Why I write — in my own words
     </Markdown>
-    <Markdown when="@wj1_why_messaging.value === 'something_else'">
+    <Markdown when="'something_else' in @wj1_why_messaging.value">
 **Messaging &amp; staying in touch:** {{@wj1_why_messaging_other.value}}
     </Markdown>
-    <Markdown when="@wj1_why_coursework.value === 'something_else'">
+    <Markdown when="'something_else' in @wj1_why_coursework.value">
 **Coursework &amp; class writing:** {{@wj1_why_coursework_other.value}}
     </Markdown>
-    <Markdown when="@wj1_why_organizing.value === 'something_else'">
+    <Markdown when="'something_else' in @wj1_why_organizing.value">
 **Notes, lists &amp; organizing:** {{@wj1_why_organizing_other.value}}
     </Markdown>
-    <Markdown when="@wj1_why_posting.value === 'something_else'">
+    <Markdown when="'something_else' in @wj1_why_posting.value">
 **Posting &amp; sharing publicly:** {{@wj1_why_posting_other.value}}
     </Markdown>
-    <Markdown when="@wj1_why_creative.value === 'something_else'">
+    <Markdown when="'something_else' in @wj1_why_creative.value">
 **Creative &amp; personal writing:** {{@wj1_why_creative_other.value}}
     </Markdown>
 
     <!-- ---------------------------------------------------------------
          2. THE STRUCTURED ANSWERS  (skimmed, not read)
-         Text where a sane text rendering exists — the reason dropdowns store
-         self-describing values, so a bullet list beats five re-rendered widgets.
-         Blocks where it doesn't: the two Writer Board grids, the multi-select,
-         and the chosen writer-type card come back as <Use>.
+         Everything structured comes back as <Use>: the two Writer Board grids,
+         the chosen writer-type card, and — since the Aug 2026 multi-reason
+         change — the five reason blocks and the top-reasons multi-select, whose
+         stored values are LISTS of codes and so have no sane text rendering.
          --------------------------------------------------------------- -->
 
     <Markdown>
 ---
 
 ## Why I write, kind by kind
-
-- **Messaging &amp; staying in touch:** {{@wj1_why_messaging.value}}
-- **Coursework &amp; class writing:** {{@wj1_why_coursework.value}}
-- **Notes, lists &amp; organizing:** {{@wj1_why_organizing.value}}
-- **Posting &amp; sharing publicly:** {{@wj1_why_posting.value}}
-- **Creative &amp; personal writing:** {{@wj1_why_creative.value}}
-
-**My two biggest reasons for writing:**
     </Markdown>
+    <Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
+    <Use ref="wj1_why_messaging" />
+    <Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
+    <Use ref="wj1_why_coursework" />
+    <Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
+    <Use ref="wj1_why_organizing" />
+    <Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
+    <Use ref="wj1_why_posting" />
+    <Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
+    <Use ref="wj1_why_creative" />
+
+    <Markdown>**The reasons that come up most across everything I write:**</Markdown>
     <!-- Multi-select: the stored value is a list, so it comes back as <Use>. -->
     <Use ref="wj1_why_top2" />
 

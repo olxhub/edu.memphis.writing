@@ -204,16 +204,12 @@ wj1_sidebar <- wj1_why
 
 // Lee's beat, restored from 66566b3: it enumerates the parts of the Why screen, so
 // the student knows how long it runs before they start it.
-// TWO TENSIONS for Fable/Piotr, both left as-is rather than resolved here:
-//   1. "the two that come up most" hard-codes the current wj1_why_top2 gate. If
-//      Katie's pick-up-to-4 change lands, this phrasing goes stale and so does the
-//      `@wj1_why_top2.value.length === 2` condition below.
-//   2. Alma's line above already ends "we can get back to the chat," which overlaps
-//      Lee's "we'll still be here." One of the two reassurances could go; the
-//      enumeration is the half that carries information.
-Lee: fair warning, it's a longer one — the reasons, then the two that come up most, then a few sentences at the end. we'll still be here. [face=cheeky]
+// OPEN for Fable/Piotr: Alma's line above already ends "we can get back to the
+// chat," which overlaps Lee's "we'll still be here." One of the two reassurances
+// could go; the enumeration is the half that carries information.
+Lee: fair warning, it's a longer one — the reasons, then the ones that come up most, then a few sentences at the end. we'll still be here. [face=cheeky]
 
---- wait @wj1_why_reflect.value && @wj1_why_top2.value.length === 2 ---
+--- wait @wj1_why_reflect.value && @wj1_why_top2.value.length >= 1 && @wj1_why_top2.value.length <= 4 ---
 
 Enough to Run It
 ----------------
