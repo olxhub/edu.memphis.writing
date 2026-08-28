@@ -1,9 +1,9 @@
-<!-- Writing Journal 1: Who Am I As a Writer? — ENGL 1010 SBA -->
+<!-- Writing Journal 2: Who Am I As a Writer? — ENGL 1010 SBA -->
 <Vertical id="wj1_sba_root">
 
 <!--
 ---
-description: "Writing Journal 1: Who Am I As a Writer? The first journal in a first-year ENGL 1010 unit on writer identity. Professor Ellington assigns the journal; the student, unsure they count as a writer at all, is invited by Alma to the in-person Writers' Circle, where they meet Lee and Richard. The student watches Alma talk through her own Writer Board, then builds their own — a Frequently/Sometimes/Never inventory of what they write and how often, for school and outside it — works out why they do different kinds of writing, then browses the Circle's deck of eight writer-type cards in a carousel and chooses the one that fits (no LLM, and no type assigned by the tool), defending the choice with a story. Same three peers as Writing Journal 2."
+description: "Writing Journal 2: Who Am I As a Writer? The first journal in a first-year ENGL 1010 unit on writer identity. Professor Ellington assigns the journal; the student, unsure they count as a writer at all, is invited by Alma to the in-person Writers' Circle, where they meet Lee and Richard. The student watches Alma talk through her own Writer Board, then builds their own — a Frequently/Sometimes/Never inventory of what they write and how often, for school and outside it — works out why they do different kinds of writing, then browses the Circle's deck of eight writer-type cards in a carousel and chooses the one that fits (no LLM, and no type assigned by the tool), defending the choice with a story. Same three peers as Writing Journal 3."
 category: writing_journal1
 index: 94
 lang: en-Latn-US
@@ -11,7 +11,7 @@ lang: en-Latn-US
 -->
 
 <Cast cast="characters.cast" id="wj1_sba_part1"
-      title="Writing Journal 1: Who Am I As a Writer?"
+      title="Writing Journal 2: Who Am I As a Writer?"
       launchable="true">
   <!-- print="no-chrome": the print pages live in a tab, so the tab strip would
        otherwise head every exported PDF. Screen behavior is unchanged. -->

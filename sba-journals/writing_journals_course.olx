@@ -20,7 +20,7 @@ license: AGPL
      under sba-journals/ parses as the one namespace declared in
      manifest.yaml.
 
-     Writing Journal 2 is two parts, because it is two scenes: the phone
+     Writing Journal 3 is two parts, because it is two scenes: the phone
      group chat (2a) and the in-person meeting a few days later (2b). The
      nav labels come from each part's own title= attribute. At the end of
      2a the chat moves the student here itself, by setting this Course's

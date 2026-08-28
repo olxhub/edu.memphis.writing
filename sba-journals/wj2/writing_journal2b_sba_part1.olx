@@ -1,9 +1,9 @@
-<!-- Writing Journal 2b: The Circle Meets — ENGL 1010 SBA -->
+<!-- Writing Journal 3b: The Circle Meets — ENGL 1010 SBA -->
 <Vertical id="wj2b_sba_root">
 
 <!--
 ---
-description: "Writing Journal 2b: The Circle Meets — the in-person meeting. The second half of the second journal in a first-year ENGL 1010 unit on writer identity. A few days after the group chat of Writing Journal 2a, the Writers' Circle gathers in the student lounge and each member tells the story of an experience that shaped them as a writer. The student — after an optional two-minute freewrite warm-up — tells their own, the real journal entry, and Alma reads it back against the attitude profile the quiz produced. The journal ends on the Print &amp; Submit tab, which gathers both halves onto one page for the completion check and the PDF export."
+description: "Writing Journal 3b: The Circle Meets — the in-person meeting. The second half of the second journal in a first-year ENGL 1010 unit on writer identity. A few days after the group chat of Writing Journal 3a, the Writers' Circle gathers in the student lounge and each member tells the story of an experience that shaped them as a writer. The student — after an optional two-minute freewrite warm-up — tells their own, the real journal entry, and Alma reads it back against the attitude profile the quiz produced. The journal ends on the Print &amp; Submit tab, which gathers both halves onto one page for the completion check and the PDF export."
 category: writing_journal2
 index: 92.5
 lang: en-Latn-US
@@ -11,7 +11,7 @@ lang: en-Latn-US
 -->
 
 <Cast cast="characters.cast" id="wj2b_sba_part1"
-      title="Writing Journal 2b: The Circle Meets"
+      title="Writing Journal 3b: The Circle Meets"
       launchable="true">
   <!-- print="no-chrome": the print pages live in a tab, so the tab strip would
        otherwise head every exported PDF. Screen behavior is unchanged. -->

@@ -1,6 +1,6 @@
 <!--
 ---
-description: "Writing Journal 2: How Do You Really Feel About Writing? (activity bank). The group chat and the in-person Writers' Circle meeting pull each screen below into the right-hand pane as the conversation advances. A first-year composition student weighs in on a debate about writer's block, takes a playful writing-attitudes quiz, sees where the Circle's tool plots them on three attitude continuums, reflects on that placement, listens to three peers' stories about experiences that shaped them as writers, and then tells their own — the real journal entry — which the tool then reflects back against their placement."
+description: "Writing Journal 3: How Do You Really Feel About Writing? (activity bank). The group chat and the in-person Writers' Circle meeting pull each screen below into the right-hand pane as the conversation advances. A first-year composition student weighs in on a debate about writer's block, takes a playful writing-attitudes quiz, sees where the Circle's tool plots them on three attitude continuums, reflects on that placement, listens to three peers' stories about experiences that shaped them as writers, and then tells their own — the real journal entry — which the tool then reflects back against their placement."
 category: writing_journal2
 index: 93
 lang: en-Latn-US
@@ -8,9 +8,9 @@ lang: en-Latn-US
 -->
 
 <!--
-  Writing Journal 2 — ENGL 1010 First-Year Composition SBA (Activity bank)
+  Writing Journal 3 — ENGL 1010 First-Year Composition SBA (Activity bank)
 
-  This one file serves both halves of Writing Journal 2. In 2a (the group chat)
+  This one file serves both halves of Writing Journal 3. In 2a (the group chat)
   the conversation (writing_journal2_dialogue_part1.chatpeg) pulls each screen
   below into the right-hand pane via `wj2_sidebar -> <id>` arrows. In 2b (the
   in-person meeting) the single wj2_meeting screen at the bottom is shown
@@ -26,7 +26,7 @@ lang: en-Latn-US
     -> TASK 1b: "What makes a good writer?" priorities (3 rounds)
     -> RESULTS: the Circle's tool plots you on three attitude continuums
     -> reflect on your placement (does it fit? a moment that explains it? a year from now?)
-    == end of Writing Journal 2a; the rest is Writing Journal 2b, in person ==
+    == end of Writing Journal 3a; the rest is Writing Journal 3b, in person ==
     -> listen to three peers' stories (receptive / modeling)
     -> TASK 2: your turn — write OR record the story of an experience that shaped you
     -> the tool reflects your story back and builds on your attitude profile
@@ -44,7 +44,7 @@ lang: en-Latn-US
         story and builds on the writing profile          -> the "circle reflects back" LLM step.
 -->
 
-<Vertical id="wj2_activities_part1" title="Writing Journal 2 — Activities" launchable="true">
+<Vertical id="wj2_activities_part1" title="Writing Journal 3 — Activities" launchable="true">
 
   <!-- The Export-as-PDF button lives on the wj2_print page at the bottom of this file,
        which writing_journal2b_sba_part1.olx mounts as its "Print &amp; Submit" tab. -->
@@ -54,7 +54,7 @@ lang: en-Latn-US
        =================================================================== -->
 
     <Markdown id="wj2_welcome">
-## Writing Journal 2: How Do You *Really* Feel About Writing?
+## Writing Journal 3: How Do You *Really* Feel About Writing?
 
 It's the middle of your first-year writing unit, and your group chat with the **Writers' Circle** is
 blowing up. **Lee** is stuck on the Literacy Narrative assignment and calling it writer's block.
@@ -832,7 +832,7 @@ in this journal — a few honest sentences are plenty.
   </Vertical>
 
   <!-- ===================================================================
-       TASK 2 — THE WRITERS' CIRCLE MEETING  (all of Writing Journal 2b)
+       TASK 2 — THE WRITERS' CIRCLE MEETING  (all of Writing Journal 3b)
        The whole meeting is ONE screen, shown full-width by
        writing_journal2b_sba_part1.olx (via <Use ref="wj2_meeting">), so there is
        no chat column here and nothing is duplicated between panes. The scene, the
@@ -994,7 +994,7 @@ export as a PDF for your course system.
 
   <!-- ===================================================================
        PRINT &amp; SUBMIT  —  THE SUBMISSION PAGE
-       The one page that gets printed, covering BOTH halves of Writing Journal 2:
+       The one page that gets printed, covering BOTH halves of Writing Journal 3:
        the group chat (2a) and the meeting (2b). It is mounted as the "Print &amp;
        Submit" tab of writing_journal2b_sba_part1.olx.
 
@@ -1061,7 +1061,7 @@ they can change. That's the groundwork for the writing you'll do next in this co
          --------------------------------------------------------------- -->
 
     <Markdown>
-# Writing Journal 2: How Do You *Really* Feel About Writing?
+# Writing Journal 3: How Do You *Really* Feel About Writing?
 
 ## My story — an experience that shaped me as a writer
 

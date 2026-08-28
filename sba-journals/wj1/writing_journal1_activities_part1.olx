@@ -1,6 +1,6 @@
 <!--
 ---
-description: "Writing Journal 1: Who Am I As a Writer? (activity bank). The in-person Writers' Circle meeting pulls each screen below into the right-hand pane as the conversation advances. A first-year composition student, unsure they count as a writer, watches Alma talk through her own Writer Board, then builds their own — marking how often (Frequently / Sometimes / Never) they do each kind of writing, FOR SCHOOL and OUTSIDE SCHOOL — works out WHY they do different kinds of writing, and finally browses the Circle's eight writer-type cards in a carousel and CHOOSES the one that fits, then defends the choice with a story."
+description: "Writing Journal 2: Who Am I As a Writer? (activity bank). The in-person Writers' Circle meeting pulls each screen below into the right-hand pane as the conversation advances. A first-year composition student, unsure they count as a writer, watches Alma talk through her own Writer Board, then builds their own — marking how often (Frequently / Sometimes / Never) they do each kind of writing, FOR SCHOOL and OUTSIDE SCHOOL — works out WHY they do different kinds of writing, and finally browses the Circle's eight writer-type cards in a carousel and CHOOSES the one that fits, then defends the choice with a story."
 category: writing_journal1
 index: 95
 lang: en-Latn-US
@@ -8,7 +8,7 @@ lang: en-Latn-US
 -->
 
 <!--
-  Writing Journal 1 — ENGL 1010 First-Year Composition SBA (Activity bank)
+  Writing Journal 2 — ENGL 1010 First-Year Composition SBA (Activity bank)
 
   The conversation (writing_journal1_dialogue_part1.chatpeg) pulls each screen
   below into the right-hand pane via `wj1_sidebar <- <id>` set commands. Each set
@@ -48,7 +48,7 @@ lang: en-Latn-US
       student made, which is a stronger writing prompt than arguing with a machine.
 -->
 
-<Vertical id="wj1_activities_part1" title="Writing Journal 1 — Activities" launchable="true">
+<Vertical id="wj1_activities_part1" title="Writing Journal 2 — Activities" launchable="true">
 
   <!-- The Export as PDF button lives on the wj1_print page at the bottom of this
        file, NOT here. The right-hand pane is a UseHistory that renders one child id at
@@ -75,7 +75,7 @@ When this happens, please read and interact with it before advancing the chat.
   </Vertical>
 
   <Markdown id="wj1_welcome">
-## Writing Journal 1: Who Am I As a Writer?
+## Writing Journal 2: Who Am I As a Writer?
 
 It's the first week of your First-Year Composition course, and **Professor Ellington** has just assigned
 your first Writing Journal:
@@ -911,7 +911,7 @@ starting from.
          --------------------------------------------------------------- -->
 
     <Markdown>
-# Writing Journal 1: Who Am I As a Writer?
+# Writing Journal 2: Who Am I As a Writer?
 
 ## My reflection — a story from my writing life
 

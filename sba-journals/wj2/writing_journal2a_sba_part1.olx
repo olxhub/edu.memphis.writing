@@ -1,9 +1,9 @@
-<!-- Writing Journal 2a: The Group Chat — ENGL 1010 SBA -->
+<!-- Writing Journal 3a: The Group Chat — ENGL 1010 SBA -->
 <Vertical id="wj2a_sba_root">
 
 <!--
 ---
-description: "Writing Journal 2a: How Do You Really Feel About Writing? — the group chat. The first half of the second journal in a first-year ENGL 1010 unit on writer identity. It opens in a phone group chat where three Writers' Circle peers argue about whether writer's block is real — the hook for the threshold concept that writing is shaped by identity and prior experience, not a fixed 'born writer' trait. A peer shares a playful writing-attitudes quiz; the Circle's tool plots the student on three attitude continuums (Expression–Evaluation, Growth–Performance, Engagement–Avoidance), and the student weighs the placement against their own sense of themselves. It ends with the Circle agreeing to finish the conversation in person, which is Writing Journal 2b."
+description: "Writing Journal 3a: How Do You Really Feel About Writing? — the group chat. The first half of the second journal in a first-year ENGL 1010 unit on writer identity. It opens in a phone group chat where three Writers' Circle peers argue about whether writer's block is real — the hook for the threshold concept that writing is shaped by identity and prior experience, not a fixed 'born writer' trait. A peer shares a playful writing-attitudes quiz; the Circle's tool plots the student on three attitude continuums (Expression–Evaluation, Growth–Performance, Engagement–Avoidance), and the student weighs the placement against their own sense of themselves. It ends with the Circle agreeing to finish the conversation in person, which is Writing Journal 3b."
 category: writing_journal2
 index: 92
 lang: en-Latn-US
@@ -11,14 +11,14 @@ lang: en-Latn-US
 -->
 
 <Cast cast="characters.cast" id="wj2a_sba_part1"
-      title="Writing Journal 2a: The Group Chat"
+      title="Writing Journal 3a: The Group Chat"
       launchable="true">
   <Tabs id="wj2a_sba_tabs">
 
     <!-- Tab 1: the phone group chat — two panes, chat left, the current activity right.
          The conversation runs from the welcome screen through the quiz, the results, and
          the placement reflection, and ends by sending the student to the in-person
-         meeting (Writing Journal 2b). The chat makes that jump itself: its last set
+         meeting (Writing Journal 3b). The chat makes that jump itself: its last set
          command repoints the enclosing Course at wj2b_sba_part1. -->
     <Vertical id="wj2_circle_tab" title="The Circle">
 
@@ -120,7 +120,7 @@ lang: en-Latn-US
 
 <!-- ============================================================
      REFERENCED CONTENT BLOCKS
-     Defined here and shared with Writing Journal 2b, which refers to
+     Defined here and shared with Writing Journal 3b, which refers to
      both of them by bare ref (one namespace across sba-journals/).
      ============================================================ -->
 
