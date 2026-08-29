@@ -1,80 +1,81 @@
 <!--
----
-description: "Writing Journal 2: Who Am I As a Writer? (activity bank). The in-person Writers' Circle meeting pulls each screen below into the right-hand pane as the conversation advances. A first-year composition student, unsure they count as a writer, watches Alma talk through her own Writer Board, then builds their own — marking how often (Frequently / Sometimes / Never) they do each kind of writing, FOR SCHOOL and OUTSIDE SCHOOL — works out WHY they do different kinds of writing, and finally browses the Circle's eight writer-type cards in a carousel and CHOOSES the one that fits, then defends the choice with a story."
-category: writing_journal1
-index: 95
-lang: en-Latn-US
----
--->
+     ---
+     description: "Writing Journal 2: Who Am I As a Writer? (activity bank). The in-person Writers' Circle meeting pulls each screen below into the right-hand pane as the conversation advances. A first-year composition student, unsure they count as a writer, watches Alma talk through her own Writer Board, then builds their own — marking how often (Frequently / Sometimes / Never) they do each kind of writing, FOR SCHOOL and OUTSIDE SCHOOL — works out WHY they do different kinds of writing, and finally browses the Circle's eight writer-type cards in a carousel and CHOOSES the one that fits, then defends the choice with a story."
+     category: writing_journal1
+     index: 95
+     lang: en-Latn-US
+     ---
+     -->
 
 <!--
-  Writing Journal 2 — ENGL 1010 First-Year Composition SBA (Activity bank)
+     Writing Journal 2 — ENGL 1010 First-Year Composition SBA (Activity bank)
 
-  The conversation (writing_journal1_dialogue_part1.chatpeg) pulls each screen
-  below into the right-hand pane via `wj1_sidebar <- <id>` set commands. Each set
-  command names a screen's own id, and UseHistory resolves it directly, so a screen
-  renders on its own — independent of whatever wraps it here.
+     The conversation (writing_journal1_dialogue_part1.chatpeg) pulls each screen
+     below into the right-hand pane via `wj1_sidebar <- <id>` set commands. Each set
+     command names a screen's own id, and UseHistory resolves it directly, so a screen
+     renders on its own — independent of whatever wraps it here.
 
-  What gets submitted is the wj1_print page at the bottom of this file, which
-  gathers the student's work by reference. Nothing else needs to hide itself from
-  the PDF; see the comment on wj1_print for the constraints that page must meet.
+     What gets submitted is the wj1_print page at the bottom of this file, which
+     gathers the student's work by reference. Nothing else needs to hide itself from
+     the PDF; see the comment on wj1_print for the constraints that page must meet.
 
-  Flow (from Design_docs/Writing_Lab/Aug5_update/Writing_journal_1_revised.docx):
-    intro slides (the assignment; the invitation; Thursday at the Circle)
-    -> orientations card (community / explorer / technician — read first as shorthand)
-    -> Alma's board (worked example; the student learns the activity by watching)
-    -> TASK 1: build your Writer Board  (Frequently/Sometimes/Never grid; what & how often)
-    -> the noticing question (optional one-line open response; ungraded)
-    -> TASK 2: Why I Write  (check every reason per cluster; name up to four that come up most; reflect)
-    -> TASK 3: Your Writer Type  (browse all eight cards in a carousel, CHOOSE one; reflect with a story)
-    -> Print &amp; Submit (the print page: confirm, export, hand in).
+     Flow (from Design_docs/Writing_Lab/Aug5_update/Writing_journal_1_revised.docx):
+  intro slides (the assignment; the invitation; Thursday at the Circle)
+  -> orientations card (community / explorer / technician — read first as shorthand)
+  -> Alma's board (worked example; the student learns the activity by watching)
+  -> TASK 1: build your Writer Board  (Frequently/Sometimes/Never grid; what & how often)
+  -> the noticing question (optional one-line open response; ungraded)
+  -> TASK 2: Why I Write  (check every reason per cluster; name up to four that come up most; reflect)
+  -> TASK 3: Your Writer Type  (browse all eight cards in a carousel, CHOOSE one; reflect with a story)
+  -> Print &amp; Submit (the print page: confirm, export, hand in).
 
-  Design-doc fidelity notes (kept out of the student's view):
-    * TASK 1 (the Writer Board) is realized as TWO TabularMCQ grids (For school /
-      Outside school): rows = kinds of writing, columns = Frequently / Sometimes /
-      Never. (An earlier version used drag-to-rank SortableInputs, but a ranking
-      can't distinguish "never" from "least often," so the instructor asked for an
-      explicit Frequently/Sometimes/Never choice; lo-blocks has no drag-into-columns
-      block, so a radio-grid TabularMCQ is the fit.) Task 1 asks only WHAT and HOW
-      OFTEN — never WHY — so the group runs into the real gap that opens Task 2.
-    * TASK 2's clusters are a fixed set (the doc's example clusters) rather than
-      generated from each student's board, because the board items are authored, not
-      free text. The fixed reason list keeps responses mappable to the Task 3 profiles.
-    * TASK 3 (Your Writer Type) is STUDENT-SELECTED — no LLM, and (as of the Aug 2026
-      revision) no assignment by the tool either. The TA reported that being handed a
-      personality-quiz result felt limiting, so the eight authored cards are now browsed
-      in a <Carousel> and the student picks one. The assessed output is still the
-      story-based reflection — but the story now defends or complicates a choice the
-      student made, which is a stronger writing prompt than arguing with a machine.
--->
+     Design-doc fidelity notes (kept out of the student's view):
+  * TASK 1 (the Writer Board) is realized as TWO TabularMCQ grids (For school /
+    Outside school): rows = kinds of writing, columns = Frequently / Sometimes /
+    Never. (An earlier version used drag-to-rank SortableInputs, but a ranking
+    can't distinguish "never" from "least often," so the instructor asked for an
+    explicit Frequently/Sometimes/Never choice; lo-blocks has no drag-into-columns
+    block, so a radio-grid TabularMCQ is the fit.) Task 1 asks only WHAT and HOW
+    OFTEN — never WHY — so the group runs into the real gap that opens Task 2.
+  * TASK 2's clusters are a fixed set (the doc's example clusters) rather than
+    generated from each student's board, because the board items are authored, not
+    free text. The fixed reason list keeps responses mappable to the Task 3 profiles.
+  * TASK 3 (Your Writer Type) is STUDENT-SELECTED — no LLM, and (as of the Aug 2026
+    revision) no assignment by the tool either. The TA reported that being handed a
+    personality-quiz result felt limiting, so the eight authored cards are now browsed
+    in a <Carousel> and the student picks one. The assessed output is still the
+    story-based reflection — but the story now defends or complicates a choice the
+    student made, which is a stronger writing prompt than arguing with a machine.
+     -->
 
 <Vertical id="wj1_activities_part1" title="Writing Journal 2 — Activities" launchable="true">
 
-  <!-- The Export as PDF button lives on the wj1_print page at the bottom of this
-       file, NOT here. The right-hand pane is a UseHistory that renders one child id at
-       a time, so a button parked on this parent Vertical never reaches the screen. -->
+<!-- The Export as PDF button lives on the wj1_print page at the bottom of this
+     file, NOT here. The right-hand pane is a UseHistory that renders one child id at
+     a time, so a button parked on this parent Vertical never reaches the screen. -->
 
-  <!-- ===================================================================
-       INTRO SLIDES  (the assignment; the invitation; Thursday at the Circle)
-       Read-only framing.
-       =================================================================== -->
 
-  <!-- The very first screen: how this activity works. Text is Katie's (see
-       notes-for-piotr.txt, "wj1_intro [NEW PAGE]"). Nothing to fill in, so the
-       <Done> at the bottom is what tells the chat the student has read it —
-       the chat waits on @wj1_intro_done.value before Alma goes on. -->
+<!-- ===================================================================
+     INTRO SLIDES  (the assignment; the invitation; Thursday at the Circle)
+     Read-only framing.
+     =================================================================== -->
 
-  <Vertical id="wj1_intro">
-    <Markdown>
+<!-- The very first screen: how this activity works. Text is Katie's (see
+     notes-for-piotr.txt, "wj1_intro [NEW PAGE]"). Nothing to fill in, so the
+     <Done> at the bottom is what tells the chat the student has read it —
+     the chat waits on @wj1_intro_done.value before Alma goes on. -->
+
+<Vertical id="wj1_intro">
+<Markdown>
 Hello! In this activity you will interact with fictional characters in a scenario created to help you
 think about your writing process. There will be a chat on the left side of the screen that you can advance
 with the 'continue' button. Sometimes activities, prompts, and text will appear here on the right side.
 When this happens, please read and interact with it before advancing the chat.
-    </Markdown>
-    <Done id="wj1_intro_done" label="Next" />
-  </Vertical>
+</Markdown>
+<Done id="wj1_intro_done" label="Next" />
+</Vertical>
 
-  <Markdown id="wj1_welcome">
+<Markdown id="wj1_welcome">
 ## Writing Journal 2: Who Am I As a Writer?
 
 It's the first week of your First-Year Composition course, and **Professor Ellington** has just assigned
@@ -107,31 +108,33 @@ mid-conversation.
 There are no wrong answers here and no grade for being one kind of writer or another. Work through the
 conversation on the left until it directs you to content on the right. When you finish something on the
 right, scroll back up to the chat box and continue the conversation.
-  </Markdown>
+</Markdown>
 
-  <!-- ===================================================================
-       THE BLANK SCREEN
-       Parked in the right-hand pane during stretches where the conversation
-       has moved past the last activity and the next one hasn't opened yet.
-       An empty pane that says nothing reads as a bug; this reads as on
-       purpose, and sends the student back to the left where the talking is.
-       =================================================================== -->
 
-  <Markdown id="wj1_blank">
+<!-- ===================================================================
+     THE BLANK SCREEN
+     Parked in the right-hand pane during stretches where the conversation
+     has moved past the last activity and the next one hasn't opened yet.
+     An empty pane that says nothing reads as a bug; this reads as on
+     purpose, and sends the student back to the left where the talking is.
+     =================================================================== -->
+
+<Markdown id="wj1_blank">
 *(nothing here right now — the Circle's talking it through on the left)*
-  </Markdown>
+</Markdown>
 
-  <!-- ===================================================================
-       THE WRITER PERSONALITIES  (read first, as the group's shorthand — so the
-       vocabulary is in place before the profile arrives). Nothing to fill in,
-       so the <Done> at the bottom is what tells the chat the student has read
-       it — without it the conversation rolls straight past a screen they never
-       looked at. The screen id moves to the wrapping Vertical so the chat's
-       `wj1_sidebar <- wj1_orientations` and the pane's Flash still find it.
-       =================================================================== -->
 
-  <Vertical id="wj1_orientations">
-  <Markdown>
+<!-- ===================================================================
+     THE WRITER PERSONALITIES  (read first, as the group's shorthand — so the
+     vocabulary is in place before the profile arrives). Nothing to fill in,
+     so the <Done> at the bottom is what tells the chat the student has read
+     it — without it the conversation rolls straight past a screen they never
+     looked at. The screen id moves to the wrapping Vertical so the chat's
+     `wj1_sidebar <- wj1_orientations` and the pane's Flash still find it.
+     =================================================================== -->
+
+<Vertical id="wj1_orientations">
+<Markdown>
 ## The Circle's Shorthand: Writer Personalities
 
 The writer's circle developed a list of writer personalities they've noticed talking about writing over
@@ -154,19 +157,20 @@ If you want a refresher at any time, click the **Writer Personalities** tab at t
 | 🔁 | **Practitioner** | Writes steadily, as a practical habit |
 | 🏁 | **Finisher** | Writes to finish something real |
 | 🎯 | **Pragmatist** | Writes to reach and affect an audience |
-  </Markdown>
-  <Done id="wj1_orientations_done" label="Mark as read" />
-  </Vertical>
+</Markdown>
+<Done id="wj1_orientations_done" label="Mark as read" />
+</Vertical> <!-- wj1_orientations -->
 
-  <!-- ===================================================================
-       ALMA'S BOARD  (worked example / scaffolding. The student learns the
-       activity by watching Alma build hers — and watching her be surprised by
-       it — rather than by reading instructions.) Nothing to fill in, so the
-       <Done> at the bottom is what tells the chat the student has read it.
-       =================================================================== -->
 
-  <Vertical id="wj1_alma_board">
-  <Markdown>
+<!-- ===================================================================
+     ALMA'S BOARD  (worked example / scaffolding. The student learns the
+     activity by watching Alma build hers — and watching her be surprised by
+     it — rather than by reading instructions.) Nothing to fill in, so the
+     <Done> at the bottom is what tells the chat the student has read it.
+     =================================================================== -->
+
+<Vertical id="wj1_alma_board">
+<Markdown>
 ## Alma's Writer Board
 
 *"It's just everything you write, laid out. Here — it's faster if I show you mine."*
@@ -188,22 +192,23 @@ If you want a refresher at any time, click the **Writer Personalities** tab at t
 On her writer board, Alma just listed what she actually writes, and the **volume** surprised her — and
 some of it (the group chat, the captions) she wouldn't have called "writing" at all. **That's what you're
 about to do next.**
-  </Markdown>
-  <Done id="wj1_alma_board_done" label="Mark as read" />
-  </Vertical>
+</Markdown>
+<Done id="wj1_alma_board_done" label="Mark as read" />
+</Vertical> <!-- wj1_alma_board -->
 
-  <!-- ===================================================================
-       TASK 1 — BUILD YOUR WRITER BOARD  (GENUINE DRAG-AND-DROP)
-       Two drag-and-drop boards = the doc's two drop zones (For school /
-       Outside school). Within each board the student drags the kinds of
-       writing into order, most often (top) -> rarely or never (bottom):
-       that ordering is how the doc's per-item "frequency" is captured.
-       Each board is a TabularMCQ radio grid (Frequently / Sometimes / Never).
-       The board asks only WHAT and HOW OFTEN — never WHY.
-       =================================================================== -->
 
-  <Vertical id="wj1_board">
-    <Markdown>
+<!-- ===================================================================
+     TASK 1 — BUILD YOUR WRITER BOARD  (GENUINE DRAG-AND-DROP)
+     Two drag-and-drop boards = the doc's two drop zones (For school /
+     Outside school). Within each board the student drags the kinds of
+     writing into order, most often (top) -> rarely or never (bottom):
+     that ordering is how the doc's per-item "frequency" is captured.
+     Each board is a TabularMCQ radio grid (Frequently / Sometimes / Never).
+     The board asks only WHAT and HOW OFTEN — never WHY.
+     =================================================================== -->
+
+<Vertical id="wj1_board">
+<Markdown>
 ## Your Writer Board
 
 Your turn. This is just an **inventory** of the writing you actually do — it doesn't have to be complete
@@ -216,11 +221,11 @@ side.
 - The same kind of writing can be different on the two sides — that's normal.
 - And **count the stuff you don't think counts.** Group chats, captions, lists — Alma almost left those
   off, and they turned out to be most of her board.
-    </Markdown>
+</Markdown>
 
-    <Markdown>### 🏫 Writing I do **FOR SCHOOL**</Markdown>
-    <Markdown>*How often do you do each of these **for school**?*</Markdown>
-    <TabularMCQ id="wj1_board_school">
+<Markdown>### 🏫 Writing I do **FOR SCHOOL**</Markdown>
+<Markdown>*How often do you do each of these **for school**?*</Markdown>
+<TabularMCQ id="wj1_board_school">
 cols: Frequently, Sometimes, Never
 rows:
   - 💬 Texting and DMs
@@ -231,13 +236,13 @@ rows:
   - 📱 Social posts, captions, and comments
   - 📄 Essays, papers, and reports
   - 🎨 Creative writing (stories, poems, song lyrics)
-    </TabularMCQ>
-    <Markdown>**Anything else you write for school** that isn't a row above? Add it here.</Markdown>
-    <TextArea id="wj1_board_school_other" rows="3" placeholder="e.g. lab reports, messages in another language, prompts to AI tools..." />
+</TabularMCQ>
+<Markdown>**Anything else you write for school** that isn't a row above? Add it here.</Markdown>
+<TextArea id="wj1_board_school_other" rows="3" placeholder="e.g. lab reports, messages in another language, prompts to AI tools..." />
 
-    <Markdown>### 🌙 Writing I do **OUTSIDE SCHOOL**</Markdown>
-    <Markdown>*How often do you do each of these **outside school**?*</Markdown>
-    <TabularMCQ id="wj1_board_outside">
+<Markdown>### 🌙 Writing I do **OUTSIDE SCHOOL**</Markdown>
+<Markdown>*How often do you do each of these **outside school**?*</Markdown>
+<TabularMCQ id="wj1_board_outside">
 cols: Frequently, Sometimes, Never
 rows:
   - 💬 Texting and DMs
@@ -248,47 +253,49 @@ rows:
   - 📱 Social posts, captions, and comments
   - 📄 Longer writing (blogs, fan fiction, reviews)
   - 🎨 Creative writing (stories, poems, song lyrics)
-    </TabularMCQ>
-    <Markdown>**Anything else you write outside school** that isn't a row above? Add it here.</Markdown>
-    <TextArea id="wj1_board_outside_other" rows="3" placeholder="e.g. messages to family, texts in another language, journaling, gaming chat..." />
-  </Vertical>
+</TabularMCQ>
+<Markdown>**Anything else you write outside school** that isn't a row above? Add it here.</Markdown>
+<TextArea id="wj1_board_outside_other" rows="3" placeholder="e.g. messages to family, texts in another language, journaling, gaming chat..." />
+</Vertical> <!-- wj1_board -->
 
-  <!-- ===================================================================
-       CLOSING TASK 1 — THE NOTICING QUESTION
-       Optional one-line open response. Ungraded. The student does the
-       noticing, so the system does not have to predict anything.
-       =================================================================== -->
 
-  <Vertical id="wj1_board_noticing">
-    <Markdown>
+<!-- ===================================================================
+     CLOSING TASK 1 — THE NOTICING QUESTION
+     Optional one-line open response. Ungraded. The student does the
+     noticing, so the system does not have to predict anything.
+     =================================================================== -->
+
+<Vertical id="wj1_board_noticing">
+<Markdown>
 ## One Thing You Noticed
 
 *Alma leans over:* **"Did anything end up on there that you wouldn't have called writing before you sat
 down?"**
 
 You don't have to answer — but if something jumped out, name it.
-    </Markdown>
-    <TextArea id="wj1_board_noticing_text" rows="2" placeholder="The thing I almost didn't count as writing was..." />
-  </Vertical>
+</Markdown>
+<TextArea id="wj1_board_noticing_text" rows="2" placeholder="The thing I almost didn't count as writing was..." />
+</Vertical>
 
-  <!-- ===================================================================
-       TASK 2 — WHY I WRITE
-       The board is a list of WHAT. This task adds the WHY. The student checks
-       EVERY reason that applies (fixed list + open option) for each cluster of
-       their writing, names up to four reasons that come up most, and writes a
-       short reflection.
 
-       Aug 2026: the five per-cluster inputs were DropdownInputs (one reason
-       each) and became CheckboxInputs, because one reason per kind of writing
-       was the wrong model — people write the same thing for several reasons at
-       once. Katie asked for an "add another reason" repeatable input; lo-blocks
-       has no repeatable-input block, so a fixed checkbox list is the interim
-       shape. Ids and option codes are unchanged, so every downstream reference
-       still resolves; what changed is that each stored value is now a LIST.
-       =================================================================== -->
+<!-- ===================================================================
+     TASK 2 — WHY I WRITE
+     The board is a list of WHAT. This task adds the WHY. The student checks
+     EVERY reason that applies (fixed list + open option) for each cluster of
+     their writing, names up to four reasons that come up most, and writes a
+     short reflection.
 
-  <Vertical id="wj1_why">
-    <Markdown>
+     Aug 2026: the five per-cluster inputs were DropdownInputs (one reason
+     each) and became CheckboxInputs, because one reason per kind of writing
+     was the wrong model — people write the same thing for several reasons at
+     once. Katie asked for an "add another reason" repeatable input; lo-blocks
+     has no repeatable-input block, so a fixed checkbox list is the interim
+     shape. Ids and option codes are unchanged, so every downstream reference
+     still resolves; what changed is that each stored value is now a LIST.
+     =================================================================== -->
+
+<Vertical id="wj1_why">
+<Markdown>
 ## Why I Write
 
 Here's the thing a board can't tell you. Two people can write the exact same grocery list — one to get
@@ -297,236 +304,237 @@ looks the same from outside.*
 
 So go back through your writing and put the **why** on it. For each group below, **check every reason
 that's true for you** — as many as fit. There's no right answer.
-    </Markdown>
+</Markdown>
 
-    <Collapsible id="wj1_why_board_reminder" title="Remind me what's on my board">
-      <Markdown>*Here's the board you built — most often at the top. You can even nudge it here if you left something out.*</Markdown>
-      <Markdown>**🏫 For school:**</Markdown>
-      <Use ref="wj1_board_school" />
-      <Markdown>**🌙 Outside school:**</Markdown>
-      <Use ref="wj1_board_outside" />
-    </Collapsible>
+<Collapsible id="wj1_why_board_reminder" title="Remind me what's on my board">
+<Markdown>*Here's the board you built — most often at the top. You can even nudge it here if you left something out.*</Markdown>
+<Markdown>**🏫 For school:**</Markdown>
+<Use ref="wj1_board_school" />
+<Markdown>**🌙 Outside school:**</Markdown>
+<Use ref="wj1_board_outside" />
+</Collapsible>
 
-    <Markdown>### 💬 Messaging &amp; staying in touch *(texts, DMs, group chats)*</Markdown>
-    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
-    <CheckboxInput id="wj1_why_messaging">
-      <Key value="dont_do">I don't really do this sort of writing</Key>
-      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
-      <Key value="community">To be part of a group or community</Key>
-      <Key value="figure_out">To figure out what I think</Key>
-      <Key value="try_out">To try something out and see what happens</Key>
-      <Key value="get_done">To get something done or stay organized</Key>
-      <Key value="remember">To remember something</Key>
-      <Key value="proud">To make something I'm proud of</Key>
-      <Key value="enjoy">Because I enjoy it</Key>
-      <Key value="feelings">To work out how I'm feeling</Key>
-      <Key value="persuade">To persuade someone or make a point</Key>
-      <Key value="required">Because a class or a job requires it</Key>
-      <Key value="something_else">Something else (I'll describe it below)</Key>
-    </CheckboxInput>
-    <!-- The "Something else" box for each group is gated on that group's own
-         checkboxes, so it opens right where the student made the choice. Every
-         option carries an explicit <Key value="…">, so the condition matches
-         the stored CODE and survives copy edits to the prose. -->
-    <Vertical id="wj1_why_messaging_other_box" when="'something_else' in @wj1_why_messaging.value">
-      <Markdown>*Describe it in your own words:*</Markdown>
-      <TextArea id="wj1_why_messaging_other" rows="2" placeholder="Mostly, I do this writing to..." />
-    </Vertical>
+<Markdown>### 💬 Messaging &amp; staying in touch *(texts, DMs, group chats)*</Markdown>
+<Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+<CheckboxInput id="wj1_why_messaging">
+  <Key value="dont_do"       > I don't really do this sort of writing</Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
+  <Key value="community"     > To be part of a group or community</Key>
+  <Key value="figure_out"    > To figure out what I think</Key>
+  <Key value="try_out"       > To try something out and see what happens</Key>
+  <Key value="get_done"      > To get something done or stay organized</Key>
+  <Key value="remember"      > To remember something</Key>
+  <Key value="proud"         > To make something I'm proud of</Key>
+  <Key value="enjoy"         > Because I enjoy it</Key>
+  <Key value="feelings"      > To work out how I'm feeling</Key>
+  <Key value="persuade"      > To persuade someone or make a point</Key>
+  <Key value="required"      > Because a class or a job requires it</Key>
+  <Key value="something_else"> Something else (I'll describe it below)</Key>
+</CheckboxInput>
+<!-- The "Something else" box for each group is gated on that group's own
+       checkboxes, so it opens right where the student made the choice. Every
+       option carries an explicit <Key value="…">, so the condition matches
+       the stored CODE and survives copy edits to the prose. -->
+<Vertical id="wj1_why_messaging_other_box" when="'something_else' in @wj1_why_messaging.value">
+<Markdown>*Describe it in your own words:*</Markdown>
+<TextArea id="wj1_why_messaging_other" rows="2" placeholder="Mostly, I do this writing to..." />
+</Vertical>
 
-    <Markdown>### 🎓 Coursework &amp; class writing *(essays, papers, discussion posts, reports)*</Markdown>
-    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
-    <CheckboxInput id="wj1_why_coursework">
-      <Key value="dont_do">I don't really do this sort of writing</Key>
-      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
-      <Key value="community">To be part of a group or community</Key>
-      <Key value="figure_out">To figure out what I think</Key>
-      <Key value="try_out">To try something out and see what happens</Key>
-      <Key value="get_done">To get something done or stay organized</Key>
-      <Key value="remember">To remember something</Key>
-      <Key value="proud">To make something I'm proud of</Key>
-      <Key value="enjoy">Because I enjoy it</Key>
-      <Key value="feelings">To work out how I'm feeling</Key>
-      <Key value="persuade">To persuade someone or make a point</Key>
-      <Key value="required">Because a class or a job requires it</Key>
-      <Key value="something_else">Something else (I'll describe it below)</Key>
-    </CheckboxInput>
-    <Vertical id="wj1_why_coursework_other_box" when="'something_else' in @wj1_why_coursework.value">
-      <Markdown>*Describe it in your own words:*</Markdown>
-      <TextArea id="wj1_why_coursework_other" rows="2" placeholder="Mostly, I do this writing to..." />
-    </Vertical>
+<Markdown>### 🎓 Coursework &amp; class writing *(essays, papers, discussion posts, reports)*</Markdown>
+<Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+<CheckboxInput id="wj1_why_coursework">
+  <Key value="dont_do"       > I don't really do this sort of writing</Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
+  <Key value="community"     > To be part of a group or community</Key>
+  <Key value="figure_out"    > To figure out what I think</Key>
+  <Key value="try_out"       > To try something out and see what happens</Key>
+  <Key value="get_done"      > To get something done or stay organized</Key>
+  <Key value="remember"      > To remember something</Key>
+  <Key value="proud"         > To make something I'm proud of</Key>
+  <Key value="enjoy"         > Because I enjoy it</Key>
+  <Key value="feelings"      > To work out how I'm feeling</Key>
+  <Key value="persuade"      > To persuade someone or make a point</Key>
+  <Key value="required"      > Because a class or a job requires it</Key>
+  <Key value="something_else"> Something else (I'll describe it below)</Key>
+</CheckboxInput>
+<Vertical id="wj1_why_coursework_other_box" when="'something_else' in @wj1_why_coursework.value">
+<Markdown>*Describe it in your own words:*</Markdown>
+<TextArea id="wj1_why_coursework_other" rows="2" placeholder="Mostly, I do this writing to..." />
+</Vertical>
 
-    <Markdown>### 🗂️ Notes, lists &amp; organizing *(class notes, to-do lists, planners, reminders)*</Markdown>
-    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
-    <CheckboxInput id="wj1_why_organizing">
-      <Key value="dont_do">I don't really do this sort of writing</Key>
-      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
-      <Key value="community">To be part of a group or community</Key>
-      <Key value="figure_out">To figure out what I think</Key>
-      <Key value="try_out">To try something out and see what happens</Key>
-      <Key value="get_done">To get something done or stay organized</Key>
-      <Key value="remember">To remember something</Key>
-      <Key value="proud">To make something I'm proud of</Key>
-      <Key value="enjoy">Because I enjoy it</Key>
-      <Key value="feelings">To work out how I'm feeling</Key>
-      <Key value="persuade">To persuade someone or make a point</Key>
-      <Key value="required">Because a class or a job requires it</Key>
-      <Key value="something_else">Something else (I'll describe it below)</Key>
-    </CheckboxInput>
-    <Vertical id="wj1_why_organizing_other_box" when="'something_else' in @wj1_why_organizing.value">
-      <Markdown>*Describe it in your own words:*</Markdown>
-      <TextArea id="wj1_why_organizing_other" rows="2" placeholder="Mostly, I do this writing to..." />
-    </Vertical>
+<Markdown>### 🗂️ Notes, lists &amp; organizing *(class notes, to-do lists, planners, reminders)*</Markdown>
+<Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+<CheckboxInput id="wj1_why_organizing">
+  <Key value="dont_do"       > I don't really do this sort of writing</Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
+  <Key value="community"     > To be part of a group or community</Key>
+  <Key value="figure_out"    > To figure out what I think</Key>
+  <Key value="try_out"       > To try something out and see what happens</Key>
+  <Key value="get_done"      > To get something done or stay organized</Key>
+  <Key value="remember"      > To remember something</Key>
+  <Key value="proud"         > To make something I'm proud of</Key>
+  <Key value="enjoy"         > Because I enjoy it</Key>
+  <Key value="feelings"      > To work out how I'm feeling</Key>
+  <Key value="persuade"      > To persuade someone or make a point</Key>
+  <Key value="required"      > Because a class or a job requires it</Key>
+  <Key value="something_else"> Something else (I'll describe it below)</Key>
+</CheckboxInput>
+<Vertical id="wj1_why_organizing_other_box" when="'something_else' in @wj1_why_organizing.value">
+<Markdown>*Describe it in your own words:*</Markdown>
+<TextArea id="wj1_why_organizing_other" rows="2" placeholder="Mostly, I do this writing to..." />
+</Vertical>
 
-    <Markdown>### 📣 Posting &amp; sharing publicly *(social posts, captions, comments, reviews)*</Markdown>
-    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
-    <CheckboxInput id="wj1_why_posting">
-      <Key value="dont_do">I don't really do this sort of writing</Key>
-      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
-      <Key value="community">To be part of a group or community</Key>
-      <Key value="figure_out">To figure out what I think</Key>
-      <Key value="try_out">To try something out and see what happens</Key>
-      <Key value="get_done">To get something done or stay organized</Key>
-      <Key value="remember">To remember something</Key>
-      <Key value="proud">To make something I'm proud of</Key>
-      <Key value="enjoy">Because I enjoy it</Key>
-      <Key value="feelings">To work out how I'm feeling</Key>
-      <Key value="persuade">To persuade someone or make a point</Key>
-      <Key value="required">Because a class or a job requires it</Key>
-      <Key value="something_else">Something else (I'll describe it below)</Key>
-    </CheckboxInput>
-    <Vertical id="wj1_why_posting_other_box" when="'something_else' in @wj1_why_posting.value">
-      <Markdown>*Describe it in your own words:*</Markdown>
-      <TextArea id="wj1_why_posting_other" rows="2" placeholder="Mostly, I do this writing to..." />
-    </Vertical>
+<Markdown>### 📣 Posting &amp; sharing publicly *(social posts, captions, comments, reviews)*</Markdown>
+<Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+<CheckboxInput id="wj1_why_posting">
+  <Key value="dont_do"       > I don't really do this sort of writing</Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
+  <Key value="community"     > To be part of a group or community</Key>
+  <Key value="figure_out"    > To figure out what I think</Key>
+  <Key value="try_out"       > To try something out and see what happens</Key>
+  <Key value="get_done"      > To get something done or stay organized</Key>
+  <Key value="remember"      > To remember something</Key>
+  <Key value="proud"         > To make something I'm proud of</Key>
+  <Key value="enjoy"         > Because I enjoy it</Key>
+  <Key value="feelings"      > To work out how I'm feeling</Key>
+  <Key value="persuade"      > To persuade someone or make a point</Key>
+  <Key value="required"      > Because a class or a job requires it</Key>
+  <Key value="something_else"> Something else (I'll describe it below)</Key>
+</CheckboxInput>
+<Vertical id="wj1_why_posting_other_box" when="'something_else' in @wj1_why_posting.value">
+<Markdown>*Describe it in your own words:*</Markdown>
+<TextArea id="wj1_why_posting_other" rows="2" placeholder="Mostly, I do this writing to..." />
+</Vertical>
 
-    <Markdown>### 🎨 Creative &amp; personal writing *(stories, poems, lyrics, journaling)*</Markdown>
-    <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
-    <CheckboxInput id="wj1_why_creative">
-      <Key value="dont_do">I don't really do this sort of writing</Key>
-      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
-      <Key value="community">To be part of a group or community</Key>
-      <Key value="figure_out">To figure out what I think</Key>
-      <Key value="try_out">To try something out and see what happens</Key>
-      <Key value="get_done">To get something done or stay organized</Key>
-      <Key value="remember">To remember something</Key>
-      <Key value="proud">To make something I'm proud of</Key>
-      <Key value="enjoy">Because I enjoy it</Key>
-      <Key value="feelings">To work out how I'm feeling</Key>
-      <Key value="persuade">To persuade someone or make a point</Key>
-      <Key value="required">Because a class or a job requires it</Key>
-      <Key value="something_else">Something else (I'll describe it below)</Key>
-    </CheckboxInput>
-    <Vertical id="wj1_why_creative_other_box" when="'something_else' in @wj1_why_creative.value">
-      <Markdown>*Describe it in your own words:*</Markdown>
-      <TextArea id="wj1_why_creative_other" rows="2" placeholder="Mostly, I do this writing to..." />
-    </Vertical>
+<Markdown>### 🎨 Creative &amp; personal writing *(stories, poems, lyrics, journaling)*</Markdown>
+<Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
+<CheckboxInput id="wj1_why_creative">
+  <Key value="dont_do"       > I don't really do this sort of writing</Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
+  <Key value="community"     > To be part of a group or community</Key>
+  <Key value="figure_out"    > To figure out what I think</Key>
+  <Key value="try_out"       > To try something out and see what happens</Key>
+  <Key value="get_done"      > To get something done or stay organized</Key>
+  <Key value="remember"      > To remember something</Key>
+  <Key value="proud"         > To make something I'm proud of</Key>
+  <Key value="enjoy"         > Because I enjoy it</Key>
+  <Key value="feelings"      > To work out how I'm feeling</Key>
+  <Key value="persuade"      > To persuade someone or make a point</Key>
+  <Key value="required"      > Because a class or a job requires it</Key>
+  <Key value="something_else"> Something else (I'll describe it below)</Key>
+</CheckboxInput>
+<Vertical id="wj1_why_creative_other_box" when="'something_else' in @wj1_why_creative.value">
+<Markdown>*Describe it in your own words:*</Markdown>
+<TextArea id="wj1_why_creative_other" rows="2" placeholder="Mostly, I do this writing to..." />
+</Vertical>
 
-    <Markdown>
+<Markdown>
 ### The reasons that come up most
 
 Looking at the **whole board**, tick **up to four** reasons that come up most across everything you
 write.
-    </Markdown>
-    <CheckboxInput id="wj1_why_top2">
-      <Key value="stay_in_touch">To stay in touch with people I care about</Key>
-      <Key value="community">To be part of a group or community</Key>
-      <Key value="figure_out">To figure out what I think</Key>
-      <Key value="try_out">To try something out and see what happens</Key>
-      <Key value="get_done">To get something done or stay organized</Key>
-      <Key value="remember">To remember something</Key>
-      <Key value="proud">To make something I'm proud of</Key>
-      <Key value="enjoy">Because I enjoy it</Key>
-      <Key value="feelings">To work out how I'm feeling</Key>
-      <Key value="persuade">To persuade someone or make a point</Key>
-      <Key value="required">Because a class or a job requires it</Key>
-      <Key value="something_else">Something else</Key>
-    </CheckboxInput>
+</Markdown>
+<CheckboxInput id="wj1_why_top2">
+  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
+  <Key value="community"     > To be part of a group or community</Key>
+  <Key value="figure_out"    > To figure out what I think</Key>
+  <Key value="try_out"       > To try something out and see what happens</Key>
+  <Key value="get_done"      > To get something done or stay organized</Key>
+  <Key value="remember"      > To remember something</Key>
+  <Key value="proud"         > To make something I'm proud of</Key>
+  <Key value="enjoy"         > Because I enjoy it</Key>
+  <Key value="feelings"      > To work out how I'm feeling</Key>
+  <Key value="persuade"      > To persuade someone or make a point</Key>
+  <Key value="required"      > Because a class or a job requires it</Key>
+  <Key value="something_else"> Something else</Key>
+</CheckboxInput>
 
-    <!-- id kept as wj1_why_top2 (it is referenced from the chat gate, the print
-         page and the artifact); the ask is now up to FOUR, not exactly two. -->
-    <Markdown when="@wj1_why_top2.value.length &lt; 1">*Pick at least one — the reasons that come up most across everything you write.*</Markdown>
-    <Markdown when="@wj1_why_top2.value.length &gt; 4">*That's more than four. Which ones really come up most? Unclick the rest.*</Markdown>
-    <Markdown when="@wj1_why_top2.value.length &gt;= 1 &amp;&amp; @wj1_why_top2.value.length &lt;= 4">*Got them. Hold onto those — they may point toward a writer personality when you get to the deck.*</Markdown>
+<!-- id kept as wj1_why_top2 (it is referenced from the chat gate, the print
+       page and the artifact); the ask is now up to FOUR, not exactly two. -->
+<Markdown when="@wj1_why_top2.value.length &lt; 1">*Pick at least one — the reasons that come up most across everything you write.*</Markdown>
+<Markdown when="@wj1_why_top2.value.length &gt; 4">*That's more than four. Which ones really come up most? Unclick the rest.*</Markdown>
+<Markdown when="@wj1_why_top2.value.length &gt;= 1 &amp;&amp; @wj1_why_top2.value.length &lt;= 4">*Got them. Hold onto those — they may point toward a writer personality when you get to the deck.*</Markdown>
 
-    <Markdown>
+<Markdown>
 ### One short reflection
 
 Considering the reasons you chose for writing, write a few sentences about what you've learned about
 yourself as a writer, or about the reasons why you write.
-    </Markdown>
-    <TextArea id="wj1_why_reflect" rows="6" placeholder="What I've learned about myself as a writer is..." />
-  </Vertical>
+</Markdown>
+<TextArea id="wj1_why_reflect" rows="6" placeholder="What I've learned about myself as a writer is..." />
+</Vertical> <!-- wj1_why -->
 
-  <!-- ===================================================================
-       TASK 3 — YOUR WRITER TYPE  (STUDENT-SELECTED; NO LLM, NO ASSIGNMENT)
-       The culminating screen puts the Circle's whole card deck in front of the
-       student and lets them choose. Three pieces:
 
-         1. wj1_type_cards — the eight authored cards, parked in <Hidden> so they
-            live in the OLX DOM as addressable blocks without rendering twice.
-            Each card is a Vertical with a `title` (the Carousel prints it in its
-            own header), the card table, and a "This one's me" ActionButton.
-         2. wj1_type_carousel — a <Carousel> over those eight ids. It shows ONE
-            card at a time with prev/next arrows; wrap="true" so the deck is a
-            loop rather than a dead end at either edge.
-         3. wj1_type_result — the confirmation. One IntakeGate per type on
-            @wj1_type_choice.value, so the chosen card is MOUNTED (not merely
-            visible) and therefore survives into the printed PDF, which is a
-            photograph of the live DOM. See the wj1_print comment below.
+<!-- ===================================================================
+     TASK 3 — YOUR WRITER TYPE  (STUDENT-SELECTED; NO LLM, NO ASSIGNMENT)
+     The culminating screen puts the Circle's whole card deck in front of the
+     student and lets them choose. Three pieces:
 
-       The Carousel's own `value` field tracks whichever card is on screen right
-       now — it changes every time an arrow is clicked, so it is a CURSOR, not a
-       choice. The student's actual selection is a separate, deliberate write:
-       each card's button fires SetFieldAction into wj1_type_choice (a Hidden
-       LineInput) with an explicit semantic code. Browsing on afterwards cannot
-       silently change what they picked; clicking a different card's button can,
-       which is what changing your mind should look like.
+       1. wj1_type_cards — the eight authored cards, parked in <Hidden> so they
+          live in the OLX DOM as addressable blocks without rendering twice.
+          Each card is a Vertical with a `title` (the Carousel prints it in its
+          own header), the card table, and a "This one's me" ActionButton.
+       2. wj1_type_carousel — a <Carousel> over those eight ids. It shows ONE
+          card at a time with prev/next arrows; wrap="true" so the deck is a
+          loop rather than a dead end at either edge.
+       3. wj1_type_result — the confirmation. One IntakeGate per type on
+          @wj1_type_choice.value, so the chosen card is MOUNTED (not merely
+          visible) and therefore survives into the printed PDF, which is a
+          photograph of the live DOM. See the wj1_print comment below.
 
-       Card id -> stored code (kept 1:1 and semantic for the event stream):
-         wj1_card_community_writer -> community_writer   🤝
-         wj1_card_explorer         -> explorer           🧭
-         wj1_card_technician       -> technician         🔧
-         wj1_card_hobbyist         -> hobbyist           🌿
-         wj1_card_dreamer          -> dreamer            💭
-         wj1_card_practitioner     -> practitioner       🔁
-         wj1_card_finisher         -> finisher           🏁
-         wj1_card_pragmatist       -> pragmatist         🎯
-         wj1_card_custom           -> custom             ✍️  (student-written)
-       (wj1_card_cover is card 0 and stores nothing — it is not a choice.)
+     The Carousel's own `value` field tracks whichever card is on screen right
+     now — it changes every time an arrow is clicked, so it is a CURSOR, not a
+     choice. The student's actual selection is a separate, deliberate write:
+     each card's button fires SetFieldAction into wj1_type_choice (a Hidden
+     LineInput) with an explicit semantic code. Browsing on afterwards cannot
+     silently change what they picked; clicking a different card's button can,
+     which is what changing your mind should look like.
 
-       ORDER — why a cover card and not a shuffle. Whichever card comes first in
-       a deck gets picked more, so the preference was to randomize the eight
-       typed cards and PIN the write-your-own card last. Carousel can't do that:
-       `randomize` (Carousel.ts:36) shuffles the entire item list with no pin or
-       exclude, and when randomize is off _Carousel.tsx:49-52 rewrites the stored
-       `order` field back to the authored sequence on every render — so there is
-       no author- or content-side way to hold one item in place, and the platform
-       is not ours to change here. A whole-deck shuffle would drop "write your
-       own" into the middle, where it reads as confusion rather than as the
-       deck's last word.
+     Card id -> stored code (kept 1:1 and semantic for the event stream):
+       wj1_card_community_writer -> community_writer   🤝
+       wj1_card_explorer         -> explorer           🧭
+       wj1_card_technician       -> technician         🔧
+       wj1_card_hobbyist         -> hobbyist           🌿
+       wj1_card_dreamer          -> dreamer            💭
+       wj1_card_practitioner     -> practitioner       🔁
+       wj1_card_finisher         -> finisher           🏁
+       wj1_card_pragmatist       -> pragmatist         🎯
+       wj1_card_custom           -> custom             ✍️  (student-written)
+     (wj1_card_cover is card 0 and stores nothing — it is not a choice.)
 
-       So: authored order behind a NEUTRAL COVER CARD. Card 0 has no "This one's
-       me" button, so the first card a student sees is not a choice at all, which
-       is what the shuffle was for. The eight then run in the same order as the
-       orientations table and the Writer Types tab, so a student meets them
-       identically everywhere, and the blank card is last — "and if none of those
-       is you…", rather than an escape hatch offered before they've looked.
+     ORDER — why a cover card and not a shuffle. Whichever card comes first in
+     a deck gets picked more, so the preference was to randomize the eight
+     typed cards and PIN the write-your-own card last. Carousel can't do that:
+     `randomize` (Carousel.ts:36) shuffles the entire item list with no pin or
+     exclude, and when randomize is off _Carousel.tsx:49-52 rewrites the stored
+     `order` field back to the authored sequence on every render — so there is
+     no author- or content-side way to hold one item in place, and the platform
+     is not ours to change here. A whole-deck shuffle would drop "write your
+     own" into the middle, where it reads as confusion rather than as the
+     deck's last word.
 
-       The custom card's two inputs are not required: the button sets `custom`
-       regardless, because a student who has decided none of the eight fits has
-       already made the choice this screen asks for. Discourage, don't block.
+     So: authored order behind a NEUTRAL COVER CARD. Card 0 has no "This one's
+     me" button, so the first card a student sees is not a choice at all, which
+     is what the shuffle was for. The eight then run in the same order as the
+     orientations table and the Writer Types tab, so a student meets them
+     identically everywhere, and the blank card is last — "and if none of those
+     is you…", rather than an escape hatch offered before they've looked.
 
-       HISTORY (Aug 2026): this screen used to ASSIGN a type — the biggest
-       reasons (wj1_why_top2) revealed one or two cards behind a "Generate your
-       writer profile" button. The TA reported that landing on a personality-quiz
-       result felt limiting, so the assignment machinery (wj1_generate_btn,
-       wj1_generate_flag, the reason->card IntakeGates, and the "does this feel
-       like you" question wj1_fit) is gone. Those reasons keep their
-       role as reflection back in Why I Write; they no longer gate anything here.
-       =================================================================== -->
+     The custom card's two inputs are not required: the button sets `custom`
+     regardless, because a student who has decided none of the eight fits has
+     already made the choice this screen asks for. Discourage, don't block.
 
-  <Vertical id="wj1_profile">
-    <Markdown>
+     HISTORY (Aug 2026): this screen used to ASSIGN a type — the biggest
+     reasons (wj1_why_top2) revealed one or two cards behind a "Generate your
+     writer profile" button. The TA reported that landing on a personality-quiz
+     result felt limiting, so the assignment machinery (wj1_generate_btn,
+     wj1_generate_flag, the reason->card IntakeGates, and the "does this feel
+     like you" question wj1_fit) is gone. Those reasons keep their
+     role as reflection back in Why I Write; they no longer gate anything here.
+     =================================================================== -->
+
+<Vertical id="wj1_profile">
+<Markdown>
 ## Your Writer Type
 
 You built your **Writer Board** and worked out **why** you do different kinds of writing. Now here's the
@@ -538,25 +546,25 @@ here is deciding for you: **you pick.** When you find the one that sounds most l
 me** on that card. You can keep browsing afterwards and change it if a later card fits better.
 
 Remember Alma's rule: it's a **shorthand, not a verdict.** You know things about yourself no card does.
-    </Markdown>
+</Markdown>
 
-    <!-- The deck. Parked in <Hidden> so these eight blocks exist in the OLX DOM
-         and are addressable by id, but render only where the Carousel puts them
-         (Hidden renders its kids into the tree and returns null). Card text is
-         unchanged from the assigned-profile version except that the old "Why
-         you're seeing it" row is gone — nothing is being shown BECAUSE of
-         anything now. Each card's inner Markdown carries its own id so the
-         confirmation section below can <Use> the table without the button. -->
-    <Hidden id="wj1_type_cards">
+<!-- The deck. Parked in <Hidden> so these eight blocks exist in the OLX DOM
+       and are addressable by id, but render only where the Carousel puts them
+       (Hidden renders its kids into the tree and returns null). Card text is
+       unchanged from the assigned-profile version except that the old "Why
+       you're seeing it" row is gone — nothing is being shown BECAUSE of
+       anything now. Each card's inner Markdown carries its own id so the
+       confirmation section below can <Use> the table without the button. -->
+<Hidden id="wj1_type_cards">
 
-      <!-- Card 0: the cover. It carries no "This one's me" button, so the first
-           thing the student lands on is not a choice — which is the whole job it
-           does. See the ORDER note in the comment above this screen.
-           Deliberately NOT the two-column table the eight cards use: the cover
-           sits above the cards in the information hierarchy, and sharing their
-           format made it read as card one of nine. -->
-      <Vertical id="wj1_card_cover" title="🃏 The Circle's Deck">
-        <Markdown id="wj1_card_cover_text">
+<!-- Card 0: the cover. It carries no "This one's me" button, so the first
+         thing the student lands on is not a choice — which is the whole job it
+         does. See the ORDER note in the comment above this screen.
+         Deliberately NOT the two-column table the eight cards use: the cover
+         sits above the cards in the information hierarchy, and sharing their
+         format made it read as card one of nine. -->
+<Vertical id="wj1_card_cover" title="🃏 The Circle's Deck">
+<Markdown id="wj1_card_cover_text">
 # 🃏 The Circle's Deck
 
 *Nine cards. Not one of them is yours yet.*
@@ -566,253 +574,253 @@ standing complaint about this deck is that people stop at the first card that
 flatters them.
 
 If none of them fit: the last card is blank, and it's for writing your own.
-        </Markdown>
-      </Vertical>
+</Markdown>
+</Vertical>
 
-      <Vertical id="wj1_card_community_writer" title="🤝 The Community Writer">
-        <Markdown id="wj1_card_community_writer_text">
+<Vertical id="wj1_card_community_writer" title="🤝 The Community Writer">
+<Markdown id="wj1_card_community_writer_text">
 | 🤝 The Community Writer | Core motivation: connection |
 | :-- | :-- |
 | **What it looks like** | You write to reach other people — messages, group chats, replies, shared docs — and you get sharper through back-and-forth with real readers. |
 | **A growth edge** | Take in feedback without becoming dependent on it. |
-        </Markdown>
-        <ActionButton id="wj1_pick_community_writer" label="This one's me">
-          <SetFieldAction id="wj1_pick_community_writer_set" target="wj1_type_choice" field="value" value="community_writer" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<ActionButton id="wj1_pick_community_writer" label="This one's me">
+<SetFieldAction id="wj1_pick_community_writer_set" target="wj1_type_choice" field="value" value="community_writer" />
+</ActionButton>
+</Vertical>
 
-      <Vertical id="wj1_card_explorer" title="🧭 The Explorer">
-        <Markdown id="wj1_card_explorer_text">
+<Vertical id="wj1_card_explorer" title="🧭 The Explorer">
+<Markdown id="wj1_card_explorer_text">
 | 🧭 The Explorer | Core motivation: curiosity |
 | :-- | :-- |
 | **What it looks like** | You write to find out what you think — often not knowing where a piece is going until you're in it. Writing is a way of thinking, and you like to experiment. *(Lee's type.)* |
 | **A growth edge** | Decide when exploring is the goal and when a piece needs to land somewhere. |
-        </Markdown>
-        <ActionButton id="wj1_pick_explorer" label="This one's me">
-          <SetFieldAction id="wj1_pick_explorer_set" target="wj1_type_choice" field="value" value="explorer" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<ActionButton id="wj1_pick_explorer" label="This one's me">
+<SetFieldAction id="wj1_pick_explorer_set" target="wj1_type_choice" field="value" value="explorer" />
+</ActionButton>
+</Vertical>
 
-      <Vertical id="wj1_card_technician" title="🔧 The Technician">
-        <Markdown id="wj1_card_technician_text">
+<Vertical id="wj1_card_technician" title="🔧 The Technician">
+<Markdown id="wj1_card_technician_text">
 | 🔧 The Technician | Core motivation: getting it done, and right |
 | :-- | :-- |
 | **What it looks like** | You write to accomplish a task cleanly — clear, organized, no wasted motion — and you like doing it properly the first time. *(Richard's type.)* |
 | **A growth edge** | The parts of writing beyond correctness — voice, surprise, the reader's experience. |
-        </Markdown>
-        <ActionButton id="wj1_pick_technician" label="This one's me">
-          <SetFieldAction id="wj1_pick_technician_set" target="wj1_type_choice" field="value" value="technician" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<ActionButton id="wj1_pick_technician" label="This one's me">
+<SetFieldAction id="wj1_pick_technician_set" target="wj1_type_choice" field="value" value="technician" />
+</ActionButton>
+</Vertical>
 
-      <Vertical id="wj1_card_hobbyist" title="🌿 The Hobbyist">
-        <Markdown id="wj1_card_hobbyist_text">
+<Vertical id="wj1_card_hobbyist" title="🌿 The Hobbyist">
+<Markdown id="wj1_card_hobbyist_text">
 | 🌿 The Hobbyist | Core motivation: personal fulfillment |
 | :-- | :-- |
 | **What it looks like** | You write because you *like* it. You don't necessarily need a big audience or a grade — the writing itself is the point, seen or not. |
 | **A growth edge** | Protect the joy of it even as you push to grow. |
-        </Markdown>
-        <ActionButton id="wj1_pick_hobbyist" label="This one's me">
-          <SetFieldAction id="wj1_pick_hobbyist_set" target="wj1_type_choice" field="value" value="hobbyist" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<ActionButton id="wj1_pick_hobbyist" label="This one's me">
+<SetFieldAction id="wj1_pick_hobbyist_set" target="wj1_type_choice" field="value" value="hobbyist" />
+</ActionButton>
+</Vertical>
 
-      <Vertical id="wj1_card_dreamer" title="💭 The Dreamer">
-        <Markdown id="wj1_card_dreamer_text">
+<Vertical id="wj1_card_dreamer" title="💭 The Dreamer">
+<Markdown id="wj1_card_dreamer_text">
 | 💭 The Dreamer | Core motivation: expression |
 | :-- | :-- |
 | **What it looks like** | You write to get what's inside into words — to work out how you feel and make sense of things. There's an inner life your writing reaches for, polished or not. |
 | **A growth edge** | Turn some of that inner material into pieces you finish and share. |
-        </Markdown>
-        <ActionButton id="wj1_pick_dreamer" label="This one's me">
-          <SetFieldAction id="wj1_pick_dreamer_set" target="wj1_type_choice" field="value" value="dreamer" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<ActionButton id="wj1_pick_dreamer" label="This one's me">
+<SetFieldAction id="wj1_pick_dreamer_set" target="wj1_type_choice" field="value" value="dreamer" />
+</ActionButton>
+</Vertical>
 
-      <Vertical id="wj1_card_practitioner" title="🔁 The Practitioner">
-        <Markdown id="wj1_card_practitioner_text">
+<Vertical id="wj1_card_practitioner" title="🔁 The Practitioner">
+<Markdown id="wj1_card_practitioner_text">
 | 🔁 The Practitioner | Core motivation: steady practice |
 | :-- | :-- |
 | **What it looks like** | You write regularly and usefully — to keep track, to remember, to stay on top of things. You trust the habit more than inspiration, and it adds up. |
 | **A growth edge** | Let some of that steady practice become writing you do for its own sake. |
-        </Markdown>
-        <ActionButton id="wj1_pick_practitioner" label="This one's me">
-          <SetFieldAction id="wj1_pick_practitioner_set" target="wj1_type_choice" field="value" value="practitioner" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<ActionButton id="wj1_pick_practitioner" label="This one's me">
+<SetFieldAction id="wj1_pick_practitioner_set" target="wj1_type_choice" field="value" value="practitioner" />
+</ActionButton>
+</Vertical>
 
-      <Vertical id="wj1_card_finisher" title="🏁 The Finisher">
-        <Markdown id="wj1_card_finisher_text">
+<Vertical id="wj1_card_finisher" title="🏁 The Finisher">
+<Markdown id="wj1_card_finisher_text">
 | 🏁 The Finisher | Core motivation: finishing something real |
 | :-- | :-- |
 | **What it looks like** | You write to end up with a finished thing — something you can point to and say *I made that.* You have, or are building, the persistence to see a piece through. |
 | **A growth edge** | Treat finishing as the start of a writing life, not a one-time test. |
-        </Markdown>
-        <ActionButton id="wj1_pick_finisher" label="This one's me">
-          <SetFieldAction id="wj1_pick_finisher_set" target="wj1_type_choice" field="value" value="finisher" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<ActionButton id="wj1_pick_finisher" label="This one's me">
+<SetFieldAction id="wj1_pick_finisher_set" target="wj1_type_choice" field="value" value="finisher" />
+</ActionButton>
+</Vertical>
 
-      <Vertical id="wj1_card_pragmatist" title="🎯 The Pragmatist">
-        <Markdown id="wj1_card_pragmatist_text">
+<Vertical id="wj1_card_pragmatist" title="🎯 The Pragmatist">
+<Markdown id="wj1_card_pragmatist_text">
 | 🎯 The Pragmatist | Core motivation: audience &amp; impact |
 | :-- | :-- |
 | **What it looks like** | You write to *reach* people — to make a point, change a mind, get a result. You think about the reader on the other end, not just the words on the page. |
 | **A growth edge** | Keep your own voice and purpose alongside the goal of landing with an audience. |
-        </Markdown>
-        <ActionButton id="wj1_pick_pragmatist" label="This one's me">
-          <SetFieldAction id="wj1_pick_pragmatist_set" target="wj1_type_choice" field="value" value="pragmatist" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<ActionButton id="wj1_pick_pragmatist" label="This one's me">
+<SetFieldAction id="wj1_pick_pragmatist_set" target="wj1_type_choice" field="value" value="pragmatist" />
+</ActionButton>
+</Vertical>
 
-      <!-- The ninth card: a blank one. Eight is eight, and a student who doesn't
-           fit any of them shouldn't have to pick the least wrong. This card is
-           the only one whose content comes from the student, so it can't be
-           <Use>d into the confirmation the way the others are — the confirmation
-           re-renders it from wj1_type_custom_name / wj1_type_custom_text below.
+<!-- The ninth card: a blank one. Eight is eight, and a student who doesn't
+         fit any of them shouldn't have to pick the least wrong. This card is
+         the only one whose content comes from the student, so it can't be
+     <Use>d into the confirmation the way the others are — the confirmation
+         re-renders it from wj1_type_custom_name / wj1_type_custom_text below.
 
-           Neither input gates the choice: the button sets `custom` whether or
-           not they've written anything. Discourage, don't block. -->
-      <Vertical id="wj1_card_custom" title="✍️ Write your own">
-        <Markdown id="wj1_card_custom_prompt">
+         Neither input gates the choice: the button sets `custom` whether or
+         not they've written anything. Discourage, don't block. -->
+<Vertical id="wj1_card_custom" title="✍️ Write your own">
+<Markdown id="wj1_card_custom_prompt">
 | ✍️ Write your own | Core motivation: yours to name |
 | :-- | :-- |
 | **What it looks like** | None of the eight? Then the deck is short a card, and the Circle's rule is that you make it. This shorthand was invented by students sitting where you're sitting — it's yours to extend. |
 | **A growth edge** | Naming your own is harder than taking one that's already written. It's also worth more. |
 
 **Name it.** *(Alma's is "the community writer." Yours can be anything you'd actually say out loud.)*
-        </Markdown>
-        <LineInput id="wj1_type_custom_name" placeholder="The ___ Writer" />
-        <Markdown>**Now say what it looks like** — a sentence or two. What do you write, and what is it for?</Markdown>
-        <TextArea id="wj1_type_custom_text" rows="4" placeholder="I write mostly to..." />
-        <ActionButton id="wj1_pick_custom" label="This one's me">
-          <SetFieldAction id="wj1_pick_custom_set" target="wj1_type_choice" field="value" value="custom" />
-        </ActionButton>
-      </Vertical>
+</Markdown>
+<LineInput id="wj1_type_custom_name" placeholder="The ___ Writer" />
+<Markdown>**Now say what it looks like** — a sentence or two. What do you write, and what is it for?</Markdown>
+<TextArea id="wj1_type_custom_text" rows="4" placeholder="I write mostly to..." />
+<ActionButton id="wj1_pick_custom" label="This one's me">
+<SetFieldAction id="wj1_pick_custom_set" target="wj1_type_choice" field="value" value="custom" />
+</ActionButton>
+</Vertical> <!-- wj1_card_custom -->
 
-    </Hidden>
+</Hidden> <!-- wj1_type_cards -->
 
-    <!-- The deck itself. wrap="true" so the eight cards are a loop: a student who
-         arrives undecided can go either direction and never hit a dead arrow. -->
-    <Carousel id="wj1_type_carousel" wrap="true">
+<!-- The deck itself. wrap="true" so the eight cards are a loop: a student who
+       arrives undecided can go either direction and never hit a dead arrow. -->
+<Carousel id="wj1_type_carousel" wrap="true">
       wj1_card_cover,
       wj1_card_community_writer, wj1_card_explorer, wj1_card_technician, wj1_card_hobbyist,
       wj1_card_dreamer, wj1_card_practitioner, wj1_card_finisher, wj1_card_pragmatist,
       wj1_card_custom
-    </Carousel>
+</Carousel>
 
-    <!-- The choice. A Hidden LineInput rather than the Carousel's own value,
-         which is a browsing cursor and moves with the arrows. -->
-    <Hidden id="wj1_type_choice_holder">
-      <LineInput id="wj1_type_choice" />
-    </Hidden>
+<!-- The choice. A Hidden LineInput rather than the Carousel's own value,
+       which is a browsing cursor and moves with the arrows. -->
+<Hidden id="wj1_type_choice_holder">
+<LineInput id="wj1_type_choice" />
+</Hidden>
 
-    <!-- The confirmation. The outer gate keeps the screen quiet until they've
-         chosen; the eight inner gates mount exactly one card, which is what the
-         print page picks up by reference. -->
-    <IntakeGate ready="@wj1_type_choice.value">
-      <Markdown>*Nothing picked yet — browse the deck above and click **This one's me** on the card that sounds most like you.*</Markdown>
-      <Vertical id="wj1_type_result">
+<!-- The confirmation. The outer gate keeps the screen quiet until they've
+       chosen; the eight inner gates mount exactly one card, which is what the
+       print page picks up by reference. -->
+<IntakeGate ready="@wj1_type_choice.value">
+<Markdown>*Nothing picked yet — browse the deck above and click **This one's me** on the card that sounds most like you.*</Markdown>
+<Vertical id="wj1_type_result">
 
-        <!-- The choice, spelled out. The stored value is a CODE
-             (`community_writer`), so a <Ref> would print machine text; these
-             when= lines mount the one human sentence that matches, and they
-             travel with wj1_type_result into the artifact tab and the PDF. -->
-        <Markdown when="@wj1_type_choice.value === 'community_writer'">**The type I chose:** 🤝 Community Writer</Markdown>
-        <Markdown when="@wj1_type_choice.value === 'explorer'"        >**The type I chose:** 🧭 Explorer</Markdown>
-        <Markdown when="@wj1_type_choice.value === 'technician'"      >**The type I chose:** 🔧 Technician</Markdown>
-        <Markdown when="@wj1_type_choice.value === 'hobbyist'"        >**The type I chose:** 🌿 Hobbyist</Markdown>
-        <Markdown when="@wj1_type_choice.value === 'dreamer'"         >**The type I chose:** 💭 Dreamer</Markdown>
-        <Markdown when="@wj1_type_choice.value === 'practitioner'"    >**The type I chose:** 🔁 Practitioner</Markdown>
-        <Markdown when="@wj1_type_choice.value === 'finisher'"        >**The type I chose:** 🏁 Finisher</Markdown>
-        <Markdown when="@wj1_type_choice.value === 'pragmatist'"      >**The type I chose:** 🎯 Pragmatist</Markdown>
-        <Markdown when="@wj1_type_choice.value === 'custom'"          >**The type I chose:** ✍️ {{@wj1_type_custom_name.value}} *(one I named myself)*</Markdown>
+<!-- The choice, spelled out. The stored value is a CODE
+           (`community_writer`), so a <Ref> would print machine text; these
+     when= lines mount the one human sentence that matches, and they
+           travel with wj1_type_result into the artifact tab and the PDF. -->
+<Markdown when="@wj1_type_choice.value === 'community_writer'">**The type I chose:** 🤝 Community Writer</Markdown>
+<Markdown when="@wj1_type_choice.value === 'explorer'"        >**The type I chose:** 🧭 Explorer</Markdown>
+<Markdown when="@wj1_type_choice.value === 'technician'"      >**The type I chose:** 🔧 Technician</Markdown>
+<Markdown when="@wj1_type_choice.value === 'hobbyist'"        >**The type I chose:** 🌿 Hobbyist</Markdown>
+<Markdown when="@wj1_type_choice.value === 'dreamer'"         >**The type I chose:** 💭 Dreamer</Markdown>
+<Markdown when="@wj1_type_choice.value === 'practitioner'"    >**The type I chose:** 🔁 Practitioner</Markdown>
+<Markdown when="@wj1_type_choice.value === 'finisher'"        >**The type I chose:** 🏁 Finisher</Markdown>
+<Markdown when="@wj1_type_choice.value === 'pragmatist'"      >**The type I chose:** 🎯 Pragmatist</Markdown>
+<Markdown when="@wj1_type_choice.value === 'custom'"          >**The type I chose:** ✍️ {{@wj1_type_custom_name.value}} *(one I named myself)*</Markdown>
 
-        <IntakeGate ready="@wj1_type_choice.value === 'community_writer'">
-          <Markdown> </Markdown>
-          <Use ref="wj1_card_community_writer_text" />
-        </IntakeGate>
+<IntakeGate ready="@wj1_type_choice.value === 'community_writer'">
+<Markdown> </Markdown>
+<Use ref="wj1_card_community_writer_text" />
+</IntakeGate>
 
-        <IntakeGate ready="@wj1_type_choice.value === 'explorer'">
-          <Markdown> </Markdown>
-          <Use ref="wj1_card_explorer_text" />
-        </IntakeGate>
+<IntakeGate ready="@wj1_type_choice.value === 'explorer'">
+<Markdown> </Markdown>
+<Use ref="wj1_card_explorer_text" />
+</IntakeGate>
 
-        <IntakeGate ready="@wj1_type_choice.value === 'technician'">
-          <Markdown> </Markdown>
-          <Use ref="wj1_card_technician_text" />
-        </IntakeGate>
+<IntakeGate ready="@wj1_type_choice.value === 'technician'">
+<Markdown> </Markdown>
+<Use ref="wj1_card_technician_text" />
+</IntakeGate>
 
-        <IntakeGate ready="@wj1_type_choice.value === 'hobbyist'">
-          <Markdown> </Markdown>
-          <Use ref="wj1_card_hobbyist_text" />
-        </IntakeGate>
+<IntakeGate ready="@wj1_type_choice.value === 'hobbyist'">
+<Markdown> </Markdown>
+<Use ref="wj1_card_hobbyist_text" />
+</IntakeGate>
 
-        <IntakeGate ready="@wj1_type_choice.value === 'dreamer'">
-          <Markdown> </Markdown>
-          <Use ref="wj1_card_dreamer_text" />
-        </IntakeGate>
+<IntakeGate ready="@wj1_type_choice.value === 'dreamer'">
+<Markdown> </Markdown>
+<Use ref="wj1_card_dreamer_text" />
+</IntakeGate>
 
-        <IntakeGate ready="@wj1_type_choice.value === 'practitioner'">
-          <Markdown> </Markdown>
-          <Use ref="wj1_card_practitioner_text" />
-        </IntakeGate>
+<IntakeGate ready="@wj1_type_choice.value === 'practitioner'">
+<Markdown> </Markdown>
+<Use ref="wj1_card_practitioner_text" />
+</IntakeGate>
 
-        <IntakeGate ready="@wj1_type_choice.value === 'finisher'">
-          <Markdown> </Markdown>
-          <Use ref="wj1_card_finisher_text" />
-        </IntakeGate>
+<IntakeGate ready="@wj1_type_choice.value === 'finisher'">
+<Markdown> </Markdown>
+<Use ref="wj1_card_finisher_text" />
+</IntakeGate>
 
-        <IntakeGate ready="@wj1_type_choice.value === 'pragmatist'">
-          <Markdown> </Markdown>
-          <Use ref="wj1_card_pragmatist_text" />
-        </IntakeGate>
+<IntakeGate ready="@wj1_type_choice.value === 'pragmatist'">
+<Markdown> </Markdown>
+<Use ref="wj1_card_pragmatist_text" />
+</IntakeGate>
 
-        <!-- The written-your-own card, rebuilt from the student's two inputs
-             rather than <Use>d: the authored block holds the empty controls, and
-             what belongs in the journal is what they typed. Deliberately NOT a
-             table — a multi-line TextArea inside a markdown table cell collapses
-             the table. -->
-        <IntakeGate ready="@wj1_type_choice.value === 'custom'">
-          <Markdown> </Markdown>
-          <Markdown id="wj1_card_custom_result">
+<!-- The written-your-own card, rebuilt from the student's two inputs
+           rather than <Use>d: the authored block holds the empty controls, and
+           what belongs in the journal is what they typed. Deliberately NOT a
+           table — a multi-line TextArea inside a markdown table cell collapses
+           the table. -->
+<IntakeGate ready="@wj1_type_choice.value === 'custom'">
+<Markdown> </Markdown>
+<Markdown id="wj1_card_custom_result">
 **✍️ {{@wj1_type_custom_name.value}}** — a writer type I named myself.
 
 {{@wj1_type_custom_text.value}}
-          </Markdown>
-        </IntakeGate>
+</Markdown>
+</IntakeGate>
 
-      </Vertical>
-    </IntakeGate>
+</Vertical> <!-- wj1_type_result -->
+</IntakeGate>
 
-    <Markdown>
+<Markdown>
 Once you've chosen, think about what makes you sure — and about the parts of the card that don't quite
 land — and answer the question below.
-    </Markdown>
+</Markdown>
 
-    <!-- <Use>, not <Ref>: a Ref renders the STORED value, which is now a code
-         like `figure_out`. <Use> re-renders the dropdown itself, so the student
-         reads their own sentence back (and can nudge it, as on the board). -->
-    <Collapsible id="wj1_type_lookback" title="Remind me what I said about why I write">
-      <Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
-      <Use ref="wj1_why_messaging" />
-      <Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
-      <Use ref="wj1_why_coursework" />
-      <Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
-      <Use ref="wj1_why_organizing" />
-      <Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
-      <Use ref="wj1_why_posting" />
-      <Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
-      <Use ref="wj1_why_creative" />
-    </Collapsible>
+<!-- <Use>, not <Ref>: a Ref renders the STORED value, which is now a code
+       like `figure_out`. <Use> re-renders the dropdown itself, so the student
+       reads their own sentence back (and can nudge it, as on the board). -->
+<Collapsible id="wj1_type_lookback" title="Remind me what I said about why I write">
+<Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
+<Use ref="wj1_why_messaging" />
+<Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
+<Use ref="wj1_why_coursework" />
+<Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
+<Use ref="wj1_why_organizing" />
+<Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
+<Use ref="wj1_why_posting" />
+<Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
+<Use ref="wj1_why_creative" />
+</Collapsible>
 
-    <!-- The old "Does this feel like you?" Yes/Partly/Not really question
-         (wj1_fit) was removed with the Aug 2026 revision: once the student picks
-         the card themselves, asking whether it feels like them answers itself.
-         The story below carries the whole weight now, and it is a better prompt
-         for it — defending a choice is writing; rating a machine's guess isn't. -->
+<!-- The old "Does this feel like you?" Yes/Partly/Not really question
+       (wj1_fit) was removed with the Aug 2026 revision: once the student picks
+       the card themselves, asking whether it feels like them answers itself.
+       The story below carries the whole weight now, and it is a better prompt
+       for it — defending a choice is writing; rating a machine's guess isn't. -->
 
-    <Markdown>
+<Markdown>
 ### Your reflection
 
 You picked (or wrote) a writing personality. Now explain your choice by telling us a story (or stories)
@@ -821,64 +829,65 @@ that explains why this writing personality fits you.
 This should be a real moment where you were writing something — but remember, it doesn't have to be about
 something you wrote for a class. Include details like what you were writing, why you were writing it, and
 how you wrote it. If the personality isn't a perfect fit, you can talk about that too.
-    </Markdown>
-    <TextArea id="wj1_profile_reflect" rows="9" placeholder="Here's a story from my writing life..." />
-  </Vertical>
+</Markdown>
+<TextArea id="wj1_profile_reflect" rows="9" placeholder="Here's a story from my writing life..." />
+</Vertical> <!-- wj1_profile -->
 
-  <!-- ===================================================================
-       PRINT &amp; SUBMIT  —  THE SUBMISSION PAGE
-       The one page that gets printed. It is mounted twice, and only ever one of
-       those mounts is visible: as the "Print &amp; Submit" tab of
-       writing_journal1_sba_part1.olx, and as the chat's final right-pane screen
-       (`wj1_sidebar <- wj1_print`). Tabs keep every panel mounted but hide the
-       inactive ones with display:none, which print inherits, so the PDF carries
-       exactly one copy.
 
-       Everything here must be MOUNTED at print time: window.print() photographs
-       the live DOM, and a block React never rendered cannot be recovered by a
-       print stylesheet. Three consequences, all load-bearing — do not "tidy"
-       them away:
-         * NO <Collapsible>. It renders children only when expanded, so a
-           collapsed section exports as a bare heading.
-         * NO <Tabs>, NO <UseHistory>. Both show one child at a time.
-         * <IntakeGate> and when= ARE fine, and are used deliberately: they
-           mount the branch the student earned, so the writer-type card prints
-           as theirs alone.
+<!-- ===================================================================
+     PRINT &amp; SUBMIT  —  THE SUBMISSION PAGE
+     The one page that gets printed. It is mounted twice, and only ever one of
+     those mounts is visible: as the "Print &amp; Submit" tab of
+     writing_journal1_sba_part1.olx, and as the chat's final right-pane screen
+     (`wj1_sidebar <- wj1_print`). Tabs keep every panel mounted but hide the
+     inactive ones with display:none, which print inherits, so the PDF carries
+     exactly one copy.
 
-       ORDER IS AN INVERTED TRIANGLE — what an instructor most needs to read
-       comes first: the controls (print-hidden), then everything the student
-       WROTE, then the structured answers, so the page can be scanned in a
-       couple of minutes without paging.
+     Everything here must be MOUNTED at print time: window.print() photographs
+     the live DOM, and a block React never rendered cannot be recovered by a
+     print stylesheet. Three consequences, all load-bearing — do not "tidy"
+     them away:
+       * NO <Collapsible>. It renders children only when expanded, so a
+         collapsed section exports as a bare heading.
+       * NO <Tabs>, NO <UseHistory>. Both show one child at a time.
+       * <IntakeGate> and when= ARE fine, and are used deliberately: they
+         mount the branch the student earned, so the writer-type card prints
+         as theirs alone.
 
-       <Use> is a DAG reference, not a copy — the grids and the type card here
-       are the SAME nodes as on the working screens, so they always agree.
-       =================================================================== -->
+     ORDER IS AN INVERTED TRIANGLE — what an instructor most needs to read
+     comes first: the controls (print-hidden), then everything the student
+     WROTE, then the structured answers, so the page can be scanned in a
+     couple of minutes without paging.
 
-  <!-- The chat's final screen: a light wrap-up that points at the Print &
-       Submit tab. The full print page lives on the tab only; the button here
-       is the manual path if the student doesn't go on their own. -->
-  <Vertical id="wj1_wrapup">
-    <Markdown>
+     <Use> is a DAG reference, not a copy — the grids and the type card here
+     are the SAME nodes as on the working screens, so they always agree.
+     =================================================================== -->
+
+<!-- The chat's final screen: a light wrap-up that points at the Print &
+     Submit tab. The full print page lives on the tab only; the button here
+     is the manual path if the student doesn't go on their own. -->
+<Vertical id="wj1_wrapup">
+<Markdown>
 ## That's the Journal
 
 Your whole journal — the board, your reasons, the writer type you chose, and your reflection — is gathered on the
 **Print &amp; Submit** tab up top. Give it a read. When you're happy with it, click the confirm box there and
 export it as a PDF for your course system.
-    </Markdown>
-    <ActionButton id="wj1_open_print_btn" label="Open Print &amp; Submit">
-      <!-- activeTab is positional: 3 = Print &amp; Submit in wj1_sba_tabs. -->
-      <SetFieldAction id="wj1_open_print_set" target="wj1_sba_tabs" field="activeTab" value="3" />
-      <ScrollToAction id="wj1_open_print_scroll" target="wj1_print" />
-    </ActionButton>
-  </Vertical>
+</Markdown>
+<ActionButton id="wj1_open_print_btn" label="Open Print &amp; Submit">
+<!-- activeTab is positional: 3 = Print &amp; Submit in wj1_sba_tabs. -->
+<SetFieldAction id="wj1_open_print_set" target="wj1_sba_tabs" field="activeTab" value="3" />
+<ScrollToAction id="wj1_open_print_scroll" target="wj1_print" />
+</ActionButton>
+</Vertical>
 
-  <Vertical id="wj1_print">
+<Vertical id="wj1_print">
 
-    <!-- The controls: on screen only. print="false" -> class print-hide, so the
-         heading, the confirm box, the button and the how-to never reach the PDF. -->
-    <Vertical id="wj1_print_controls" print="false">
+<!-- The controls: on screen only. print="false" -> class print-hide, so the
+       heading, the confirm box, the button and the how-to never reach the PDF. -->
+<Vertical id="wj1_print_controls" print="false">
 
-      <Markdown>
+<Markdown>
 ## Print &amp; Submit
 
 Here is your whole journal on one page, in the order your instructor will read it — your writing first.
@@ -887,27 +896,27 @@ back. Everything below updates to match.
 
 When it looks right, click the box and the **Export as PDF** button will appear. Save the file, then upload
 it to your course system.
-      </Markdown>
+</Markdown>
 
-      <CheckboxInput id="wj1_completion_page">
-        <Markdown>**Confirm that you are done with this journal entry.**</Markdown>
-        <Key id="wj1_finished" value="wj1_finished">I don't need to make any more changes.</Key>
-      </CheckboxInput>
-      <!-- Ticking the confirm box brings the student to the print tab (once;
-           activeTab is positional: 3 = Print &amp; Submit in wj1_sba_tabs). -->
-      <Trigger id="wj1_finished_jump" watch="'wj1_finished' in @wj1_completion_page.value" mode="once">
-        <SetFieldAction id="wj1_finished_jump_set" target="wj1_sba_tabs" field="activeTab" value="3" />
-        <ScrollToAction id="wj1_finished_jump_scroll" target="wj1_print" />
-      </Trigger>
+<CheckboxInput id="wj1_completion_page">
+<Markdown>**Confirm that you are done with this journal entry.**</Markdown>
+<Key id="wj1_finished" value="wj1_finished">I don't need to make any more changes.</Key>
+</CheckboxInput>
+<!-- Ticking the confirm box brings the student to the print tab (once;
+         activeTab is positional: 3 = Print &amp; Submit in wj1_sba_tabs). -->
+<Trigger id="wj1_finished_jump" watch="'wj1_finished' in @wj1_completion_page.value" mode="once">
+<SetFieldAction id="wj1_finished_jump_set" target="wj1_sba_tabs" field="activeTab" value="3" />
+<ScrollToAction id="wj1_finished_jump_scroll" target="wj1_print" />
+</Trigger>
 
-      <!-- Gated on the confirm box, matching WJ2. ActionButtons are hidden from
-           print by print.css anyway; the wrapper above hides the rest. -->
-      <ActionButton id="wj1_print_btn" label="Export as PDF"
-                    when="'wj1_finished' in @wj1_completion_page.value">
-        <PrintAction id="wj1_print_action" />
-      </ActionButton>
+<!-- Gated on the confirm box, matching WJ2. ActionButtons are hidden from
+         print by print.css anyway; the wrapper above hides the rest. -->
+<ActionButton id="wj1_print_btn" label="Export as PDF"
+  when="'wj1_finished' in @wj1_completion_page.value">
+<PrintAction id="wj1_print_action" />
+</ActionButton>
 
-      <Markdown when="'wj1_finished' in @wj1_completion_page.value">
+<Markdown when="'wj1_finished' in @wj1_completion_page.value">
 ## Journal Complete
 
 In this journal you did the thing the assignment was really asking for: you stopped and **noticed the
@@ -918,17 +927,17 @@ most important part: you told the story that shows why.
 Hold onto Alma's point: a writer type is a **snapshot, not a verdict.** The writing you're about to do in
 this course will keep changing the picture — which is exactly why it was worth mapping where you're
 starting from.
-      </Markdown>
+</Markdown>
 
-    </Vertical>
+</Vertical> <!-- wj1_print_controls -->
 
-    <!-- ---------------------------------------------------------------
-         1. THE STUDENT'S WRITING  (what the instructor actually reads)
-         Longest and most considered first: the story, then the two shorter
-         reflections, then the open boxes that top up the structured items.
-         --------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------
+       1. THE STUDENT'S WRITING  (what the instructor actually reads)
+       Longest and most considered first: the story, then the two shorter
+       reflections, then the open boxes that top up the structured items.
+       --------------------------------------------------------------- -->
 
-    <Markdown>
+<Markdown>
 # Writing Journal 2: Who Am I As a Writer?
 
 ## My reflection — a story from my writing life
@@ -948,75 +957,75 @@ starting from.
 **For school:** {{@wj1_board_school_other.value}}
 
 **Outside school:** {{@wj1_board_outside_other.value}}
-    </Markdown>
+</Markdown>
 
-    <!-- The per-group "Something else" descriptions, each shown only if that
-         group's dropdown is on "Something else". when= mounts the branch, so
-         whatever the student earned is in the DOM at print time. -->
-    <Markdown when="'something_else' in @wj1_why_messaging.value || 'something_else' in @wj1_why_coursework.value || 'something_else' in @wj1_why_organizing.value || 'something_else' in @wj1_why_posting.value || 'something_else' in @wj1_why_creative.value">
+<!-- The per-group "Something else" descriptions, each shown only if that
+       group's dropdown is on "Something else". when= mounts the branch, so
+       whatever the student earned is in the DOM at print time. -->
+<Markdown when="'something_else' in @wj1_why_messaging.value || 'something_else' in @wj1_why_coursework.value || 'something_else' in @wj1_why_organizing.value || 'something_else' in @wj1_why_posting.value || 'something_else' in @wj1_why_creative.value">
 ## Why I write — in my own words
-    </Markdown>
-    <Markdown when="'something_else' in @wj1_why_messaging.value">
+</Markdown>
+<Markdown when="'something_else' in @wj1_why_messaging.value">
 **Messaging &amp; staying in touch:** {{@wj1_why_messaging_other.value}}
-    </Markdown>
-    <Markdown when="'something_else' in @wj1_why_coursework.value">
+</Markdown>
+<Markdown when="'something_else' in @wj1_why_coursework.value">
 **Coursework &amp; class writing:** {{@wj1_why_coursework_other.value}}
-    </Markdown>
-    <Markdown when="'something_else' in @wj1_why_organizing.value">
+</Markdown>
+<Markdown when="'something_else' in @wj1_why_organizing.value">
 **Notes, lists &amp; organizing:** {{@wj1_why_organizing_other.value}}
-    </Markdown>
-    <Markdown when="'something_else' in @wj1_why_posting.value">
+</Markdown>
+<Markdown when="'something_else' in @wj1_why_posting.value">
 **Posting &amp; sharing publicly:** {{@wj1_why_posting_other.value}}
-    </Markdown>
-    <Markdown when="'something_else' in @wj1_why_creative.value">
+</Markdown>
+<Markdown when="'something_else' in @wj1_why_creative.value">
 **Creative &amp; personal writing:** {{@wj1_why_creative_other.value}}
-    </Markdown>
+</Markdown>
 
-    <!-- ---------------------------------------------------------------
-         2. THE STRUCTURED ANSWERS  (skimmed, not read)
-         Everything structured comes back as <Use>: the two Writer Board grids,
-         the chosen writer-type card, and — since the Aug 2026 multi-reason
-         change — the five reason blocks and the top-reasons multi-select, whose
-         stored values are LISTS of codes and so have no sane text rendering.
-         --------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------
+       2. THE STRUCTURED ANSWERS  (skimmed, not read)
+       Everything structured comes back as <Use>: the two Writer Board grids,
+       the chosen writer-type card, and — since the Aug 2026 multi-reason
+       change — the five reason blocks and the top-reasons multi-select, whose
+       stored values are LISTS of codes and so have no sane text rendering.
+       --------------------------------------------------------------- -->
 
-    <Markdown>
+<Markdown>
 ---
 
 ## Why I write, kind by kind
-    </Markdown>
-    <Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
-    <Use ref="wj1_why_messaging" />
-    <Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
-    <Use ref="wj1_why_coursework" />
-    <Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
-    <Use ref="wj1_why_organizing" />
-    <Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
-    <Use ref="wj1_why_posting" />
-    <Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
-    <Use ref="wj1_why_creative" />
+</Markdown>
+<Markdown>**💬 Messaging &amp; staying in touch:**</Markdown>
+<Use ref="wj1_why_messaging" />
+<Markdown>**🎓 Coursework &amp; class writing:**</Markdown>
+<Use ref="wj1_why_coursework" />
+<Markdown>**🗂️ Notes, lists &amp; organizing:**</Markdown>
+<Use ref="wj1_why_organizing" />
+<Markdown>**📣 Posting &amp; sharing publicly:**</Markdown>
+<Use ref="wj1_why_posting" />
+<Markdown>**🎨 Creative &amp; personal writing:**</Markdown>
+<Use ref="wj1_why_creative" />
 
-    <Markdown>**The reasons that come up most across everything I write:**</Markdown>
-    <!-- Multi-select: the stored value is a list, so it comes back as <Use>. -->
-    <Use ref="wj1_why_top2" />
+<Markdown>**The reasons that come up most across everything I write:**</Markdown>
+<!-- Multi-select: the stored value is a list, so it comes back as <Use>. -->
+<Use ref="wj1_why_top2" />
 
-    <Markdown>
+<Markdown>
 ## My writer type
-    </Markdown>
-    <!-- The card the student CHOSE, plus the choice spelled out in words. Both
-         live inside wj1_type_result, whose per-type gates mount exactly one
-         branch — so the PDF carries their card and no one else's. -->
-    <Use ref="wj1_type_result" />
+</Markdown>
+<!-- The card the student CHOSE, plus the choice spelled out in words. Both
+       live inside wj1_type_result, whose per-type gates mount exactly one
+       branch — so the PDF carries their card and no one else's. -->
+<Use ref="wj1_type_result" />
 
-    <Markdown>
+<Markdown>
 ## My Writer Board
 
 **🏫 Writing I do for school:**
-    </Markdown>
-    <Use ref="wj1_board_school" />
-    <Markdown>**🌙 Writing I do outside school:**</Markdown>
-    <Use ref="wj1_board_outside" />
+</Markdown>
+<Use ref="wj1_board_school" />
+<Markdown>**🌙 Writing I do outside school:**</Markdown>
+<Use ref="wj1_board_outside" />
 
-  </Vertical>
+</Vertical> <!-- wj1_print -->
 
-</Vertical>
+</Vertical> <!-- wj1_activities_part1 -->
