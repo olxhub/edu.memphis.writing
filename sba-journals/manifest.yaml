@@ -22,7 +22,7 @@ content_notice: >
 routes:
   # "/" lands on the consent gate (consent.olx); the course renders inside it
   # once the consent question is answered (either way) and acknowledged.
-  "/": edu.memphis.writing.sba/wj_consent_gate
+  "/": edu.memphis.writing.sba/wj_study
   "/tutorial": edu.memphis.writing.sba/tut_sba_part1
   "/wj1": edu.memphis.writing.sba/wj1_sba_part1
   "/wj2a": edu.memphis.writing.sba/wj2a_sba_part1
