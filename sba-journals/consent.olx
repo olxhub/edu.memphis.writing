@@ -27,8 +27,9 @@
 
 <Vertical id="wj_study" title="Writing Journals" launchable="true">
 
-<!-- <Use> does not honor when=; the gating lives on wrapper Verticals
-     (same pattern as artifact.olx). -->
+<!-- HACK: when= directly on these <Use> tags rendered unconditionally, so the
+     gating lives on wrapper Verticals. Per Piotr, <Use> supports overrides and
+     when= SHOULD work — this is a platform bug (bugs.md); unwrap when fixed. -->
 <Vertical id="wj_irb_form_gate" when="!@wj_irb_consent.value">
 <Use ref="wj_irb_consent_form" />
 </Vertical>
