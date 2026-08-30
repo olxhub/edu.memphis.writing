@@ -317,19 +317,19 @@ that's true for you** — as many as fit. There's no right answer.
 <Markdown>### 💬 Messaging &amp; staying in touch *(texts, DMs, group chats)*</Markdown>
 <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
 <CheckboxInput id="wj1_why_messaging">
-  <Key value="dont_do"       > I don't really do this sort of writing</Key>
-  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
-  <Key value="community"     > To be part of a group or community</Key>
-  <Key value="figure_out"    > To figure out what I think</Key>
-  <Key value="try_out"       > To try something out and see what happens</Key>
-  <Key value="get_done"      > To get something done or stay organized</Key>
-  <Key value="remember"      > To remember something</Key>
-  <Key value="proud"         > To make something I'm proud of</Key>
-  <Key value="enjoy"         > Because I enjoy it</Key>
-  <Key value="feelings"      > To work out how I'm feeling</Key>
-  <Key value="persuade"      > To persuade someone or make a point</Key>
-  <Key value="required"      > Because a class or a job requires it</Key>
-  <Key value="something_else"> Something else (I'll describe it below)</Key>
+  <Key value="dont_do"       > I don't really do this sort of writing    </Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about </Key>
+  <Key value="community"     > To be part of a group or community        </Key>
+  <Key value="figure_out"    > To figure out what I think                </Key>
+  <Key value="try_out"       > To try something out and see what happens </Key>
+  <Key value="get_done"      > To get something done or stay organized   </Key>
+  <Key value="remember"      > To remember something                     </Key>
+  <Key value="proud"         > To make something I'm proud of            </Key>
+  <Key value="enjoy"         > Because I enjoy it                        </Key>
+  <Key value="feelings"      > To work out how I'm feeling               </Key>
+  <Key value="persuade"      > To persuade someone or make a point       </Key>
+  <Key value="required"      > Because a class or a job requires it      </Key>
+  <Key value="something_else"> Something else (I'll describe it below)   </Key>
 </CheckboxInput>
 <!-- The "Something else" box for each group is gated on that group's own
        checkboxes, so it opens right where the student made the choice. Every
@@ -343,19 +343,19 @@ that's true for you** — as many as fit. There's no right answer.
 <Markdown>### 🎓 Coursework &amp; class writing *(essays, papers, discussion posts, reports)*</Markdown>
 <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
 <CheckboxInput id="wj1_why_coursework">
-  <Key value="dont_do"       > I don't really do this sort of writing</Key>
-  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
-  <Key value="community"     > To be part of a group or community</Key>
-  <Key value="figure_out"    > To figure out what I think</Key>
-  <Key value="try_out"       > To try something out and see what happens</Key>
-  <Key value="get_done"      > To get something done or stay organized</Key>
-  <Key value="remember"      > To remember something</Key>
-  <Key value="proud"         > To make something I'm proud of</Key>
-  <Key value="enjoy"         > Because I enjoy it</Key>
-  <Key value="feelings"      > To work out how I'm feeling</Key>
-  <Key value="persuade"      > To persuade someone or make a point</Key>
-  <Key value="required"      > Because a class or a job requires it</Key>
-  <Key value="something_else"> Something else (I'll describe it below)</Key>
+  <Key value="dont_do"       > I don't really do this sort of writing    </Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about </Key>
+  <Key value="community"     > To be part of a group or community        </Key>
+  <Key value="figure_out"    > To figure out what I think                </Key>
+  <Key value="try_out"       > To try something out and see what happens </Key>
+  <Key value="get_done"      > To get something done or stay organized   </Key>
+  <Key value="remember"      > To remember something                     </Key>
+  <Key value="proud"         > To make something I'm proud of            </Key>
+  <Key value="enjoy"         > Because I enjoy it                        </Key>
+  <Key value="feelings"      > To work out how I'm feeling               </Key>
+  <Key value="persuade"      > To persuade someone or make a point       </Key>
+  <Key value="required"      > Because a class or a job requires it      </Key>
+  <Key value="something_else"> Something else (I'll describe it below)   </Key>
 </CheckboxInput>
 <Vertical id="wj1_why_coursework_other_box" when="'something_else' in @wj1_why_coursework.value">
 <Markdown>*Describe it in your own words:*</Markdown>
@@ -365,19 +365,19 @@ that's true for you** — as many as fit. There's no right answer.
 <Markdown>### 🗂️ Notes, lists &amp; organizing *(class notes, to-do lists, planners, reminders)*</Markdown>
 <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
 <CheckboxInput id="wj1_why_organizing">
-  <Key value="dont_do"       > I don't really do this sort of writing</Key>
-  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
-  <Key value="community"     > To be part of a group or community</Key>
-  <Key value="figure_out"    > To figure out what I think</Key>
-  <Key value="try_out"       > To try something out and see what happens</Key>
-  <Key value="get_done"      > To get something done or stay organized</Key>
-  <Key value="remember"      > To remember something</Key>
-  <Key value="proud"         > To make something I'm proud of</Key>
-  <Key value="enjoy"         > Because I enjoy it</Key>
-  <Key value="feelings"      > To work out how I'm feeling</Key>
-  <Key value="persuade"      > To persuade someone or make a point</Key>
-  <Key value="required"      > Because a class or a job requires it</Key>
-  <Key value="something_else"> Something else (I'll describe it below)</Key>
+  <Key value="dont_do"       > I don't really do this sort of writing    </Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about </Key>
+  <Key value="community"     > To be part of a group or community        </Key>
+  <Key value="figure_out"    > To figure out what I think                </Key>
+  <Key value="try_out"       > To try something out and see what happens </Key>
+  <Key value="get_done"      > To get something done or stay organized   </Key>
+  <Key value="remember"      > To remember something                     </Key>
+  <Key value="proud"         > To make something I'm proud of            </Key>
+  <Key value="enjoy"         > Because I enjoy it                        </Key>
+  <Key value="feelings"      > To work out how I'm feeling               </Key>
+  <Key value="persuade"      > To persuade someone or make a point       </Key>
+  <Key value="required"      > Because a class or a job requires it      </Key>
+  <Key value="something_else"> Something else (I'll describe it below)   </Key>
 </CheckboxInput>
 <Vertical id="wj1_why_organizing_other_box" when="'something_else' in @wj1_why_organizing.value">
 <Markdown>*Describe it in your own words:*</Markdown>
@@ -387,19 +387,19 @@ that's true for you** — as many as fit. There's no right answer.
 <Markdown>### 📣 Posting &amp; sharing publicly *(social posts, captions, comments, reviews)*</Markdown>
 <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
 <CheckboxInput id="wj1_why_posting">
-  <Key value="dont_do"       > I don't really do this sort of writing</Key>
-  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
-  <Key value="community"     > To be part of a group or community</Key>
-  <Key value="figure_out"    > To figure out what I think</Key>
-  <Key value="try_out"       > To try something out and see what happens</Key>
-  <Key value="get_done"      > To get something done or stay organized</Key>
-  <Key value="remember"      > To remember something</Key>
-  <Key value="proud"         > To make something I'm proud of</Key>
-  <Key value="enjoy"         > Because I enjoy it</Key>
-  <Key value="feelings"      > To work out how I'm feeling</Key>
-  <Key value="persuade"      > To persuade someone or make a point</Key>
-  <Key value="required"      > Because a class or a job requires it</Key>
-  <Key value="something_else"> Something else (I'll describe it below)</Key>
+  <Key value="dont_do"       > I don't really do this sort of writing    </Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about </Key>
+  <Key value="community"     > To be part of a group or community        </Key>
+  <Key value="figure_out"    > To figure out what I think                </Key>
+  <Key value="try_out"       > To try something out and see what happens </Key>
+  <Key value="get_done"      > To get something done or stay organized   </Key>
+  <Key value="remember"      > To remember something                     </Key>
+  <Key value="proud"         > To make something I'm proud of            </Key>
+  <Key value="enjoy"         > Because I enjoy it                        </Key>
+  <Key value="feelings"      > To work out how I'm feeling               </Key>
+  <Key value="persuade"      > To persuade someone or make a point       </Key>
+  <Key value="required"      > Because a class or a job requires it      </Key>
+  <Key value="something_else"> Something else (I'll describe it below)   </Key>
 </CheckboxInput>
 <Vertical id="wj1_why_posting_other_box" when="'something_else' in @wj1_why_posting.value">
 <Markdown>*Describe it in your own words:*</Markdown>
@@ -409,19 +409,19 @@ that's true for you** — as many as fit. There's no right answer.
 <Markdown>### 🎨 Creative &amp; personal writing *(stories, poems, lyrics, journaling)*</Markdown>
 <Markdown>*Check every reason that's true for you — I do this writing…*</Markdown>
 <CheckboxInput id="wj1_why_creative">
-  <Key value="dont_do"       > I don't really do this sort of writing</Key>
-  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
-  <Key value="community"     > To be part of a group or community</Key>
-  <Key value="figure_out"    > To figure out what I think</Key>
-  <Key value="try_out"       > To try something out and see what happens</Key>
-  <Key value="get_done"      > To get something done or stay organized</Key>
-  <Key value="remember"      > To remember something</Key>
-  <Key value="proud"         > To make something I'm proud of</Key>
-  <Key value="enjoy"         > Because I enjoy it</Key>
-  <Key value="feelings"      > To work out how I'm feeling</Key>
-  <Key value="persuade"      > To persuade someone or make a point</Key>
-  <Key value="required"      > Because a class or a job requires it</Key>
-  <Key value="something_else"> Something else (I'll describe it below)</Key>
+  <Key value="dont_do"       > I don't really do this sort of writing    </Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about </Key>
+  <Key value="community"     > To be part of a group or community        </Key>
+  <Key value="figure_out"    > To figure out what I think                </Key>
+  <Key value="try_out"       > To try something out and see what happens </Key>
+  <Key value="get_done"      > To get something done or stay organized   </Key>
+  <Key value="remember"      > To remember something                     </Key>
+  <Key value="proud"         > To make something I'm proud of            </Key>
+  <Key value="enjoy"         > Because I enjoy it                        </Key>
+  <Key value="feelings"      > To work out how I'm feeling               </Key>
+  <Key value="persuade"      > To persuade someone or make a point       </Key>
+  <Key value="required"      > Because a class or a job requires it      </Key>
+  <Key value="something_else"> Something else (I'll describe it below)   </Key>
 </CheckboxInput>
 <Vertical id="wj1_why_creative_other_box" when="'something_else' in @wj1_why_creative.value">
 <Markdown>*Describe it in your own words:*</Markdown>
@@ -435,18 +435,18 @@ Looking at the **whole board**, tick **up to four** reasons that come up most ac
 write.
 </Markdown>
 <CheckboxInput id="wj1_why_top2">
-  <Key value="stay_in_touch" > To stay in touch with people I care about</Key>
-  <Key value="community"     > To be part of a group or community</Key>
-  <Key value="figure_out"    > To figure out what I think</Key>
-  <Key value="try_out"       > To try something out and see what happens</Key>
-  <Key value="get_done"      > To get something done or stay organized</Key>
-  <Key value="remember"      > To remember something</Key>
-  <Key value="proud"         > To make something I'm proud of</Key>
-  <Key value="enjoy"         > Because I enjoy it</Key>
-  <Key value="feelings"      > To work out how I'm feeling</Key>
-  <Key value="persuade"      > To persuade someone or make a point</Key>
-  <Key value="required"      > Because a class or a job requires it</Key>
-  <Key value="something_else"> Something else</Key>
+  <Key value="stay_in_touch" > To stay in touch with people I care about </Key>
+  <Key value="community"     > To be part of a group or community        </Key>
+  <Key value="figure_out"    > To figure out what I think                </Key>
+  <Key value="try_out"       > To try something out and see what happens </Key>
+  <Key value="get_done"      > To get something done or stay organized   </Key>
+  <Key value="remember"      > To remember something                     </Key>
+  <Key value="proud"         > To make something I'm proud of            </Key>
+  <Key value="enjoy"         > Because I enjoy it                        </Key>
+  <Key value="feelings"      > To work out how I'm feeling               </Key>
+  <Key value="persuade"      > To persuade someone or make a point       </Key>
+  <Key value="required"      > Because a class or a job requires it      </Key>
+  <Key value="something_else"> Something else                            </Key>
 </CheckboxInput>
 
 <!-- id kept as wj1_why_top2 (it is referenced from the chat gate, the print
