@@ -64,7 +64,7 @@ same activities, same credit. You can change your answer at any time under
 <Hidden id="wj_consent_defs">
 <Vertical id="wj_irb_consent_form" title="Research Consent">
 
-<TalkBubble who="Professor Fredlund" seed="prof_fredlund">
+<TalkBubble who="Katie Fredlund" cast="consent.cast">
 <Markdown>
 As a college instructor, I am always working to improve my courses so
 that my students are successful.

@@ -1,0 +1,15 @@
+# Research-consent page cast: the one real person on it.
+# Katie Fredlund is the head ENGL 1010 instructor and the study's student
+# contact point. Unlike the journals' fictional cast, this avatar stands in
+# for a real person — appearance choices are hers to veto.
+#   https://www.dicebear.com/styles/open-peeps/#options
+
+Katie Fredlund:
+  openPeeps:
+    face: smile
+    head: long
+    skinColor: ffdbb4
+    headContrastColor: a87c4f
+  profile:
+    role: Professor, ENGL 1010 — head instructor
+    bio: Head instructor for the ENGL 1010 Writing Journals and the student contact point for the classroom research study.
