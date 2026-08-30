@@ -64,11 +64,14 @@ same activities, same credit. You can change your answer at any time under
 <!-- The form definition, parked unrendered (the <Use> above and the course
      nav render it). Same pattern as wj1's card deck. -->
 <Hidden id="wj_consent_defs">
-<!-- Flag holder for the acknowledgment. SetFieldAction can only write fields
-     of REGISTERED blocks (a bare name is a silent no-op), so the flag needs a
-     real block; parked here unrendered. A Done directly in the ack screen
-     renders as the mark-complete slider — wrong UX for "Continue". -->
-<Done id="wj_irb_ack_done" label="(acknowledged flag)" />
+<!-- Flag holder for the acknowledgment. SetFieldAction needs a real block to
+     write into, so the flag is parked here unrendered — same pattern as wj1's
+     wj1_type_choice. It is a LineInput, not a Done: SetFieldAction validates
+     the value against the TARGET FIELD'S SCHEMA, and Done's value is boolean
+     (z_olx_boolean), so writing the semantic code "acknowledged" threw inside
+     the action and the button did nothing at all. LineInput's value is a
+     plain string, so the stored value can say what happened. -->
+<LineInput id="wj_irb_ack_done" />
 
 <Vertical id="wj_irb_consent_form" title="Research Consent">
 
