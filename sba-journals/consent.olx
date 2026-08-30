@@ -1,0 +1,131 @@
+<!--
+  RESEARCH CONSENT GATE
+
+  The deployed route "/" lands here, not on the course. Three states, one
+  Vertical: unanswered → the IRB form; answered but not acknowledged → a short
+  verdict-neutral acknowledgment with the course behind one Continue;
+  acknowledged → the course itself. Gates test ANSWERED (any value), never
+  ACCEPTED: declining changes nothing about the course, including this gate.
+
+  The form block is also a child of wj_course (nav item "Research Consent"),
+  same block, same state — so "you may leave the study at any time" is a page
+  students can actually revisit, and a later change of answer never locks
+  anything (both values are truthy).
+
+  IRB language: University of Memphis, same protocol/grant as the psychology
+  SBAs (source: edu.memphis.psych psychology/consent.olx). Kept verbatim except:
+  (a) "obtained from Canvas" — this course's work lives on this platform, not
+  Canvas; (b) the sentence naming Dr. Anderson as the course instructor,
+  generalized to "your instructor" for ENGL 1010. FLAG: both edits should be
+  confirmed against the approved protocol before launch.
+
+  FORM VERSION: wj-consent-2026-08-30-a (constant at the bottom of the form).
+  If the language changes, bump it and plan re-consent. The version is not
+  stamped per-student: to know which text a consent was given under, correlate
+  the consent event's timestamp with the deploy history of this file.
+-->
+
+<Vertical id="wj_consent_gate" title="Writing Journals" launchable="true">
+
+<Use ref="wj_irb_consent_form" when="!@wj_irb_consent.value" />
+
+<Vertical id="wj_irb_ack" when="@wj_irb_consent.value && !@wj_irb_ack_done.value">
+<Markdown when="@wj_irb_consent.value === 'consented'">
+## Thank you
+
+Your course work may be included in the research, always de-identified. You
+can change your answer at any time under **Research Consent** in the course
+navigation.
+</Markdown>
+<Markdown when="@wj_irb_consent.value === 'declined'">
+## No problem
+
+Your course work stays out of the research. Nothing about the course changes —
+same activities, same credit. You can change your answer at any time under
+**Research Consent** in the course navigation.
+</Markdown>
+<ActionButton id="wj_irb_ack_btn" label="Continue to the Writing Journals">
+<SetFieldAction id="wj_irb_ack_set" target="wj_irb_ack_done" field="value" value="acknowledged" />
+</ActionButton>
+</Vertical>
+
+<Use ref="wj_course" when="@wj_irb_consent.value && @wj_irb_ack_done.value" />
+
+<!-- The form definition, parked unrendered (the <Use> above and the course
+     nav render it). Same pattern as wj1's card deck. -->
+<Hidden id="wj_consent_defs">
+<Vertical id="wj_irb_consent_form" title="Research Consent">
+
+<Markdown>
+_As a college instructor, I am always working to improve my courses so
+that my students are successful._
+
+_As part of this goal, I conduct classroom-based studies. This involves
+asking my students to do different activities that give me information
+about them or involves me testing out ideas. I collect this
+information to be a better instructor. However, I learn about ways to
+help other college instructors support their students. When this
+happens, I want to be able to share what I have learned from
+de-identified student course work._
+
+_For me to use the information that I gather from students in this way,
+I need their consent. Below is an informed consent form for this
+class. Please read the form. Whichever way you answer, the course — your
+activities, your grade, your experience — is exactly the same._
+
+# University of Memphis
+
+## Informed Consent
+
+**Title:** Scenario-Based Assessment in the age of generative AI: Making space in the education market for alternative assessment paradigms
+
+**Principal Investigator:** Dr. John Sabatini
+
+**Co-Investigators:** Dr. Randy Floyd, Dr. Emily Srisarajivakul, and Dr. Mollie Anderson
+
+**Sponsor:** Institute for Intelligent Systems (IIS)
+
+## Procedures
+
+You are being asked to take part in a research study. If you decide to
+take part, you will agree to share some of your course work with the
+researchers. This work includes writing assignments, online
+discussions, and assessments you produce for the course. These
+materials will be obtained after grades are submitted and
+will be accessed only by the researchers.
+
+No work beyond that which you would normally do as part of this course
+will be required. The research will require no more time than you
+would normally spend on the course. The decision to participate, or
+not to take part, will have no effect on your grade or standing in
+this class.
+
+Your instructor will not know whether you consented to this research
+until after they submit the grades for the course. You will not
+interact with any of the other researchers.
+
+## Voluntary Participation and Withdrawal
+
+You do not have to be in this study, and you may choose to leave the study at any time.
+
+## Contact Information
+
+Contact Dr. Randy Floyd at 901-678-2167 or rgfloyd@memphis.edu.
+
+## Consent
+
+Please choose one. Either answer takes you into the course.
+</Markdown>
+
+<ChoiceInput id="wj_irb_consent">
+  <Key value="consented"> I accept. </Key>
+  <Key value="declined" > I do not want to participate in this study. </Key>
+</ChoiceInput>
+
+<!-- Consent-form text version; analytics joins consent values against this.
+     Bump on ANY change to the language above. -->
+<Markdown id="wj_irb_consent_version" when="false">wj-consent-2026-08-30-a</Markdown>
+
+</Vertical> <!-- wj_irb_consent_form -->
+</Hidden>
+</Vertical> <!-- wj_consent_gate -->

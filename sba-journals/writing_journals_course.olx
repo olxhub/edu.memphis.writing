@@ -31,4 +31,7 @@ license: AGPL
   <Use ref="wj1_sba_part1"  />
   <Use ref="wj2a_sba_part1" />
   <Use ref="wj2b_sba_part1" />
+  <!-- Same block the consent gate shows; same state. Here so a student can
+       revisit and change their answer at any time (consent.olx). -->
+  <Use ref="wj_irb_consent_form" />
 </Course>
