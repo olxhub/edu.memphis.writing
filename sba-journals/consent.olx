@@ -52,7 +52,9 @@ Your course work stays out of the research. Nothing about the course changes —
 same activities, same credit. You can change your answer at any time under
 **Research Consent** in the course navigation.
 </Markdown>
-<Done id="wj_irb_ack_done" label="Continue to the Writing Journals" />
+<ActionButton id="wj_irb_ack_btn" label="Continue to the Writing Journals">
+<SetFieldAction id="wj_irb_ack_set" target="wj_irb_ack_done" field="value" value="acknowledged" />
+</ActionButton>
 </Vertical>
 
 <Vertical id="wj_course_gate" when="@wj_irb_consent.value && @wj_irb_ack_done.value">
@@ -62,6 +64,12 @@ same activities, same credit. You can change your answer at any time under
 <!-- The form definition, parked unrendered (the <Use> above and the course
      nav render it). Same pattern as wj1's card deck. -->
 <Hidden id="wj_consent_defs">
+<!-- Flag holder for the acknowledgment. SetFieldAction can only write fields
+     of REGISTERED blocks (a bare name is a silent no-op), so the flag needs a
+     real block; parked here unrendered. A Done directly in the ack screen
+     renders as the mark-complete slider — wrong UX for "Continue". -->
+<Done id="wj_irb_ack_done" label="(acknowledged flag)" />
+
 <Vertical id="wj_irb_consent_form" title="Research Consent">
 
 <TalkBubble who="Katie Fredlund" cast="consent.cast">
