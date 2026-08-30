@@ -13,11 +13,14 @@
   anything (both values are truthy).
 
   IRB language: University of Memphis, same protocol/grant as the psychology
-  SBAs (source: edu.memphis.psych psychology/consent.olx). Kept verbatim except:
-  (a) "obtained from Canvas" — this course's work lives on this platform, not
-  Canvas; (b) the sentence naming Dr. Anderson as the course instructor,
-  generalized to "your instructor" for ENGL 1010. FLAG: both edits should be
-  confirmed against the approved protocol before launch.
+  SBAs (source: edu.memphis.psych psychology/consent.olx). Adapted for ENGL
+  1010: (a) "obtained from Canvas" dropped — this course's work lives on this
+  platform; (b) psych's instructor sentence (Dr. Anderson) generalized to
+  "your instructor"; (c) the psych co-investigators removed and the contact
+  is Professor Fredlund, the head instructor — Floyd/Anderson are psychology
+  people with no role here (Piotr). PI (Dr. Sabatini) unchanged — same
+  protocol. FLAG: confirm the adapted text against the approved protocol
+  before launch.
 
   FORM VERSION: wj-consent-2026-08-30-a (constant at the bottom of the form).
   If the language changes, bump it and plan re-consent. The version is not
@@ -61,23 +64,27 @@ same activities, same credit. You can change your answer at any time under
 <Hidden id="wj_consent_defs">
 <Vertical id="wj_irb_consent_form" title="Research Consent">
 
+<TalkBubble who="Professor Fredlund" seed="prof_fredlund">
 <Markdown>
-_As a college instructor, I am always working to improve my courses so
-that my students are successful._
+As a college instructor, I am always working to improve my courses so
+that my students are successful.
 
-_As part of this goal, I conduct classroom-based studies. This involves
+As part of this goal, I conduct classroom-based studies. This involves
 asking my students to do different activities that give me information
 about them or involves me testing out ideas. I collect this
 information to be a better instructor. However, I learn about ways to
 help other college instructors support their students. When this
 happens, I want to be able to share what I have learned from
-de-identified student course work._
+de-identified student course work.
 
-_For me to use the information that I gather from students in this way,
+For me to use the information that I gather from students in this way,
 I need their consent. Below is an informed consent form for this
 class. Please read the form. Whichever way you answer, the course — your
-activities, your grade, your experience — is exactly the same._
+activities, your grade, your experience — is exactly the same.
+</Markdown>
+</TalkBubble>
 
+<Markdown>
 # University of Memphis
 
 ## Informed Consent
@@ -113,7 +120,7 @@ You do not have to be in this study, and you may choose to leave the study at an
 
 ## Contact Information
 
-Contact Dr. Randy Floyd at 901-678-2167 or rgfloyd@memphis.edu.
+Contact Professor Katherine Fredlund at kfrdlund@memphis.edu.
 
 ## Consent
 
