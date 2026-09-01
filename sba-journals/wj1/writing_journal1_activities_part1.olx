@@ -931,7 +931,7 @@ a combination of writing personalities!
 *Keep going — there's more story than this. What were you writing? Why? What did it take?*
 </Markdown>
 <Markdown when="wordcount(@wj1_profile_reflect.value) &gt;= 50">
-*✓ That's enough to continue. Before you do, read it back: does it show what you were writing, why, and how — and does it connect to the personality you picked?*
+*You can continue whenever you're ready. The counter can't tell when a story is finished — you can. Once you feel you've told your story, read it back: does it show what you were writing, why, and how? Does it connect to the personality you picked? Edit. Revise. Have fun.*
 </Markdown>
 
 <Markdown>
