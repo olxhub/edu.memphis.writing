@@ -151,7 +151,7 @@ If you want a refresher at any time, click the **Writer Personalities** tab at t
 | 🧭 | **Explorer** *(Lee)* | Writes to find out what they think — *"I write to find out what I think about things."* |
 | 🔧 | **Technician** *(Richard)* | Writes to get things done clearly and correctly — *"I write so things get done properly the first time."* |
 | 🌿 | **Hobbyist** | Writes for the enjoyment of it |
-| 💭 | **Dreamer** | Writes to express an inner life |
+| 💭 | **Dreamer** | Writes to bring imagined stories and ideas to life |
 | 🔁 | **Practitioner** | Writes steadily, as a practical habit |
 | 🏁 | **Finisher** | Writes to finish something real |
 | 🎯 | **Pragmatist** | Writes to reach and affect an audience |
@@ -583,10 +583,19 @@ If none of them fit: the last card is blank, and it's for writing your own.
 
 <Vertical id="wj1_card_community_writer" title="🤝 The Community Writer">
 <Markdown id="wj1_card_community_writer_text">
-| 🤝 The Community Writer | Core motivation: connection |
-| :-- | :-- |
-| **What it looks like** | You write to reach other people — messages, group chats, replies, shared docs — and you get sharper through back-and-forth with real readers. |
-| **A growth edge** | Take in feedback without becoming dependent on it. |
+### 🤝 The Community Writer
+*Core motivation: connection*
+
+> *"Almost everything I write is pointed at another person."* — Alma
+
+You write to connect — with individual people, with the places you live, with
+whole online communities. You seek out people to write with and for: when you
+finish a draft, you want someone else to read it before you even think about
+revising. Writing is social and collaborative for you, and you learn best
+through interaction and feedback.
+
+**A growth edge:** listening to feedback without becoming dependent on it —
+learning to judge your own writing yourself.
 </Markdown>
 <ActionButton id="wj1_pick_community_writer" label="This one's me">
 <SetFieldAction id="wj1_pick_community_writer_set" target="wj1_type_choice" field="value" value="community_writer" />
@@ -595,10 +604,18 @@ If none of them fit: the last card is blank, and it's for writing your own.
 
 <Vertical id="wj1_card_explorer" title="🧭 The Explorer">
 <Markdown id="wj1_card_explorer_text">
-| 🧭 The Explorer | Core motivation: curiosity |
-| :-- | :-- |
-| **What it looks like** | You write to find out what you think — often not knowing where a piece is going until you're in it. Writing is a way of thinking, and you like to experiment. *(Lee's type.)* |
-| **A growth edge** | Decide when exploring is the goal and when a piece needs to land somewhere. |
+### 🧭 The Explorer
+*Core motivation: curiosity*
+
+> *"I write to find out what I think about things."* — Lee
+
+You write because you enjoy discovering what happens when the words hit the
+page. You experiment — genres, forms, topics — without needing a destination,
+because writing is how you think and learn.
+
+**A growth edge:** deciding when exploring is the goal and when a draft wants
+to become a larger project — and pushing through the revising that an
+exploratory (often messy) draft still needs.
 </Markdown>
 <ActionButton id="wj1_pick_explorer" label="This one's me">
 <SetFieldAction id="wj1_pick_explorer_set" target="wj1_type_choice" field="value" value="explorer" />
@@ -607,10 +624,18 @@ If none of them fit: the last card is blank, and it's for writing your own.
 
 <Vertical id="wj1_card_technician" title="🔧 The Technician">
 <Markdown id="wj1_card_technician_text">
-| 🔧 The Technician | Core motivation: getting it done, and right |
-| :-- | :-- |
-| **What it looks like** | You write to accomplish a task cleanly — clear, organized, no wasted motion — and you like doing it properly the first time. *(Richard's type.)* |
-| **A growth edge** | The parts of writing beyond correctness — voice, surprise, the reader's experience. |
+### 🔧 The Technician
+*Core motivation: mastery of language*
+
+> *"I write so things get done properly the first time."* — Richard
+
+You understand clarity, structure, and grammar, and your writing makes every
+word count. Writers like you end up in journalism, law, academia, education —
+anywhere precision pays.
+
+**A growth edge:** remembering that writing is more than correctness. Engaging
+a reader takes skills beyond technical competence, and correctness is not the
+only measure of good writing.
 </Markdown>
 <ActionButton id="wj1_pick_technician" label="This one's me">
 <SetFieldAction id="wj1_pick_technician_set" target="wj1_type_choice" field="value" value="technician" />
@@ -619,10 +644,17 @@ If none of them fit: the last card is blank, and it's for writing your own.
 
 <Vertical id="wj1_card_hobbyist" title="🌿 The Hobbyist">
 <Markdown id="wj1_card_hobbyist_text">
-| 🌿 The Hobbyist | Core motivation: personal fulfillment |
-| :-- | :-- |
-| **What it looks like** | You write because you *like* it. You don't necessarily need a big audience or a grade — the writing itself is the point, seen or not. |
-| **A growth edge** | Protect the joy of it even as you push to grow. |
+### 🌿 The Hobbyist
+*Core motivation: personal fulfillment*
+
+You write because you enjoy it. You might share with friends or family, join a
+writing group, or finish projects purely for your own satisfaction — a big
+audience isn't the point. Writing for class may be a drag, but writing for
+yourself is a pleasure.
+
+**A growth edge:** protecting the joy while you keep improving. Hobbyists can
+drift to a new project before the old one is finished, or write far past what
+an audience will sit for.
 </Markdown>
 <ActionButton id="wj1_pick_hobbyist" label="This one's me">
 <SetFieldAction id="wj1_pick_hobbyist_set" target="wj1_type_choice" field="value" value="hobbyist" />
@@ -631,10 +663,16 @@ If none of them fit: the last card is blank, and it's for writing your own.
 
 <Vertical id="wj1_card_dreamer" title="💭 The Dreamer">
 <Markdown id="wj1_card_dreamer_text">
-| 💭 The Dreamer | Core motivation: expression |
-| :-- | :-- |
-| **What it looks like** | You write to get what's inside into words — to work out how you feel and make sense of things. There's an inner life your writing reaches for, polished or not. |
-| **A growth edge** | Turn some of that inner material into pieces you finish and share. |
+### 💭 The Dreamer
+*Core motivation: expression and imagination*
+
+You're drawn to storytelling — rich ideas, worlds, characters, themes you want
+to share — often long before the habits and skills that finish a project.
+You'd like to be good at this, maybe even write for a living; the hard part is
+the road from the idea to the reality.
+
+**A growth edge:** moving from imagining a book or an essay to writing one —
+learning to plan, and to carry the plan out.
 </Markdown>
 <ActionButton id="wj1_pick_dreamer" label="This one's me">
 <SetFieldAction id="wj1_pick_dreamer_set" target="wj1_type_choice" field="value" value="dreamer" />
@@ -643,10 +681,17 @@ If none of them fit: the last card is blank, and it's for writing your own.
 
 <Vertical id="wj1_card_practitioner" title="🔁 The Practitioner">
 <Markdown id="wj1_card_practitioner_text">
-| 🔁 The Practitioner | Core motivation: steady practice |
-| :-- | :-- |
-| **What it looks like** | You write regularly and usefully — to keep track, to remember, to stay on top of things. You trust the habit more than inspiration, and it adds up. |
-| **A growth edge** | Let some of that steady practice become writing you do for its own sake. |
+### 🔁 The Practitioner
+*Core motivation: consistent improvement*
+
+You write regularly and you trust the process: skill comes from repetition,
+not inspiration. You may not be the writer you want to be yet — but you know
+that if you put in the work, you can become one. Over time, writers like you
+make the largest gains.
+
+**A growth edge:** balancing discipline with creativity. Too much discipline
+forces writing when the draft — and your brain — really need a break; space
+from a draft can let you see it clearly.
 </Markdown>
 <ActionButton id="wj1_pick_practitioner" label="This one's me">
 <SetFieldAction id="wj1_pick_practitioner_set" target="wj1_type_choice" field="value" value="practitioner" />
@@ -655,10 +700,16 @@ If none of them fit: the last card is blank, and it's for writing your own.
 
 <Vertical id="wj1_card_finisher" title="🏁 The Finisher">
 <Markdown id="wj1_card_finisher_text">
-| 🏁 The Finisher | Core motivation: finishing something real |
-| :-- | :-- |
-| **What it looks like** | You write to end up with a finished thing — something you can point to and say *I made that.* You have, or are building, the persistence to see a piece through. |
-| **A growth edge** | Treat finishing as the start of a writing life, not a one-time test. |
+### 🏁 The Finisher
+*Core motivation: completion*
+
+Many people dream of writing a book; you actually finish things. You can make
+a plan and get the writing done whether you're enjoying it or not —
+persistence and project management are your strengths. Whether the finished
+thing succeeds is secondary: it exists.
+
+**A growth edge:** not letting *done* become the whole point. Rushing to
+finish can crowd out improving your writing process — and your writing.
 </Markdown>
 <ActionButton id="wj1_pick_finisher" label="This one's me">
 <SetFieldAction id="wj1_pick_finisher_set" target="wj1_type_choice" field="value" value="finisher" />
@@ -667,10 +718,16 @@ If none of them fit: the last card is blank, and it's for writing your own.
 
 <Vertical id="wj1_card_pragmatist" title="🎯 The Pragmatist">
 <Markdown id="wj1_card_pragmatist_text">
-| 🎯 The Pragmatist | Core motivation: audience &amp; impact |
-| :-- | :-- |
-| **What it looks like** | You write to *reach* people — to make a point, change a mind, get a result. You think about the reader on the other end, not just the words on the page. |
-| **A growth edge** | Keep your own voice and purpose alongside the goal of landing with an audience. |
+### 🎯 The Pragmatist
+*Core motivation: audience and impact*
+
+You write because of what writing can do. It's a working tool: you think about
+how your audience will receive your words and you adjust accordingly. The goal
+isn't producing text — it's reaching people, and you read the room well.
+
+**A growth edge:** keeping your own purpose alongside the practical one — and
+remembering that writing isn't only for reaching others; it's also for
+thinking and learning.
 </Markdown>
 <ActionButton id="wj1_pick_pragmatist" label="This one's me">
 <SetFieldAction id="wj1_pick_pragmatist_set" target="wj1_type_choice" field="value" value="pragmatist" />
