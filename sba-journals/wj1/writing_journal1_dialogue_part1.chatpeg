@@ -46,7 +46,7 @@ Introduction
 // wj1_intro is also the UseHistory `initial`, so the embed's repoint is a
 // no-op on a fresh session — the marker is here for the transcript.
 
-Alma: Hey, before we get started, read the text to the right. When you're done, come back and hit the blue continue button.
+Alma: Hey, before we get started, read the text to the right and click **Mark as read** at the bottom. then come back and hit the blue continue button.
 
 --- wait @wj1_intro_done.value ---
 

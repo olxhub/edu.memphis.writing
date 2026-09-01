@@ -70,7 +70,7 @@ think about your writing process. There will be a chat on the left side of the s
 with the 'continue' button. Sometimes activities, prompts, and text will appear here on the right side.
 When this happens, please read and interact with it before advancing the chat.
 </Markdown>
-<Done id="wj1_intro_done" label="Next" />
+<Done id="wj1_intro_done" label="Mark as read" />
 </Vertical>
 
 <Markdown id="wj1_welcome">
