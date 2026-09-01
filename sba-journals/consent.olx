@@ -16,37 +16,28 @@ license: AGPL
 <!--
   RESEARCH CONSENT GATE
 
-  The deployed route "/" lands here, not on the course. Three states, one
-  Vertical: unanswered → the IRB form; answered but not acknowledged → a short
-  verdict-neutral acknowledgment with the course behind one Continue;
-  acknowledged → the course itself. Gates test ANSWERED (any value), never
-  ACCEPTED: declining changes nothing about the course, including this gate.
+  The deployed route "/" lands here, not on the course. Three states:
+  * unanswered → the IRB form
+  * answered but not acknowledged → a short acknowledgment
+  * acknowledged → the course itself
 
-  The form block is also a child of wj_course (nav item "Research Consent"),
-  same block, same state — so "you may leave the study at any time" is a page
-  students can actually revisit, and a later change of answer never locks
-  anything (both values are truthy).
+  Gates test ANSWERED (any value); declining changes nothing about the course
 
-  IRB language: University of Memphis, the protocol shared with the psychology
-  SBAs (edu.memphis.psych psychology/consent.olx), adapted for ENGL 1010 in
-  three ways: (a) no "obtained from Canvas" — this course's work lives on this
-  platform; (b) the instructor sentence is generalized to "your instructor";
-  (c) the contact is the head instructor, and the psychology co-investigators
-  are not listed — they have no role in this course. The PI is unchanged
-  (same protocol). FLAG: confirm this adapted text against the approved
-  protocol before launch.
+  The form block is also a child of the main course (same block),
+  giving students the opportunity to opt-out or opt-in later.
 
-  FORM VERSION: wj-consent-2026-08-30-a (constant at the bottom of the form).
-  If the language changes, bump it and plan re-consent. The version is not
-  stamped per-student: to know which text a consent was given under, correlate
-  the consent event's timestamp with the deploy history of this file.
+  Version of the consent form can be had from event logs, which should
+  tie back to a specific release key. We may consider adding an event
+  explicitly including form version in the future.
 -->
 
 <Vertical id="wj_study" title="Writing Journals (Research Study)" launchable="true">
 
-<!-- HACK: when= directly on these <Use> tags renders unconditionally, so the
-     gating lives on wrapper Verticals. <Use> supports attribute overrides and
-     when= is supposed to work — platform bug (bugs.md); unwrap when fixed. -->
+<!-- HACK: when= directly on these <Use> tags rendered unconditionally,
+     so the gating lives on wrapper Verticals. <Use> supports
+     attribute overrides and when= is supposed to work — platform bug;
+     unwrap when fix is confirmed. -->
+
 <Vertical id="wj_irb_form_gate" when="!@wj_irb_consent.value">
 <Use ref="wj_irb_consent_form" />
 </Vertical>
@@ -91,21 +82,17 @@ same activities, same credit. You can change your answer at any time under
 
 <TalkBubble who="Katie Fredlund" cast="consent.cast">
 <Markdown>
-As a college instructor, I am always working to improve my courses so
-that my students are successful.
-
-As part of this goal, I conduct classroom-based studies. This involves
-asking my students to do different activities that give me information
-about them or involves me testing out ideas. I collect this
-information to be a better instructor. However, I learn about ways to
-help other college instructors support their students. When this
-happens, I want to be able to share what I have learned from
-de-identified student course work.
-
-For me to use the information that I gather from students in this way,
-I need their consent. Below is an informed consent form for this
-class. Please read the form. Whichever way you answer, the course — your
-activities, your grade, your experience — is exactly the same.
+As the Director of First-Year Writing, I am always working to improve
+how writing is taught at the University of Memphis and to identify the
+learning activities that most effectively support and engage our
+students. To do this, I conduct research about how students learn to
+think and write. In order to learn what our students need, I look at
+how students complete writing and thinking activities. I collect this
+information to improve our courses and the instruction in the program
+overall. As an added benefit, I often learn new ways to support
+writing instructors beyond the UofM. Sometimes, I want to share what I
+have learned, and I can only do that if you are okay with me using
+your responses to the Writing Process Journals in my research.
 </Markdown>
 </TalkBubble>
 
@@ -156,10 +143,6 @@ Please choose one. Either answer takes you into the course.
   <Key value="consented"> I accept. </Key>
   <Key value="declined" > I do not want to participate in this study. </Key>
 </ChoiceInput>
-
-<!-- Consent-form text version; analytics joins consent values against this.
-     Bump on ANY change to the language above. -->
-<Markdown id="wj_irb_consent_version" when="false">wj-consent-2026-08-30-a</Markdown>
 
 </Vertical> <!-- wj_irb_consent_form -->
 </Hidden>
