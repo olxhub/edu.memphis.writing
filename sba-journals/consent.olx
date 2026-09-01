@@ -1,4 +1,19 @@
 <!--
+---
+description: "Research-study version of the Writing Journals: the same ENGL 1010 course, preceded by the University of Memphis informed-consent form. Students may take part in the study or not — the course is identical either way, and the consent answer can be changed at any time under Research Consent in the course navigation. For the journals without the study, launch the course itself (writing_journals_course.olx, wj_course)."
+category: writing
+index: -1
+lang: en-Latn-US
+authors:
+  - Katherine Fredlund
+  - J Elliott Casal
+  - Paul Deane
+  - Piotr Mitros
+license: AGPL
+---
+-->
+
+<!--
   RESEARCH CONSENT GATE
 
   The deployed route "/" lands here, not on the course. Three states, one
@@ -28,7 +43,7 @@
   the consent event's timestamp with the deploy history of this file.
 -->
 
-<Vertical id="wj_study" title="Writing Journals" launchable="true">
+<Vertical id="wj_study" title="Writing Journals (Research Study)" launchable="true">
 
 <!-- HACK: when= directly on these <Use> tags rendered unconditionally, so the
      gating lives on wrapper Verticals. Per Piotr, <Use> supports overrides and
