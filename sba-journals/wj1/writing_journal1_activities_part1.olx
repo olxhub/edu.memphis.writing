@@ -32,20 +32,19 @@
      Design-doc fidelity notes (kept out of the student's view):
   * TASK 1 (the Writer Board) is realized as TWO TabularMCQ grids (For school /
     Outside school): rows = kinds of writing, columns = Frequently / Sometimes /
-    Never. (An earlier version used drag-to-rank SortableInputs, but a ranking
-    can't distinguish "never" from "least often," so the instructor asked for an
-    explicit Frequently/Sometimes/Never choice; lo-blocks has no drag-into-columns
+    Never. (Not drag-to-rank: a ranking can't distinguish "never" from "least
+    often," and an explicit choice can; lo-blocks has no drag-into-columns
     block, so a radio-grid TabularMCQ is the fit.) Task 1 asks only WHAT and HOW
     OFTEN — never WHY — so the group runs into the real gap that opens Task 2.
   * TASK 2's clusters are a fixed set (the doc's example clusters) rather than
     generated from each student's board, because the board items are authored, not
     free text. The fixed reason list keeps responses mappable to the Task 3 profiles.
-  * TASK 3 (Your Writer Type) is STUDENT-SELECTED — no LLM, and (as of the Aug 2026
-    revision) no assignment by the tool either. The TA reported that being handed a
-    personality-quiz result felt limiting, so the eight authored cards are now browsed
-    in a <Carousel> and the student picks one. The assessed output is still the
-    story-based reflection — but the story now defends or complicates a choice the
-    student made, which is a stronger writing prompt than arguing with a machine.
+  * TASK 3 (Your Writer Type) is STUDENT-SELECTED — no LLM, and no assignment
+    by the tool either: being handed a personality-quiz result feels limiting.
+    The eight authored cards are browsed in a <Carousel> and the student picks
+    one. The assessed output is the story-based reflection — a story that
+    defends or complicates the student's own choice, which is a stronger
+    writing prompt than arguing with a machine's verdict.
      -->
 
 <Vertical id="wj1_activities_part1" title="Writing Journal 2 — Activities" launchable="true">
@@ -60,9 +59,8 @@
      Read-only framing.
      =================================================================== -->
 
-<!-- The very first screen: how this activity works. Text is Katie's (see
-     notes-for-piotr.txt, "wj1_intro [NEW PAGE]"). Nothing to fill in, so the
-     <Done> at the bottom is what tells the chat the student has read it —
+<!-- The very first screen: how this activity works. Nothing to fill in, so
+     the <Done> at the bottom is what tells the chat the student has read it —
      the chat waits on @wj1_intro_done.value before Alma goes on. -->
 
 <Vertical id="wj1_intro">
@@ -179,10 +177,16 @@ If you want a refresher at any time, click the **Writer Personalities** tab at t
 |---|---|---|
 | Texting | Outside | Every day |
 | The roommate group chat | Outside | Every day |
+| Texts to her family — the aunts get Spanish, the cousins get both | Outside | Every day |
 | Emails (professors, work) | For school | A couple times a week |
 | Discussion posts | For school | Weekly *("and I resent every one")* |
 | Captions when she posts something | Outside | A few times a week |
 | Comments on shared docs (group projects) | Both | Adds up fast |
+| Study-group notes — she's the one who types them up | For school | Most weeks |
+| The planner and the to-do lists | Both | Constantly |
+| Shift-swap messages for work | Outside | A few times a month |
+| The whole inside of birthday cards | Outside | Every friend, every year |
+| Reviews, when a place is actually good | Outside | Now and then |
 
 > *Alma stops partway down.* **"Huh. I always forget how much ends up on here."**
 >
@@ -285,13 +289,11 @@ You don't have to answer — but if something jumped out, name it.
      their writing, names up to four reasons that come up most, and writes a
      short reflection.
 
-     Aug 2026: the five per-cluster inputs were DropdownInputs (one reason
-     each) and became CheckboxInputs, because one reason per kind of writing
-     was the wrong model — people write the same thing for several reasons at
-     once. Katie asked for an "add another reason" repeatable input; lo-blocks
-     has no repeatable-input block, so a fixed checkbox list is the interim
-     shape. Ids and option codes are unchanged, so every downstream reference
-     still resolves; what changed is that each stored value is now a LIST.
+     CheckboxInputs, not dropdowns: people write the same thing for several
+     reasons at once, so one reason per kind of writing is the wrong model,
+     and each stored value is a LIST of codes. The ideal input would grow on
+     demand ("add another reason"); lo-blocks has no repeatable-input block,
+     so the fixed checkbox list is the interim shape (bugs.md).
      =================================================================== -->
 
 <Vertical id="wj1_why">
@@ -462,6 +464,10 @@ Considering the reasons you chose for writing, write a few sentences about what 
 yourself as a writer, or about the reasons why you write.
 </Markdown>
 <TextArea id="wj1_why_reflect" rows="6" placeholder="What I've learned about myself as a writer is..." />
+
+<Markdown>
+*Once you've finished, scroll up and return to the chat.*
+</Markdown>
 </Vertical> <!-- wj1_why -->
 
 
@@ -524,13 +530,11 @@ yourself as a writer, or about the reasons why you write.
      regardless, because a student who has decided none of the eight fits has
      already made the choice this screen asks for. Discourage, don't block.
 
-     HISTORY (Aug 2026): this screen used to ASSIGN a type — the biggest
-     reasons (wj1_why_top2) revealed one or two cards behind a "Generate your
-     writer profile" button. The TA reported that landing on a personality-quiz
-     result felt limiting, so the assignment machinery (wj1_generate_btn,
-     wj1_generate_flag, the reason->card IntakeGates, and the "does this feel
-     like you" question wj1_fit) is gone. Those reasons keep their
-     role as reflection back in Why I Write; they no longer gate anything here.
+     There is deliberately NO machinery that assigns a type from the answers:
+     landing on a personality-quiz result feels limiting, and the argument the
+     course wants is with yourself, not with a generator. The biggest reasons
+     (wj1_why_top2) keep their role as reflection back in Why I Write; they
+     gate nothing here.
      =================================================================== -->
 
 <Vertical id="wj1_profile">
@@ -814,23 +818,53 @@ land — and answer the question below.
 <Use ref="wj1_why_creative" />
 </Collapsible>
 
-<!-- The old "Does this feel like you?" Yes/Partly/Not really question
-       (wj1_fit) was removed with the Aug 2026 revision: once the student picks
-       the card themselves, asking whether it feels like them answers itself.
-       The story below carries the whole weight now, and it is a better prompt
-       for it — defending a choice is writing; rating a machine's guess isn't. -->
+<!-- There is deliberately no "does this feel like you?" question here: once
+     the student picks the card themselves, asking whether it feels like them
+     answers itself. The story below carries the whole weight, and it is the
+     better prompt — defending a choice is writing; rating a guess isn't. -->
 
 <Markdown>
 ### Your reflection
 
-You picked (or wrote) a writing personality. Now explain your choice by telling us a story (or stories)
-that explains why this writing personality fits you.
+You picked (or wrote) a writing personality. Now explain your choice by telling us a story that explains
+why this writing personality fits you.
 
-This should be a real moment where you were writing something — but remember, it doesn't have to be about
-something you wrote for a class. Include details like what you were writing, why you were writing it, and
-how you wrote it. If the personality isn't a perfect fit, you can talk about that too.
+These writing personalities help us understand a writer's motivations, but they don't help us understand
+how your motivations for writing influence your writing process. That's one reason we want you to write a
+story about a time you wrote something. Stories help us bridge the gap between what we think about
+ourselves and what our behaviors actually show us about ourselves.
+
+Your story should focus on a time in your life when you were writing something, but remember, it doesn't
+have to be about something you wrote for a class. Include details like what you were writing, why you were
+writing it, and how you wrote it. If the personality you chose isn't a perfect fit, you can talk about
+that too.
+
+Sometimes, stories lead us to self-awareness, rather than the other way around, so if you can't think of a
+story that illustrates the personality you chose, write a story about a time you wrote something and then
+return to the personalities to see if a different personality fits your story. Don't forget, you might be
+a combination of writing personalities!
+</Markdown>
+<Markdown>
+*Plan on at least 50 words (you're at {{wordcount(@wj1_profile_reflect.value)}}) — a story that really shows the fit usually runs well past that on its own.*
 </Markdown>
 <TextArea id="wj1_profile_reflect" rows="9" placeholder="Here's a story from my writing life..." />
+
+<!-- We want students to know why they can't hit Continue, without making 50
+     a target: a bare (49/50) counter under the box encourages stopping at
+     exactly 50. So the live count sits INSIDE the instruction sentence, next
+     to the floor and the "runs well past it" framing, and the feedback tiers
+     never show a number — under nudges for STORY, over claims only what was
+     checked. The gate itself is the chat wait. -->
+<Markdown when="wordcount(@wj1_profile_reflect.value) &lt; 50">
+*Keep going — there's more story than this. What were you writing? Why? What did it take?*
+</Markdown>
+<Markdown when="wordcount(@wj1_profile_reflect.value) &gt;= 50">
+*✓ That's enough to continue. Before you do, read it back: does it show what you were writing, why, and how — and does it connect to the personality you picked?*
+</Markdown>
+
+<Markdown>
+*Once you finish your reflection, return to the chat where you'll finish up and get a PDF to submit to your instructor.*
+</Markdown>
 </Vertical> <!-- wj1_profile -->
 
 
@@ -984,9 +1018,9 @@ starting from.
 <!-- ---------------------------------------------------------------
        2. THE STRUCTURED ANSWERS  (skimmed, not read)
        Everything structured comes back as <Use>: the two Writer Board grids,
-       the chosen writer-type card, and — since the Aug 2026 multi-reason
-       change — the five reason blocks and the top-reasons multi-select, whose
-       stored values are LISTS of codes and so have no sane text rendering.
+       the chosen writer-type card, the five reason blocks, and the top-reasons
+       multi-select — the latter store LISTS of codes, which have no sane text
+       rendering.
        --------------------------------------------------------------- -->
 
 <Markdown>

@@ -43,10 +43,8 @@ Introduction
 --------------
 ::wj1_intro [display=target:wj1_sidebar label="How this works"]
 
-// wj1_intro is a new page; its text is Katie's, from notes-for-piotr.txt
-// ("wj1_intro [NEW PAGE]"), and now lives in writing_journal1_activities_part1.olx.
-// It is also the UseHistory `initial`, so the embed's repoint is a no-op on a
-// fresh session — it is here for the transcript marker.
+// wj1_intro is also the UseHistory `initial`, so the embed's repoint is a
+// no-op on a fresh session — the marker is here for the transcript.
 
 Alma: Hey, before we get started, read the text to the right. When you're done, come back and hit the blue continue button.
 
@@ -56,10 +54,9 @@ The Invitation
 --------------
 ::wj1_welcome [display=target:wj1_sidebar label="Who am I as a writer?"]
 
-// Writing Team: "We want them to click a 'next' button at the bottom of wj1_intro
-// before the chat can be advanced." Implemented above as the
-// `--- wait @wj1_intro_done.value ---` gate in the Introduction section, backed by
-// <Done id="wj1_intro_done" label="Next" /> at the bottom of the wj1_intro page.
+// The intro page is actively acknowledged before the chat moves: the wait in
+// the Introduction section is backed by <Done id="wj1_intro_done" label="Next"/>
+// at the bottom of the wj1_intro page.
 
 You: hey — you took 1010 last year right [face=smile]
 
@@ -75,11 +72,11 @@ Alma: it's just students who get together every so often to talk about writing. 
 
 Alma: let me add you to the group chat
 
-// Writing Team, verbatim: "You've been added to the Writing Circle Group Chat"
-// OPEN QUESTION (Fable/Piotr to decide): how should this render? Candidates are a
-// system/narrator message in the chat stream vs. a section header marking the move
-// from the 1:1 thread into the group chat. Left unimplemented deliberately — no
-// rendering invented here.
+// A phone-style "X added you" notice: an inline embed sits between bubbles,
+// unattributed — the system-message register.
+::
+<Markdown id="wj1_groupchat_notice">*You've been added to the Writing Circle Group Chat*</Markdown>
+::
 
 Thursday, 4:02
 --------------
@@ -127,7 +124,11 @@ Richard: and then you'd tell me I was wrong, which was the useful part. [face=se
 
 Richard: this is the honest version of that. you choose, and then you explain why. It is harder, but it's yours. [face=serious]
 
-Richard: if you haven't already, go ahead and read it. there's a **Mark as read** at the bottom. click it and the chat will reopen. [face=serious]
+// State-neutral on purpose: students often Mark-as-read the pane long before
+// this beat, so the line must not describe gate state ("the chat will reopen")
+// that is already false for them. Say the task, never the gate. (bugs.md:
+// conditional dialogue lines are the real cure for this class.)
+Richard: if you haven't already, give it a read — there's a **Mark as read** at the bottom for when you're done. [face=serious]
 
 --- wait @wj1_orientations_done.value ---
 
@@ -153,7 +154,7 @@ Alma: oh, then this is good timing. here — it's faster if I just show you mine
 
 ::wj1_alma_board [display=target:wj1_sidebar label="Alma's writer board"]
 
-Alma: there it is, on the right ---> [face=smile]
+Alma: that's mine ---> [face=smile]
 
 Alma: so it's just everything you write, laid out. mine's ... okay. texting, obviously every day, mostly outside school. the roommate group chat, which is ninety percent negotiating whose turn it is to buy toilet paper. [face=explaining]
 
@@ -169,29 +170,28 @@ Alma: no, but the first time I did this I put down three things. essays, emails,
 
 Richard: and now? [face=serious]
 
-Alma: now it doesn't fit on one screen. [face=smile]
+Alma: now I scroll just to get to the bottom of it. [face=smile]
 
 Lee: don't worry, there's no quiz on Alma's toilet paper negotiations. hit **mark as read** when you're done [face=cheeky]
 
 --- wait @wj1_alma_board_done.value ---
 
-// PLATFORM/CONTENT REQUEST (later, not this merge) — Writing Team: "Each time we
-// display the 'mark as read' button, can we have text appear once they click it
-// that says 'go back to chat'?" Applies to every <Done> on the right-hand pages.
+// TODO (platform, bugs.md): after a <Done> is clicked it should flip to a
+// "go back to chat" hint — wanted on every <Done> on the right-hand pages.
 
 Your Turn — Build Your Board
 ----------------------------
 ::wj1_board [display=target:wj1_sidebar label="Your writer board"]
 
-Alma: okay, your turn. it doesn't have to be complete or organized — just put down what you actually do. there's a side for school and a side for everything else. [face=smile]
+Alma: okay, your turn. just put down what you actually do. The top one's for school and the bottom one's for everything else. [face=smile]
 
 Lee: and count the stuff you don't think counts. that's the whole trick. [face=cheeky]
 
 Alma: no rush at all. once there's at least one thing on it, we'll take a look together — you can keep adding after. [face=calm]
 
 // The gate is "has started", not "is finished": it exists so the board doesn't
-// get skipped, and Alma has just said the board doesn't have to be complete. A
-// Done button implied a finish line (and was ours, not the course team's).
+// get skipped, and Alma has just promised there's no rush. A Done button would
+// imply a finish line the activity doesn't have.
 --- wait Object.keys(@wj1_board_school.value).length >= 1 || Object.keys(@wj1_board_outside.value).length >= 1 || @wj1_board_school_other.value || @wj1_board_outside_other.value ---
 
 There It Is
@@ -199,12 +199,11 @@ There It Is
 
 Lee: there it is. [face=cheeky]
 
-// Embed-before-announce: Alma's next line is the announce ("there's a spot on the
-// right"), so the marker sits above it — the pane is showing wj1_board_noticing by
-// the time she says it, and the marker records where in the talk it arrived.
-::wj1_board_noticing [display=target:wj1_sidebar label="One thing you noticed"]
+// Announce-before-appear: Alma asks the question FIRST, then the spot for the
+// answer lands. The question is the event; a pane arriving first steals it.
+Alma: okay, real question — did anything end up on there that you wouldn't have called writing before you sat down? let me drop a spot in here for it. [face=explaining]
 
-Alma: okay, real question — did anything end up on there that you wouldn't have called writing before you sat down? there's a spot on the right. [face=explaining]
+::wj1_board_noticing [display=target:wj1_sidebar label="One thing you noticed"]
 
 Richard: that's the part that gets everybody. I had grocery lists on mine for about a year before I'd admit they counted. [face=serious]
 
@@ -240,15 +239,14 @@ Alma: which is the thing about a board. any board. it's a list of what. it can't
 
 // Syntax: [face=...] must be the last thing on a dialogue line, so the face tag
 // moved to the end. Wording unchanged.
-Alma: so — go back through yours and put the why on it. Once you've answered the questions on the right, we can get back to the chat [face=smile]
+Alma: so — go back through yours and put the why on it. here, I'll drop the questions in [face=smile]
 
 ::wj1_why [display=target:wj1_sidebar label="Why I write"]
 
 // Lee's beat, restored from 66566b3: it enumerates the parts of the Why screen, so
-// the student knows how long it runs before they start it.
-// OPEN for Fable/Piotr: Alma's line above already ends "we can get back to the
-// chat," which overlaps Lee's "we'll still be here." One of the two reassurances
-// could go; the enumeration is the half that carries information.
+// the student knows how long it runs before they start it. It also carries the
+// only reassurance now: Alma's line above hands the questions over ("I'll drop the
+// questions in") and no longer describes gate state, so the two no longer overlap.
 Lee: fair warning, it's a longer one — the reasons, then the ones that come up most, then a few sentences at the end. we'll still be here. [face=cheeky]
 
 --- wait @wj1_why_reflect.value && @wj1_why_top2.value.length >= 1 && @wj1_why_top2.value.length <= 4 ---
@@ -288,7 +286,7 @@ Your Writer Type
 ::wj1_profile [display=target:wj1_sidebar label="Your writer type"]
 wj1_types_ready <- go
 
-Alma: Check these out on the right side. The arrows move you through the personalities. there it is, on the right ---> [face=smile]
+Alma: there's the whole deck — the arrows move you through the personalities ---> [face=smile]
 
 // Beat order (from 66566b3): the reference beat first, then the action
 // instruction sitting adjacent to the gate it describes.
@@ -304,7 +302,7 @@ Richard: a real one. what you were writing, what happened, what it took. [face=s
 
 Alma: The story Richard's talking about should explain why you chose that personality. If the personalist only fits you part way, use the story to show us that. It's ok if you need to tell us more than one story. The part that doesn't fit is usually the interesting part. [face=calm]
 
---- wait @wj1_profile_reflect.value ---
+--- wait wordcount(@wj1_profile_reflect.value) >= 50 ---
 
 Wrapping Up
 -----------

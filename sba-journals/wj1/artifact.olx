@@ -73,10 +73,10 @@ export your PDF.*
   <Collapsible id="wj1_artifact_profile" title="3. My writer type">
     <!-- The card the student CHOSE, by reference. wj1_type_result carries both
          the choice in words and the card itself, and its per-type gates mount
-         exactly one branch, so this is always their card and only theirs. The
-         "Does this feel like me?" question that used to sit here (wj1_fit) went
-         away when the type stopped being assigned — see the Task 3 comment in
-         writing_journal1_activities_part1.olx. -->
+         exactly one branch, so this is always their card and only theirs. There
+         is deliberately no "does this feel like me?" follow-up: the student
+         chose the card themselves, so the question answers itself — see the
+         Task 3 comment in writing_journal1_activities_part1.olx. -->
     <Markdown>*You chose this one over on **The Circle** tab. Head back there to browse the deck again if you want to change it.*</Markdown>
     <Use ref="wj1_type_result" />
   </Collapsible>

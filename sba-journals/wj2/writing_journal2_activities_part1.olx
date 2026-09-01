@@ -909,11 +909,11 @@ without stopping and without deleting for a couple of minutes. Don't worry about
 keep your hand moving. When you stop, you'll usually find you've already started your story. (This is
 Peter Elbow's *freewriting*, and it's one of the best-known cures for the blank page.)
 </Markdown>
-<!-- The prose above promises two minutes, so a TimedContainer has to supply them:
-         on expiry it marks its content inert, which locks the box. `reveal` was removed
-         because Reveal only makes sense with `invisible` — it un-hides hidden text and
-         ends the exercise. Without `invisible` there was nothing to reveal, so the
-         button read as an arbitrary "stop writing now" control. -->
+<!-- The prose above promises two minutes, so a TimedContainer supplies them:
+     on expiry it marks its content inert, which locks the box. Deliberately no
+     `reveal`: Reveal only makes sense with `invisible` — it un-hides hidden
+     text and ends the exercise. Without `invisible` there is nothing to
+     reveal, and the button reads as an arbitrary "stop writing now" control. -->
 <TimedContainer id="wj2_freewrite_timer" duration="2 minutes" hideuntilstart="true"
   label="Start the two minutes"
   before="Two minutes, no stopping and no deleting. When the time is up the box locks, and whatever is in it is yours to use."

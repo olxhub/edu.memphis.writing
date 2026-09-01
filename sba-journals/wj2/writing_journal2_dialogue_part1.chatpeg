@@ -73,7 +73,7 @@ Take the Quiz
 -------------
 ::wj2_survey [display=target:wj2_sidebar label="The quiz — part 1"]
 
-Alma: ok, it's on the right now. it gives you one statement at a time — just go with your gut, first instinct, don't overthink it. work through all of them and it'll unlock the next part [face=explaining]
+Alma: ok, there's the link. it gives you one statement at a time — just go with your gut, first instinct, don't overthink it. work through all of them and it'll unlock the next part [face=explaining]
 
 Richard: fine. going in skeptical, but going in [face=suspicious]
 
@@ -137,7 +137,7 @@ Does It Fit?
 ------------
 ::wj2_placement_reflect [display=target:wj2_sidebar label="Does this feel accurate?"]
 
-Alma: so — does it actually fit you? that's the real question. take a few sentences right here and think it through — see if you can put your finger on a moment that explains where you landed [face=explaining]
+Alma: so — does it actually fit you? that's the real question. I'll put a box right below this — take a few sentences in it and think it through, see if you can put your finger on a moment that explains where you landed [face=explaining]
 
 ::wj2_placement_input
 

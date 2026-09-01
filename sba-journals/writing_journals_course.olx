@@ -27,10 +27,13 @@ license: AGPL
      `selectedChild` field to 2b's definition key. -->
 
 <Course id="wj_course" title="Writing Journals" launchable="course">
+  <!-- The journals join the nav when the tutorial hands off (it sets
+       tut_complete on its final beat) — until then the course is the
+       tutorial, and there is nothing to wander into half-taught. -->
   <Use ref="tut_sba_part1" />
-  <Use ref="wj1_sba_part1"  />
-  <Use ref="wj2a_sba_part1" />
-  <Use ref="wj2b_sba_part1" />
+  <Use ref="wj1_sba_part1"  when="@tut_complete.value" />
+  <Use ref="wj2a_sba_part1" when="@tut_complete.value" />
+  <Use ref="wj2b_sba_part1" when="@tut_complete.value" />
   <!-- Same block the consent gate shows; same state. Here so a student can
        revisit and change their answer at any time (consent.olx). -->
   <Use ref="wj_irb_consent_form" />

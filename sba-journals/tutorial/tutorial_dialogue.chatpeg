@@ -38,17 +38,20 @@ Ellington: over here on the left of the screen is the chat where you are part of
 
 ::tut_welcome [display=target:tut_sidebar label="Welcome"]
 
-Ellington: the right side is where the work happens. sometimes there will be text for you to read, sometimes we will ask you to interact with survey items, and sometimes you will do some writing over there. For now, read the text that just landed and then click **Mark as read** at the bottom when you are done. You will notice that the **Continue** button stays off (grey) until you do. The text is over there ---> [face=explaining]
+Ellington: the right side is where the work happens. sometimes there will be text for you to read, sometimes we will ask you to interact with survey items, and sometimes you will do some writing over there. For now, read the text that just landed and then click **Mark as read** at the bottom when you are done. You will notice that the **Continue** button stays off (grey) until you do. You can try toggling it a few times. The text is over there ---> [face=explaining]
 
-Ellington: (that little **Welcome** button that just appeared here in the chat is a bookmark to it. ignore it for now — I'll come back to it.) [face=calm]
-
+// The wait sits directly under the line that describes it, so "stays off until
+// you do" is true the moment it is said — a beat in between would leave
+// Continue live while the claim says otherwise.
 --- wait @tut_welcome_done.value ---
+
+Ellington: (that little **Welcome** button a few lines above is a bookmark to the welcome screen. ignore it for now — I'll come back to it.) [face=calm]
 
 Try It Once
 -----------
 ::tut_practice [display=target:tut_sidebar label="Try it"]
 
-Ellington: good. when there's something to *do*, it shows up on the right side the same way, and it pulses to catch your eye. type anything at all in the box; one word is plenty. [face=explaining]
+Ellington: good. when there's something to *do*, it shows up on the right side the same way, and sometimes pulses to catch your eye. this time the chat needs something in the box — anything at all — before it moves on. [face=explaining]
 
 --- wait @tut_practice_text.value ---
 
@@ -57,7 +60,7 @@ Ellington: notice you never clicked "save." there is no save button anywhere her
 Looking Back
 ------------
 // Taught by doing, like everything else here. BOTH ways back are taught as
-// equals (Piotr): the bookmark button in the transcript, and the history bar
+// equals: the bookmark button in the transcript, and the history bar
 // at the top of the pane (‹ arrow, one dot per card seen, › arrow). The
 // exercise accepts either route — a marker click and a ‹ click both write
 // tut_sidebar.value (the marker writes the QUALIFIED ref, the bar re-writes
@@ -92,4 +95,7 @@ Ellington: you did your first writing journal on paper. from here they move onli
 
 --- pause ---
 
+// Finishing the tutorial unlocks the journals in the course nav (the when=
+// gates on wj_course's children watch this flag).
+tut_complete <- done
 wj_course.selectedChild <- edu.memphis.writing.sba/wj1_sba_part1
