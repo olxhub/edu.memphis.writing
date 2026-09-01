@@ -584,18 +584,19 @@ If none of them fit: the last card is blank, and it's for writing your own.
 <Vertical id="wj1_card_community_writer" title="🤝 The Community Writer">
 <Markdown id="wj1_card_community_writer_text">
 ### 🤝 The Community Writer
-*Core motivation: connection*
+*Core motivation: Connection.*
 
 > *"Almost everything I write is pointed at another person."* — Alma
 
-You write to connect — with individual people, with the places you live, with
-whole online communities. You seek out people to write with and for: when you
-finish a draft, you want someone else to read it before you even think about
-revising. Writing is social and collaborative for you, and you learn best
-through interaction and feedback.
+Community writers write to connect with others, whether it be individual
+people, the cities or towns where they live, or large online groups. These
+writers seek out writing communities. When they finish a draft, they want
+someone else to read it before they think about revising. They understand
+writing as social and collaborative and learn best through interaction and
+feedback.
 
-**A growth edge:** listening to feedback without becoming dependent on it —
-learning to judge your own writing yourself.
+**Growth task:** Listen to feedback without becoming dependent on it; learning
+to self-assess their writing.
 </Markdown>
 <ActionButton id="wj1_pick_community_writer" label="This one's me">
 <SetFieldAction id="wj1_pick_community_writer_set" target="wj1_type_choice" field="value" value="community_writer" />
@@ -605,17 +606,18 @@ learning to judge your own writing yourself.
 <Vertical id="wj1_card_explorer" title="🧭 The Explorer">
 <Markdown id="wj1_card_explorer_text">
 ### 🧭 The Explorer
-*Core motivation: curiosity*
+*Core motivation: Curiosity.*
 
 > *"I write to find out what I think about things."* — Lee
 
-You write because you enjoy discovering what happens when the words hit the
-page. You experiment — genres, forms, topics — without needing a destination,
-because writing is how you think and learn.
+Explorers write because they enjoy discovering what happens when they put
+words on the page. They may experiment with genres, forms, or topics without a
+strong commitment to publication. For explorers, writing is a way of thinking
+and learning.
 
-**A growth edge:** deciding when exploring is the goal and when a draft wants
-to become a larger project — and pushing through the revising that an
-exploratory (often messy) draft still needs.
+**Growth task:** Decide whether exploration itself is the goal or whether they
+want to develop a larger project. The explorer can struggle to revise
+sufficiently after finishing an exploratory (and often messy) draft.
 </Markdown>
 <ActionButton id="wj1_pick_explorer" label="This one's me">
 <SetFieldAction id="wj1_pick_explorer_set" target="wj1_type_choice" field="value" value="explorer" />
@@ -625,17 +627,20 @@ exploratory (often messy) draft still needs.
 <Vertical id="wj1_card_technician" title="🔧 The Technician">
 <Markdown id="wj1_card_technician_text">
 ### 🔧 The Technician
-*Core motivation: mastery of language*
+*Core motivation: Mastery of language.*
 
 > *"I write so things get done properly the first time."* — Richard
 
-You understand clarity, structure, and grammar, and your writing makes every
-word count. Writers like you end up in journalism, law, academia, education —
-anywhere precision pays.
+Technicians often seek careers in journalism, academia, law, education, or
+professional writing. They understand clarity, structure, and grammar. Their
+challenge is recognizing that storytelling requires additional skills beyond
+technical competence. The technician can get so focused on word choice that
+they forget writing is about more than that, but their writing makes every
+word count.
 
-**A growth edge:** remembering that writing is more than correctness. Engaging
-a reader takes skills beyond technical competence, and correctness is not the
-only measure of good writing.
+**Growth task:** Writing to engage others can be a challenge and focusing on
+correctness over idea development can impede their success. They may struggle
+to accept that correctness is not the sole meter for writing assessment.
 </Markdown>
 <ActionButton id="wj1_pick_technician" label="This one's me">
 <SetFieldAction id="wj1_pick_technician_set" target="wj1_type_choice" field="value" value="technician" />
@@ -645,16 +650,17 @@ only measure of good writing.
 <Vertical id="wj1_card_hobbyist" title="🌿 The Hobbyist">
 <Markdown id="wj1_card_hobbyist_text">
 ### 🌿 The Hobbyist
-*Core motivation: personal fulfillment*
+*Core motivation: Personal fulfillment.*
 
-You write because you enjoy it. You might share with friends or family, join a
-writing group, or finish projects purely for your own satisfaction — a big
-audience isn't the point. Writing for class may be a drag, but writing for
-yourself is a pleasure.
+Hobbyists write because they enjoy it. They may share work with friends or
+family, participate in writing groups, or complete projects for their own
+satisfaction. They do not necessarily seek a large audience. Writing for class
+may be a drag, but they love writing for their own purposes and enjoyment.
 
-**A growth edge:** protecting the joy while you keep improving. Hobbyists can
-drift to a new project before the old one is finished, or write far past what
-an audience will sit for.
+**Growth task:** Protect the joy of writing while continuing to improve. They
+may struggle to finish their writing because they get distracted by a new
+project or may write essays or even books that are far too long for their
+audiences.
 </Markdown>
 <ActionButton id="wj1_pick_hobbyist" label="This one's me">
 <SetFieldAction id="wj1_pick_hobbyist_set" target="wj1_type_choice" field="value" value="hobbyist" />
@@ -664,15 +670,17 @@ an audience will sit for.
 <Vertical id="wj1_card_dreamer" title="💭 The Dreamer">
 <Markdown id="wj1_card_dreamer_text">
 ### 💭 The Dreamer
-*Core motivation: expression and imagination*
+*Core motivation: Expression and imagination.*
 
-You're drawn to storytelling — rich ideas, worlds, characters, themes you want
-to share — often long before the habits and skills that finish a project.
-You'd like to be good at this, maybe even write for a living; the hard part is
-the road from the idea to the reality.
+Dreamers are drawn to the idea of storytelling long before they develop the
+habits or skills needed to finish a project. They often have rich ideas,
+worlds, characters, or themes they want to share. Their challenge is
+translating inspiration into sustained practice. They want to be good at
+writing and would maybe even like to write for a living, but they don't always
+know how to get from the idea to the reality.
 
-**A growth edge:** moving from imagining a book or an essay to writing one —
-learning to plan, and to carry the plan out.
+**Growth task:** Move from imagining a book or essay to writing one. They
+don't always know how to plan (let alone how to implement a plan).
 </Markdown>
 <ActionButton id="wj1_pick_dreamer" label="This one's me">
 <SetFieldAction id="wj1_pick_dreamer_set" target="wj1_type_choice" field="value" value="dreamer" />
@@ -682,16 +690,18 @@ learning to plan, and to carry the plan out.
 <Vertical id="wj1_card_practitioner" title="🔁 The Practitioner">
 <Markdown id="wj1_card_practitioner_text">
 ### 🔁 The Practitioner
-*Core motivation: consistent improvement*
+*Core motivation: Consistent improvement.*
 
-You write regularly and you trust the process: skill comes from repetition,
-not inspiration. You may not be the writer you want to be yet — but you know
-that if you put in the work, you can become one. Over time, writers like you
-make the largest gains.
+Practitioners write regularly and understand that skill develops through
+repetition. They are less interested in inspiration and more interested in
+process. Over time, this group often makes the largest gains. Practitioners
+may not yet be great writers, but they know that if they put in the work,
+they can become the kind of writer they want to be.
 
-**A growth edge:** balancing discipline with creativity. Too much discipline
-forces writing when the draft — and your brain — really need a break; space
-from a draft can let you see it clearly.
+**Growth task:** Balance discipline with creativity and experimentation.
+Practitioners can become too disciplined and force writing when what their
+draft (and brain) really need is a break. Space from a draft can allow them
+to see it more clearly.
 </Markdown>
 <ActionButton id="wj1_pick_practitioner" label="This one's me">
 <SetFieldAction id="wj1_pick_practitioner_set" target="wj1_type_choice" field="value" value="practitioner" />
@@ -701,15 +711,17 @@ from a draft can let you see it clearly.
 <Vertical id="wj1_card_finisher" title="🏁 The Finisher">
 <Markdown id="wj1_card_finisher_text">
 ### 🏁 The Finisher
-*Core motivation: completion*
+*Core motivation: Completion.*
 
-Many people dream of writing a book; you actually finish things. You can make
-a plan and get the writing done whether you're enjoying it or not —
-persistence and project management are your strengths. Whether the finished
-thing succeeds is secondary: it exists.
+Many people dream of writing a book; Finishers actually do it. Whether the
+resulting work succeeds commercially is secondary. They have learned
+persistence and project management. Finishers don't necessarily love the
+process of writing, but they can make a plan and get writing done whether they
+like what they are writing or not.
 
-**A growth edge:** not letting *done* become the whole point. Rushing to
-finish can crowd out improving your writing process — and your writing.
+**Growth task:** View completion as the sole purpose of a writing life which
+can mean they rush to finish rather than improving their writing process (and
+their writing products).
 </Markdown>
 <ActionButton id="wj1_pick_finisher" label="This one's me">
 <SetFieldAction id="wj1_pick_finisher_set" target="wj1_type_choice" field="value" value="finisher" />
@@ -719,15 +731,18 @@ finish can crowd out improving your writing process — and your writing.
 <Vertical id="wj1_card_pragmatist" title="🎯 The Pragmatist">
 <Markdown id="wj1_card_pragmatist_text">
 ### 🎯 The Pragmatist
-*Core motivation: audience and impact*
+*Core motivation: Audience and impact.*
 
-You write because of what writing can do. It's a working tool: you think about
-how your audience will receive your words and you adjust accordingly. The goal
-isn't producing text — it's reaching people, and you read the room well.
+The pragmatist writes because of what it can do for them. They come to writing
+as a professional task that allows them to get things done. As they write,
+they think about how their audience will receive their words and ideas and
+adjust accordingly. Their focus is not simply producing text but reaching
+people. They may struggle to think about writing as a way to learn, but they
+understand the rhetorical situation and use it to their advantage.
 
-**A growth edge:** keeping your own purpose alongside the practical one — and
-remembering that writing isn't only for reaching others; it's also for
-thinking and learning.
+**Growth task:** Maintain artistic purpose alongside professional goals,
+understand writing is not only for reaching others, but also for thinking and
+learning.
 </Markdown>
 <ActionButton id="wj1_pick_pragmatist" label="This one's me">
 <SetFieldAction id="wj1_pick_pragmatist_set" target="wj1_type_choice" field="value" value="pragmatist" />
