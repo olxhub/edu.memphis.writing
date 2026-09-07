@@ -32,8 +32,11 @@ license: AGPL
        tutorial, and there is nothing to wander into half-taught. -->
   <Use ref="tut_sba_part1" />
   <Use ref="wj1_sba_part1"  when="@tut_complete.value" />
+  <!-- Journal 3 (parts 2a/2b) is held out pending course-team edits.
+       Hidden as a pair: 2a's chat ends by repointing the course at 2b.
   <Use ref="wj2a_sba_part1" when="@tut_complete.value" />
   <Use ref="wj2b_sba_part1" when="@tut_complete.value" />
+  -->
   <!-- Same block the consent gate shows; same state. Here so a student can
        revisit and change their answer at any time (consent.olx). -->
   <Use ref="wj_irb_consent_form" />
