@@ -4,8 +4,9 @@ Contributors
 Course
 ======
 
-The course content was developed by J Elliott Casal, Katherine
-Fredlund, Paul Deane, and Piotr Mitros.
+The course content was developed by Katherine Fredlund, J Elliott
+Casal, Paul Deane, Piotr Mitros, Monique Bain, Pejman Javanmardi,
+and Shahadur Rahman.
 
 Platform
 ========
