@@ -1348,7 +1348,9 @@ in this journal — a few honest sentences are plenty.
 
 <!-- Three short answers, one per dimension, named the way the explainer and the results
      name them. The chat's gate is a 10-word floor on all three, so all three have to be
-     answered; nothing here is gated on anything else. -->
+     answered; nothing here is gated on anything else. The chat's wait renders nothing
+     while it is unsatisfied, so each box carries its own live count until its floor is
+     met and then drops it — the floor is visible, and 10 never reads as a target. -->
 
 <Vertical id="wj3_future">
 <Markdown id="wj3_decide_future_sliders">
@@ -1366,10 +1368,13 @@ sentence or two each.
 </Markdown>
 <Markdown>**Purpose** — closer to Expression, or to Evaluation?</Markdown>
 <TextArea id="wj3_future_purpose" rows="2" />
+<Markdown when="wordcount(@wj3_future_purpose.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_purpose.value)}} of 10 words so far.*</Markdown>
 <Markdown>**Orientation** — closer to Growth, or to Performance?</Markdown>
 <TextArea id="wj3_future_orientation" rows="2" />
+<Markdown when="wordcount(@wj3_future_orientation.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_orientation.value)}} of 10 words so far.*</Markdown>
 <Markdown>**Experience** — closer to Engagement, or to Avoidance?</Markdown>
 <TextArea id="wj3_future_experience" rows="2" />
+<Markdown when="wordcount(@wj3_future_experience.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_experience.value)}} of 10 words so far.*</Markdown>
 </Vertical> <!-- wj3_future -->
 
 
