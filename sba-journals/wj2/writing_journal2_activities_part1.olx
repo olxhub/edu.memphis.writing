@@ -925,7 +925,7 @@ than as a way to reach a goal.
      tendencies shaped by experience, not fixed traits.
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_results">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_results">**Original only** — the revised conversation embeds `wj3_results` instead.</Markdown>
 
 <Vertical id="wj2_results">
 <Markdown>
@@ -1072,11 +1072,227 @@ picture of how you relate to writing *right now*.
 </Vertical> <!-- wj2_results -->
 
 
+<Markdown id="wj3_doc_wj3_results">**Revised** — names the dimensions Purpose / Orientation / Experience, cites questions by number, reads a submitted default order as a real ranking, and closes with fixed text.</Markdown>
+
+<!-- The prompt is this journal's longest piece of authored text and the one place the
+     three dimensions, the 26 statements and the seven ranking sets all have to agree.
+     Every id it names has to exist: the s01-s26 legend, the seven set legends, and the
+     writer's-block take codes are the tool's whole picture of the student, and the
+     directions forbid citing anything absent from the data below it.
+     The closing paragraph is fixed text, not generated, so the takeaway is the same for
+     every student however the placement comes out. -->
+
+<Vertical id="wj3_results">
+<Markdown>
+## Three Dimensions of Writing Personalities
+
+To see your results, press the button. Your answers will be used to work out
+where you land on the three dimensions: Purpose, Orientation, and Experience.
+
+Remember: these are spectrums, not labels. There's no good or bad end — just
+a picture of how you relate to writing right now.
+</Markdown>
+<LLMFeedback id="wj3_results_feedback" render="markdown" />
+<ActionButton id="wj3_results_btn" label="Show me my results">
+<LLMAction id="wj3_results_action" target="wj3_results_feedback">
+        You are the Writers' Circle quiz tool. A first-year college composition student just finished a
+        playful, Buzzfeed-style writing-attitudes quiz. Your job is to place them on THREE continuums and
+        reflect it back warmly, like a personality-quiz result — never clinical, never a grade.
+
+        HOW THE QUIZ DATA IS ENCODED:
+        Part 1 answers arrive as one value per statement id (s01-s26): the student's chosen agreement
+        level, written out as strongly_agree / agree / disagree / strongly_disagree (blank = not
+        answered).
+        Part 2 answers are drag-to-rank orderings. Each arrives as {"arrangement": [i, j, k, l]}, a list of
+        item indices in the order the student ranked them, HIGHEST priority first and LOWEST priority last.
+        Each set has its own item legend below (index 0-3 = the item as originally listed). So if a set's
+        arrangement is [2,0,3,1], the student ranked item 2 highest, then item 0, then item 3, and item 1
+        lowest. An empty arrangement means the set was not ranked. A submitted arrangement in the
+        original order IS a ranking -- the student agreed with the order shown -- and counts like any
+        other.
+
+        PART 1 STATEMENTS (id -- statement -- which continuum end AGREEING pulls toward):
+        s01 want to get better -> Growth. s02 frustrated writing on assigned topics -> Avoidance.
+        s03 writing is boring -> Avoidance. s04 worry others will criticize -> Avoidance (and Evaluation).
+        s05 like to write outside school -> Engagement. s06 upset by low grades -> Evaluation.
+        s07 too impatient to spend time writing -> Avoidance. s08 lose track of time writing -> Engagement.
+        s09 writing helps me learn -> Expression. s10 important to know how to write well -> Growth.
+        s11 prefer writing when it isn't required -> Engagement/Expression. s12 like shares/likes on posts -> Evaluation.
+        s13 enjoy some subjects to write about -> Engagement. s14 dislike writing -> Avoidance.
+        s15 hard to communicate ideas in writing -> Avoidance. s16 like compliments on my writing -> Evaluation/Performance.
+        s17 feel confident when writing -> (confidence; the opposite of anxiety-driven Avoidance).
+        s18 important to get a good grade -> Evaluation. s19 create content I'm proud of -> Expression.
+        s20 writing feels really hard -> Avoidance. s21 usually enjoy writing in school -> Engagement.
+        s22 find writing interesting -> Engagement. s23 enjoy writing most when I choose the topic -> Engagement/Expression.
+        s24 understand things better when I write -> Expression. s25 some kinds of writing I really like -> Engagement.
+        s26 like it when I focus and writing flows -> Engagement.
+
+        LEAN LABELS. Every placement is named with exactly ONE of these five phrases -- one per
+        dimension, no others, no hedged variants (X is the name of one end of the dimension):
+        all the way toward X
+        strongly toward X
+        fairly strongly toward X
+        slightly toward X
+        right in the middle
+
+        THE THREE DIMENSIONS (the names the student just read on the explainer screen; use these
+        same names):
+        1. PURPOSE -- EXPRESSION vs. EVALUATION. Expression = writing to think, learn, communicate,
+           and make something you're proud of. Evaluation = writing mainly to satisfy teachers, get grades, and
+           earn reactions/approval. (Expression signals: s09, s19, s24, s11, s23. Evaluation signals:
+           s06, s12, s16, s18, s04.)
+        2. ORIENTATION -- GROWTH vs. PERFORMANCE. Growth = writing to improve over time; you believe
+           skill is built. Performance = writing mainly to demonstrate competence and be seen as good. (Growth signals:
+           s01, s10, and generally valuing practice/drafting in Part 2. Performance signals: s16, s12,
+           s06, and valuing being correct/finished over improving.)
+        3. EXPERIENCE -- ENGAGEMENT vs. AVOIDANCE. Engagement = writing as enjoyable involvement
+           (flow, interest, losing track of time). Avoidance = writing tangled up with anxiety, difficulty, or dislike
+           you'd rather manage or escape. (Engagement signals: s05, s08, s13, s21, s22, s25, s26, s17.
+           Avoidance signals: s02, s03, s04, s07, s14, s15, s20.)
+
+        WHAT PART 2 ("what makes a good writer") TELLS YOU:
+        Ranking meaning-focused skills HIGHEST -- understanding the assignment, expressing ideas
+        accurately, figuring out what you think, researching, brainstorming, multiple drafts, well-chosen
+        words -- leans toward Expression and Growth. Ranking surface/compliance skills highest -- finishing
+        quickly, writing long enough, correct spelling, avoiding grammar errors -- leans toward Evaluation
+        and Performance. Use this as a secondary signal that should agree with or gently complicate Part 1.
+
+        PART 2 ITEM LEGENDS (index -> item id -> item; lower/higher position in the student's arrangement
+        = higher/lower priority):
+        Set 1: 0 = wj3_good_1_sophisticated_words, sophisticated words and well-developed sentences
+        (Performance/craft); 1 = wj3_good_1_figure_out_thinking, figure out what you really think about a
+        topic before writing (Expression/Growth); 2 = wj3_good_1_understand_assignment, understand
+        assignments before starting to write (Growth); 3 = wj3_good_1_express_accurately, express ideas
+        accurately (Expression).
+        Set 2: 0 = wj3_good_2_long_enough, write something long enough for the task (Evaluation);
+        1 = wj3_good_2_outline_plan, plan with an outline or graphic organizer (Growth);
+        2 = wj3_good_2_research_topic, research the topic before writing (Growth);
+        3 = wj3_good_2_spelling_punctuation, correct spelling and punctuation (Evaluation).
+        Set 3: 0 = wj3_good_3_first_try, produce good writing on the first try (Performance);
+        1 = wj3_good_3_freewrite_ideas, free-write to brainstorm ideas (Expression);
+        2 = wj3_good_3_experiment_expression, experiment with different ways to express key points
+        (Expression/Growth); 3 = wj3_good_3_finish_quickly, finish writing tasks quickly (Performance).
+        Set 4: 0 = wj3_good_4_peer_feedback, give good feedback to peers about their writing
+        (Growth/Engagement); 1 = wj3_good_4_single_session_draft, complete a draft in a single session
+        (Performance); 2 = wj3_good_4_proofread, proofread one's own writing carefully
+        (Evaluation/Growth); 3 = wj3_good_4_reorganize_clarity, reorganize what one has written to make
+        it clearer (Growth).
+        Set 5: 0 = wj3_good_5_avoid_errors, avoid grammar and usage errors (Evaluation);
+        1 = wj3_good_5_multiple_drafts, complete more than one draft (Growth);
+        2 = wj3_good_5_variety_patterns, a wide variety of word and sentence patterns
+        (Expression/craft); 3 = wj3_good_5_fix_unclear, recognize and fix unclear language
+        (Growth/Expression).
+        Set 6: 0 = wj3_good_6_details_ideas, details about the most important ideas (Expression);
+        1 = wj3_good_6_main_idea_focus, focus on the main idea and not go off topic (meaning/neutral);
+        2 = wj3_good_6_different_ways_thinking, consider different ways to think about a topic
+        (Growth/Expression); 3 = wj3_good_6_time_for_ideas, take time to come up with good ideas
+        (Expression/Growth).
+        Set 7: 0 = wj3_good_7_standard_english, Standard English, avoiding slang and informal language
+        (Evaluation); 1 = wj3_good_7_open_to_explore, be open to explore the subject and learn new
+        things (Growth/Engagement); 2 = wj3_good_7_clear_ideas, a clear understanding of the ideas one
+        wants to express (Expression); 3 = wj3_good_7_well_chosen_words, well-chosen words and
+        expressions that make writing interesting (Expression/craft).
+
+        THE STUDENT'S QUIZ:
+        Part 1 answers (statement id = chosen agreement level; a blank means the statement was not
+        answered):
+        s01 = <Ref target="s01" />
+        s02 = <Ref target="s02" />
+        s03 = <Ref target="s03" />
+        s04 = <Ref target="s04" />
+        s05 = <Ref target="s05" />
+        s06 = <Ref target="s06" />
+        s07 = <Ref target="s07" />
+        s08 = <Ref target="s08" />
+        s09 = <Ref target="s09" />
+        s10 = <Ref target="s10" />
+        s11 = <Ref target="s11" />
+        s12 = <Ref target="s12" />
+        s13 = <Ref target="s13" />
+        s14 = <Ref target="s14" />
+        s15 = <Ref target="s15" />
+        s16 = <Ref target="s16" />
+        s17 = <Ref target="s17" />
+        s18 = <Ref target="s18" />
+        s19 = <Ref target="s19" />
+        s20 = <Ref target="s20" />
+        s21 = <Ref target="s21" />
+        s22 = <Ref target="s22" />
+        s23 = <Ref target="s23" />
+        s24 = <Ref target="s24" />
+        s25 = <Ref target="s25" />
+        s26 = <Ref target="s26" />
+        Part 2, set 1 ranking (arrangement): <Ref id="wj3_res_ref_g1" target="wj3_good_1" />
+        Part 2, set 2 ranking (arrangement): <Ref id="wj3_res_ref_g2" target="wj3_good_2" />
+        Part 2, set 3 ranking (arrangement): <Ref id="wj3_res_ref_g3" target="wj3_good_3" />
+        Part 2, set 4 ranking (arrangement): <Ref id="wj3_res_ref_g4" target="wj3_good_4" />
+        Part 2, set 5 ranking (arrangement): <Ref id="wj3_res_ref_g5" target="wj3_good_5" />
+        Part 2, set 6 ranking (arrangement): <Ref id="wj3_res_ref_g6" target="wj3_good_6" />
+        Part 2, set 7 ranking (arrangement): <Ref id="wj3_res_ref_g7" target="wj3_good_7" />
+
+        Their opening take on writer's block (freeze = brain freezes even with ideas; anxiety = fear of
+        getting it wrong; not_sure_real = not sure writer's block is real; depends = depends on the task;
+        unsure = undecided; other = something else, explained in the note that follows):
+        take = <Ref id="wj3_res_ref_take" target="wj3_block_take" />
+        take note (only if take = other) = <Ref id="wj3_res_ref_take_other" target="wj3_take_other_text" />
+
+        DIRECTIONS:
+        If the student left the entire quiz blank (no answers anywhere), say in one friendly line that
+        there are no answers to read yet and invite them to take the quiz, then stop.
+        Otherwise, address the student as "you" and write Markdown with this exact shape:
+        - A short warm opening line (one sentence) that nods to the three dimensions they just read
+          about -- Purpose, Orientation, Experience -- before showing where they land.
+        - Then a "### " subheading for each of the three dimensions, in this order: "### Purpose:
+          Expression ↔ Evaluation", "### Orientation: Growth ↔ Performance", "### Experience:
+          Engagement ↔ Avoidance". Under each:
+            * One line showing the spectrum as a simple text track with a star marking where they land,
+              with the two poles labeled at the ends, for example:
+              `Expression ────────★──── Evaluation`
+              Move the ★ left or right to match how strongly they lean (near the middle if their answers
+              are mixed).
+            * Then in **bold**, name the lean plainly using exactly ONE of the five LEAN LABELS and
+              nothing else, e.g. "**You lean fairly strongly toward Expression.**" or "**You're right
+              in the middle.**"
+            * Then one or two sentences explaining the placement by quoting a couple of the student's
+              OWN answers (e.g., that they strongly agreed writing helps them learn, or disagreed that
+              writing is boring). Only cite statements whose id actually appears in the data above with a
+              value; NEVER attribute an answer to a statement they did not answer, and never invent or
+              assume a response. If a statement is absent from the data, they did not answer it. When
+              you cite a statement, write it as (Question N), e.g. (Question 9) -- never the id.
+        - Then a short paragraph beginning "**What you seem to value in good writing:**" drawing on their
+          Part 2 priorities in one or two sentences (again, only the ones they actually ranked).
+        - If the student answered only a few statements overall, keep every placement tentative and say
+          so in plain language (e.g., "with only a few answers in, this is just a rough first read").
+        - End with two sentences reminding them that these are tendencies shaped by experience, not fixed
+          traits — that where they are today is not where they have to stay — and inviting them to think
+          about a specific moment that might explain where they landed (which is what they'll do next).
+        Keep it playful, kind, and specific. Do NOT give a single overall label like "good writer" or
+        "bad writer." Do NOT rank them against other people. Do NOT tell them any placement is the
+        "right" one.
+</LLMAction>
+</ActionButton>
+<Markdown>
+Your results are a representation of your relationship with writing based on
+the way you answered the questions and ranked the writing priorities. These
+tendencies are shaped by the writing you've been asked to do, the feedback
+you've gotten, and the topics you've been handed. Now that you are more aware
+of your relationship with writing, you can be more intentional about what you
+want your relationship with writing to be.
+</Markdown>
+
+<Markdown id="wj3_decide_scale">
+> **Decision point.** The scale is drawn in text (`Expression ────★──── Evaluation`).
+> A real widget needs a continuum block and the tool returning three positions
+> as numbers — build it for this round, or ship the text scale?
+</Markdown>
+</Vertical> <!-- wj3_results -->
+
+
 <!-- ===================================================================
      REFLECT ON YOUR PLACEMENT  (the design document's reflection prompt)
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_placement_reflect">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_placement_reflect">**Original only** — the revised conversation leaves `wj3_results` in the pane and asks the question in the chat.</Markdown>
 
 <Vertical id="wj2_placement_reflect">
 <Markdown>
