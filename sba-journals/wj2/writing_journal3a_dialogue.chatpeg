@@ -102,7 +102,7 @@ Your Writing Personality
 
 Alma: ok before you see your results, read about three continuums that will help you think about your relationship with writing. It's kinda fun. Look right now ---> [face=smile]
 
-::wj2_vibe_explainer [display=target:wj3_sidebar label="What your writing vibe says about you"]
+::wj3_dimensions [display=target:wj3_sidebar label="Your relationship with writing on three dimensions"]
 
 Lee: I already know I'm going to be dramatically self-expression [face=cheeky]
 
@@ -110,7 +110,7 @@ Richard: it's less ridiculous than I expected. **Mark as read** when you're thro
 
 Alma: Hit **Show me my results** on the right and you'll see where you land on all three dimensions.
 
---- wait @wj2_vibe_explainer_done.value ---
+--- wait @wj3_dimensions_done.value ---
 
 Your Results
 ------------

@@ -851,7 +851,7 @@ in the most accurate writing profile.
      pane's Flash still find it.
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_vibe_explainer">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_vibe_explainer">**Original only** — the revised conversation embeds `wj3_dimensions` instead.</Markdown>
 
 <Vertical id="wj2_vibe_explainer">
 <Markdown>
@@ -888,6 +888,33 @@ results**. You deliver exactly what a prompt is looking for and keep your eye on
 </Markdown>
 <Done id="wj2_vibe_explainer_done" label="Mark as read" />
 </Vertical> <!-- wj2_vibe_explainer -->
+
+
+<Markdown id="wj3_doc_wj3_dimensions">**Revised** — names the three dimensions as Purpose, Orientation and Experience, in a table of ends rather than three writer types.</Markdown>
+
+<!-- Read-only: the three dimensions the results place the student on, named the same
+     way here, in the results prompt and on the results screen. The Done is the chat's
+     gate, so the student cannot reach the results without passing through the key. -->
+
+<Vertical id="wj3_dimensions">
+<Markdown>
+## Your Relationship with Writing on Three Dimensions ✍️✨
+
+One way to think about your relationship with writing is to see where you
+land on three dimensions: **Purpose**, **Orientation**, and **Experience**.
+The two ends of each are explained below. These are spectrums, so most
+writers don't land at either extreme — but if you land closer to Expression
+than Evaluation, you probably think of writing more as a way to communicate
+than as a way to reach a goal.
+
+| Dimension | ← one end | the other end → |
+|---|---|---|
+| **Purpose** | **Expression:** I write to communicate, think, or express myself | **Evaluation:** I write to meet expectations, to get things done, or to earn a grade |
+| **Orientation** | **Growth:** I write to learn and improve | **Performance:** I write to show what I can do |
+| **Experience** | **Engagement:** Writing is something I can get involved in or enjoy | **Avoidance:** Writing is something I try to minimize, postpone, or get through |
+</Markdown>
+<Done id="wj3_dimensions_done" label="Mark as read" />
+</Vertical> <!-- wj3_dimensions -->
 
 
 <!-- ===================================================================
