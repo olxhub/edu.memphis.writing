@@ -46,6 +46,38 @@ Reviewer comments addressed:
 
 <Vertical id="wj2_activities_part1" title="Writing Journal 3 — Activities" launchable="true">
 
+<!-- REVIEW SCAFFOLD. This block and the one-line status notes before each screen
+     below are documentation, not activity: they render when an instructor opens
+     this bank as a page, and they are invisible to students, because the right-hand
+     pane is a UseHistory that renders one named screen at a time and never these. -->
+
+<Markdown id="wj3_doc_scaffold">
+### Writing Journal 3a is being reviewed — two versions run from this one bank
+
+Journal 3a exists twice right now, side by side, as the two first tabs of
+`wj3_review` (`wj2/writing_journal3_review.olx`, route `/wj3-review`). Both versions
+pull their screens from **this** file, so the vocabulary for every screen below is one
+of three words:
+
+- **Shared** — used by both the original and the revised journal. Editing it changes both.
+- **Original** — reached only by the original conversation, and on its way out.
+- **Revised** — reached only by the revised conversation. These are the screens prefixed
+  `wj3_`; there are none yet.
+
+The revised conversation lives in `wj2/writing_journal3a_dialogue.chatpeg` — the
+instructors' rewrite, with their `// NOTE (instructors):` lines left in it as the
+to-do list for the screens this bank still owes it. It drives its own pane,
+`wj3_sidebar`. The original's chatpeg and `wj2_sidebar` are untouched.
+
+Every id prefixed `wj3_` belongs to the revised version alone; everything still
+prefixed `wj2_` is shared. The namespace is shared too — everything under
+`sba-journals/` parses as one — so the two prefixes are what keeps them apart.
+
+*At this commit every screen below is Shared: the revised conversation shows the same
+screens the original does.*
+</Markdown>
+
+
 <!-- The Export-as-PDF button lives on the wj2_print page at the bottom of this file,
      which writing_journal2b_sba_part1.olx mounts as its "Print &amp; Submit" tab. -->
 
@@ -53,6 +85,8 @@ Reviewer comments addressed:
 <!-- ===================================================================
      INTRO SLIDE
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_welcome">**Shared** — used by both the original and the revised journal.</Markdown>
 
 <Markdown id="wj2_welcome">
 ## Writing Journal 3: How Do You *Really* Feel About Writing?
@@ -93,6 +127,8 @@ honesty. Work through the conversation on the left — each step opens an activi
      purpose, and sends the student back to the left where the talking is.
      =================================================================== -->
 
+<Markdown id="wj3_doc_wj2_blank">**Shared** — used by both the original and the revised journal.</Markdown>
+
 <Markdown id="wj2_blank">
 *(nothing here right now — the conversation's on the left)*
 </Markdown>
@@ -101,6 +137,8 @@ honesty. Work through the conversation on the left — each step opens an activi
 <!-- ===================================================================
      THE DEBATE: YOUR QUICK TAKE  (activates prior experience; low friction)
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_debate_react">**Shared** — used by both the original and the revised journal.</Markdown>
 
 <Vertical id="wj2_debate_react">
 <Markdown>
@@ -145,6 +183,8 @@ feels natural. (You can always feel differently tomorrow — that's kind of the 
      the value. The results tool reads the values against the s01-s26 legend it
      carries, which names what each statement measures.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_survey">**Shared** — used by both the original and the revised journal.</Markdown>
 
 <Vertical id="wj2_survey">
 <Markdown>
@@ -539,6 +579,8 @@ Writing is a skill I want to get better at.
      hashes of the prose. The prompt's index legend below names them alongside the index.
      =================================================================== -->
 
+<Markdown id="wj3_doc_wj2_good_1_screen">**Shared** — used by both the original and the revised journal.</Markdown>
+
 <Vertical id="wj2_good_1_screen">
 <Markdown>
 ## 🏆 The Quiz — Part 2: What Makes a Good Writer?
@@ -561,6 +603,8 @@ opinion. Being honest gives you the most accurate writing profile.
 </CapaProblem>
 </Vertical> <!-- wj2_good_1_screen -->
 
+<Markdown id="wj3_doc_wj2_good_2_screen">**Shared** — used by both the original and the revised journal.</Markdown>
+
 <Vertical id="wj2_good_2_screen">
 <Markdown>
 ## 🏆 The Quiz — Part 2: What Makes a Good Writer?
@@ -582,6 +626,8 @@ opinion. Being honest gives you the most accurate writing profile.
 </SortableGrader>
 </CapaProblem>
 </Vertical> <!-- wj2_good_2_screen -->
+
+<Markdown id="wj3_doc_wj2_good_3_screen">**Shared** — used by both the original and the revised journal.</Markdown>
 
 <Vertical id="wj2_good_3_screen">
 <Markdown>
@@ -616,6 +662,8 @@ opinion. Being honest gives you the most accurate writing profile.
      Vertical so the chat's `wj2_sidebar <- wj2_vibe_explainer` and the
      pane's Flash still find it.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_vibe_explainer">**Shared** — used by both the original and the revised journal.</Markdown>
 
 <Vertical id="wj2_vibe_explainer">
 <Markdown>
@@ -661,6 +709,8 @@ results**. You deliver exactly what a prompt is looking for and keep your eye on
      a single score or label. It reinforces the threshold concept: these are
      tendencies shaped by experience, not fixed traits.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_results">**Shared** — used by both the original and the revised journal.</Markdown>
 
 <Vertical id="wj2_results">
 <Markdown>
@@ -811,6 +861,8 @@ picture of how you relate to writing *right now*.
      REFLECT ON YOUR PLACEMENT  (the design document's reflection prompt)
      =================================================================== -->
 
+<Markdown id="wj3_doc_wj2_placement_reflect">**Shared** — used by both the original and the revised journal.</Markdown>
+
 <Vertical id="wj2_placement_reflect">
 <Markdown>
 ## Does This Feel Accurate?
@@ -833,6 +885,8 @@ in this journal — a few honest sentences are plenty.
      a word count, so it is defined here as a standalone block (not inside a right-pane screen).
      The live counter rides with the box: the chat's `wait wordcount(...) >= 20` renders nothing
      while unsatisfied, so without it the student has no way to see why Continue hasn't appeared. -->
+<Markdown id="wj3_doc_wj2_placement_input">**Shared** — used by both the original and the revised journal.</Markdown>
+
 <Vertical id="wj2_placement_input">
 <TextArea id="wj2_placement_text" rows="6" placeholder="The part that feels most accurate is... One moment that might explain it is... A year from now I'd like to..." />
 <Markdown id="wj2_placement_count">*{{wordcount(@wj2_placement_text.value)}} words (20 minimum)*</Markdown>
@@ -847,6 +901,8 @@ in this journal — a few honest sentences are plenty.
      three peers' stories, the student's own story, Alma's response, and the
      wrap-up all live here in one self-paced flow.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_meeting">**Shared** — used by both the original and the revised journal.</Markdown>
 
 <Vertical id="wj2_meeting">
 
@@ -1021,6 +1077,8 @@ export as a PDF for your course system.
      <Use> is a DAG reference, not a copy — the ranking boards and the feedback
      here are the SAME nodes as on the working screens, so they always agree.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_print">**Shared** — used by both the original and the revised journal.</Markdown>
 
 <Vertical id="wj2_print">
 
