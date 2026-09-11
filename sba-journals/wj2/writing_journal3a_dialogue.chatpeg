@@ -47,12 +47,10 @@ Lee: ok not to be dramatic but I’ve been staring at this writing prompt for my
 
 Richard: I don't think writer's block is actually a thing. you just probably haven't sorted out what you want to say yet, ijs [face=serious]
 
-Alma: What's YOUR take? is writer's block real thing or not? [face=explaining]
+Alma: What's YOUR take? is writer's block real thing or not? it's on the right ---> [face=explaining]
 
-// NOTE (instructors): insert arrow to the right
-
-::wj2_debate_react [display=target:wj3_sidebar label="What's your take on writer's block?"]
---- wait @wj2_block_take.value ---
+::wj3_debate_react [display=target:wj3_sidebar label="What's your take on writer's block?"]
+--- wait @wj3_block_take.value ---
 
 // NOTE (instructors): ADD a LOCK to the Continue button until they answer
 
