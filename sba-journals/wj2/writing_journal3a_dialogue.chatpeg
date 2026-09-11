@@ -134,9 +134,11 @@ Alma: so — does it actually fit you?
 
 --- wait @wj3_fit.value ---
 
-Alma: A year from now, where would you like to be on each line? Adjust the scales below and briefly explain
+Alma: A year from now, where would you like to be on each line? Adjust the scales below and briefly explain.
 
-// NOTE (instructors): We would LOVE if we could let the students toggle left and right to plot themselves on the three scales. Also, add a short response below each scale and require 10 words or more
+::wj3_future [display=target:wj3_sidebar label="A year from now"]
+
+--- wait wordcount(@wj3_future_purpose.value) >= 10 && wordcount(@wj3_future_orientation.value) >= 10 && wordcount(@wj3_future_experience.value) >= 10 ---
 
 Lee: That's really interesting. I'm thinking a lot about myself as a writer and how my relationship is connected to all of my experiences. Like this time in sixth grade my teacher told our class that some people are just born writers and some aren't, and I remember thinking, well, I know which one I am. Ever since then, every time I sit down to write, I hear that line in my head before I've written a single word. It's not that I don't have ideas. It's that I freeze before I let myself try.
 

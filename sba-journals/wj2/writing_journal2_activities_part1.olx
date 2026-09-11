@@ -1344,6 +1344,35 @@ in this journal — a few honest sentences are plenty.
 </Vertical> <!-- wj3_fit_input -->
 
 
+<Markdown id="wj3_doc_wj3_future">**Revised** — a new screen with no original: where the student would like to be on each dimension a year from now.</Markdown>
+
+<!-- Three short answers, one per dimension, named the way the explainer and the results
+     name them. The chat's gate is a 10-word floor on all three, so all three have to be
+     answered; nothing here is gated on anything else. -->
+
+<Vertical id="wj3_future">
+<Markdown id="wj3_decide_future_sliders">
+> **Placeholder.** This screen wants three sliders — Purpose, Orientation,
+> Experience — where the student drags a point to where they'd like to be a
+> year from now, with a short note under each. No continuum input exists yet;
+> the three questions below stand in for it. **Decision point:** build the
+> slider block for this round, or keep the questions?
+</Markdown>
+<Markdown>
+## A Year From Now
+
+For each dimension, say where you'd like to be a year from now, and why — a
+sentence or two each.
+</Markdown>
+<Markdown>**Purpose** — closer to Expression, or to Evaluation?</Markdown>
+<TextArea id="wj3_future_purpose" rows="2" />
+<Markdown>**Orientation** — closer to Growth, or to Performance?</Markdown>
+<TextArea id="wj3_future_orientation" rows="2" />
+<Markdown>**Experience** — closer to Engagement, or to Avoidance?</Markdown>
+<TextArea id="wj3_future_experience" rows="2" />
+</Vertical> <!-- wj3_future -->
+
+
 <!-- ===================================================================
      TASK 2 — THE WRITERS' CIRCLE MEETING  (all of Writing Journal 3b)
      The whole meeting is ONE screen, shown full-width by
