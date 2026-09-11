@@ -86,36 +86,38 @@ screens the original does.*
      INTRO SLIDE
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_welcome">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_welcome">**Shared** — used by both the original and the revised journal; the intro is the instructors' revised wording, which both versions show.</Markdown>
 
 <Markdown id="wj2_welcome">
-## Writing Journal 3: How Do You *Really* Feel About Writing?
+# Writing Journal 3: How Do You Feel About Writing?
 
-It's the middle of your first-year writing unit, and your group chat with the **Writers' Circle** is
-blowing up. **Lee** is stuck on the Literacy Narrative assignment and calling it writer's block.
-**Richard** says writer's block isn't even real. **Alma** isn't so sure — something happened to her in
-ninth grade that she's never quite shaken.
+Your group chat with the Writers' Circle is blowing up. Lee says he has
+writer's block. Richard says writer's block isn't even real. Alma isn't so
+sure — something happened in ninth grade that she's never quite shaken.
 
-You don't have to have the answer. This journal is a chance to notice something most writers never stop
-to name: **how you actually feel about writing, and where those feelings came from.**
+This journal asks you to consider something most writers never stop to name:
+how you actually feel about writing and where those feelings came from.
 
-> **The big idea for this journal:** writing is influenced by our identities and prior experiences
-> (Wardle and Downs). In other words, how you feel when you sit down to write isn't proof that you're
-> "a writer" or "not a writer" — it's a *tendency*, shaped by things that happened to you, and
-> tendencies can change.
+**The big idea for this journal:** writing is influenced by our identities
+and prior experiences (Wardle and Downs). In other words, how you feel when
+you sit down to write isn't proof that you're "a writer" or "not a writer" —
+it's a tendency, shaped by things that happened to you, and tendencies can
+change.
 
-**By the end of this journal you will have:**
+By the end of this journal you will have:
 
-- taken a quick, no-wrong-answers quiz about **how you feel about writing** and **what you think makes
-  writing good**;
-- seen where the Circle's tool places you on three **attitude continuums** — and decided for yourself
-  how accurate that feels;
-- listened to three peers tell the story of a moment that shaped them as writers; and
-- told **your own story** — the real journal entry — about an experience that shaped how you feel about
-  yourself as a writer.
+- taken a quick, no-wrong-answers quiz about how you feel about writing and
+  what you think makes writing good;
+- seen where the Circle's tool places you on three attitude continuums — and
+  decided for yourself how accurate that feels;
+- listened to three peers tell the story of a moment that shaped them as
+  writers; and
+- told your own story — the real journal entry — about an experience that
+  shaped how you feel about yourself as a writer.
 
-There are no wrong answers and no grade for feeling one way or another about writing. What counts is
-honesty. Work through the conversation on the left — each step opens an activity here on the right.
+There are no wrong answers and no grade for feeling one way or another about
+writing. What counts is honesty. Work through the conversation on the left
+until an activity opens on the right.
 </Markdown>
 
 
@@ -184,17 +186,18 @@ feels natural. (You can always feel differently tomorrow — that's kind of the 
      carries, which names what each statement measures.
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_survey">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_survey">**Shared** — used by both the original and the revised journal; the header and eight statements carry the instructors' revised wording, which both versions show.</Markdown>
 
 <Vertical id="wj2_survey">
 <Markdown>
 ## ✏️ The Quiz — Part 1: How Do You Really Feel About Writing?
 
-*No wrong answers, promise. Just go with your gut — this one's for you.*
+Pick an emoji response for each statement to help us discover where your
+attitude falls on a writing spectrum. Are you more about expression or
+evaluation? Growth or performance? Engagement or avoidance?
 
-Pick your emoji response for each statement and we'll reveal where your attitude falls on a writing
-spectrum. Are you more about **expression** or **performance**? Each new statement appears once you
-answer the one before it.
+You don't need to scroll. Once you answer a question, the next one appears
+at the top.
 </Markdown>
 
 <Markdown when="@s26.value">
@@ -205,7 +208,7 @@ answer the one before it.
 <Markdown>
 **Question 26 of 26**  `██████████████████████████`
 
-I like it when I can focus and my writing flows.
+Sometimes I get in the zone and writing comes easily.
 </Markdown>
 <ChoiceInput id="s26">
   <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
@@ -219,7 +222,7 @@ I like it when I can focus and my writing flows.
 <Markdown>
 **Question 25 of 26**  `█████████████████████████░`
 
-There are some kinds of writing that I really like.
+I enjoy writing sometimes.
 </Markdown>
 <ChoiceInput id="s25">
   <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
@@ -275,7 +278,7 @@ I find writing interesting.
 <Markdown>
 **Question 21 of 26**  `█████████████████████░░░░░`
 
-I usually enjoy writing in school.
+I enjoy writing in school.
 </Markdown>
 <ChoiceInput id="s21">
   <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
@@ -289,7 +292,7 @@ I usually enjoy writing in school.
 <Markdown>
 **Question 20 of 26**  `████████████████████░░░░░░`
 
-Writing feels really hard.
+Overall, writing is hard for me.
 </Markdown>
 <ChoiceInput id="s20">
   <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
@@ -317,7 +320,7 @@ When I write, I create content that I can be proud of.
 <Markdown>
 **Question 18 of 26**  `██████████████████░░░░░░░░`
 
-It is important that I get a good grade on a writing assignment.
+It is important that I get good grades on writing assignments.
 </Markdown>
 <ChoiceInput id="s18">
   <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
@@ -345,7 +348,7 @@ I feel confident when I am writing.
 <Markdown>
 **Question 16 of 26**  `████████████████░░░░░░░░░░`
 
-I like it when people compliment my writing skills.
+I like when people compliment my writing skills.
 </Markdown>
 <ChoiceInput id="s16">
   <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
@@ -401,7 +404,7 @@ There are some subjects that I really enjoy writing about.
 <Markdown>
 **Question 12 of 26**  `████████████░░░░░░░░░░░░░░`
 
-I like getting lots of shares or likes when I post something I have written.
+I like getting lots of shares or likes when I post something online.
 </Markdown>
 <ChoiceInput id="s12">
   <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
@@ -429,7 +432,7 @@ I prefer writing when it isn't required.
 <Markdown>
 **Question 10 of 26**  `██████████░░░░░░░░░░░░░░░░`
 
-I feel it is important to know how to write well.
+It is important to know how to write well.
 </Markdown>
 <ChoiceInput id="s10">
   <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
