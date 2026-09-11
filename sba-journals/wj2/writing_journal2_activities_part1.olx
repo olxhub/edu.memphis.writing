@@ -706,94 +706,31 @@ in the most accurate writing profile.
 > **Decision point.** Three, five, or seven sets? All seven from the original are here; the markers below show where the current build stops (3) and the instructors' minimum (5). Notice where it starts to feel long.
 </Markdown>
 
-<Vertical id="wj3_good_1_set">
-<Markdown>
-**What makes a good writer? (Set 1 of 7)**  `█░░░░░░`
+<Markdown when="@wj3_good_7_grader.submitCount &gt; 0">
+**That's all seven sets.** Head back to the chat on the left to keep going.
 </Markdown>
-<CapaProblem id="wj3_good_1_problem" title="What makes a good writer? (Set 1)" showAnswer="never" submitLabel="Submit">
+
+<!-- The sets are written newest-first: set 7 at the top of the file, set 1 at
+     the bottom. A set appears when the one before it is submitted, and this
+     order puts each new set ABOVE the finished ones, where the student is
+     already looking, instead of below them at the end of a growing page. The
+     quiz items are written the same way for the same reason. -->
+<Vertical id="wj3_good_7_set" when="@wj3_good_6_grader.submitCount &gt; 0">
+<Markdown>
+**What makes a good writer? (Set 7 of 7)**  `███████`
+</Markdown>
+<CapaProblem id="wj3_good_7_problem" title="What makes a good writer? (Set 7)" showAnswer="never" submitLabel="Submit">
 <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
-<SortableGrader id="wj3_good_1_grader" algorithm="survey">
-<SortableInput id="wj3_good_1" dragMode="whole">
-<Markdown id="wj3_good_1_sophisticated_words"  > Using sophisticated words and well-developed sentences.             </Markdown>
-<Markdown id="wj3_good_1_figure_out_thinking"  > Figuring out what one really thinks about a topic before writing.   </Markdown>
-<Markdown id="wj3_good_1_understand_assignment"> Taking the time to understand assignments before starting to write. </Markdown>
-<Markdown id="wj3_good_1_express_accurately"   > Expressing ideas accurately.                                        </Markdown>
+<SortableGrader id="wj3_good_7_grader" algorithm="survey">
+<SortableInput id="wj3_good_7" dragMode="whole">
+<Markdown id="wj3_good_7_standard_english" > Writing in Standard English, avoiding slang and informal language.      </Markdown>
+<Markdown id="wj3_good_7_open_to_explore"  > Being open to explore the subject and learn new things.                 </Markdown>
+<Markdown id="wj3_good_7_clear_ideas"      > Coming up with a clear understanding of the ideas one wants to express. </Markdown>
+<Markdown id="wj3_good_7_well_chosen_words"> Using well-chosen words and expressions that make writing interesting.  </Markdown>
 </SortableInput>
 </SortableGrader>
 </CapaProblem>
-</Vertical> <!-- wj3_good_1_set -->
-
-<Vertical id="wj3_good_2_set" when="@wj3_good_1_grader.submitCount &gt; 0">
-<Markdown>
-**What makes a good writer? (Set 2 of 7)**  `██░░░░░`
-</Markdown>
-<CapaProblem id="wj3_good_2_problem" title="What makes a good writer? (Set 2)" showAnswer="never" submitLabel="Submit">
-<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
-<SortableGrader id="wj3_good_2_grader" algorithm="survey">
-<SortableInput id="wj3_good_2" dragMode="whole">
-<Markdown id="wj3_good_2_long_enough"         > Making sure to write something that is long enough for the task. </Markdown>
-<Markdown id="wj3_good_2_outline_plan"        > Planning one's writing using an outline or graphic organizer.    </Markdown>
-<Markdown id="wj3_good_2_research_topic"      > Taking the time to research a topic before writing about it.     </Markdown>
-<Markdown id="wj3_good_2_spelling_punctuation"> Using correct spelling and punctuation.                          </Markdown>
-</SortableInput>
-</SortableGrader>
-</CapaProblem>
-</Vertical> <!-- wj3_good_2_set -->
-
-<Vertical id="wj3_good_3_set" when="@wj3_good_2_grader.submitCount &gt; 0">
-<Markdown>
-**What makes a good writer? (Set 3 of 7)**  `███░░░░`
-</Markdown>
-<CapaProblem id="wj3_good_3_problem" title="What makes a good writer? (Set 3)" showAnswer="never" submitLabel="Submit">
-<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
-<SortableGrader id="wj3_good_3_grader" algorithm="survey">
-<SortableInput id="wj3_good_3" dragMode="whole">
-<Markdown id="wj3_good_3_first_try"            > Producing good writing on the first try.                 </Markdown>
-<Markdown id="wj3_good_3_freewrite_ideas"      > Free-writing to brainstorm ideas.                        </Markdown>
-<Markdown id="wj3_good_3_experiment_expression"> Experimenting with different ways to express key points. </Markdown>
-<Markdown id="wj3_good_3_finish_quickly"       > Finishing writing tasks quickly.                         </Markdown>
-</SortableInput>
-</SortableGrader>
-</CapaProblem>
-</Vertical> <!-- wj3_good_3_set -->
-
-<Vertical id="wj3_good_4_set" when="@wj3_good_3_grader.submitCount &gt; 0">
-<Markdown id="wj3_marker_three_sets">
-> **Marker.** The current build stops after three sets.
-</Markdown>
-
-<Markdown>
-**What makes a good writer? (Set 4 of 7)**  `████░░░`
-</Markdown>
-<CapaProblem id="wj3_good_4_problem" title="What makes a good writer? (Set 4)" showAnswer="never" submitLabel="Submit">
-<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
-<SortableGrader id="wj3_good_4_grader" algorithm="survey">
-<SortableInput id="wj3_good_4" dragMode="whole">
-<Markdown id="wj3_good_4_peer_feedback"       > Giving good feedback to one's peers about their writing.                       </Markdown>
-<Markdown id="wj3_good_4_single_session_draft"> Completing a draft of what one is writing in a single session.                 </Markdown>
-<Markdown id="wj3_good_4_proofread"           > Proofreading one's own writing carefully.                                      </Markdown>
-<Markdown id="wj3_good_4_reorganize_clarity"  > Reorganizing what one has written to make it clearer and easier to understand. </Markdown>
-</SortableInput>
-</SortableGrader>
-</CapaProblem>
-</Vertical> <!-- wj3_good_4_set -->
-
-<Vertical id="wj3_good_5_set" when="@wj3_good_4_grader.submitCount &gt; 0">
-<Markdown>
-**What makes a good writer? (Set 5 of 7)**  `█████░░`
-</Markdown>
-<CapaProblem id="wj3_good_5_problem" title="What makes a good writer? (Set 5)" showAnswer="never" submitLabel="Submit">
-<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
-<SortableGrader id="wj3_good_5_grader" algorithm="survey">
-<SortableInput id="wj3_good_5" dragMode="whole">
-<Markdown id="wj3_good_5_avoid_errors"    > Avoiding grammar and usage errors.                  </Markdown>
-<Markdown id="wj3_good_5_multiple_drafts" > Taking time to complete more than one draft.        </Markdown>
-<Markdown id="wj3_good_5_variety_patterns"> Using a wide variety of word and sentence patterns. </Markdown>
-<Markdown id="wj3_good_5_fix_unclear"     > Recognizing and fixing unclear language.            </Markdown>
-</SortableInput>
-</SortableGrader>
-</CapaProblem>
-</Vertical> <!-- wj3_good_5_set -->
+</Vertical> <!-- wj3_good_7_set -->
 
 <Vertical id="wj3_good_6_set" when="@wj3_good_5_grader.submitCount &gt; 0">
 <Markdown id="wj3_marker_five_sets">
@@ -816,26 +753,94 @@ in the most accurate writing profile.
 </CapaProblem>
 </Vertical> <!-- wj3_good_6_set -->
 
-<Vertical id="wj3_good_7_set" when="@wj3_good_6_grader.submitCount &gt; 0">
+<Vertical id="wj3_good_5_set" when="@wj3_good_4_grader.submitCount &gt; 0">
 <Markdown>
-**What makes a good writer? (Set 7 of 7)**  `███████`
+**What makes a good writer? (Set 5 of 7)**  `█████░░`
 </Markdown>
-<CapaProblem id="wj3_good_7_problem" title="What makes a good writer? (Set 7)" showAnswer="never" submitLabel="Submit">
+<CapaProblem id="wj3_good_5_problem" title="What makes a good writer? (Set 5)" showAnswer="never" submitLabel="Submit">
 <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
-<SortableGrader id="wj3_good_7_grader" algorithm="survey">
-<SortableInput id="wj3_good_7" dragMode="whole">
-<Markdown id="wj3_good_7_standard_english" > Writing in Standard English, avoiding slang and informal language.      </Markdown>
-<Markdown id="wj3_good_7_open_to_explore"  > Being open to explore the subject and learn new things.                 </Markdown>
-<Markdown id="wj3_good_7_clear_ideas"      > Coming up with a clear understanding of the ideas one wants to express. </Markdown>
-<Markdown id="wj3_good_7_well_chosen_words"> Using well-chosen words and expressions that make writing interesting.  </Markdown>
+<SortableGrader id="wj3_good_5_grader" algorithm="survey">
+<SortableInput id="wj3_good_5" dragMode="whole">
+<Markdown id="wj3_good_5_avoid_errors"    > Avoiding grammar and usage errors.                  </Markdown>
+<Markdown id="wj3_good_5_multiple_drafts" > Taking time to complete more than one draft.        </Markdown>
+<Markdown id="wj3_good_5_variety_patterns"> Using a wide variety of word and sentence patterns. </Markdown>
+<Markdown id="wj3_good_5_fix_unclear"     > Recognizing and fixing unclear language.            </Markdown>
 </SortableInput>
 </SortableGrader>
 </CapaProblem>
-</Vertical> <!-- wj3_good_7_set -->
+</Vertical> <!-- wj3_good_5_set -->
 
-<Markdown when="@wj3_good_7_grader.submitCount &gt; 0">
-**That's all seven sets.** Head back to the chat on the left to keep going.
+<Vertical id="wj3_good_4_set" when="@wj3_good_3_grader.submitCount &gt; 0">
+<Markdown id="wj3_marker_three_sets">
+> **Marker.** The current build stops after three sets.
 </Markdown>
+
+<Markdown>
+**What makes a good writer? (Set 4 of 7)**  `████░░░`
+</Markdown>
+<CapaProblem id="wj3_good_4_problem" title="What makes a good writer? (Set 4)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_4_grader" algorithm="survey">
+<SortableInput id="wj3_good_4" dragMode="whole">
+<Markdown id="wj3_good_4_peer_feedback"       > Giving good feedback to one's peers about their writing.                       </Markdown>
+<Markdown id="wj3_good_4_single_session_draft"> Completing a draft of what one is writing in a single session.                 </Markdown>
+<Markdown id="wj3_good_4_proofread"           > Proofreading one's own writing carefully.                                      </Markdown>
+<Markdown id="wj3_good_4_reorganize_clarity"  > Reorganizing what one has written to make it clearer and easier to understand. </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_4_set -->
+
+<Vertical id="wj3_good_3_set" when="@wj3_good_2_grader.submitCount &gt; 0">
+<Markdown>
+**What makes a good writer? (Set 3 of 7)**  `███░░░░`
+</Markdown>
+<CapaProblem id="wj3_good_3_problem" title="What makes a good writer? (Set 3)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_3_grader" algorithm="survey">
+<SortableInput id="wj3_good_3" dragMode="whole">
+<Markdown id="wj3_good_3_first_try"            > Producing good writing on the first try.                 </Markdown>
+<Markdown id="wj3_good_3_freewrite_ideas"      > Free-writing to brainstorm ideas.                        </Markdown>
+<Markdown id="wj3_good_3_experiment_expression"> Experimenting with different ways to express key points. </Markdown>
+<Markdown id="wj3_good_3_finish_quickly"       > Finishing writing tasks quickly.                         </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_3_set -->
+
+<Vertical id="wj3_good_2_set" when="@wj3_good_1_grader.submitCount &gt; 0">
+<Markdown>
+**What makes a good writer? (Set 2 of 7)**  `██░░░░░`
+</Markdown>
+<CapaProblem id="wj3_good_2_problem" title="What makes a good writer? (Set 2)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_2_grader" algorithm="survey">
+<SortableInput id="wj3_good_2" dragMode="whole">
+<Markdown id="wj3_good_2_long_enough"         > Making sure to write something that is long enough for the task. </Markdown>
+<Markdown id="wj3_good_2_outline_plan"        > Planning one's writing using an outline or graphic organizer.    </Markdown>
+<Markdown id="wj3_good_2_research_topic"      > Taking the time to research a topic before writing about it.     </Markdown>
+<Markdown id="wj3_good_2_spelling_punctuation"> Using correct spelling and punctuation.                          </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_2_set -->
+
+<Vertical id="wj3_good_1_set">
+<Markdown>
+**What makes a good writer? (Set 1 of 7)**  `█░░░░░░`
+</Markdown>
+<CapaProblem id="wj3_good_1_problem" title="What makes a good writer? (Set 1)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_1_grader" algorithm="survey">
+<SortableInput id="wj3_good_1" dragMode="whole">
+<Markdown id="wj3_good_1_sophisticated_words"  > Using sophisticated words and well-developed sentences.             </Markdown>
+<Markdown id="wj3_good_1_figure_out_thinking"  > Figuring out what one really thinks about a topic before writing.   </Markdown>
+<Markdown id="wj3_good_1_understand_assignment"> Taking the time to understand assignments before starting to write. </Markdown>
+<Markdown id="wj3_good_1_express_accurately"   > Expressing ideas accurately.                                        </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_1_set -->
 
 </Vertical> <!-- wj3_good_screen -->
 
