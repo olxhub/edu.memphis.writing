@@ -1,0 +1,84 @@
+<!-- Writing Journal 3a, revised: the group chat, the quiz, the story, and the export in one part -->
+<Vertical id="wj3a_file">
+
+<!--
+---
+description: "Writing Journal 3a, revised: a first-year ENGL 1010 student joins a group chat with three members of the Writers' Circle arguing about writer's block, takes a writing-attitudes quiz, is placed on three dimensions, hears three peers' stories, tells their own, and hears what Alma noticed — then exports the journal. Under review beside the original (wj2a_sba_part1) at its own /wj3a route; not yet in wj_course."
+category: writing_journal2
+index: 92.1
+lang: en-Latn-US
+---
+-->
+
+<!-- The revised Journal 3a. It is reviewed against the original by opening
+     both routes in two browser tabs: /wj2a is the original, /wj3a is this.
+
+     Both versions draw their screens from one activity bank
+     (writing_journal2_activities_part1.olx) and therefore share state: a
+     screen that both embed — the quiz, the intro — is one block with one set
+     of answers, whichever version the student is in. Screens that differ are
+     revised-only blocks, prefixed wj3_; blocks prefixed wj2_ are either shared
+     or original-only, as the status notes in the activity bank say. The
+     wj3_ prefix and the notes are the review scaffold; when the revised
+     version takes over, the original's blocks retire and these are renamed.
+
+     No cue Triggers yet. The original's nine compare the pane value against
+     bare screen names through DefinitionKey(), a marked HACK whose fix is
+     cues on the embeds themselves; the revised pane is cued once its screens
+     settle, as the last step of the review.
+
+     Same geometry as the original's Circle tab (38/62, 460px of chat), so the
+     two versions differ only in content. -->
+
+<Cast cast="characters.cast" id="wj3a_sba_part1"
+      title="Writing Journal 3a: The Group Chat (revised)"
+      launchable="true">
+  <Tabs id="wj3a_sba_tabs">
+
+    <Vertical id="wj3_circle_tab" title="The Circle">
+      <SplitPanel id="wj3_sba_split" sizes="38, 62">
+        <StartPane>
+          <Chat id="wj3_chat"
+                src="writing_journal3a_dialogue.chatpeg"
+                cast="characters.cast"
+                height="460px" />
+        </StartPane>
+        <EndPane>
+          <Vertical id="wj3_current_activity" title="Current Activity">
+            <UseHistory id="wj3_sidebar" initial="wj2_welcome" />
+          </Vertical>
+        </EndPane>
+      </SplitPanel>
+    </Vertical>
+
+    <!-- The revised record reads wj3_ fields, none of which the original's
+         wj2_artifact knows, so it has its own artifact (artifact_wj3.olx). -->
+    <Vertical id="wj3_journal_tab" title="My Journal">
+      <Use ref="wj3_artifact" />
+    </Vertical>
+
+    <!-- The character list is the original's own; it needs no revised twin. -->
+    <Vertical id="wj3_people_tab" title="Characters">
+      <Use ref="wj2_circle_members" />
+    </Vertical>
+
+    <!-- The revised journal is one part, so its whole record fits on one page.
+         Nothing teleports here; the chat's closing line names the tab. -->
+    <Vertical id="wj3_print_tab" title="Print &amp; Submit">
+      <Use ref="wj3_print" />
+    </Vertical>
+
+  </Tabs>
+</Cast>
+
+<!-- ============================================================
+     REFERENCED CONTENT BLOCKS
+     ============================================================ -->
+
+<!-- Loaders: bring the original's file into scope for wj2_circle_members, and
+     the revised record for the My Journal tab. src= must not go on a rendered
+     <Use> (it leaks onto the inlined block), so the loaders carry it here. -->
+<Use ref="wj2_circle_members" src="writing_journal2a_sba_part1.olx"/>
+<Use ref="wj3_artifact" src="artifact_wj3.olx"/>
+
+</Vertical>

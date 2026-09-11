@@ -30,7 +30,7 @@ description: A first-year ENGL 1010 student is in a group chat with three member
 // therefore changes one Continue BEFORE the line that announces it, never
 // after — which is the order you want anyway.
 //
-// The review wrapper (writing_journal3_review.olx) does not yet carry the
+// The review wrapper (writing_journal3a_sba_part1.olx) does not yet carry the
 // Flash/FocusAction cue Triggers the original's Circle tab has — cues come at
 // the end of the review. When they land they will watch @wj3_sidebar.value,
 // and an embed writes the QUALIFIED ref, not the bare name an arrow wrote, so

@@ -29,4 +29,4 @@ routes:
   "/wj2b": edu.memphis.writing.sba/wj2b_sba_part1
   # Review build: Journal 3a original and revised, side by side. Not part of
   # wj_course on purpose — it is for the course owner, not for students.
-  "/wj3-review": edu.memphis.writing.sba/wj3_review
+  "/wj3a": edu.memphis.writing.sba/wj3a_sba_part1
