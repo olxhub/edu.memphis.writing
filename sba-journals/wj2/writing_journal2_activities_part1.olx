@@ -62,7 +62,7 @@ of three words:
 - **Shared** — used by both the original and the revised journal. Editing it changes both.
 - **Original** — reached only by the original conversation, and on its way out.
 - **Revised** — reached only by the revised conversation. These are the screens prefixed
-  `wj3_`; there are none yet.
+  `wj3_`.
 
 The revised conversation lives in `wj2/writing_journal3a_dialogue.chatpeg` — the
 instructors' rewrite, with their `// NOTE (instructors):` lines left in it as the
@@ -73,8 +73,9 @@ Every id prefixed `wj3_` belongs to the revised version alone; everything still
 prefixed `wj2_` is shared. The namespace is shared too — everything under
 `sba-journals/` parses as one — so the two prefixes are what keeps them apart.
 
-*At this commit every screen below is Shared: the revised conversation shows the same
-screens the original does.*
+*Each screen below carries its own status note. Where a revised screen exists, the
+original it replaces is marked **Original only** and stays in place, still reached by
+the original conversation.*
 </Markdown>
 
 
@@ -140,7 +141,7 @@ until an activity opens on the right.
      THE DEBATE: YOUR QUICK TAKE  (activates prior experience; low friction)
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_debate_react">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_debate_react">**Original only** — the revised conversation embeds `wj3_debate_react` instead.</Markdown>
 
 <Vertical id="wj2_debate_react">
 <Markdown>
@@ -168,6 +169,34 @@ feels natural. (You can always feel differently tomorrow — that's kind of the 
 **before** you ever sat down to write. Hold onto your answer — you'll come back to it.*
 </Markdown>
 </Vertical> <!-- wj2_debate_react -->
+
+<Markdown id="wj3_doc_wj3_debate_react">**Revised** — the instructors' stem, an "Other" option, and a box that appears only when Other is picked.</Markdown>
+
+<Vertical id="wj3_debate_react">
+<Markdown>
+## What's Your Take on Writer's Block?
+
+Lee, Richard, and Alma can't agree, and there's no official answer. Before you
+take the quiz, weigh in: do you think writer's block is real? Have you ever
+experienced it?
+
+Whatever your view, there's no wrong answer.
+</Markdown>
+<!-- Same stored-value contract as wj2_block_take: short semantic values, never the
+     sentences, because the prose is display text and gets copy-edited. "other" is the
+     only value whose meaning lives outside the legend, so it carries a companion
+     TextArea and every reader of this input has to read that too. -->
+<ChoiceInput id="wj3_block_take">
+<Key id="wj3_take_freeze"        value="freeze"       > It's real, and I've felt it — my brain just freezes up, even when I have ideas </Key>
+<Key id="wj3_take_anxiety"       value="anxiety"      > It's real for me, but it feels more like anxiety or fear of getting it wrong   </Key>
+<Key id="wj3_take_not_sure_real" value="not_sure_real"> Richard's kind of right; I'm not sure it's real                                </Key>
+<Key id="wj3_take_depends"       value="depends"      > It depends on what I'm being asked to write                                    </Key>
+<Key id="wj3_take_unsure"        value="unsure"       > I'm honestly not sure yet                                                      </Key>
+<Key id="wj3_take_other"         value="other"        > Something else — I'll explain                                                  </Key>
+</ChoiceInput>
+<TextArea id="wj3_take_other_text" rows="2" when="@wj3_block_take.value === 'other'"
+  placeholder="Say more…" />
+</Vertical> <!-- wj3_debate_react -->
 
 
 <!-- ===================================================================
