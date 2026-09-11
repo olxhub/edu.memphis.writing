@@ -130,12 +130,9 @@ Does It Fit?
 
 Alma: so — does it actually fit you?
 
-// NOTE (instructors): Turn the story box into a multiple choice question with these options: Yes 	No 	Sort-of
-// NOTE (instructors): Also add a little box for them to explain if they'd like
+::wj3_fit_input
 
-::wj2_placement_input
-
---- wait wordcount(@wj2_placement_text.value) >= 20 ---
+--- wait @wj3_fit.value ---
 
 Alma: A year from now, where would you like to be on each line? Adjust the scales below and briefly explain
 

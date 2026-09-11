@@ -1319,12 +1319,29 @@ in this journal — a few honest sentences are plenty.
      a word count, so it is defined here as a standalone block (not inside a right-pane screen).
      The live counter rides with the box: the chat's `wait wordcount(...) >= 20` renders nothing
      while unsatisfied, so without it the student has no way to see why Continue hasn't appeared. -->
-<Markdown id="wj3_doc_wj2_placement_input">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_placement_input">**Original only** — the revised conversation inlines `wj3_fit_input` instead.</Markdown>
 
 <Vertical id="wj2_placement_input">
 <TextArea id="wj2_placement_text" rows="6" placeholder="The part that feels most accurate is... One moment that might explain it is... A year from now I'd like to..." />
 <Markdown id="wj2_placement_count">*{{wordcount(@wj2_placement_text.value)}} words (20 minimum)*</Markdown>
 </Vertical>
+
+
+<Markdown id="wj3_doc_wj3_fit_input">**Revised** — asks the same question as a yes / no / sort of choice with an optional note, so the answer costs one click.</Markdown>
+
+<!-- Chat-inline (no [display=...] on its embed), so it sits in the conversation where
+     Alma asks, with wj3_results still in the pane beside it. The chat gates on the
+     choice alone; the note is genuinely optional and nothing waits on it. -->
+
+<Vertical id="wj3_fit_input">
+<ChoiceInput id="wj3_fit">
+  <Key id="wj3_fit_yes"     value="yes"    > Yes     </Key>
+  <Key id="wj3_fit_no"      value="no"     > No      </Key>
+  <Key id="wj3_fit_sort_of" value="sort_of"> Sort of </Key>
+</ChoiceInput>
+<Markdown>*Want to say why? Optional.*</Markdown>
+<TextArea id="wj3_fit_text" rows="3" placeholder="It fits because… / It misses because…" />
+</Vertical> <!-- wj3_fit_input -->
 
 
 <!-- ===================================================================
