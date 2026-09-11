@@ -78,13 +78,16 @@ lang: en-Latn-US
       </SplitPanel>
     </Vertical>
 
-    <!-- Tabs 3 and 4 are the original's own, referenced the way 3a and 3b
-         reference them. They are shared, so they need no revised twin: the
-         record and the character list are the same work either way. -->
+    <!-- Tab 3: the revised record. The original's wj2_artifact reads wj2_ fields,
+         none of which the revised conversation writes, so this tab gets a revised twin
+         (wj3_artifact, in artifact_wj3.olx) rather than a shared ref. The original's
+         own record is reviewable on its own /wj2a route. -->
     <Vertical id="wj3_journal_tab" title="My Journal">
-      <Use ref="wj2_artifact" />
+      <Use ref="wj3_artifact" />
     </Vertical>
 
+    <!-- Tab 4 is the original's own, referenced the way 3a and 3b reference it. The
+         character list is shared, so it needs no revised twin. -->
     <Vertical id="wj3_people_tab" title="Characters">
       <Use ref="wj2_circle_members" />
     </Vertical>
@@ -109,5 +112,8 @@ lang: en-Latn-US
      rendered <Use> (it leaks onto the inlined block -> "Invalid attributes:
      src"), so the loader carries it here instead. -->
 <Use ref="wj2_circle_tab" src="writing_journal2a_sba_part1.olx"/>
+
+<!-- Loader: the revised journal record, for the My Journal tab above. -->
+<Use ref="wj3_artifact" src="artifact_wj3.olx"/>
 
 </Vertical>
