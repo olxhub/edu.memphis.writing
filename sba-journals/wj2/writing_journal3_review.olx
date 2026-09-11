@@ -89,6 +89,13 @@ lang: en-Latn-US
       <Use ref="wj2_circle_members" />
     </Vertical>
 
+    <!-- Tab 5: the revised export. The revised journal is one part, so its whole
+         record fits on one page, and nothing here teleports to this tab — the
+         revised chat's closing line names it and the student clicks it. -->
+    <Vertical id="wj3_print_tab" title="Print &amp; Submit">
+      <Use ref="wj3_print" />
+    </Vertical>
+
   </Tabs>
 </Cast>
 
