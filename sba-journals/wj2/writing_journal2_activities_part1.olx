@@ -1373,6 +1373,122 @@ sentence or two each.
 </Vertical> <!-- wj3_future -->
 
 
+<Markdown id="wj3_doc_wj3_warmup">**Revised** — the original meeting's two-minute freewrite, reached from the chat as an optional screen of its own.</Markdown>
+
+<!-- The freewrite itself is the ORIGINAL block, referenced not copied, so the warm-up a
+     student does here is the same wj2_freewrite either version prints. Nothing gates on
+     it: the chat embeds this screen and walks straight on. -->
+
+<Vertical id="wj3_warmup">
+<Markdown id="wj3_decide_freewrite">
+> **Decision point.** The rewritten flow goes from the peers' stories straight
+> to the student's — should this optional two-minute freewrite warm-up stay
+> between them, or go?
+</Markdown>
+<Use ref="wj2_freewrite_timer" />
+</Vertical> <!-- wj3_warmup -->
+
+
+<Markdown id="wj3_doc_wj3_story_input">**Revised** — the journal entry is written in the chat, with a 150-word floor and messages that keep rising past it.</Markdown>
+
+<!-- Chat-inline (no [display=...] on its embed): the student writes where the three
+     peers just told their stories, not off in the pane. The live count sits inside the
+     first tier's sentence rather than under the box, so 150 reads as a floor and not a
+     target; the tiers above it never show a number. The gate is the chat's wait. -->
+
+<Vertical id="wj3_story_input">
+<Markdown>*Your story. Tell it like a story, not a summary — what happened,
+how it felt, and how it has shaped your writing since.*</Markdown>
+<TextArea id="wj3_story_text" rows="10" placeholder="Write your story here." />
+<Markdown when="wordcount(@wj3_story_text.value) &lt; 150">
+*Keep going — {{wordcount(@wj3_story_text.value)}} of 150 words so far.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &gt;= 150 &amp;&amp; wordcount(@wj3_story_text.value) &lt; 300">
+*Continue is open. If there's more to the story, keep writing — the more you give Alma, the more she has to work with.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &gt;= 300 &amp;&amp; wordcount(@wj3_story_text.value) &lt; 600">
+*That's a full story. Alma is going to have plenty to say.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &gt;= 600 &amp;&amp; wordcount(@wj3_story_text.value) &lt; 1000">
+*Impressive — that's more than all three of them wrote put together.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &gt;= 1000">
+*A thousand words. Honestly, we're a little flabbergasted, and delighted. Continue whenever you're ready.*
+</Markdown>
+</Vertical> <!-- wj3_story_input -->
+
+
+<Markdown id="wj3_doc_wj3_alma_response">**Revised** — Alma's response moves into 3a and reads the fit answer and the three year-from-now answers alongside the story.</Markdown>
+
+<Vertical id="wj3_alma_response">
+<Markdown id="wj3_response_intro">
+## What Alma Hears in Your Story
+
+When you're happy with your story, press the button. **Alma** — who kicked off the whole conversation —
+will read your story alongside your quiz results and reflect back what she notices, connecting your
+experience to where you landed on the three dimensions. She won't rewrite your story or grade it; she
+just listens closely and asks one question back, the way a good writing group would.
+</Markdown>
+<LLMFeedback id="wj3_response_feedback" render="markdown" />
+<ActionButton id="wj3_response_btn" label="Hear what Alma noticed in my story">
+<LLMAction id="wj3_response_action" target="wj3_response_feedback">
+        You are Alma, a warm, perceptive peer in a first-year college Writers' Circle, responding to a
+        fellow student who just read aloud the story of an experience that shaped how they feel about
+        writing. (You are the one who started this whole conversation in the group chat and who shared
+        your own story about red-pen feedback and writing in two languages.) The whole point of this
+        journal is the threshold concept that writing attitudes are shaped by identity and prior
+        experience, not by a fixed "born writer" trait. Your job is to listen closely and build on the
+        writing profile the quiz started — NOT to rewrite, grade, correct, or praise generically.
+
+        WHAT YOU KNOW ABOUT THIS WRITER:
+        Their earlier quick take on writer's block: <Ref id="wj3_resp_ref_take" target="wj3_block_take" />
+        (that answer is coded: freeze = it's real and my brain freezes even when I have ideas;
+        anxiety = it's real for me, but more like anxiety or fear of getting it wrong;
+        not_sure_real = Richard's kind of right, I'm not sure it's real; depends = it depends on what
+        I'm asked to write; unsure = I'm honestly not sure yet; other = they chose "something else" and
+        explained:
+        <Ref id="wj3_resp_ref_take_other" target="wj3_take_other_text" />
+        blank = they didn't answer.)
+        The results the quiz tool gave them (their placement on the three dimensions — Purpose,
+        Orientation, Experience):
+        <Ref id="wj3_resp_ref_results" target="wj3_results_feedback" />
+        Whether that placement fit them (yes / no / sort_of; blank = they didn't answer):
+        <Ref id="wj3_resp_ref_fit" target="wj3_fit" />
+        Their optional note on why it fit or missed: <Ref id="wj3_resp_ref_fit_text" target="wj3_fit_text" />
+        Where they said they would like to be a year from now, one answer per dimension:
+        Purpose (Expression–Evaluation): <Ref id="wj3_resp_ref_future_p" target="wj3_future_purpose" />
+        Orientation (Growth–Performance): <Ref id="wj3_resp_ref_future_o" target="wj3_future_orientation" />
+        Experience (Engagement–Avoidance): <Ref id="wj3_resp_ref_future_e" target="wj3_future_experience" />
+        THEIR STORY (the most important thing — weight it heavily and quote from it):
+        <Ref id="wj3_resp_ref_story" target="wj3_story_text" />
+
+        DIRECTIONS:
+        FIRST decide whether a real story is present. Only if THEIR STORY above is blank or just a
+        fragment (roughly under 15 words) should you gently invite them to tell the whole story and then
+        stop. If they have written a real story, respond to it directly — do NOT open with any line
+        suggesting you are still waiting to hear it ("I'd love to hear the whole story", "whenever you're
+        ready", etc.); they have already shared it, so react to what they actually wrote.
+        When a real story is present, address the writer as "you" and write 4-6 sentences of warm Markdown that:
+        - Name one specific, concrete thing from THEIR story and quote a few of their own words back to
+          them, so they know they were truly heard.
+        - Point out how the EXPERIENCE in their story seems to have shaped an attitude toward writing —
+          explicitly connecting it to where the quiz placed them (for example, an experience that could
+          explain a lean toward Avoidance, or toward Expression). If their story complicates or
+          contradicts their quiz placement, say so honestly and with interest; that tension is valuable,
+          not a problem.
+        - Reinforce the threshold concept in plain language: that this feeling was learned from an
+          experience, which means it isn't fixed — attitudes can shift with new experiences and practice.
+        - End with exactly ONE genuine, open question that invites them to think further (for example,
+          about what experience might start to shift the feeling, or about their own answer to whether
+          writers are born or made). Do not stack multiple questions.
+        Never tell them they are a good or bad writer. Never rewrite their story or suggest edits. Never
+        invent details they didn't share. Speak in your own warm, first-person voice as Alma, a fellow
+        writer in the circle — not as an evaluator or a grader.
+</LLMAction>
+</ActionButton>
+</Vertical> <!-- wj3_alma_response -->
+
+
 <!-- ===================================================================
      TASK 2 — THE WRITERS' CIRCLE MEETING  (all of Writing Journal 3b)
      The whole meeting is ONE screen, shown full-width by
@@ -1382,7 +1498,7 @@ sentence or two each.
      wrap-up all live here in one self-paced flow.
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_meeting">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_meeting">**Original only** — the revised conversation runs the meeting's parts from the chat: `wj3_warmup`, `wj3_story_input`, `wj3_alma_response`.</Markdown>
 
 <Vertical id="wj2_meeting">
 
@@ -1558,7 +1674,7 @@ export as a PDF for your course system.
      here are the SAME nodes as on the working screens, so they always agree.
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_print">**Shared** — used by both the original and the revised journal.</Markdown>
+<Markdown id="wj3_doc_wj2_print">**Original only** — the revised review build exports through `wj3_print`.</Markdown>
 
 <Vertical id="wj2_print">
 
@@ -1705,5 +1821,158 @@ they can change. That's the groundwork for the writing you'll do next in this co
 <Use ref="wj2_response_feedback" />
 
 </Vertical> <!-- wj2_print -->
+
+
+<Markdown id="wj3_doc_wj3_print">**Revised** — the same inverted-triangle export, reading the revised fields and all seven ranking sets.</Markdown>
+
+<!-- The revised journal is one part, not two, so this page covers the whole of it. Same
+     print rules as wj2_print: everything must be MOUNTED at print time, so no
+     Collapsible, no Tabs, no UseHistory; when= is fine. Same order — controls (hidden
+     from the PDF), then what the student wrote, then the structured answers, then the
+     generated text last. <Use> is a DAG reference, so the boards and the feedback here
+     are the same nodes the student worked on and can never disagree with them. -->
+
+<Vertical id="wj3_print">
+
+<Vertical id="wj3_print_controls" print="false">
+
+<Markdown>
+## Print &amp; Submit
+
+Here is your whole journal on one page, in the order your instructor will read it: your writing first.
+Read it over; if you want to change an answer, go back to that step and edit it, then come back.
+Everything below updates to match.
+
+When it looks right, click the box and the **Export as PDF** button will appear. Save the file, then upload
+it to your course system.
+</Markdown>
+
+<CheckboxInput id="wj3_completion_page">
+<Markdown>**When you're happy with your entry, confirm you're done.**</Markdown>
+<Key id="wj3_finished" value="wj3_finished">I don't need to make any more changes.</Key>
+</CheckboxInput>
+
+<ActionButton id="wj3_print_btn" label="Export as PDF" when="@wj3_completion_page.value.length &gt; 0">
+<PrintAction id="wj3_print_action" />
+</ActionButton>
+
+<Markdown id="wj3_complete_md" when="@wj3_completion_page.value.length &gt; 0">
+## Journal Complete
+
+In this journal you noticed something writers rarely stop to name: **how you actually feel about writing,
+and where those feelings came from.** You took the quiz, saw where you landed on three dimensions,
+said whether the placement fit, named where you'd like to be a year from now, listened to how experience
+shaped three other writers, and told the story of an experience that shaped *you.*
+
+Hold onto the big idea: these are **tendencies shaped by experience, not fixed traits** — which means
+they can change. That's the groundwork for the writing you'll do next in this course.
+</Markdown>
+
+</Vertical> <!-- wj3_print_controls -->
+
+<Markdown>
+# Writing Journal 3: How Do You Feel About Writing?
+
+## My story — an experience that shaped me as a writer
+
+{{@wj3_story_text.value}}
+
+## Does the placement fit?
+
+**{{@wj3_fit.value}}**
+
+{{@wj3_fit_text.value}}
+
+## A year from now
+
+**Purpose** — {{@wj3_future_purpose.value}}
+
+**Orientation** — {{@wj3_future_orientation.value}}
+
+**Experience** — {{@wj3_future_experience.value}}
+</Markdown>
+
+<Markdown when="@wj2_freewrite.value">
+## My two-minute warm-up freewrite
+
+*Unedited, by design.*
+
+{{@wj2_freewrite.value}}
+</Markdown>
+
+<Markdown>
+---
+
+## Where I started: is writer's block real?
+</Markdown>
+<Use ref="wj3_block_take" />
+<Markdown when="@wj3_block_take.value === 'other'">
+**What I said instead:** {{@wj3_take_other_text.value}}
+</Markdown>
+
+<Markdown>
+## What makes a good writer — how I ranked them
+
+*Most important at the top of each set.*
+</Markdown>
+<Markdown>**Set 1:**</Markdown>
+<Use ref="wj3_good_1" />
+<Markdown>**Set 2:**</Markdown>
+<Use ref="wj3_good_2" />
+<Markdown>**Set 3:**</Markdown>
+<Use ref="wj3_good_3" />
+<Markdown>**Set 4:**</Markdown>
+<Use ref="wj3_good_4" />
+<Markdown>**Set 5:**</Markdown>
+<Use ref="wj3_good_5" />
+<Markdown>**Set 6:**</Markdown>
+<Use ref="wj3_good_6" />
+<Markdown>**Set 7:**</Markdown>
+<Use ref="wj3_good_7" />
+
+<Markdown>
+## How I feel about writing — all 26 statements
+
+1. Writing is a skill I want to get better at. — **{{@s01.value}}**
+2. It is frustrating to have to write about a subject I did not choose. — **{{@s02.value}}**
+3. Writing is usually boring for me. — **{{@s03.value}}**
+4. I worry that other people will criticize my writing. — **{{@s04.value}}**
+5. I like to write outside of school. — **{{@s05.value}}**
+6. It upsets me when I get low grades on a writing assignment. — **{{@s06.value}}**
+7. I am too impatient to spend a lot of time writing. — **{{@s07.value}}**
+8. I get so involved in my writing that I often lose track of time. — **{{@s08.value}}**
+9. Writing helps me learn. — **{{@s09.value}}**
+10. It is important to know how to write well. — **{{@s10.value}}**
+11. I prefer writing when it isn't required. — **{{@s11.value}}**
+12. I like getting lots of shares or likes when I post something online. — **{{@s12.value}}**
+13. There are some subjects that I really enjoy writing about. — **{{@s13.value}}**
+14. I dislike writing. — **{{@s14.value}}**
+15. I find it difficult to communicate my ideas through writing. — **{{@s15.value}}**
+16. I like when people compliment my writing skills. — **{{@s16.value}}**
+17. I feel confident when I am writing. — **{{@s17.value}}**
+18. It is important that I get good grades on writing assignments. — **{{@s18.value}}**
+19. When I write, I create content that I can be proud of. — **{{@s19.value}}**
+20. Overall, writing is hard for me. — **{{@s20.value}}**
+21. I enjoy writing in school. — **{{@s21.value}}**
+22. I find writing interesting. — **{{@s22.value}}**
+23. I enjoy writing most when I get to decide what to write about. — **{{@s23.value}}**
+24. I understand things better when I write about them. — **{{@s24.value}}**
+25. I enjoy writing sometimes. — **{{@s25.value}}**
+26. Sometimes I get in the zone and writing comes easily. — **{{@s26.value}}**
+</Markdown>
+
+<Markdown>
+---
+
+## Where the quiz placed me — three dimensions
+</Markdown>
+<Use ref="wj3_results_feedback" />
+
+<Markdown>
+## What Alma heard in my story
+</Markdown>
+<Use ref="wj3_response_feedback" />
+
+</Vertical> <!-- wj3_print -->
 
 </Vertical> <!-- wj2_activities_part1 -->

@@ -23,7 +23,7 @@ description: A first-year ENGL 1010 student is in a group chat with three member
 // conversation. (The one inline `::wj2_placement_input` below, with no
 // [display=...], is deliberate: that box belongs IN the talk.)
 //
-// The only arrow that remains is the course hand-off set at the very end.
+// No arrows remain: the revised conversation ends in 3a and hands the course to nothing.
 //
 // Timing note: a set command executes while the reveal walks past it, without
 // stopping; an embed is content, so it is revealed as its own beat. The pane
@@ -150,15 +150,20 @@ Lee: Can you send me a link to that video? That sounds really cool.
 
 Alma: Yeah, later. For now let's stay locked in.
 
+::wj3_warmup [display=target:wj3_sidebar label="Two-minute warm-up"]
+
 Richard: Hey, what about you? Tell us a story of a moment, an experience, or a piece of feedback about writing that made you feel like you were a good or a bad writer. What happened? Tell it like a story, not a summary. Make sure to share the way you felt in the moment and how that moment has influenced your feelings about writing. Don't be lazy. Write at least as much as we did
 
-// NOTE (instructors): ADD in a response box with a minimum of 150 words.
+::wj3_story_input
+
+--- wait wordcount(@wj3_story_text.value) >= 150 ---
 
 Alma: Thanks for sharing your story!
 
-// NOTE (instructors): cut to the 'hear what alma notices in my story' part of wpj 3b
 // NOTE (instructors): Also, Katie is happy that this part caught her flaking on the writing task xD
 
---- pause ---
+::wj3_alma_response [display=target:wj3_sidebar label="What Alma hears in your story"]
 
-wj_course.selectedChild <- edu.memphis.writing.sba/wj2b_sba_part1
+--- wait @wj3_response_feedback.value ---
+
+Alma: that's the journal. head to **Print &amp; Submit** at the top when you're ready to turn it in
