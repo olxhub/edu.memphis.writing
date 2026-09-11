@@ -1,0 +1,177 @@
+title: Writing Journal 3a — The Group Chat (revised)
+authors: Writing Journal 3 SBA, built in lo-blocks
+description: A first-year ENGL 1010 student is in a group chat with three members of the Writers' Circle who are arguing about whether writer's block is real. A peer shares a playful writing-attitudes quiz that plots the student on three attitude continuums, and the student weighs the placement against their own sense of themselves. The chat closes by inviting them to the Circle's in-person meeting, and hands the course over to Writing Journal 3b.
+~~~~
+
+// HOW THE ACTIVITY PANE IS DRIVEN.
+//
+// Every screen the conversation opens on the right is written as a TARGET EMBED:
+//
+//     ::wj2_survey [display=target:wj3_sidebar label="The quiz — part 1"]
+//
+// which does two things at once. It repoints the wj3_sidebar UseHistory at that
+// screen (once, the first time the line is revealed), and it leaves a small
+// labelled button sitting in the transcript at exactly the point in the group
+// chat where that activity happened. Clicking that button repoints the pane
+// there again.
+//
+// The marker is the reason for the form. A bare `wj3_sidebar <- x` set command
+// is invisible: the pane changes, and the record of WHY is only in the
+// surrounding dialogue. With a marker, a student scrolling back can see where
+// each activity sat in the conversation and reopen it. The activities still
+// live in the pane — this is not an inline embed, and the chat column stays a
+// conversation. (The one inline `::wj2_placement_input` below, with no
+// [display=...], is deliberate: that box belongs IN the talk.)
+//
+// The only arrow that remains is the course hand-off set at the very end.
+//
+// Timing note: a set command executes while the reveal walks past it, without
+// stopping; an embed is content, so it is revealed as its own beat. The pane
+// therefore changes one Continue BEFORE the line that announces it, never
+// after — which is the order you want anyway.
+//
+// The review wrapper (writing_journal3_review.olx) does not yet carry the
+// Flash/FocusAction cue Triggers the original's Circle tab has — cues come at
+// the end of the review. When they land they will watch @wj3_sidebar.value,
+// and an embed writes the QUALIFIED ref, not the bare name an arrow wrote, so
+// comparisons on that value must normalize both sides with DefinitionKey(...).
+
+A Group Chat, Blowing Up
+------------------------
+::wj2_welcome [display=target:wj3_sidebar label="How do you really feel about writing?"]
+
+// wj2_welcome is also the UseHistory `initial`, so the repoint is a no-op on a
+// fresh session — the embed is here for the transcript marker.
+
+Lee: ok not to be dramatic but I’ve been staring at this writing prompt for my history class for 40 minutes and I have zero words. writer's block is destroying me rn [face=concerned]
+
+Richard: I don't think writer's block is actually a thing. you just probably haven't sorted out what you want to say yet, ijs [face=serious]
+
+Alma: What's YOUR take? is writer's block real thing or not? [face=explaining]
+
+// NOTE (instructors): insert arrow to the right
+
+::wj2_debate_react [display=target:wj3_sidebar label="What's your take on writer's block?"]
+--- wait @wj2_block_take.value ---
+
+// NOTE (instructors): ADD a LOCK to the Continue button until they answer
+
+Lee: nah bro, it's more than me having nothing to say. it's like my brain just refuses to come up with ideas or words.
+
+Lee: I used to think like that. but then I got an essay back in 9th grade covered in red ink, and I swear I have not been able to draft anything without freezing up since. so I don't think it's about not planning or willpower — I think it's about what happened to you before you even sat down to write [face=calm]
+
+Alma: wait, that's actually really relatable. I think of myself as "blocked", but I do sometimes have anxiety about how to begin, or fear of writing something wrong [face=concerned]
+
+Lee: huh. I've never thought about writer's block like that. So it can be kind of social, like your feelings and anxiety instead of just no ideas in your head?
+
+So... Is It Real?
+-----------------
+
+Alma: figuring out why you are blocked seems like the key to unblocking yourself. ok this is going to sound random, but I found this quiz online that's basically "what's your writing personality" and it actually gets kind of real about this stuff. takes like 5 min, no wrong answers, I'll send the link in a sec [face=smile]
+
+Lee: ok, a quiz that might actually explain my own brain to me? say less, I'm in [face=cheeky]
+
+Richard: lmao fine, I'll bite. still not sure about this writer's block stuff though [face=suspicious]
+
+Take the Quiz
+-------------
+::wj2_survey [display=target:wj3_sidebar label="The quiz — part 1"]
+
+Alma: ok, you've got the quiz on the right. it gives you one statement at a time. Don't overthink it. work through all of them and it'll unlock the next part [face=explaining]
+
+--- wait @s26.value ---
+
+Richard: fine. I went in skeptical, but I went in [face=suspicious]
+
+Lee: ok this was weirdly kind of fun. some of these were calling me out lol [face=cheeky]
+
+
+What Makes Good Writing?
+------------------------
+
+Alma: ok, part 2. now it's not about how you feel, it's about what you think makes writing actually good. drag the four into order on the right, most at the top and least at the bottom, then hit Submit [face=explaining]
+
+::wj2_good_1_screen [display=target:wj3_sidebar label="What makes a good writer? — set 1"]
+
+Richard: finally, a section for people who care about doing it right [face=serious]
+
+--- wait @wj2_good_1_grader.submitCount > 0 ---
+
+One More Set
+------------
+::wj2_good_2_screen [display=target:wj3_sidebar label="What makes a good writer? — set 2"]
+
+Lee: of course ranking is your favorite part, Richard [face=cheeky]
+
+--- wait @wj2_good_2_grader.submitCount > 0 ---
+
+Last Set
+--------
+::wj2_good_3_screen [display=target:wj3_sidebar label="What makes a good writer? — set 3"]
+
+--- wait @wj2_good_3_grader.submitCount > 0 ---
+
+Your Writing Personality
+-----------------
+
+Alma: ok before you see your results, read about three continuums that will help you think about your relationship with writing. It's kinda fun. Look right now ---> [face=smile]
+
+::wj2_vibe_explainer [display=target:wj3_sidebar label="What your writing vibe says about you"]
+
+Lee: I already know I'm going to be dramatically self-expression [face=cheeky]
+
+Richard: it's less ridiculous than I expected. **Mark as read** when you're through, and she'll show you yours [face=serious]
+
+Alma: Hit **Show me my results** on the right and you'll see where you land on all three dimensions.
+
+--- wait @wj2_vibe_explainer_done.value ---
+
+Your Results
+------------
+::wj2_results [display=target:wj3_sidebar label="Your writing personality"]
+
+--- wait @wj2_results_feedback.value ---
+
+Lee: mine leaned all the way toward "avoidance" and honestly? fair [face=concerned]
+
+Richard: mine said I write to get it correct. shocking, I know [face=serious]
+
+Does It Fit?
+------------
+::wj2_placement_reflect [display=target:wj3_sidebar label="Does this feel accurate?"]
+
+Alma: so — does it actually fit you?
+
+// NOTE (instructors): Turn the story box into a multiple choice question with these options: Yes 	No 	Sort-of
+// NOTE (instructors): Also add a little box for them to explain if they'd like
+
+::wj2_placement_input
+
+--- wait wordcount(@wj2_placement_text.value) >= 20 ---
+
+Alma: A year from now, where would you like to be on each line? Adjust the scales below and briefly explain
+
+// NOTE (instructors): We would LOVE if we could let the students toggle left and right to plot themselves on the three scales. Also, add a short response below each scale and require 10 words or more
+
+Lee: That's really interesting. I'm thinking a lot about myself as a writer and how my relationship is connected to all of my experiences. Like this time in sixth grade my teacher told our class that some people are just born writers and some aren't, and I remember thinking, well, I know which one I am. Ever since then, every time I sit down to write, I hear that line in my head before I've written a single word. It's not that I don't have ideas. It's that I freeze before I let myself try.
+
+Richard: Yeah, our relationship with writing does seem to be shaped by our habits and experiences. Mine is so different from yours because I used to keep a notebook where I'd write one paragraph every single day about whatever happened, even boring stuff, just because my older cousin did it, and I thought it was cool. I never waited for inspiration. That's why I don't think writing has to be this big emotional struggle. For me it’s just a habit, like brushing my teeth. I'm starting to realize, though, that not everyone's habit started the same way mine did
+
+Alma: Growing up, I spoke Spanish at home and English at school, so for me writing was always tangled up with navigating two languages and figuring out where I fit. In ninth grade I turned in an essay I was actually proud of, and it came back covered edge to edge in red pen with comments like “awkward” and “huh?” next to sentences I'd rewritten five times. I didn't write anything I wasn't required to for almost two years. What finally changed things wasn't a teacher telling me I was good.  it was a friend saying they liked my wording in a tik-tok I made about being bilingual and how that means I have sort of a different personality when I speak different languages.
+
+Lee: Can you send me a link to that video? That sounds really cool.
+
+Alma: Yeah, later. For now let's stay locked in.
+
+Richard: Hey, what about you? Tell us a story of a moment, an experience, or a piece of feedback about writing that made you feel like you were a good or a bad writer. What happened? Tell it like a story, not a summary. Make sure to share the way you felt in the moment and how that moment has influenced your feelings about writing. Don't be lazy. Write at least as much as we did
+
+// NOTE (instructors): ADD in a response box with a minimum of 150 words.
+
+Alma: Thanks for sharing your story!
+
+// NOTE (instructors): cut to the 'hear what alma notices in my story' part of wpj 3b
+// NOTE (instructors): Also, Katie is happy that this part caught her flaking on the writing task xD
+
+--- pause ---
+
+wj_course.selectedChild <- edu.memphis.writing.sba/wj2b_sba_part1

@@ -1,0 +1,106 @@
+<!-- Writing Journal 3a: original and revised, side by side — review build -->
+<Vertical id="wj3_review_root">
+
+<!--
+---
+description: "Writing Journal 3a, twice: the original group chat and the revised one, as two tabs of one activity. A review build for the course owner, not a student-facing activity — it is reachable only at its own /wj3-review route and is deliberately absent from wj_course. Both tabs read and write the same student state and pull their screens from the same activity bank (writing_journal2_activities_part1.olx), so the only difference a reviewer sees is the difference that is actually there."
+category: writing_journal2
+index: 92.1
+lang: en-Latn-US
+---
+-->
+
+<!-- WHAT THIS WRAPPER IS FOR.
+
+     Writing Journal 3a is being revised. This file puts the two versions in
+     adjacent tabs so they can be read against each other in the browser: the
+     "Original" tab mounts the original's own Circle tab (wj2_circle_tab,
+     defined in writing_journal2a_sba_part1.olx), and the "Revised" tab mounts
+     a second chat column, wj3_chat, running writing_journal3a_dialogue.chatpeg
+     against its own pane, wj3_sidebar.
+
+     BOTH VERSIONS SHARE STATE. The screens in the right-hand pane are the same
+     blocks in both tabs — one activity bank, one set of input ids — so a quiz
+     answered in the Original tab is answered in the Revised tab too. That is
+     the point: what differs between the tabs is the conversation, not the work.
+     Each chat keeps its own place in its own script (wj2_chat and wj3_chat are
+     separate blocks), and each drives its own pane.
+
+     THE ORIGINAL IS UNTOUCHED. Nothing here edits the original journal: it is
+     referenced, not copied. writing_journal2a_sba_part1.olx, its chatpeg, and
+     the activity bank are the shipping content, and wj2a_sba_part1 remains the
+     activity students reach through wj_course.
+
+     THIS WRAPPER AND THE wj3_ BLOCKS ARE THE SCAFFOLD. Every id prefixed wj3_
+     — this file's blocks, the revised chatpeg's pane target, and the
+     revised-only screens later commits will add to the activity bank — belongs
+     to the revised version alone. Blocks still prefixed wj2_ are shared by both
+     versions. When the review finishes and the revised version takes over, the
+     wj3_ blocks are what gets promoted and this wrapper is what gets deleted.
+
+     The namespace is shared (everything under sba-journals/ parses as one), so
+     wj3_ ids must not collide with wj2_ ones. -->
+
+<Cast cast="characters.cast" id="wj3_review"
+      title="Writing Journal 3a — original and revised"
+      launchable="true">
+  <Tabs id="wj3_review_tabs">
+
+    <!-- Tab 1: the original, exactly as it ships. wj2_circle_tab carries its own
+         SplitPanel, its own chat (wj2_chat), its own pane (wj2_sidebar) and the
+         nine Flash/FocusAction cue Triggers that sit outside that SplitPanel. -->
+    <Vertical id="wj3_original_tab" title="Original">
+      <Use ref="wj2_circle_tab" />
+    </Vertical>
+
+    <!-- Tab 2: the revised conversation, driving its own pane. Same geometry as
+         the original's Circle tab (38/62, 460px of chat) so the two tabs differ
+         only in their content.
+
+         No cue Triggers here yet. The original's nine are a marked HACK — they
+         compare a pane value written as a qualified ref against a bare name and
+         need DefinitionKey() on both sides — and the fix is cues riding the
+         embed itself. Re-cueing the revised pane is the last step of the review,
+         after the screens themselves settle, so nothing is copied over now. -->
+    <Vertical id="wj3_circle_tab" title="Revised">
+      <SplitPanel id="wj3_sba_split" sizes="38, 62">
+        <StartPane>
+          <Chat id="wj3_chat"
+                src="writing_journal3a_dialogue.chatpeg"
+                cast="characters.cast"
+                height="460px" />
+        </StartPane>
+        <EndPane>
+          <Vertical id="wj3_current_activity" title="Current Activity">
+            <UseHistory id="wj3_sidebar" initial="wj2_welcome" />
+          </Vertical>
+        </EndPane>
+      </SplitPanel>
+    </Vertical>
+
+    <!-- Tabs 3 and 4 are the original's own, referenced the way 3a and 3b
+         reference them. They are shared, so they need no revised twin: the
+         record and the character list are the same work either way. -->
+    <Vertical id="wj3_journal_tab" title="My Journal">
+      <Use ref="wj2_artifact" />
+    </Vertical>
+
+    <Vertical id="wj3_people_tab" title="Characters">
+      <Use ref="wj2_circle_members" />
+    </Vertical>
+
+  </Tabs>
+</Cast>
+
+<!-- ============================================================
+     REFERENCED CONTENT BLOCKS
+     ============================================================ -->
+
+<!-- Loader: pull Writing Journal 3a into scope so the bare refs above
+     (wj2_circle_tab, wj2_artifact, wj2_circle_members — all defined there, and
+     the artifact through that file's own loader) resolve. src= must NOT go on a
+     rendered <Use> (it leaks onto the inlined block -> "Invalid attributes:
+     src"), so the loader carries it here instead. -->
+<Use ref="wj2_circle_tab" src="writing_journal2a_sba_part1.olx"/>
+
+</Vertical>
