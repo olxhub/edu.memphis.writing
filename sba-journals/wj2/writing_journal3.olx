@@ -39,9 +39,15 @@ lang: en-Latn-US
     <Vertical id="wj3_circle_tab" title="The Circle">
       <SplitPanel id="wj3_sba_split" sizes="38, 62">
         <StartPane>
+          <!-- The chat opens with Lee's first message already on screen, as a
+               message you arrive to rather than one you click for: the
+               "Earlier in the chat" section is shown as history, and the
+               live conversation is clipped to start at the next section. -->
           <Chat id="wj3_chat"
                 src="writing_journal3_dialogue.chatpeg"
                 cast="characters.cast"
+                history="wj3_opening"
+                clip="[wj3_chat_start,]"
                 height="460px" />
         </StartPane>
         <EndPane>
