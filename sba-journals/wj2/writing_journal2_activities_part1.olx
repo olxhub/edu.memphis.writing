@@ -1393,7 +1393,8 @@ sentence or two each.
 <Markdown id="wj3_decide_freewrite">
 > **Decision point.** The rewritten flow goes from the peers' stories straight
 > to the student's — should this optional two-minute freewrite warm-up stay
-> between them, or go?
+> between them, or go? Kept here, it sits on the right while the chat asks
+> for the story, and draws the story into itself.
 </Markdown>
 <Use ref="wj2_freewrite_timer" />
 </Vertical> <!-- wj3_warmup -->
@@ -1407,10 +1408,17 @@ sentence or two each.
      target; the tiers above it never show a number. The gate is the chat's wait. -->
 
 <Vertical id="wj3_story_input">
-<Markdown>*Your story. Tell it like a story, not a summary — what happened,
-how it felt, and how it has shaped your writing since.*</Markdown>
+<Markdown>**Write your story in this box.** Tell it like a story, not a summary —
+what happened, how it felt, and how it has shaped your writing since. The
+warm-up on the right was only to get you going; pull anything you want from it.</Markdown>
 <TextArea id="wj3_story_text" rows="10" placeholder="Write your story here." />
-<Markdown when="wordcount(@wj3_story_text.value) &lt; 150">
+<!-- The box starts empty even when the warm-up on the right is full, so the
+     first count line speaks to that case: it names the warm-up words and
+     says the story itself goes here. -->
+<Markdown when="wordcount(@wj3_story_text.value) === 0 &amp;&amp; wordcount(@wj2_freewrite.value) &gt; 0">
+*You've got {{wordcount(@wj2_freewrite.value)}} words warmed up on the right. The story itself goes in this box — start with the part that matters most.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &lt; 150 &amp;&amp; !(wordcount(@wj3_story_text.value) === 0 &amp;&amp; wordcount(@wj2_freewrite.value) &gt; 0)">
 *Keep going — {{wordcount(@wj3_story_text.value)}} of 150 words so far.*
 </Markdown>
 <Markdown when="wordcount(@wj3_story_text.value) &gt;= 150 &amp;&amp; wordcount(@wj3_story_text.value) &lt; 300">
