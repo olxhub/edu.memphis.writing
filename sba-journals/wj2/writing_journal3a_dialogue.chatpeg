@@ -89,25 +89,13 @@ What Makes Good Writing?
 
 Alma: ok, part 2. now it's not about how you feel, it's about what you think makes writing actually good. drag the four into order on the right, most at the top and least at the bottom, then hit Submit [face=explaining]
 
-::wj2_good_1_screen [display=target:wj3_sidebar label="What makes a good writer? — set 1"]
-
 Richard: finally, a section for people who care about doing it right [face=serious]
 
---- wait @wj2_good_1_grader.submitCount > 0 ---
+::wj3_good_screen [display=target:wj3_sidebar label="What makes a good writer?"]
 
-One More Set
-------------
-::wj2_good_2_screen [display=target:wj3_sidebar label="What makes a good writer? — set 2"]
+--- wait @wj3_good_7_grader.submitCount > 0 ---
 
 Lee: of course ranking is your favorite part, Richard [face=cheeky]
-
---- wait @wj2_good_2_grader.submitCount > 0 ---
-
-Last Set
---------
-::wj2_good_3_screen [display=target:wj3_sidebar label="What makes a good writer? — set 3"]
-
---- wait @wj2_good_3_grader.submitCount > 0 ---
 
 Your Writing Personality
 -----------------
