@@ -1,0 +1,63 @@
+<!-- My Writing Journal (running artifact) — the REVISED Writing Journal 3a -->
+
+<!-- The revised twin of wj2_artifact (wj2/artifact.olx), mounted as the My Journal tab
+     of the review build. It is a separate file rather than a second block in
+     artifact.olx because an OLX file has exactly one root node, and the original file's
+     root is wj2_artifact — adding a sibling there would mean restructuring shipping
+     content for the sake of the review.
+
+     Same five sections as the original, over the revised fields, plus the
+     year-from-now answers, which the original has no equivalent of. Collapsibles are
+     browsable but never printable (they render their children only when expanded), so
+     exporting is wj3_print's job, not this tab's. -->
+
+<Vertical id="wj3_artifact">
+
+  <Markdown id="wj3_artifact_intro">
+## My Writing Journal — Entry 2
+
+This tab gathers your work in one place as you go, so you can see the whole journal at a glance — your
+quiz results, whether the placement fit, where you'd like to be a year from now, the story you told, and
+what the Circle heard in it. Come back any time to review what you have built.
+
+*Submitting is handled on the **Print &amp; Submit** tab — that's where you'll confirm you're done and
+export your PDF.*
+  </Markdown>
+
+  <Collapsible id="wj3_artifact_take" title="Where I started: is writer's block real?">
+    <Markdown>**My first take, before the quiz:**</Markdown>
+    <!-- <Use>, not <Ref>: a Ref renders the stored value, which is a code like `freeze`;
+         <Use> re-renders the choices, showing the sentence the student picked. The one
+         code with no sentence behind it is `other`, so its note follows. -->
+    <Use ref="wj3_block_take" />
+    <Markdown when="@wj3_block_take.value === 'other'">**What I said instead:** {{@wj3_take_other_text.value}}</Markdown>
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_results" title="1. My writing personality — three dimensions">
+    <Markdown>**Where the quiz placed me:**</Markdown>
+    <Ref id="wj3_art_results" target="wj3_results_feedback" />
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_fit" title="2. Does it fit?">
+    <Markdown>**My answer:** {{@wj3_fit.value}}</Markdown>
+    <Ref id="wj3_art_fit_text" target="wj3_fit_text" />
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_future" title="3. A year from now">
+    <Markdown>**Purpose** — expression or evaluation:</Markdown>
+    <Ref id="wj3_art_future_p" target="wj3_future_purpose" />
+    <Markdown>**Orientation** — growth or performance:</Markdown>
+    <Ref id="wj3_art_future_o" target="wj3_future_orientation" />
+    <Markdown>**Experience** — engagement or avoidance:</Markdown>
+    <Ref id="wj3_art_future_e" target="wj3_future_experience" />
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_story" title="4. My story — an experience that shaped me as a writer">
+    <Ref id="wj3_art_story" target="wj3_story_text" />
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_response" title="5. What Alma heard in my story">
+    <Ref id="wj3_art_response" target="wj3_response_feedback" />
+  </Collapsible>
+
+</Vertical>
