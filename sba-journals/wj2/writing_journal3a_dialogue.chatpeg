@@ -114,9 +114,9 @@ Alma: Hit **Show me my results** on the right and you'll see where you land on a
 
 Your Results
 ------------
-::wj2_results [display=target:wj3_sidebar label="Your writing personality"]
+::wj3_results [display=target:wj3_sidebar label="Three dimensions of writing personalities"]
 
---- wait @wj2_results_feedback.value ---
+--- wait @wj3_results_feedback.value ---
 
 Lee: mine leaned all the way toward "avoidance" and honestly? fair [face=concerned]
 
@@ -124,7 +124,9 @@ Richard: mine said I write to get it correct. shocking, I know [face=serious]
 
 Does It Fit?
 ------------
-::wj2_placement_reflect [display=target:wj3_sidebar label="Does this feel accurate?"]
+
+// The pane keeps showing wj3_results while this is asked, so the placement the
+// question is about stays on screen next to it.
 
 Alma: so — does it actually fit you?
 
