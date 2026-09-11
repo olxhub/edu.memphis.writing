@@ -1,17 +1,18 @@
-<!-- Writing Journal 3a, revised: the group chat, the quiz, the story, and the export in one part -->
-<Vertical id="wj3a_file">
+<!-- Writing Journal 3, revised: the group chat, the quiz, the story, and the export in one part -->
+<Vertical id="wj3_file">
 
 <!--
 ---
-description: "Writing Journal 3a, revised: a first-year ENGL 1010 student joins a group chat with three members of the Writers' Circle arguing about writer's block, takes a writing-attitudes quiz, is placed on three dimensions, hears three peers' stories, tells their own, and hears what Alma noticed — then exports the journal. Under review beside the original (wj2a_sba_part1) at its own /wj3a route; not yet in wj_course."
+description: "Writing Journal 3, revised: a first-year ENGL 1010 student joins a group chat with three members of the Writers' Circle arguing about writer's block, takes a writing-attitudes quiz, is placed on three dimensions, hears three peers' stories, tells their own, and hears what Alma noticed — then exports the journal. Under review beside the original (wj2a_sba_part1) at its own /wj3 route; not yet in wj_course."
 category: writing_journal2
 index: 92.1
 lang: en-Latn-US
 ---
 -->
 
-<!-- The revised Journal 3a. It is reviewed against the original by opening
-     both routes in two browser tabs: /wj2a is the original, /wj3a is this.
+<!-- The revised Journal 3: what used to be 3a and 3b as one part. It is
+     reviewed against the original by opening both routes in two browser
+     tabs: /wj2a is the original, /wj3 is this.
 
      Both versions draw their screens from one activity bank
      (writing_journal2_activities_part1.olx) and therefore share state: a
@@ -30,16 +31,16 @@ lang: en-Latn-US
      Same geometry as the original's Circle tab (38/62, 460px of chat), so the
      two versions differ only in content. -->
 
-<Cast cast="characters.cast" id="wj3a_sba_part1"
-      title="Writing Journal 3a: The Group Chat (revised)"
+<Cast cast="characters.cast" id="wj3_sba"
+      title="Writing Journal 3: How Do You Feel About Writing?"
       launchable="true">
-  <Tabs id="wj3a_sba_tabs">
+  <Tabs id="wj3_sba_tabs">
 
     <Vertical id="wj3_circle_tab" title="The Circle">
       <SplitPanel id="wj3_sba_split" sizes="38, 62">
         <StartPane>
           <Chat id="wj3_chat"
-                src="writing_journal3a_dialogue.chatpeg"
+                src="writing_journal3_dialogue.chatpeg"
                 cast="characters.cast"
                 height="460px" />
         </StartPane>

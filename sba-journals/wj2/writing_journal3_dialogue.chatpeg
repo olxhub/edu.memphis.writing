@@ -1,4 +1,4 @@
-title: Writing Journal 3a — The Group Chat (revised)
+title: Writing Journal 3 — How Do You Feel About Writing?
 authors: Writing Journal 3 SBA, built in lo-blocks
 description: A first-year ENGL 1010 student is in a group chat with three members of the Writers' Circle who are arguing about whether writer's block is real. A peer shares a playful writing-attitudes quiz that plots the student on three attitude continuums, and the student weighs the placement against their own sense of themselves. The chat closes by inviting them to the Circle's in-person meeting, and hands the course over to Writing Journal 3b.
 ~~~~
@@ -30,7 +30,7 @@ description: A first-year ENGL 1010 student is in a group chat with three member
 // therefore changes one Continue BEFORE the line that announces it, never
 // after — which is the order you want anyway.
 //
-// The review wrapper (writing_journal3a_sba_part1.olx) does not yet carry the
+// The review wrapper (writing_journal3.olx) does not yet carry the
 // Flash/FocusAction cue Triggers the original's Circle tab has — cues come at
 // the end of the review. When they land they will watch @wj3_sidebar.value,
 // and an embed writes the QUALIFIED ref, not the bare name an arrow wrote, so

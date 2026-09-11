@@ -55,7 +55,7 @@ Reviewer comments addressed:
 ### Writing Journal 3a is being reviewed — two versions run from this one bank
 
 Journal 3a exists twice right now: the original at `/wj2a` (`wj2a_sba_part1`) and
-the revised journal at `/wj3a` (`wj3a_sba_part1`, `wj2/writing_journal3a_sba_part1.olx`),
+the revised journal at `/wj3` (`wj3_sba`, `wj2/writing_journal3.olx`),
 opened in two browser tabs to compare. Both versions pull their screens from **this**
 file, so the vocabulary for every screen below is one of three words:
 
@@ -64,7 +64,7 @@ file, so the vocabulary for every screen below is one of three words:
 - **Revised** — reached only by the revised conversation. These are the screens prefixed
   `wj3_`.
 
-The revised conversation lives in `wj2/writing_journal3a_dialogue.chatpeg` — the
+The revised conversation lives in `wj2/writing_journal3_dialogue.chatpeg` — the
 instructors' rewrite, with their `// NOTE (instructors):` lines left in it as the
 to-do list for the screens this bank still owes it. It drives its own pane,
 `wj3_sidebar`. The original's chatpeg and `wj2_sidebar` are untouched.
