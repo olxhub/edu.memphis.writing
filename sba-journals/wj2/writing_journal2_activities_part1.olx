@@ -54,10 +54,10 @@ Reviewer comments addressed:
 <Markdown id="wj3_doc_scaffold">
 ### Writing Journal 3a is being reviewed — two versions run from this one bank
 
-Journal 3a exists twice right now, side by side, as the two first tabs of
-`wj3_review` (`wj2/writing_journal3_review.olx`, route `/wj3-review`). Both versions
-pull their screens from **this** file, so the vocabulary for every screen below is one
-of three words:
+Journal 3a exists twice right now: the original at `/wj2a` (`wj2a_sba_part1`) and
+the revised journal at `/wj3a` (`wj3a_sba_part1`, `wj2/writing_journal3a_sba_part1.olx`),
+opened in two browser tabs to compare. Both versions pull their screens from **this**
+file, so the vocabulary for every screen below is one of three words:
 
 - **Shared** — used by both the original and the revised journal. Editing it changes both.
 - **Original** — reached only by the original conversation, and on its way out.
