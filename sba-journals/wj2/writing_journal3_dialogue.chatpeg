@@ -36,14 +36,20 @@ description: A first-year ENGL 1010 student is in a group chat with three member
 // and an embed writes the QUALIFIED ref, not the bare name an arrow wrote, so
 // comparisons on that value must normalize both sides with DefinitionKey(...).
 
-A Group Chat, Blowing Up
-------------------------
+Earlier in the chat [id=wj3_opening]
+-----------------------------------
+
+// Shown as history: the Chat block's history= names this section, so it is on
+// screen when the student arrives, not revealed by a click. The welcome embed
+// is here for its transcript marker; the pane already shows wj2_welcome as its
+// initial screen, so nothing moves.
+
 ::wj2_welcome [display=target:wj3_sidebar label="How do you really feel about writing?"]
 
-// wj2_welcome is also the UseHistory `initial`, so the repoint is a no-op on a
-// fresh session — the embed is here for the transcript marker.
-
 Lee: ok not to be dramatic but I’ve been staring at this writing prompt for my history class for 40 minutes and I have zero words. writer's block is destroying me rn [face=concerned]
+
+A Group Chat, Blowing Up [id=wj3_chat_start]
+--------------------------------------------
 
 Richard: I don't think writer's block is actually a thing. you just probably haven't sorted out what you want to say yet, ijs [face=serious]
 
