@@ -134,13 +134,19 @@ Does It Fit?
 // The pane keeps showing wj3_results while this is asked, so the placement the
 // question is about stays on screen next to it.
 
-Alma: so — does it actually fit you? and while you're there, put yourself on the three lines where you think you actually are right now.
+Alma: so — does it actually fit you?
 
 ::wj3_fit_input
 
---- wait @wj3_fit.value && isFilled(@wj3_now_purpose.value) && isFilled(@wj3_now_orientation.value) && isFilled(@wj3_now_experience.value) ---
+--- wait @wj3_fit.value ---
 
-Alma: Move each point to where you'd like to be a year from now, and say briefly why.
+Alma: ok, forget what the quiz said for a second. where would you put yourself, right now? drag each point [face=explaining]
+
+::wj3_now_input
+
+--- wait isFilled(@wj3_now_purpose.value) && isFilled(@wj3_now_orientation.value) && isFilled(@wj3_now_experience.value) ---
+
+Alma: now the same three lines are about to show up on the right, with your "now" marked on each. this time, drag each point to where you'd like to be a year from now, and tell me briefly why [face=explaining]
 
 ::wj3_future [display=target:wj3_sidebar label="A year from now"]
 

@@ -1346,7 +1346,7 @@ in this journal — a few honest sentences are plenty.
 </Vertical>
 
 
-<Markdown id="wj3_doc_wj3_fit_input">**Revised** — asks the same question as a yes / no / sort of choice with an optional note, so the answer costs one click, and then takes the student's own placement on the three scales.</Markdown>
+<Markdown id="wj3_doc_wj3_fit_input">**Revised** — asks the same question as a yes / no / sort of choice with an optional note, so the answer costs one click. The student's own placement follows as its own chat turn (`wj3_now_input`).</Markdown>
 
 <!-- Chat-inline (no [display=...] on its embed), so it sits in the conversation where
      Alma asks, with wj3_results still in the pane beside it. The chat gates on the
@@ -1362,7 +1362,14 @@ in this journal — a few honest sentences are plenty.
 </ChoiceInput>
 <Markdown>*Want to say why? Optional.*</Markdown>
 <TextArea id="wj3_fit_text" rows="3" placeholder="It fits because… / It misses because…" />
-<Markdown id="wj3_now_prompt">*And where do you think you actually are, right now? Put yourself on each line.*</Markdown>
+</Vertical> <!-- wj3_fit_input -->
+
+<Markdown id="wj3_doc_wj3_now_input">**Revised** — the student's own placement on the three scales, inline in the chat as its own turn after the fit question; "a year from now" is seeded from these values.</Markdown>
+
+<!-- Its own chat turn rather than part of wj3_fit_input: three lines with
+     their labels are a screenful in the chat column, so the fit question
+     gets answered on its own before these appear. -->
+<Vertical id="wj3_now_input">
 <Markdown id="wj3_now_purpose_label">**Purpose**</Markdown>
 <NumberLineInput id="wj3_now_purpose" min="0" max="100" step="1" snap="step">
   <Tick id="wj3_now_purpose_expression" value="0"  >Expression</Tick>
@@ -1378,7 +1385,7 @@ in this journal — a few honest sentences are plenty.
   <Tick id="wj3_now_experience_engagement" value="0"  >Engagement</Tick>
   <Tick id="wj3_now_experience_avoidance"  value="100">Avoidance</Tick>
 </NumberLineInput>
-</Vertical> <!-- wj3_fit_input -->
+</Vertical> <!-- wj3_now_input -->
 
 
 <Markdown id="wj3_doc_wj3_future">**Revised** — a new screen with no original: three scales, one per dimension, each starting from where the student just put themselves, moved to where they would like to be a year from now, with a sentence or two under each.</Markdown>
