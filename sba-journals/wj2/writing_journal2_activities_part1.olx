@@ -684,12 +684,12 @@ opinion. Being honest gives you the most accurate writing profile.
 </Vertical> <!-- wj2_good_3_screen -->
 
 
-<Markdown id="wj3_doc_wj3_good_screen">**Revised** — the original's seven ranking sets on one screen, each set appearing once the one before it is submitted.</Markdown>
+<Markdown id="wj3_doc_wj3_good_screen">**Revised** — five of the original's seven ranking sets on one screen, each set appearing once the one before it is submitted.</Markdown>
 
-<!-- All seven sets of the source survey (survey-journals/writing_process_journal_2.olx,
+<!-- Five sets of the source survey (survey-journals/writing_process_journal_2.olx,
      questions 2-8) on ONE screen, revealed one at a time: set N+1 is `when=` set N's
-     grader has been submitted, so the pane is never a wall of seven drag boxes and the
-     student cannot skip ahead. The chat's single gate is set 7's submitCount, so every
+     grader has been submitted, so the pane is never a wall of drag boxes and the
+     student cannot skip ahead. The chat's single gate is set 5's submitCount, so every
      set has to be submitted to advance. algorithm="survey" -> a ranking is never wrong;
      submitting is the whole grade. Item ids are semantic and per-set, because the
      results prompt reads the arrangement by id and needs to know which set it came from. -->
@@ -702,19 +702,21 @@ These are a matter of opinion, not right and wrong. Being honest will result
 in the most accurate writing profile.
 </Markdown>
 
-<Markdown id="wj3_decide_set_count">
-> **Decision point.** Three, five, or seven sets? All seven from the original are here; the markers below show where the current build stops (3) and the instructors' minimum (5). Notice where it starts to feel long.
+<!-- Decision point: the source survey has seven sets. Five is the instructors' minimum
+     and is where the screen starts to feel long, so sets 6 and 7 are commented out below
+     rather than deleted, in case the count is revisited. -->
+
+<Markdown when="@wj3_good_5_grader.submitCount &gt; 0">
+**That's all five sets.** Head back to the chat on the left to keep going.
 </Markdown>
 
-<Markdown when="@wj3_good_7_grader.submitCount &gt; 0">
-**That's all seven sets.** Head back to the chat on the left to keep going.
-</Markdown>
-
-<!-- The sets are written newest-first: set 7 at the top of the file, set 1 at
+<!-- The sets are written newest-first: the last set at the top of the file, set 1 at
      the bottom. A set appears when the one before it is submitted, and this
      order puts each new set ABOVE the finished ones, where the student is
      already looking, instead of below them at the end of a growing page. The
      quiz items are written the same way for the same reason. -->
+<!-- Sets 6 and 7 of the source survey, held here in case the count is revisited.
+
 <Vertical id="wj3_good_7_set" when="@wj3_good_6_grader.submitCount &gt; 0">
 <Markdown>
 **What makes a good writer? (Set 7 of 7)**  `███████`
@@ -730,13 +732,9 @@ in the most accurate writing profile.
 </SortableInput>
 </SortableGrader>
 </CapaProblem>
-</Vertical> <!-- wj3_good_7_set -->
+</Vertical>
 
 <Vertical id="wj3_good_6_set" when="@wj3_good_5_grader.submitCount &gt; 0">
-<Markdown id="wj3_marker_five_sets">
-> **Marker.** Five sets — the instructors' minimum.
-</Markdown>
-
 <Markdown>
 **What makes a good writer? (Set 6 of 7)**  `██████░`
 </Markdown>
@@ -751,11 +749,13 @@ in the most accurate writing profile.
 </SortableInput>
 </SortableGrader>
 </CapaProblem>
-</Vertical> <!-- wj3_good_6_set -->
+</Vertical>
+
+-->
 
 <Vertical id="wj3_good_5_set" when="@wj3_good_4_grader.submitCount &gt; 0">
 <Markdown>
-**What makes a good writer? (Set 5 of 7)**  `█████░░`
+**What makes a good writer? (Set 5 of 5)**  `█████`
 </Markdown>
 <CapaProblem id="wj3_good_5_problem" title="What makes a good writer? (Set 5)" showAnswer="never" submitLabel="Submit">
 <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
@@ -771,12 +771,8 @@ in the most accurate writing profile.
 </Vertical> <!-- wj3_good_5_set -->
 
 <Vertical id="wj3_good_4_set" when="@wj3_good_3_grader.submitCount &gt; 0">
-<Markdown id="wj3_marker_three_sets">
-> **Marker.** The current build stops after three sets.
-</Markdown>
-
 <Markdown>
-**What makes a good writer? (Set 4 of 7)**  `████░░░`
+**What makes a good writer? (Set 4 of 5)**  `████░`
 </Markdown>
 <CapaProblem id="wj3_good_4_problem" title="What makes a good writer? (Set 4)" showAnswer="never" submitLabel="Submit">
 <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
@@ -793,7 +789,7 @@ in the most accurate writing profile.
 
 <Vertical id="wj3_good_3_set" when="@wj3_good_2_grader.submitCount &gt; 0">
 <Markdown>
-**What makes a good writer? (Set 3 of 7)**  `███░░░░`
+**What makes a good writer? (Set 3 of 5)**  `███░░`
 </Markdown>
 <CapaProblem id="wj3_good_3_problem" title="What makes a good writer? (Set 3)" showAnswer="never" submitLabel="Submit">
 <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
@@ -810,7 +806,7 @@ in the most accurate writing profile.
 
 <Vertical id="wj3_good_2_set" when="@wj3_good_1_grader.submitCount &gt; 0">
 <Markdown>
-**What makes a good writer? (Set 2 of 7)**  `██░░░░░`
+**What makes a good writer? (Set 2 of 5)**  `██░░░`
 </Markdown>
 <CapaProblem id="wj3_good_2_problem" title="What makes a good writer? (Set 2)" showAnswer="never" submitLabel="Submit">
 <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
@@ -827,7 +823,7 @@ in the most accurate writing profile.
 
 <Vertical id="wj3_good_1_set">
 <Markdown>
-**What makes a good writer? (Set 1 of 7)**  `█░░░░░░`
+**What makes a good writer? (Set 1 of 5)**  `█░░░░`
 </Markdown>
 <CapaProblem id="wj3_good_1_problem" title="What makes a good writer? (Set 1)" showAnswer="never" submitLabel="Submit">
 <Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
@@ -1080,8 +1076,8 @@ picture of how you relate to writing *right now*.
 <Markdown id="wj3_doc_wj3_results">**Revised** — names the dimensions Purpose / Orientation / Experience, cites questions by number, reads a submitted default order as a real ranking, and closes with fixed text.</Markdown>
 
 <!-- The prompt is this journal's longest piece of authored text and the one place the
-     three dimensions, the 26 statements and the seven ranking sets all have to agree.
-     Every id it names has to exist: the s01-s26 legend, the seven set legends, and the
+     three dimensions, the 26 statements and the five ranking sets all have to agree.
+     Every id it names has to exist: the s01-s26 legend, the five set legends, and the
      writer's-block take codes are the tool's whole picture of the student, and the
      directions forbid citing anything absent from the data below it.
      The closing paragraph is fixed text, not generated, so the takeaway is the same for
@@ -1190,16 +1186,6 @@ a picture of how you relate to writing right now.
         2 = wj3_good_5_variety_patterns, a wide variety of word and sentence patterns
         (Expression/craft); 3 = wj3_good_5_fix_unclear, recognize and fix unclear language
         (Growth/Expression).
-        Set 6: 0 = wj3_good_6_details_ideas, details about the most important ideas (Expression);
-        1 = wj3_good_6_main_idea_focus, focus on the main idea and not go off topic (meaning/neutral);
-        2 = wj3_good_6_different_ways_thinking, consider different ways to think about a topic
-        (Growth/Expression); 3 = wj3_good_6_time_for_ideas, take time to come up with good ideas
-        (Expression/Growth).
-        Set 7: 0 = wj3_good_7_standard_english, Standard English, avoiding slang and informal language
-        (Evaluation); 1 = wj3_good_7_open_to_explore, be open to explore the subject and learn new
-        things (Growth/Engagement); 2 = wj3_good_7_clear_ideas, a clear understanding of the ideas one
-        wants to express (Expression); 3 = wj3_good_7_well_chosen_words, well-chosen words and
-        expressions that make writing interesting (Expression/craft).
 
         THE STUDENT'S QUIZ:
         Part 1 answers (statement id = chosen agreement level; a blank means the statement was not
@@ -1235,8 +1221,6 @@ a picture of how you relate to writing right now.
         Part 2, set 3 ranking (arrangement): <Ref id="wj3_res_ref_g3" target="wj3_good_3" />
         Part 2, set 4 ranking (arrangement): <Ref id="wj3_res_ref_g4" target="wj3_good_4" />
         Part 2, set 5 ranking (arrangement): <Ref id="wj3_res_ref_g5" target="wj3_good_5" />
-        Part 2, set 6 ranking (arrangement): <Ref id="wj3_res_ref_g6" target="wj3_good_6" />
-        Part 2, set 7 ranking (arrangement): <Ref id="wj3_res_ref_g7" target="wj3_good_7" />
 
         Their opening take on writer's block (freeze = brain freezes even with ideas; anxiety = fear of
         getting it wrong; not_sure_real = not sure writer's block is real; depends = depends on the task;
@@ -1841,7 +1825,7 @@ they can change. That's the groundwork for the writing you'll do next in this co
 </Vertical> <!-- wj2_print -->
 
 
-<Markdown id="wj3_doc_wj3_print">**Revised** — the same inverted-triangle export, reading the revised fields and all seven ranking sets.</Markdown>
+<Markdown id="wj3_doc_wj3_print">**Revised** — the same inverted-triangle export, reading the revised fields and all five ranking sets.</Markdown>
 
 <!-- The revised journal is one part, not two, so this page covers the whole of it. Same
      print rules as wj2_print: everything must be MOUNTED at print time, so no
@@ -1943,10 +1927,6 @@ they can change. That's the groundwork for the writing you'll do next in this co
 <Use ref="wj3_good_4" />
 <Markdown>**Set 5:**</Markdown>
 <Use ref="wj3_good_5" />
-<Markdown>**Set 6:**</Markdown>
-<Use ref="wj3_good_6" />
-<Markdown>**Set 7:**</Markdown>
-<Use ref="wj3_good_7" />
 
 <Markdown>
 ## How I feel about writing — all 26 statements

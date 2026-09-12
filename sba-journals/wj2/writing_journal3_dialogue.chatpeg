@@ -99,7 +99,7 @@ Richard: finally, a section for people who care about doing it right [face=serio
 
 ::wj3_good_screen [display=target:wj3_sidebar label="What makes a good writer?"]
 
---- wait @wj3_good_7_grader.submitCount > 0 ---
+--- wait @wj3_good_5_grader.submitCount > 0 ---
 
 Lee: of course ranking is your favorite part, Richard [face=cheeky]
 
