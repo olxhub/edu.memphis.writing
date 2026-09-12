@@ -215,7 +215,7 @@ Whatever your view, there's no wrong answer.
      carries, which names what each statement measures.
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_survey">**Shared** — used by both the original and the revised journal; the header and eight statements carry the instructors' revised wording, which both versions show.</Markdown>
+<Markdown id="wj3_doc_wj2_survey">**Shared** — used by both the original and the revised journal; the header's intro paragraph and eight statements carry the instructors' revised wording, which both versions show.</Markdown>
 
 <Vertical id="wj2_survey">
 <Markdown>
@@ -224,16 +224,16 @@ Whatever your view, there's no wrong answer.
 Pick an emoji response for each statement to help us discover where your
 attitude falls on a writing spectrum. Are you more about expression or
 evaluation? Growth or performance? Engagement or avoidance?
-
-You don't need to scroll. Once you answer a question, the next one appears
-at the top.
 </Markdown>
 
 <Markdown when="@s26.value">
 **That's all 26 — nice work.** Head back to the chat on the left to keep going.
 </Markdown>
 
+<!-- A new statement appears at the top of the pane; the OnShow flashes it so the
+     student sees where it landed without an instruction telling them to look. -->
 <Vertical id="wj2_item_26" when="@s25.value">
+<OnShow id="wj2_item_26_show"><Flash target="wj2_item_26" /></OnShow>
 <Markdown>
 **Question 26 of 26**  `██████████████████████████`
 
@@ -248,6 +248,7 @@ Sometimes I get in the zone and writing comes easily.
 </Vertical>
 
 <Vertical id="wj2_item_25" when="@s24.value">
+<OnShow id="wj2_item_25_show"><Flash target="wj2_item_25" /></OnShow>
 <Markdown>
 **Question 25 of 26**  `█████████████████████████░`
 
@@ -262,6 +263,7 @@ I enjoy writing sometimes.
 </Vertical>
 
 <Vertical id="wj2_item_24" when="@s23.value">
+<OnShow id="wj2_item_24_show"><Flash target="wj2_item_24" /></OnShow>
 <Markdown>
 **Question 24 of 26**  `████████████████████████░░`
 
@@ -276,6 +278,7 @@ I understand things better when I write about them.
 </Vertical>
 
 <Vertical id="wj2_item_23" when="@s22.value">
+<OnShow id="wj2_item_23_show"><Flash target="wj2_item_23" /></OnShow>
 <Markdown>
 **Question 23 of 26**  `███████████████████████░░░`
 
@@ -290,6 +293,7 @@ I enjoy writing most when I get to decide what to write about.
 </Vertical>
 
 <Vertical id="wj2_item_22" when="@s21.value">
+<OnShow id="wj2_item_22_show"><Flash target="wj2_item_22" /></OnShow>
 <Markdown>
 **Question 22 of 26**  `██████████████████████░░░░`
 
@@ -304,6 +308,7 @@ I find writing interesting.
 </Vertical>
 
 <Vertical id="wj2_item_21" when="@s20.value">
+<OnShow id="wj2_item_21_show"><Flash target="wj2_item_21" /></OnShow>
 <Markdown>
 **Question 21 of 26**  `█████████████████████░░░░░`
 
@@ -318,6 +323,7 @@ I enjoy writing in school.
 </Vertical>
 
 <Vertical id="wj2_item_20" when="@s19.value">
+<OnShow id="wj2_item_20_show"><Flash target="wj2_item_20" /></OnShow>
 <Markdown>
 **Question 20 of 26**  `████████████████████░░░░░░`
 
@@ -332,6 +338,7 @@ Overall, writing is hard for me.
 </Vertical>
 
 <Vertical id="wj2_item_19" when="@s18.value">
+<OnShow id="wj2_item_19_show"><Flash target="wj2_item_19" /></OnShow>
 <Markdown>
 **Question 19 of 26**  `███████████████████░░░░░░░`
 
@@ -346,6 +353,7 @@ When I write, I create content that I can be proud of.
 </Vertical>
 
 <Vertical id="wj2_item_18" when="@s17.value">
+<OnShow id="wj2_item_18_show"><Flash target="wj2_item_18" /></OnShow>
 <Markdown>
 **Question 18 of 26**  `██████████████████░░░░░░░░`
 
@@ -360,6 +368,7 @@ It is important that I get good grades on writing assignments.
 </Vertical>
 
 <Vertical id="wj2_item_17" when="@s16.value">
+<OnShow id="wj2_item_17_show"><Flash target="wj2_item_17" /></OnShow>
 <Markdown>
 **Question 17 of 26**  `█████████████████░░░░░░░░░`
 
@@ -374,6 +383,7 @@ I feel confident when I am writing.
 </Vertical>
 
 <Vertical id="wj2_item_16" when="@s15.value">
+<OnShow id="wj2_item_16_show"><Flash target="wj2_item_16" /></OnShow>
 <Markdown>
 **Question 16 of 26**  `████████████████░░░░░░░░░░`
 
@@ -388,6 +398,7 @@ I like when people compliment my writing skills.
 </Vertical>
 
 <Vertical id="wj2_item_15" when="@s14.value">
+<OnShow id="wj2_item_15_show"><Flash target="wj2_item_15" /></OnShow>
 <Markdown>
 **Question 15 of 26**  `███████████████░░░░░░░░░░░`
 
@@ -402,6 +413,7 @@ I find it difficult to communicate my ideas through writing.
 </Vertical>
 
 <Vertical id="wj2_item_14" when="@s13.value">
+<OnShow id="wj2_item_14_show"><Flash target="wj2_item_14" /></OnShow>
 <Markdown>
 **Question 14 of 26**  `██████████████░░░░░░░░░░░░`
 
@@ -416,6 +428,7 @@ I dislike writing.
 </Vertical>
 
 <Vertical id="wj2_item_13" when="@s12.value">
+<OnShow id="wj2_item_13_show"><Flash target="wj2_item_13" /></OnShow>
 <Markdown>
 **Question 13 of 26**  `█████████████░░░░░░░░░░░░░`
 
@@ -430,6 +443,7 @@ There are some subjects that I really enjoy writing about.
 </Vertical>
 
 <Vertical id="wj2_item_12" when="@s11.value">
+<OnShow id="wj2_item_12_show"><Flash target="wj2_item_12" /></OnShow>
 <Markdown>
 **Question 12 of 26**  `████████████░░░░░░░░░░░░░░`
 
@@ -444,6 +458,7 @@ I like getting lots of shares or likes when I post something online.
 </Vertical>
 
 <Vertical id="wj2_item_11" when="@s10.value">
+<OnShow id="wj2_item_11_show"><Flash target="wj2_item_11" /></OnShow>
 <Markdown>
 **Question 11 of 26**  `███████████░░░░░░░░░░░░░░░`
 
@@ -458,6 +473,7 @@ I prefer writing when it isn't required.
 </Vertical>
 
 <Vertical id="wj2_item_10" when="@s09.value">
+<OnShow id="wj2_item_10_show"><Flash target="wj2_item_10" /></OnShow>
 <Markdown>
 **Question 10 of 26**  `██████████░░░░░░░░░░░░░░░░`
 
@@ -472,6 +488,7 @@ It is important to know how to write well.
 </Vertical>
 
 <Vertical id="wj2_item_09" when="@s08.value">
+<OnShow id="wj2_item_09_show"><Flash target="wj2_item_09" /></OnShow>
 <Markdown>
 **Question 9 of 26**  `█████████░░░░░░░░░░░░░░░░░`
 
@@ -486,6 +503,7 @@ Writing helps me learn.
 </Vertical>
 
 <Vertical id="wj2_item_08" when="@s07.value">
+<OnShow id="wj2_item_08_show"><Flash target="wj2_item_08" /></OnShow>
 <Markdown>
 **Question 8 of 26**  `████████░░░░░░░░░░░░░░░░░░`
 
@@ -500,6 +518,7 @@ I get so involved in my writing that I often lose track of time.
 </Vertical>
 
 <Vertical id="wj2_item_07" when="@s06.value">
+<OnShow id="wj2_item_07_show"><Flash target="wj2_item_07" /></OnShow>
 <Markdown>
 **Question 7 of 26**  `███████░░░░░░░░░░░░░░░░░░░`
 
@@ -514,6 +533,7 @@ I am too impatient to spend a lot of time writing.
 </Vertical>
 
 <Vertical id="wj2_item_06" when="@s05.value">
+<OnShow id="wj2_item_06_show"><Flash target="wj2_item_06" /></OnShow>
 <Markdown>
 **Question 6 of 26**  `██████░░░░░░░░░░░░░░░░░░░░`
 
@@ -528,6 +548,7 @@ It upsets me when I get low grades on a writing assignment.
 </Vertical>
 
 <Vertical id="wj2_item_05" when="@s04.value">
+<OnShow id="wj2_item_05_show"><Flash target="wj2_item_05" /></OnShow>
 <Markdown>
 **Question 5 of 26**  `█████░░░░░░░░░░░░░░░░░░░░░`
 
@@ -542,6 +563,7 @@ I like to write outside of school.
 </Vertical>
 
 <Vertical id="wj2_item_04" when="@s03.value">
+<OnShow id="wj2_item_04_show"><Flash target="wj2_item_04" /></OnShow>
 <Markdown>
 **Question 4 of 26**  `████░░░░░░░░░░░░░░░░░░░░░░`
 
@@ -556,6 +578,7 @@ I worry that other people will criticize my writing.
 </Vertical>
 
 <Vertical id="wj2_item_03" when="@s02.value">
+<OnShow id="wj2_item_03_show"><Flash target="wj2_item_03" /></OnShow>
 <Markdown>
 **Question 3 of 26**  `███░░░░░░░░░░░░░░░░░░░░░░░`
 
@@ -570,6 +593,7 @@ Writing is usually boring for me.
 </Vertical>
 
 <Vertical id="wj2_item_02" when="@s01.value">
+<OnShow id="wj2_item_02_show"><Flash target="wj2_item_02" /></OnShow>
 <Markdown>
 **Question 2 of 26**  `██░░░░░░░░░░░░░░░░░░░░░░░░`
 
@@ -753,7 +777,10 @@ in the most accurate writing profile.
 
 -->
 
+<!-- Each set arrives above the finished ones; the OnShow flashes it so the student
+     sees the new set instead of hunting for it. -->
 <Vertical id="wj3_good_5_set" when="@wj3_good_4_grader.submitCount &gt; 0">
+<OnShow id="wj3_good_5_show"><Flash target="wj3_good_5_set" /></OnShow>
 <Markdown>
 **What makes a good writer? (Set 5 of 5)**  `█████`
 </Markdown>
@@ -771,6 +798,7 @@ in the most accurate writing profile.
 </Vertical> <!-- wj3_good_5_set -->
 
 <Vertical id="wj3_good_4_set" when="@wj3_good_3_grader.submitCount &gt; 0">
+<OnShow id="wj3_good_4_show"><Flash target="wj3_good_4_set" /></OnShow>
 <Markdown>
 **What makes a good writer? (Set 4 of 5)**  `████░`
 </Markdown>
@@ -788,6 +816,7 @@ in the most accurate writing profile.
 </Vertical> <!-- wj3_good_4_set -->
 
 <Vertical id="wj3_good_3_set" when="@wj3_good_2_grader.submitCount &gt; 0">
+<OnShow id="wj3_good_3_show"><Flash target="wj3_good_3_set" /></OnShow>
 <Markdown>
 **What makes a good writer? (Set 3 of 5)**  `███░░`
 </Markdown>
@@ -805,6 +834,7 @@ in the most accurate writing profile.
 </Vertical> <!-- wj3_good_3_set -->
 
 <Vertical id="wj3_good_2_set" when="@wj3_good_1_grader.submitCount &gt; 0">
+<OnShow id="wj3_good_2_show"><Flash target="wj3_good_2_set" /></OnShow>
 <Markdown>
 **What makes a good writer? (Set 2 of 5)**  `██░░░`
 </Markdown>
