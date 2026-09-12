@@ -1346,11 +1346,13 @@ in this journal — a few honest sentences are plenty.
 </Vertical>
 
 
-<Markdown id="wj3_doc_wj3_fit_input">**Revised** — asks the same question as a yes / no / sort of choice with an optional note, so the answer costs one click.</Markdown>
+<Markdown id="wj3_doc_wj3_fit_input">**Revised** — asks the same question as a yes / no / sort of choice with an optional note, so the answer costs one click, and then takes the student's own placement on the three scales.</Markdown>
 
 <!-- Chat-inline (no [display=...] on its embed), so it sits in the conversation where
      Alma asks, with wj3_results still in the pane beside it. The chat gates on the
-     choice alone; the note is genuinely optional and nothing waits on it. -->
+     choice and on all three scales; the note is genuinely optional and nothing waits
+     on it. The scales carry no notes of their own — the fit note already asks why —
+     and wj3_future seeds itself from where the student puts the points here. -->
 
 <Vertical id="wj3_fit_input">
 <ChoiceInput id="wj3_fit">
@@ -1360,40 +1362,67 @@ in this journal — a few honest sentences are plenty.
 </ChoiceInput>
 <Markdown>*Want to say why? Optional.*</Markdown>
 <TextArea id="wj3_fit_text" rows="3" placeholder="It fits because… / It misses because…" />
+<Markdown id="wj3_now_prompt">*And where do you think you actually are, right now? Put yourself on each line.*</Markdown>
+<Markdown id="wj3_now_purpose_label">**Purpose**</Markdown>
+<NumberLineInput id="wj3_now_purpose" min="0" max="100" step="1" snap="step">
+  <Tick id="wj3_now_purpose_expression" value="0"  >Expression</Tick>
+  <Tick id="wj3_now_purpose_evaluation" value="100">Evaluation</Tick>
+</NumberLineInput>
+<Markdown id="wj3_now_orientation_label">**Orientation**</Markdown>
+<NumberLineInput id="wj3_now_orientation" min="0" max="100" step="1" snap="step">
+  <Tick id="wj3_now_orientation_growth"      value="0"  >Growth</Tick>
+  <Tick id="wj3_now_orientation_performance" value="100">Performance</Tick>
+</NumberLineInput>
+<Markdown id="wj3_now_experience_label">**Experience**</Markdown>
+<NumberLineInput id="wj3_now_experience" min="0" max="100" step="1" snap="step">
+  <Tick id="wj3_now_experience_engagement" value="0"  >Engagement</Tick>
+  <Tick id="wj3_now_experience_avoidance"  value="100">Avoidance</Tick>
+</NumberLineInput>
 </Vertical> <!-- wj3_fit_input -->
 
 
-<Markdown id="wj3_doc_wj3_future">**Revised** — a new screen with no original: where the student would like to be on each dimension a year from now.</Markdown>
+<Markdown id="wj3_doc_wj3_future">**Revised** — a new screen with no original: three scales, one per dimension, each starting from where the student just put themselves, moved to where they would like to be a year from now, with a sentence or two under each.</Markdown>
 
-<!-- Three short answers, one per dimension, named the way the explainer and the results
-     name them. The chat's gate is a 10-word floor on all three, so all three have to be
-     answered; nothing here is gated on anything else. The chat's wait renders nothing
-     while it is unsatisfied, so each box carries its own live count until its floor is
-     met and then drops it — the floor is visible, and 10 never reads as a target. -->
+<!-- Three scales, one per dimension, named and ordered the way the explainer and the
+     results name them. Each scale starts where the student put themselves on the same
+     dimension in wj3_fit_input, and keeps that placement as a fixed "now" marker, so
+     the question is how far they want to move rather than where they stand. The chat's
+     gate is all three points moved or touched plus a 10-word floor on all three notes.
+     The chat's wait renders nothing while it is unsatisfied, so each note carries its
+     own live count until its floor is met and then drops it — the floor is visible, and
+     10 never reads as a target. -->
 
 <Vertical id="wj3_future">
-<Markdown id="wj3_decide_future_sliders">
-> **Placeholder.** This screen wants three sliders — Purpose, Orientation,
-> Experience — where the student drags a point to where they'd like to be a
-> year from now, with a short note under each. No continuum input exists yet;
-> the three questions below stand in for it. **Decision point:** build the
-> slider block for this round, or keep the questions?
-</Markdown>
-<Markdown>
+<Markdown id="wj3_future_intro">
 ## A Year From Now
 
-For each dimension, say where you'd like to be a year from now, and why — a
-sentence or two each.
+For each dimension, move the point to where you'd like to be a year from now, and say
+why — a sentence or two each. The thin marker shows where you just put yourself.
 </Markdown>
-<Markdown>**Purpose** — closer to Expression, or to Evaluation?</Markdown>
-<TextArea id="wj3_future_purpose" rows="2" />
-<Markdown when="wordcount(@wj3_future_purpose.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_purpose.value)}} of 10 words so far.*</Markdown>
-<Markdown>**Orientation** — closer to Growth, or to Performance?</Markdown>
-<TextArea id="wj3_future_orientation" rows="2" />
-<Markdown when="wordcount(@wj3_future_orientation.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_orientation.value)}} of 10 words so far.*</Markdown>
-<Markdown>**Experience** — closer to Engagement, or to Avoidance?</Markdown>
-<TextArea id="wj3_future_experience" rows="2" />
-<Markdown when="wordcount(@wj3_future_experience.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_experience.value)}} of 10 words so far.*</Markdown>
+<Markdown id="wj3_future_purpose_label">**Purpose**</Markdown>
+<NumberLineInput id="wj3_future_purpose" min="0" max="100" step="1" snap="step"
+                 initial="@wj3_now_purpose.value" reference="@wj3_now_purpose.value" referenceLabel="now">
+  <Tick id="wj3_future_purpose_expression" value="0"  >Expression</Tick>
+  <Tick id="wj3_future_purpose_evaluation" value="100">Evaluation</Tick>
+</NumberLineInput>
+<TextArea id="wj3_future_purpose_note" rows="2" />
+<Markdown id="wj3_future_purpose_count" when="wordcount(@wj3_future_purpose_note.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_purpose_note.value)}} of 10 words so far.*</Markdown>
+<Markdown id="wj3_future_orientation_label">**Orientation**</Markdown>
+<NumberLineInput id="wj3_future_orientation" min="0" max="100" step="1" snap="step"
+                 initial="@wj3_now_orientation.value" reference="@wj3_now_orientation.value" referenceLabel="now">
+  <Tick id="wj3_future_orientation_growth"      value="0"  >Growth</Tick>
+  <Tick id="wj3_future_orientation_performance" value="100">Performance</Tick>
+</NumberLineInput>
+<TextArea id="wj3_future_orientation_note" rows="2" />
+<Markdown id="wj3_future_orientation_count" when="wordcount(@wj3_future_orientation_note.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_orientation_note.value)}} of 10 words so far.*</Markdown>
+<Markdown id="wj3_future_experience_label">**Experience**</Markdown>
+<NumberLineInput id="wj3_future_experience" min="0" max="100" step="1" snap="step"
+                 initial="@wj3_now_experience.value" reference="@wj3_now_experience.value" referenceLabel="now">
+  <Tick id="wj3_future_experience_engagement" value="0"  >Engagement</Tick>
+  <Tick id="wj3_future_experience_avoidance"  value="100">Avoidance</Tick>
+</NumberLineInput>
+<TextArea id="wj3_future_experience_note" rows="2" />
+<Markdown id="wj3_future_experience_count" when="wordcount(@wj3_future_experience_note.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_experience_note.value)}} of 10 words so far.*</Markdown>
 </Vertical> <!-- wj3_future -->
 
 
@@ -1487,10 +1516,18 @@ just listens closely and asks one question back, the way a good writing group wo
         Whether that placement fit them (yes / no / sort_of; blank = they didn't answer):
         <Ref id="wj3_resp_ref_fit" target="wj3_fit" />
         Their optional note on why it fit or missed: <Ref id="wj3_resp_ref_fit_text" target="wj3_fit_text" />
-        Where they said they would like to be a year from now, one answer per dimension:
-        Purpose (Expression–Evaluation): <Ref id="wj3_resp_ref_future_p" target="wj3_future_purpose" />
-        Orientation (Growth–Performance): <Ref id="wj3_resp_ref_future_o" target="wj3_future_orientation" />
-        Experience (Engagement–Avoidance): <Ref id="wj3_resp_ref_future_e" target="wj3_future_experience" />
+        Where they put themselves on each dimension and where they said they would like to be a
+        year from now. Each dimension is a 0-100 line: 0 is the first name, 100 is the second, and
+        a blank number means they did not place themselves.
+        Purpose (0 = Expression, 100 = Evaluation): now <Ref id="wj3_resp_ref_now_p" target="wj3_now_purpose" />,
+        a year from now <Ref id="wj3_resp_ref_future_p_num" target="wj3_future_purpose" />, because:
+        <Ref id="wj3_resp_ref_future_p" target="wj3_future_purpose_note" />
+        Orientation (0 = Growth, 100 = Performance): now <Ref id="wj3_resp_ref_now_o" target="wj3_now_orientation" />,
+        a year from now <Ref id="wj3_resp_ref_future_o_num" target="wj3_future_orientation" />, because:
+        <Ref id="wj3_resp_ref_future_o" target="wj3_future_orientation_note" />
+        Experience (0 = Engagement, 100 = Avoidance): now <Ref id="wj3_resp_ref_now_e" target="wj3_now_experience" />,
+        a year from now <Ref id="wj3_resp_ref_future_e_num" target="wj3_future_experience" />, because:
+        <Ref id="wj3_resp_ref_future_e" target="wj3_future_experience_note" />
         THEIR STORY (the most important thing — weight it heavily and quote from it):
         <Ref id="wj3_resp_ref_story" target="wj3_story_text" />
 
@@ -1917,11 +1954,17 @@ they can change. That's the groundwork for the writing you'll do next in this co
 
 ## A year from now
 
-**Purpose** — {{@wj3_future_purpose.value}}
+**Purpose:** now {{@wj3_now_purpose.value}}, a year from now {{@wj3_future_purpose.value}} (0 = Expression, 100 = Evaluation)
 
-**Orientation** — {{@wj3_future_orientation.value}}
+{{@wj3_future_purpose_note.value}}
 
-**Experience** — {{@wj3_future_experience.value}}
+**Orientation:** now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)
+
+{{@wj3_future_orientation_note.value}}
+
+**Experience:** now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)
+
+{{@wj3_future_experience_note.value}}
 </Markdown>
 
 <Markdown when="@wj2_freewrite.value">

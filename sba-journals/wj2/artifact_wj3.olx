@@ -44,12 +44,14 @@ export your PDF.*
   </Collapsible>
 
   <Collapsible id="wj3_artifact_future" title="3. A year from now">
-    <Markdown>**Purpose** — expression or evaluation:</Markdown>
-    <Ref id="wj3_art_future_p" target="wj3_future_purpose" />
-    <Markdown>**Orientation** — growth or performance:</Markdown>
-    <Ref id="wj3_art_future_o" target="wj3_future_orientation" />
-    <Markdown>**Experience** — engagement or avoidance:</Markdown>
-    <Ref id="wj3_art_future_e" target="wj3_future_experience" />
+    <!-- The two numbers are interpolated rather than <Ref>-ed so each dimension reads as one
+         sentence; the note underneath stays a <Ref>, the way the other sections show prose. -->
+    <Markdown id="wj3_art_future_p_line">**Purpose:** now {{@wj3_now_purpose.value}}, a year from now {{@wj3_future_purpose.value}} (0 = Expression, 100 = Evaluation)</Markdown>
+    <Ref id="wj3_art_future_p" target="wj3_future_purpose_note" />
+    <Markdown id="wj3_art_future_o_line">**Orientation:** now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)</Markdown>
+    <Ref id="wj3_art_future_o" target="wj3_future_orientation_note" />
+    <Markdown id="wj3_art_future_e_line">**Experience:** now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)</Markdown>
+    <Ref id="wj3_art_future_e" target="wj3_future_experience_note" />
   </Collapsible>
 
   <Collapsible id="wj3_artifact_story" title="4. My story — an experience that shaped me as a writer">
