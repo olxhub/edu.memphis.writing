@@ -1370,6 +1370,7 @@ in this journal — a few honest sentences are plenty.
      their labels are a screenful in the chat column, so the fit question
      gets answered on its own before these appear. -->
 <Vertical id="wj3_now_input">
+<Markdown id="wj3_now_instructions">*Put yourself on each line.*</Markdown>
 <Markdown id="wj3_now_purpose_label">**Purpose**</Markdown>
 <NumberLineInput id="wj3_now_purpose" min="0" max="100" step="1" snap="step">
   <Tick id="wj3_now_purpose_expression" value="0"  >Expression</Tick>

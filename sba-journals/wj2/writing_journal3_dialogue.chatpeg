@@ -140,13 +140,13 @@ Alma: so — does it actually fit you?
 
 --- wait @wj3_fit.value ---
 
-Alma: ok, forget what the quiz said for a second. where would you put yourself, right now? drag each point [face=explaining]
+Alma: ok, forget what the quiz said for a second. where would you actually put yourself, right now? [face=smile]
 
 ::wj3_now_input
 
 --- wait isFilled(@wj3_now_purpose.value) && isFilled(@wj3_now_orientation.value) && isFilled(@wj3_now_experience.value) ---
 
-Alma: now the same three lines are about to show up on the right, with your "now" marked on each. this time, drag each point to where you'd like to be a year from now, and tell me briefly why [face=explaining]
+Alma: and a year from now — where would you like to be? [face=smile]
 
 ::wj3_future [display=target:wj3_sidebar label="A year from now"]
 
