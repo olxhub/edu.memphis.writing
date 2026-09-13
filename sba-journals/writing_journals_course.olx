@@ -23,11 +23,11 @@ license: AGPL
      under sba-journals/ parses as the one namespace declared in
      manifest.yaml.
 
-     Writing Journal 3 is two parts, because it is two scenes: the phone
-     group chat (2a) and the in-person meeting a few days later (2b). The
-     nav labels come from each part's own title= attribute. At the end of
-     2a the chat moves the student here itself, by setting this Course's
-     `selectedChild` field to 2b's definition key. -->
+     Writing Journal 3 is one part: the group chat carries the whole
+     journal, and its last beat opens the journal's own Print & Submit tab.
+     The earlier two-part version (wj2a/wj2b) stays in the repository for
+     comparison at its review routes and is not in the nav. The nav labels
+     come from each journal's own title= attribute. -->
 
 <Course id="wj_course" title="Writing Journals" launchable="course">
   <!-- The journals join the nav when the tutorial hands off (it sets
@@ -35,11 +35,7 @@ license: AGPL
        tutorial, and there is nothing to wander into half-taught. -->
   <Use ref="tut_sba_part1" />
   <Use ref="wj1_sba_part1"  when="@tut_complete.value" />
-  <!-- Journal 3 (parts 2a/2b) is held out pending course-team edits.
-       Hidden as a pair: 2a's chat ends by repointing the course at 2b.
-  <Use ref="wj2a_sba_part1" when="@tut_complete.value" />
-  <Use ref="wj2b_sba_part1" when="@tut_complete.value" />
-  -->
+  <Use ref="wj3_sba" when="@tut_complete.value" />
   <!-- Same block the consent gate shows; same state. Here so a student can
        revisit and change their answer at any time (consent.olx). -->
   <Use ref="wj_irb_consent_form" />
