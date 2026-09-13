@@ -1434,20 +1434,52 @@ why — a sentence or two each. The thin marker shows where you just put yoursel
 </Vertical> <!-- wj3_future -->
 
 
-<Markdown id="wj3_doc_wj3_warmup">**Revised** — the original meeting's two-minute freewrite, reached from the chat as an optional screen of its own.</Markdown>
+<Markdown id="wj3_doc_wj3_warmup">**Revised** — the two-minute freewrite as the writer's-block tool: introduced from the chat, optional, with the rules, where the technique comes from (Elbow, Macrorie, Brande) and links to the books for anyone who wants more. The story box that follows draws on it.</Markdown>
 
 <!-- The freewrite itself is the ORIGINAL block, referenced not copied, so the warm-up a
      student does here is the same wj2_freewrite either version prints. Nothing gates on
      it: the chat embeds this screen and walks straight on. -->
 
 <Vertical id="wj3_warmup">
-<Markdown id="wj3_decide_freewrite">
-> **Decision point.** The rewritten flow goes from the peers' stories straight
-> to the student's — should this optional two-minute freewrite warm-up stay
-> between them, or go? Kept here, it sits on the right while the chat asks
-> for the story, and draws the story into itself.
+<Markdown id="wj3_warmup_intro">
+## Two-Minute Freewrite
+
+**Optional, and only two minutes.** You're about to tell a story about a moment
+that shaped how you feel about writing. This is a way to find it.
+
+**How it works.** Start the clock and write about any writing memory that
+comes to mind: a comment on a paper, a grade, something you were proud of, the
+night before a deadline. Then:
+
+- **Keep going.** If you run out, write "I'm stuck" until the next thing comes.
+- **Don't fix anything.** Spelling, grammar, whether it's any good: not now. The
+  box won't let you delete. That's the point, not a bug.
+- **Try not to read it back** until the time is up.
+
+When the clock stops, read what you have. Pull anything you like into your story.
 </Markdown>
 <Use ref="wj2_freewrite_timer" />
+<Markdown id="wj3_warmup_origin">
+**Where this comes from.** [Peter Elbow](https://en.wikipedia.org/wiki/Peter_Elbow)
+made freewriting famous in *Writing Without Teachers* (1973), a book he wrote
+after his own writing froze so badly that he left graduate school. His idea: the
+part of you that produces words and the part that judges them can't work at the
+same time, so give the producer a few minutes alone. The word itself was coined
+by his colleague Ken Macrorie. Forty years earlier, Dorothea Brande had proposed
+something close in *Becoming a Writer* (1934): fifteen minutes every morning, as
+fast as you can, before the judging part of your mind is fully awake. Her book
+opens with the four difficulties writers run into, and one of them is exactly the
+one this chat started with: not being able to write at all.
+</Markdown>
+<Collapsible id="wj3_warmup_more" title="Want to go deeper?">
+<Markdown id="wj3_warmup_links">
+Both books are short, plain-spoken, and free to read:
+
+- Peter Elbow, [*Writing Without Teachers*](https://archive.org/details/writingwithoutte0000elbo) (1973), on the Internet Archive.
+- Dorothea Brande, [*Becoming a Writer*](https://archive.org/details/becomingwriter00bran) (1934), on the Internet Archive.
+- Wikipedia on [free writing](https://en.wikipedia.org/wiki/Free_writing) and its history.
+</Markdown>
+</Collapsible>
 </Vertical> <!-- wj3_warmup -->
 
 
@@ -1460,14 +1492,14 @@ why — a sentence or two each. The thin marker shows where you just put yoursel
 
 <Vertical id="wj3_story_input">
 <Markdown>**Write your story in this box.** Tell it like a story, not a summary —
-what happened, how it felt, and how it has shaped your writing since. The
-warm-up on the right was only to get you going; pull anything you want from it.</Markdown>
+what happened, how it felt, and how it has shaped your writing since. If you did
+the freewrite, pull anything you want from it.</Markdown>
 <TextArea id="wj3_story_text" rows="10" placeholder="Write your story here." />
-<!-- The box starts empty even when the warm-up on the right is full, so the
-     first count line speaks to that case: it names the warm-up words and
-     says the story itself goes here. -->
+<!-- The box starts empty even when the freewrite is full, so the first count
+     line speaks to that case: it names the freewrite words and says the story
+     itself goes here. -->
 <Markdown when="wordcount(@wj3_story_text.value) === 0 &amp;&amp; wordcount(@wj2_freewrite.value) &gt; 0">
-*You've got {{wordcount(@wj2_freewrite.value)}} words warmed up on the right. The story itself goes in this box — start with the part that matters most.*
+*You've got {{wordcount(@wj2_freewrite.value)}} words from the freewrite. The story itself goes in this box — start with the part that matters most.*
 </Markdown>
 <Markdown when="wordcount(@wj3_story_text.value) &lt; 150 &amp;&amp; !(wordcount(@wj3_story_text.value) === 0 &amp;&amp; wordcount(@wj2_freewrite.value) &gt; 0)">
 *Keep going — {{wordcount(@wj3_story_text.value)}} of 150 words so far.*
