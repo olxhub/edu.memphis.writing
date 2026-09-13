@@ -1477,25 +1477,34 @@ in this journal — a few honest sentences are plenty.
 <TextArea id="wj3_fit_text" rows="3" placeholder="It fits because… / It misses because…" />
 </Vertical> <!-- wj3_fit_input -->
 
-<Markdown id="wj3_doc_wj3_now_input">**Revised** — the student's own placement on the three scales, inline in the chat as its own turn after the fit question; "a year from now" is seeded from these values.</Markdown>
+<Markdown id="wj3_doc_wj3_now_input">**Revised** — the student's own placement on the three scales, inline in the chat as its own turn after the fit question, each line carrying a thin "quiz" marker where the quiz put them so "does it fit?" is a visible comparison; "a year from now" is seeded from these values.</Markdown>
 
 <!-- Its own chat turn rather than part of wj3_fit_input: three lines with
      their labels are a screenful in the chat column, so the fit question
-     gets answered on its own before these appear. -->
+     gets answered on its own before these appear.
+
+     THE QUIZ'S MARKER IS ON EACH LINE (the same expression the results lines draw,
+     labelled "quiz"), which primes the student toward it by design: "does it fit?" is a
+     comparison, and a comparison needs both points visible. The alternative on the table
+     is asking for the self-placement BEFORE the results (journal3-changes.md candidate
+     18), which removes these markers and the anchoring with them. -->
 <Vertical id="wj3_now_input">
 <Markdown id="wj3_now_instructions">*Put yourself on each line.*</Markdown>
 <Markdown id="wj3_now_purpose_label">**Purpose**</Markdown>
-<NumberLineInput id="wj3_now_purpose" min="0" max="100" step="1" snap="step">
+<NumberLineInput id="wj3_now_purpose" min="0" max="100" step="1" snap="step"
+                 reference="Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code]))" referenceLabel="quiz">
   <Tick id="wj3_now_purpose_expression" value="0"  >Expression</Tick>
   <Tick id="wj3_now_purpose_evaluation" value="100">Evaluation</Tick>
 </NumberLineInput>
 <Markdown id="wj3_now_orientation_label">**Orientation**</Markdown>
-<NumberLineInput id="wj3_now_orientation" min="0" max="100" step="1" snap="step">
+<NumberLineInput id="wj3_now_orientation" min="0" max="100" step="1" snap="step"
+                 reference="Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code]))" referenceLabel="quiz">
   <Tick id="wj3_now_orientation_growth"      value="0"  >Growth</Tick>
   <Tick id="wj3_now_orientation_performance" value="100">Performance</Tick>
 </NumberLineInput>
 <Markdown id="wj3_now_experience_label">**Experience**</Markdown>
-<NumberLineInput id="wj3_now_experience" min="0" max="100" step="1" snap="step">
+<NumberLineInput id="wj3_now_experience" min="0" max="100" step="1" snap="step"
+                 reference="Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code]))" referenceLabel="quiz">
   <Tick id="wj3_now_experience_engagement" value="0"  >Engagement</Tick>
   <Tick id="wj3_now_experience_avoidance"  value="100">Avoidance</Tick>
 </NumberLineInput>
