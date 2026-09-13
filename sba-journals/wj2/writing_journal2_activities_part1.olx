@@ -1171,7 +1171,7 @@ picture of how you relate to writing *right now*.
 </Vertical> <!-- wj2_results -->
 
 
-<Markdown id="wj3_doc_wj3_results">**Revised** — names the dimensions Purpose / Orientation / Experience, cites questions by number, reads a submitted default order as a real ranking, and closes with fixed text.</Markdown>
+<Markdown id="wj3_doc_wj3_results">**Revised** — the three dimensions are drawn as lines, with a marker where the student's own answers put them, computed from the same codes as the live lines under the quiz header; Alma then explains the placements instead of restating them — she cites questions by number, reads a submitted default order as a real ranking, and closes with fixed text.</Markdown>
 
 <!-- The prompt is this journal's longest piece of authored text and the one place the
      three dimensions, the 26 statements and the five ranking sets all have to agree.
@@ -1179,24 +1179,72 @@ picture of how you relate to writing *right now*.
      writer's-block take codes are the tool's whole picture of the student, and the
      directions forbid citing anything absent from the data below it.
      The closing paragraph is fixed text, not generated, so the takeaway is the same for
-     every student however the placement comes out. -->
+     every student however the placement comes out.
+
+     WHERE vs WHY. The three lines above say WHERE the student landed and this prompt says
+     WHY, and it is told the positions are drawn for it and forbidden to name one -- so the
+     prose cannot disagree with the markers, because it makes no claim about position at
+     all. That split is forced: a prompt body is assembled from its text and the VALUES of
+     the blocks inside it (`<Ref>`), and nothing in it is interpolated -- a double-brace
+     expression reaches the model as its own source text -- while a display line stores no
+     value to Ref. There is no way today to hand a computed number to an LLMAction. If
+     that changes (an interpolated prompt body, or a block that stores an expression's
+     value), pass
+     `Math.round(50 + 25 * average([...]))` per dimension, exactly as the lines and the
+     journal page compute it, and let the model name the lean itself. -->
 
 <Vertical id="wj3_results">
-<Markdown>
+<Markdown id="wj3_results_intro">
 ## Three Dimensions of Writing Personalities
 
-To see your results, press the button. Your answers will be used to work out
-where you land on the three dimensions: Purpose, Orientation, and Experience.
-
-Remember: these are spectrums, not labels. There's no good or bad end — just
-a picture of how you relate to writing right now.
+Here is where your answers put you on the three dimensions. These are
+spectrums, not labels — there is no good or bad end, just a picture of how you
+relate to writing right now.
 </Markdown>
-<LLMFeedback id="wj3_results_feedback" render="markdown" />
-<ActionButton id="wj3_results_btn" label="Show me my results">
+
+<!-- THE SAME LINES AS UNDER THE QUIZ HEADER, read once at the end instead of live: the
+     same 0..100 scale, the same pole labels, the same memberships, and the same
+     arithmetic (`50 + 25 * average(...)` over the items' codes, see the LIVE DIMENSIONS
+     note in wj2_survey). Math.round wraps it here only because showValue prints the
+     number: an average over fifteen codes is rarely an integer, and "61.667" beside a
+     line the student is meant to read as a picture is noise. The rounding is the same one
+     the journal page prints, so the number on the line, the number in the PDF and the
+     number the student quotes back are one integer. A student who answered nothing has no
+     position at all -- average() is absent, no marker is drawn, and the placeholder speaks
+     instead. -->
+<Markdown id="wj3_results_purpose_label">**Purpose**</Markdown>
+<NumberLineInput id="wj3_results_purpose" min="0" max="100" step="1" snap="step" display="true"
+                 initial="Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code]))"
+                 markerLabel="you" showValue="true"
+                 placeholder="No answers yet — take the quiz and your position appears here.">
+  <Tick id="wj3_results_purpose_expression" value="0"  >Expression</Tick>
+  <Tick id="wj3_results_purpose_evaluation" value="100">Evaluation</Tick>
+</NumberLineInput>
+<Markdown id="wj3_results_orientation_label">**Orientation**</Markdown>
+<NumberLineInput id="wj3_results_orientation" min="0" max="100" step="1" snap="step" display="true"
+                 initial="Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code]))"
+                 markerLabel="you" showValue="true"
+                 placeholder="No answers yet — take the quiz and your position appears here.">
+  <Tick id="wj3_results_orientation_growth"      value="0"  >Growth</Tick>
+  <Tick id="wj3_results_orientation_performance" value="100">Performance</Tick>
+</NumberLineInput>
+<Markdown id="wj3_results_experience_label">**Experience**</Markdown>
+<NumberLineInput id="wj3_results_experience" min="0" max="100" step="1" snap="step" display="true"
+                 initial="Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code]))"
+                 markerLabel="you" showValue="true"
+                 placeholder="No answers yet — take the quiz and your position appears here.">
+  <Tick id="wj3_results_experience_engagement" value="0"  >Engagement</Tick>
+  <Tick id="wj3_results_experience_avoidance"  value="100">Avoidance</Tick>
+</NumberLineInput>
+
+<Markdown id="wj3_results_ask">Alma has read the same answers. Press the button and she will say what she sees in the picture.</Markdown>
+<ActionButton id="wj3_results_btn" label="What does Alma see in this?">
 <LLMAction id="wj3_results_action" target="wj3_results_feedback">
         You are the Writers' Circle quiz tool. A first-year college composition student just finished a
-        playful, Buzzfeed-style writing-attitudes quiz. Your job is to place them on THREE continuums and
-        reflect it back warmly, like a personality-quiz result — never clinical, never a grade.
+        playful, Buzzfeed-style writing-attitudes quiz. They are looking at THREE continuums with their
+        own position marked on each. Your job is to read those answers back warmly, like a
+        personality-quiz result — never clinical, never a grade — and say what put them where the lines
+        show.
 
         HOW THE QUIZ DATA IS ENCODED:
         Part 1 answers arrive as one value per statement id (s01-s26): the student's chosen agreement
@@ -1229,13 +1277,18 @@ a picture of how you relate to writing right now.
         s24 understand things better when I write -> Expression. s25 enjoy writing sometimes -> Engagement.
         s26 sometimes get in the zone and writing comes easily -> Engagement.
 
-        LEAN LABELS. Every placement is named with exactly ONE of these five phrases -- one per
-        dimension, no others, no hedged variants (X is the name of one end of the dimension):
-        all the way toward X
-        strongly toward X
-        fairly strongly toward X
-        slightly toward X
-        right in the middle
+        WHERE THEY LAND IS ALREADY DRAWN, AND NOT BY YOU. Three lines sit on the screen directly
+        above your text, one per dimension, each with a marker labelled "you" and the position
+        printed beside it. A position runs 0 to 100: 0 is the dimension's FIRST pole (Expression,
+        Growth, Engagement), 100 its SECOND (Evaluation, Performance, Avoidance), 50 the middle.
+        Those numbers are computed from the very answers you are reading, and the student is
+        looking at them. You are NOT given them. So never state, guess or imply a position: no
+        numbers, no "you lean strongly toward Expression", no "you're right in the middle", no
+        overall verdict on a dimension, and no scale drawn in text. Your job is the WHY, not the
+        WHERE -- which of their own answers pull toward which end, and how strongly they said it.
+        "Learning by writing and choosing your own topics pull hard toward the Expression end,
+        while caring about grades pulls the other way" is right; "you land toward Expression" is
+        not.
 
         THE THREE DIMENSIONS (the names the student just read on the explainer screen; use these
         same names):
@@ -1331,27 +1384,23 @@ a picture of how you relate to writing right now.
         there are no answers to read yet and invite them to take the quiz, then stop.
         Otherwise, address the student as "you" and write Markdown with this exact shape:
         - A short warm opening line (one sentence) that nods to the three dimensions they just read
-          about -- Purpose, Orientation, Experience -- before showing where they land.
+          about -- Purpose, Orientation, Experience -- and to the three lines they are looking at.
         - Then a "### " subheading for each of the three dimensions, in this order: "### Purpose:
           Expression ↔ Evaluation", "### Orientation: Growth ↔ Performance", "### Experience:
           Engagement ↔ Avoidance". Under each:
-            * One line showing the spectrum as a simple text track with a star marking where they land,
-              with the two poles labeled at the ends, for example:
-              `Expression ────────★──── Evaluation`
-              Move the ★ left or right to match how strongly they lean (near the middle if their answers
-              are mixed).
-            * Then in **bold**, name the lean plainly using exactly ONE of the five LEAN LABELS and
-              nothing else, e.g. "**You lean fairly strongly toward Expression.**" or "**You're right
-              in the middle.**"
-            * Then one or two sentences explaining the placement by quoting a couple of the student's
-              OWN answers (e.g., that they strongly agreed writing helps them learn, or disagreed that
-              writing is boring). Only cite statements whose id actually appears in the data above with a
-              value; NEVER attribute an answer to a statement they did not answer, and never invent or
-              assume a response. If a statement is absent from the data, they did not answer it. When
-              you cite a statement, write it as (Question N), e.g. (Question 9) -- never the id.
+            * Two or three sentences explaining what put them where the line shows, by quoting a
+              couple of the student's OWN answers (e.g., that they strongly agreed writing helps
+              them learn, or disagreed that writing is boring) and saying which end of THAT
+              dimension each answer pulls toward. Only cite statements whose id actually appears in
+              the data above with a value; NEVER attribute an answer to a statement they did not
+              answer, and never invent or assume a response. If a statement is absent from the data,
+              they did not answer it. When you cite a statement, write it as (Question N), e.g.
+              (Question 9) -- never the id.
+            * If their answers on a dimension pull both ways, say so plainly -- a mixed picture is a
+              real result and the line will be sitting near the middle.
         - Then a short paragraph beginning "**What you seem to value in good writing:**" drawing on their
           Part 2 priorities in one or two sentences (again, only the ones they actually ranked).
-        - If the student answered only a few statements overall, keep every placement tentative and say
+        - If the student answered only a few statements overall, keep every reading tentative and say
           so in plain language (e.g., "with only a few answers in, this is just a rough first read").
         - End with two sentences reminding them that these are tendencies shaped by experience, not fixed
           traits — that where they are today is not where they have to stay — and inviting them to think
@@ -1361,6 +1410,7 @@ a picture of how you relate to writing right now.
         "right" one.
 </LLMAction>
 </ActionButton>
+<LLMFeedback id="wj3_results_feedback" render="markdown" />
 <Markdown>
 Your results are a representation of your relationship with writing based on
 the way you answered the questions and ranked the writing priorities. These
@@ -1370,11 +1420,6 @@ of your relationship with writing, you can be more intentional about what you
 want your relationship with writing to be.
 </Markdown>
 
-<Markdown id="wj3_decide_scale">
-> **Decision point.** The scale is drawn in text (`Expression ────★──── Evaluation`).
-> A real widget needs a continuum block and the tool returning three positions
-> as numbers — build it for this round, or ship the text scale?
-</Markdown>
 </Vertical> <!-- wj3_results -->
 
 
@@ -2052,6 +2097,16 @@ they can change. That's the groundwork for the writing you'll do next in this co
 
 </Vertical> <!-- wj3_print_controls -->
 
+<!-- THREE NUMBERS PER DIMENSION: where the quiz put them, where they put themselves, and
+     where they want to be. The quiz number is the same Math.round(50 + 25 * average(...))
+     the results lines draw, so the page and the lines cannot print different numbers, and
+     it is guarded with isNumber() because average() over an untouched quiz is absent and
+     50 + 25 * absent is NaN. It is spelled out inline rather than read off a block
+     because nothing stores it -- a display line computes its position and keeps none.
+     Markdown interpolation re-parses its expressions on every dispatch (see
+     notes/live-feedback-scoping.md #2), which is why the live screens keep big expressions
+     in attributes; this page is rendered once, on the way to a PDF, so the cost is fine
+     here. -->
 <Markdown>
 # Writing Journal 3: How Do You Feel About Writing?
 
@@ -2067,15 +2122,15 @@ they can change. That's the groundwork for the writing you'll do next in this co
 
 ## A year from now
 
-**Purpose:** now {{@wj3_now_purpose.value}}, a year from now {{@wj3_future_purpose.value}} (0 = Expression, 100 = Evaluation)
+**Purpose:** quiz {{isNumber(average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) ? Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) : '—'}}, now {{@wj3_now_purpose.value}}, a year from now {{@wj3_future_purpose.value}} (0 = Expression, 100 = Evaluation)
 
 {{@wj3_future_purpose_note.value}}
 
-**Orientation:** now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)
+**Orientation:** quiz {{isNumber(average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) ? Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) : '—'}}, now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)
 
 {{@wj3_future_orientation_note.value}}
 
-**Experience:** now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)
+**Experience:** quiz {{isNumber(average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) ? Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) : '—'}}, now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)
 
 {{@wj3_future_experience_note.value}}
 </Markdown>

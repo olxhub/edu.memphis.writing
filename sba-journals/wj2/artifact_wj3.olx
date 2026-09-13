@@ -44,13 +44,19 @@ export your PDF.*
   </Collapsible>
 
   <Collapsible id="wj3_artifact_future" title="3. A year from now">
-    <!-- The two numbers are interpolated rather than <Ref>-ed so each dimension reads as one
-         sentence; the note underneath stays a <Ref>, the way the other sections show prose. -->
-    <Markdown id="wj3_art_future_p_line">**Purpose:** now {{@wj3_now_purpose.value}}, a year from now {{@wj3_future_purpose.value}} (0 = Expression, 100 = Evaluation)</Markdown>
+    <!-- The three numbers are interpolated rather than <Ref>-ed so each dimension reads as one
+         sentence; the note underneath stays a <Ref>, the way the other sections show prose.
+         The quiz number is the expression the results lines draw, guarded with isNumber()
+         because an untouched quiz has no average and 50 + 25 * absent is NaN; nothing stores
+         it, since a display line computes its position and keeps none. Interpolation
+         re-parses per dispatch (notes/live-feedback-scoping.md #2), and a Collapsible renders
+         its children only while it is open, so this costs nothing until the student opens the
+         section. -->
+    <Markdown id="wj3_art_future_p_line">**Purpose:** quiz {{isNumber(average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) ? Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) : '—'}}, now {{@wj3_now_purpose.value}}, a year from now {{@wj3_future_purpose.value}} (0 = Expression, 100 = Evaluation)</Markdown>
     <Ref id="wj3_art_future_p" target="wj3_future_purpose_note" />
-    <Markdown id="wj3_art_future_o_line">**Orientation:** now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)</Markdown>
+    <Markdown id="wj3_art_future_o_line">**Orientation:** quiz {{isNumber(average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) ? Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) : '—'}}, now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)</Markdown>
     <Ref id="wj3_art_future_o" target="wj3_future_orientation_note" />
-    <Markdown id="wj3_art_future_e_line">**Experience:** now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)</Markdown>
+    <Markdown id="wj3_art_future_e_line">**Experience:** quiz {{isNumber(average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) ? Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) : '—'}}, now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)</Markdown>
     <Ref id="wj3_art_future_e" target="wj3_future_experience_note" />
   </Collapsible>
 
