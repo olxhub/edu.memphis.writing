@@ -107,21 +107,21 @@ Lee: of course ranking is your favorite part, Richard [face=cheeky]
 Your Writing Personality
 -----------------
 
-Alma: ok before you see your results, read about three continuums that will help you think about your relationship with writing. It's kinda fun. Look right now ---> [face=smile]
+Alma: ok so those three lines that kept moving while you answered? they're the actual thing. here's what they mean [face=explaining]
 
 ::wj3_dimensions [display=target:wj3_sidebar label="Your relationship with writing on three dimensions"]
 
-Lee: I already know I'm going to be dramatically self-expression [face=cheeky]
+Lee: I don't even need the explanation. mine has been parked on Expression the whole time [face=cheeky]
 
-Richard: it's less ridiculous than I expected. **Mark as read** when you're through, and she'll show you yours [face=serious]
-
-Alma: Hit **Show me my results** on the right and you'll see where you land on all three dimensions.
+Richard: it's less ridiculous than I expected [face=serious]
 
 --- wait @wj3_dimensions_done.value ---
 
 Your Results
 ------------
 ::wj3_results [display=target:wj3_sidebar label="Three dimensions of writing personalities"]
+
+Alma: so that's where your answers put you. want to hear what I see in them? [face=smile]
 
 --- wait @wj3_results_feedback.value ---
 
