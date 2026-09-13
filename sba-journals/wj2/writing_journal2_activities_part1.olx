@@ -216,6 +216,7 @@ Whatever your view, there's no wrong answer.
      =================================================================== -->
 
 <Markdown id="wj3_doc_wj2_survey">**Shared** — used by both the original and the revised journal; the header's intro paragraph and eight statements carry the instructors' revised wording, which both versions show.</Markdown>
+<Markdown id="wj3_doc_wj3_live_dimensions">**Revised** — three live dimension lines under the quiz header, drawn from the codes the items already carry and moving as each statement is answered; whether they show while answering, only between the parts, or only on request is still open (journal3-changes.md candidate 17).</Markdown>
 
 <Vertical id="wj2_survey">
 <Markdown>
@@ -225,6 +226,56 @@ Pick an emoji response for each statement to help us discover where your
 attitude falls on a writing spectrum. Are you more about expression or
 evaluation? Growth or performance? Engagement or avoidance?
 </Markdown>
+
+<!-- LIVE DIMENSIONS. The three continuums the results screen reports, drawn here while the
+     student is still answering: a marker on each line that moves with every statement.
+
+     THE ARITHMETIC. Each item's code= is -2..2 and points toward the SECOND pole of its
+     dimension (Evaluation / Performance / Avoidance) -- see the CODES note below. The 15
+     items that point at the FIRST pole are reverseCoded and already carry NEGATED codes, so
+     nothing has to be flipped here: a PLAIN average of the member items is the dimension,
+     and `50 + 25 * average(...)` maps it onto the 0..100 line (-2 -> 0, 0 -> 50, 2 -> 100),
+     which is the same scale, with the same pole labels, that the student places themself on
+     later in wj3_now_input.
+
+     WHILE IT IS EMPTY. `average()` SKIPS items with no answer, so each line starts with no
+     marker at all (the placeholder text stands in for it), shows a position from the first
+     answer on, and re-averages over exactly the items answered so far. Nothing is stored:
+     these are display-only lines, computed at render time from the sNN codes, and they write
+     no field of their own.
+
+     MEMBERSHIPS are the ones in the results prompt's "THE THREE DIMENSIONS" legend below and
+     are listed there in the same order -- first-pole signals, then second-pole signals. s04,
+     s06, s12 and s16 each belong to two dimensions and point the same way in both, so they
+     appear in two lists.
+
+     OPEN DECISION. Showing a running score while the student answers is also a demand cue --
+     a marker visibly drifting toward "Evaluation" can be pushed back by later answers.
+     Whether this shows during the quiz (as here), only between Part 1 and Part 2, or only on
+     request, is the owner's call: journal3-changes.md candidate 17. -->
+<Vertical id="wj3_live_dimensions">
+<Markdown id="wj3_live_purpose_label">**Purpose**</Markdown>
+<NumberLineInput id="wj3_live_purpose" min="0" max="100" step="1" snap="step" display="true"
+                 initial="50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])"
+                 placeholder="Appears as you answer.">
+  <Tick id="wj3_live_purpose_expression" value="0"  >Expression</Tick>
+  <Tick id="wj3_live_purpose_evaluation" value="100">Evaluation</Tick>
+</NumberLineInput>
+<Markdown id="wj3_live_orientation_label">**Orientation**</Markdown>
+<NumberLineInput id="wj3_live_orientation" min="0" max="100" step="1" snap="step" display="true"
+                 initial="50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])"
+                 placeholder="Appears as you answer.">
+  <Tick id="wj3_live_orientation_growth"      value="0"  >Growth</Tick>
+  <Tick id="wj3_live_orientation_performance" value="100">Performance</Tick>
+</NumberLineInput>
+<Markdown id="wj3_live_experience_label">**Experience**</Markdown>
+<NumberLineInput id="wj3_live_experience" min="0" max="100" step="1" snap="step" display="true"
+                 initial="50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])"
+                 placeholder="Appears as you answer.">
+  <Tick id="wj3_live_experience_engagement" value="0"  >Engagement</Tick>
+  <Tick id="wj3_live_experience_avoidance"  value="100">Avoidance</Tick>
+</NumberLineInput>
+</Vertical> <!-- wj3_live_dimensions -->
 
 <Markdown when="@s26.value">
 **That's all 26 — nice work.** Head back to the chat on the left to keep going.
