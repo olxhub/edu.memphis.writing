@@ -236,12 +236,16 @@ evaluation? Growth or performance? Engagement or avoidance?
      dimension (Evaluation, Performance, Avoidance), so a positive code always means
      "further toward the second pole" however the statement happens to be worded.
      Statements that point at the FIRST pole (Expression, Growth, Engagement) are therefore
-     REVERSED here, on the item: agreeing with "Writing is a skill I want to get better at"
-     (s01, a Growth signal) is recorded as -1. Reversing once, in the content, means the
-     results prompt, the event stream, and any later analysis all read the same numbers
-     instead of each re-deriving which items were reversed. The memberships are the ones
-     listed under "THE THREE DIMENSIONS" in the results prompt below; s04, s06, s12 and s16
-     each belong to two dimensions and point the same way in both. -->
+     REVERSE-CODED: agreeing with "Writing is a skill I want to get better at" (s01, a Growth
+     signal) is recorded as -1. Those 15 items say so twice over -- reverseCoded="true" on the
+     ChoiceInput states the intent, and the four code= values state the numbers. Either alone
+     would do the job (reverseCoded negates the default table by itself), but together they
+     check each other: a dropped minus sign on any one option, or a reverseCoded attribute
+     added to or lost from an item, makes the two disagree and the parser says so. Reversing
+     once, in the content, means the results prompt, the event stream, and any later analysis
+     all read the same numbers instead of each re-deriving which items were reversed. The
+     memberships are the ones listed under "THE THREE DIMENSIONS" in the results prompt below;
+     s04, s06, s12 and s16 each belong to two dimensions and point the same way in both. -->
 
 <!-- A new statement appears at the top of the pane; the OnShow flashes it so the
      student sees where it landed without an instruction telling them to look. -->
@@ -252,7 +256,7 @@ evaluation? Growth or performance? Engagement or avoidance?
 
 Sometimes I get in the zone and writing comes easily.
 </Markdown>
-<ChoiceInput id="s26">
+<ChoiceInput id="s26" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -267,7 +271,7 @@ Sometimes I get in the zone and writing comes easily.
 
 I enjoy writing sometimes.
 </Markdown>
-<ChoiceInput id="s25">
+<ChoiceInput id="s25" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -282,7 +286,7 @@ I enjoy writing sometimes.
 
 I understand things better when I write about them.
 </Markdown>
-<ChoiceInput id="s24">
+<ChoiceInput id="s24" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -297,7 +301,7 @@ I understand things better when I write about them.
 
 I enjoy writing most when I get to decide what to write about.
 </Markdown>
-<ChoiceInput id="s23">
+<ChoiceInput id="s23" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -312,7 +316,7 @@ I enjoy writing most when I get to decide what to write about.
 
 I find writing interesting.
 </Markdown>
-<ChoiceInput id="s22">
+<ChoiceInput id="s22" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -327,7 +331,7 @@ I find writing interesting.
 
 I enjoy writing in school.
 </Markdown>
-<ChoiceInput id="s21">
+<ChoiceInput id="s21" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -357,7 +361,7 @@ Overall, writing is hard for me.
 
 When I write, I create content that I can be proud of.
 </Markdown>
-<ChoiceInput id="s19">
+<ChoiceInput id="s19" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -387,7 +391,7 @@ It is important that I get good grades on writing assignments.
 
 I feel confident when I am writing.
 </Markdown>
-<ChoiceInput id="s17">
+<ChoiceInput id="s17" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -447,7 +451,7 @@ I dislike writing.
 
 There are some subjects that I really enjoy writing about.
 </Markdown>
-<ChoiceInput id="s13">
+<ChoiceInput id="s13" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -477,7 +481,7 @@ I like getting lots of shares or likes when I post something online.
 
 I prefer writing when it isn't required.
 </Markdown>
-<ChoiceInput id="s11">
+<ChoiceInput id="s11" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -492,7 +496,7 @@ I prefer writing when it isn't required.
 
 It is important to know how to write well.
 </Markdown>
-<ChoiceInput id="s10">
+<ChoiceInput id="s10" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -507,7 +511,7 @@ It is important to know how to write well.
 
 Writing helps me learn.
 </Markdown>
-<ChoiceInput id="s09">
+<ChoiceInput id="s09" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -522,7 +526,7 @@ Writing helps me learn.
 
 I get so involved in my writing that I often lose track of time.
 </Markdown>
-<ChoiceInput id="s08">
+<ChoiceInput id="s08" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -567,7 +571,7 @@ It upsets me when I get low grades on a writing assignment.
 
 I like to write outside of school.
 </Markdown>
-<ChoiceInput id="s05">
+<ChoiceInput id="s05" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
@@ -626,7 +630,7 @@ It is frustrating to have to write about a subject I did not choose.
 
 Writing is a skill I want to get better at.
 </Markdown>
-<ChoiceInput id="s01">
+<ChoiceInput id="s01" reverseCoded="true">
   <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
   <Key value="agree"             code="-1"> 🙂 Agree             </Key>
   <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
