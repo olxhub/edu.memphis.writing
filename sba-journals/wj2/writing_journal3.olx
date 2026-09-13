@@ -70,7 +70,7 @@ lang: en-Latn-US
     </Vertical>
 
     <!-- The revised journal is one part, so its whole record fits on one page.
-         Nothing teleports here; the chat's closing line names the tab. -->
+         The chat's last command opens this tab once the closing beat is read. -->
     <Vertical id="wj3_print_tab" title="Print &amp; Submit">
       <Use ref="wj3_print" />
     </Vertical>
