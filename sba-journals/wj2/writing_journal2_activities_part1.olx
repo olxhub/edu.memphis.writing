@@ -230,6 +230,19 @@ evaluation? Growth or performance? Engagement or avoidance?
 **That's all 26 — nice work.** Head back to the chat on the left to keep going.
 </Markdown>
 
+<!-- CODES. Every option below carries an explicit code= : the number the response is
+     RECORDED as -- the survey sense of the word (an SPSS code, a Qualtrics recode value),
+     not a score and not a grade. Codes point toward the SECOND pole of the statement's
+     dimension (Evaluation, Performance, Avoidance), so a positive code always means
+     "further toward the second pole" however the statement happens to be worded.
+     Statements that point at the FIRST pole (Expression, Growth, Engagement) are therefore
+     REVERSED here, on the item: agreeing with "Writing is a skill I want to get better at"
+     (s01, a Growth signal) is recorded as -1. Reversing once, in the content, means the
+     results prompt, the event stream, and any later analysis all read the same numbers
+     instead of each re-deriving which items were reversed. The memberships are the ones
+     listed under "THE THREE DIMENSIONS" in the results prompt below; s04, s06, s12 and s16
+     each belong to two dimensions and point the same way in both. -->
+
 <!-- A new statement appears at the top of the pane; the OnShow flashes it so the
      student sees where it landed without an instruction telling them to look. -->
 <Vertical id="wj2_item_26" when="@s25.value">
@@ -240,10 +253,10 @@ evaluation? Growth or performance? Engagement or avoidance?
 Sometimes I get in the zone and writing comes easily.
 </Markdown>
 <ChoiceInput id="s26">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -255,10 +268,10 @@ Sometimes I get in the zone and writing comes easily.
 I enjoy writing sometimes.
 </Markdown>
 <ChoiceInput id="s25">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -270,10 +283,10 @@ I enjoy writing sometimes.
 I understand things better when I write about them.
 </Markdown>
 <ChoiceInput id="s24">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -285,10 +298,10 @@ I understand things better when I write about them.
 I enjoy writing most when I get to decide what to write about.
 </Markdown>
 <ChoiceInput id="s23">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -300,10 +313,10 @@ I enjoy writing most when I get to decide what to write about.
 I find writing interesting.
 </Markdown>
 <ChoiceInput id="s22">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -315,10 +328,10 @@ I find writing interesting.
 I enjoy writing in school.
 </Markdown>
 <ChoiceInput id="s21">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -330,10 +343,10 @@ I enjoy writing in school.
 Overall, writing is hard for me.
 </Markdown>
 <ChoiceInput id="s20">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -345,10 +358,10 @@ Overall, writing is hard for me.
 When I write, I create content that I can be proud of.
 </Markdown>
 <ChoiceInput id="s19">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -360,10 +373,10 @@ When I write, I create content that I can be proud of.
 It is important that I get good grades on writing assignments.
 </Markdown>
 <ChoiceInput id="s18">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -375,10 +388,10 @@ It is important that I get good grades on writing assignments.
 I feel confident when I am writing.
 </Markdown>
 <ChoiceInput id="s17">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -390,10 +403,10 @@ I feel confident when I am writing.
 I like when people compliment my writing skills.
 </Markdown>
 <ChoiceInput id="s16">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -405,10 +418,10 @@ I like when people compliment my writing skills.
 I find it difficult to communicate my ideas through writing.
 </Markdown>
 <ChoiceInput id="s15">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -420,10 +433,10 @@ I find it difficult to communicate my ideas through writing.
 I dislike writing.
 </Markdown>
 <ChoiceInput id="s14">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -435,10 +448,10 @@ I dislike writing.
 There are some subjects that I really enjoy writing about.
 </Markdown>
 <ChoiceInput id="s13">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -450,10 +463,10 @@ There are some subjects that I really enjoy writing about.
 I like getting lots of shares or likes when I post something online.
 </Markdown>
 <ChoiceInput id="s12">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -465,10 +478,10 @@ I like getting lots of shares or likes when I post something online.
 I prefer writing when it isn't required.
 </Markdown>
 <ChoiceInput id="s11">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -480,10 +493,10 @@ I prefer writing when it isn't required.
 It is important to know how to write well.
 </Markdown>
 <ChoiceInput id="s10">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -495,10 +508,10 @@ It is important to know how to write well.
 Writing helps me learn.
 </Markdown>
 <ChoiceInput id="s09">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -510,10 +523,10 @@ Writing helps me learn.
 I get so involved in my writing that I often lose track of time.
 </Markdown>
 <ChoiceInput id="s08">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -525,10 +538,10 @@ I get so involved in my writing that I often lose track of time.
 I am too impatient to spend a lot of time writing.
 </Markdown>
 <ChoiceInput id="s07">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -540,10 +553,10 @@ I am too impatient to spend a lot of time writing.
 It upsets me when I get low grades on a writing assignment.
 </Markdown>
 <ChoiceInput id="s06">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -555,10 +568,10 @@ It upsets me when I get low grades on a writing assignment.
 I like to write outside of school.
 </Markdown>
 <ChoiceInput id="s05">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -570,10 +583,10 @@ I like to write outside of school.
 I worry that other people will criticize my writing.
 </Markdown>
 <ChoiceInput id="s04">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -585,10 +598,10 @@ I worry that other people will criticize my writing.
 Writing is usually boring for me.
 </Markdown>
 <ChoiceInput id="s03">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -600,10 +613,10 @@ Writing is usually boring for me.
 It is frustrating to have to write about a subject I did not choose.
 </Markdown>
 <ChoiceInput id="s02">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -614,10 +627,10 @@ It is frustrating to have to write about a subject I did not choose.
 Writing is a skill I want to get better at.
 </Markdown>
 <ChoiceInput id="s01">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 </Vertical> <!-- wj2_survey -->
