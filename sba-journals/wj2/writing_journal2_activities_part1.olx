@@ -2121,6 +2121,9 @@ they can change. That's the groundwork for the writing you'll do next in this co
      generated text last. <Use> is a DAG reference, so the boards and the feedback here
      are the same nodes the student worked on and can never disagree with them. -->
 
+<!-- The whole structure is always on the page, with a dash wherever nothing
+     has been written yet: students open this tab early to see what goes
+     where, and a page that grows section by section reads as broken. -->
 <Vertical id="wj3_print">
 
 <Vertical id="wj3_print_controls" print="false">
@@ -2175,33 +2178,39 @@ they can change. That's the groundwork for the writing you'll do next in this co
 ## My story — an experience that shaped me as a writer
 </Markdown>
 <Ref id="wj3_print_story" target="wj3_story_text" format="text" />
+<Markdown when="!isFilled(@wj3_story_text.value)">—</Markdown>
 <Markdown>
 ## Does the placement fit?
 
-**{{@wj3_fit.value}}**
+**{{isFilled(@wj3_fit.value) ? @wj3_fit.value : '—'}}**
 </Markdown>
 <Ref id="wj3_print_fit_text" target="wj3_fit_text" format="text" />
+<Markdown when="!isFilled(@wj3_fit_text.value)">—</Markdown>
 <Markdown>
 ## A year from now
 
-**Purpose:** quiz {{isNumber(average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) ? Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) : '—'}}, now {{@wj3_now_purpose.value}}, a year from now {{@wj3_future_purpose.value}} (0 = Expression, 100 = Evaluation)
+**Purpose:** quiz {{isNumber(average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) ? Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) : '—'}}, now {{isFilled(@wj3_now_purpose.value) ? @wj3_now_purpose.value : '—'}}, a year from now {{isFilled(@wj3_future_purpose.value) ? @wj3_future_purpose.value : '—'}} (0 = Expression, 100 = Evaluation)
 </Markdown>
 <Ref id="wj3_print_future_purpose_note" target="wj3_future_purpose_note" format="text" />
+<Markdown when="!isFilled(@wj3_future_purpose_note.value)">—</Markdown>
 <Markdown>
-**Orientation:** quiz {{isNumber(average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) ? Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) : '—'}}, now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)
+**Orientation:** quiz {{isNumber(average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) ? Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) : '—'}}, now {{isFilled(@wj3_now_orientation.value) ? @wj3_now_orientation.value : '—'}}, a year from now {{isFilled(@wj3_future_orientation.value) ? @wj3_future_orientation.value : '—'}} (0 = Growth, 100 = Performance)
 </Markdown>
 <Ref id="wj3_print_future_orientation_note" target="wj3_future_orientation_note" format="text" />
+<Markdown when="!isFilled(@wj3_future_orientation_note.value)">—</Markdown>
 <Markdown>
-**Experience:** quiz {{isNumber(average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) ? Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) : '—'}}, now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)
+**Experience:** quiz {{isNumber(average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) ? Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) : '—'}}, now {{isFilled(@wj3_now_experience.value) ? @wj3_now_experience.value : '—'}}, a year from now {{isFilled(@wj3_future_experience.value) ? @wj3_future_experience.value : '—'}} (0 = Engagement, 100 = Avoidance)
 </Markdown>
 <Ref id="wj3_print_future_experience_note" target="wj3_future_experience_note" format="text" />
+<Markdown when="!isFilled(@wj3_future_experience_note.value)">—</Markdown>
 
-<Markdown when="@wj2_freewrite.value">
+<Markdown>
 ## My two-minute freewrite
 
 *Unedited, by design.*
 </Markdown>
-<Ref id="wj3_print_freewrite" target="wj2_freewrite" format="text" when="@wj2_freewrite.value" />
+<Ref id="wj3_print_freewrite" target="wj2_freewrite" format="text" />
+<Markdown when="!isFilled(@wj2_freewrite.value)">—</Markdown>
 
 <Markdown>
 ---
@@ -2271,10 +2280,11 @@ they can change. That's the groundwork for the writing you'll do next in this co
 ## What Alma heard in my story
 </Markdown>
 <Use ref="wj3_response_feedback" />
-<Markdown when="@wj3_response_reply.value">
+<Markdown>
 **My answer to Alma's question**
 </Markdown>
-<Ref id="wj3_print_response_reply" target="wj3_response_reply" format="text" when="@wj3_response_reply.value" />
+<Ref id="wj3_print_response_reply" target="wj3_response_reply" format="text" />
+<Markdown when="!isFilled(@wj3_response_reply.value)">—</Markdown>
 
 </Vertical> <!-- wj3_print -->
 
