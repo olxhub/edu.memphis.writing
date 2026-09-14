@@ -59,8 +59,6 @@ Alma: What's YOUR take? is writer's block real thing or not? it's on the right -
 ::wj3_debate_react [display=target:wj3_sidebar label="What's your take on writer's block?"]
 --- wait @wj3_block_take.value ---
 
-// NOTE (instructors): ADD a LOCK to the Continue button until they answer
-
 Lee: nah bro, it's more than me having nothing to say. it's like my brain just refuses to come up with ideas or words.
 
 Lee: I used to think like that. but then I got an essay back in 9th grade covered in red ink, and I swear I have not been able to draft anything without freezing up since. so I don't think it's about not planning or willpower — I think it's about what happened to you before you even sat down to write [face=calm]
@@ -104,7 +102,6 @@ Alma: ok, here it is. one statement at a time. don't overthink it [face=smile]
 Richard: fine. I went in skeptical, but I went in [face=suspicious]
 
 Lee: ok this was weirdly kind of fun. some of these were calling me out lol [face=cheeky]
-
 
 What Makes Good Writing?
 ------------------------
@@ -197,8 +194,6 @@ Alma: ok. let's see what you wrote. no judgment. now make it the story [face=smi
 --- wait wordcount(@wj3_story_text.value) >= 150 ---
 
 Alma: Thanks for sharing your story!
-
-// NOTE (instructors): Also, Katie is happy that this part caught her flaking on the writing task xD
 
 ::wj3_alma_response [display=target:wj3_sidebar label="What Alma hears in your story"]
 
