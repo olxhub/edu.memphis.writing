@@ -46,6 +46,39 @@ Reviewer comments addressed:
 
 <Vertical id="wj2_activities_part1" title="Writing Journal 3 — Activities" launchable="true">
 
+<!-- REVIEW SCAFFOLD. This block and the one-line status notes before each screen
+     below are documentation, not activity: they render when an instructor opens
+     this bank as a page, and they are invisible to students, because the right-hand
+     pane is a UseHistory that renders one named screen at a time and never these. -->
+
+<Markdown id="wj3_doc_scaffold">
+### Writing Journal 3a is being reviewed — two versions run from this one bank
+
+Journal 3a exists twice right now: the original at `/wj2a` (`wj2a_sba_part1`) and
+the revised journal at `/wj3` (`wj3_sba`, `wj2/writing_journal3.olx`),
+opened in two browser tabs to compare. Both versions pull their screens from **this**
+file, so the vocabulary for every screen below is one of three words:
+
+- **Shared** — used by both the original and the revised journal. Editing it changes both.
+- **Original** — reached only by the original conversation, and on its way out.
+- **Revised** — reached only by the revised conversation. These are the screens prefixed
+  `wj3_`.
+
+The revised conversation lives in `wj2/writing_journal3_dialogue.chatpeg` — the
+instructors' rewrite, with their `// NOTE (instructors):` lines left in it as the
+to-do list for the screens this bank still owes it. It drives its own pane,
+`wj3_sidebar`. The original's chatpeg and `wj2_sidebar` are untouched.
+
+Every id prefixed `wj3_` belongs to the revised version alone; everything still
+prefixed `wj2_` is shared. The namespace is shared too — everything under
+`sba-journals/` parses as one — so the two prefixes are what keeps them apart.
+
+*Each screen below carries its own status note. Where a revised screen exists, the
+original it replaces is marked **Original only** and stays in place, still reached by
+the original conversation.*
+</Markdown>
+
+
 <!-- The Export-as-PDF button lives on the wj2_print page at the bottom of this file,
      which writing_journal2b_sba_part1.olx mounts as its "Print &amp; Submit" tab. -->
 
@@ -54,34 +87,38 @@ Reviewer comments addressed:
      INTRO SLIDE
      =================================================================== -->
 
+<Markdown id="wj3_doc_wj2_welcome">**Shared** — used by both the original and the revised journal; the intro is the instructors' revised wording, which both versions show.</Markdown>
+
 <Markdown id="wj2_welcome">
-## Writing Journal 3: How Do You *Really* Feel About Writing?
+# Writing Journal 3: How Do You Feel About Writing?
 
-It's the middle of your first-year writing unit, and your group chat with the **Writers' Circle** is
-blowing up. **Lee** is stuck on the Literacy Narrative assignment and calling it writer's block.
-**Richard** says writer's block isn't even real. **Alma** isn't so sure — something happened to her in
-ninth grade that she's never quite shaken.
+Your group chat with the Writers' Circle is blowing up. Lee says he has
+writer's block. Richard says writer's block isn't even real. Alma isn't so
+sure — something happened in ninth grade that she's never quite shaken.
 
-You don't have to have the answer. This journal is a chance to notice something most writers never stop
-to name: **how you actually feel about writing, and where those feelings came from.**
+This journal asks you to consider something most writers never stop to name:
+how you actually feel about writing and where those feelings came from.
 
-> **The big idea for this journal:** writing is influenced by our identities and prior experiences
-> (Wardle and Downs). In other words, how you feel when you sit down to write isn't proof that you're
-> "a writer" or "not a writer" — it's a *tendency*, shaped by things that happened to you, and
-> tendencies can change.
+**The big idea for this journal:** writing is influenced by our identities
+and prior experiences (Wardle and Downs). In other words, how you feel when
+you sit down to write isn't proof that you're "a writer" or "not a writer" —
+it's a tendency, shaped by things that happened to you, and tendencies can
+change.
 
-**By the end of this journal you will have:**
+By the end of this journal you will have:
 
-- taken a quick, no-wrong-answers quiz about **how you feel about writing** and **what you think makes
-  writing good**;
-- seen where the Circle's tool places you on three **attitude continuums** — and decided for yourself
-  how accurate that feels;
-- listened to three peers tell the story of a moment that shaped them as writers; and
-- told **your own story** — the real journal entry — about an experience that shaped how you feel about
-  yourself as a writer.
+- taken a quick, no-wrong-answers quiz about how you feel about writing and
+  what you think makes writing good;
+- seen where the Circle's tool places you on three attitude continuums — and
+  decided for yourself how accurate that feels;
+- listened to three peers tell the story of a moment that shaped them as
+  writers; and
+- told your own story — the real journal entry — about an experience that
+  shaped how you feel about yourself as a writer.
 
-There are no wrong answers and no grade for feeling one way or another about writing. What counts is
-honesty. Work through the conversation on the left — each step opens an activity here on the right.
+There are no wrong answers and no grade for feeling one way or another about
+writing. What counts is honesty. Work through the conversation on the left
+until an activity opens on the right.
 </Markdown>
 
 
@@ -93,6 +130,8 @@ honesty. Work through the conversation on the left — each step opens an activi
      purpose, and sends the student back to the left where the talking is.
      =================================================================== -->
 
+<Markdown id="wj3_doc_wj2_blank">**Shared** — used by both the original and the revised journal.</Markdown>
+
 <Markdown id="wj2_blank">
 *(nothing here right now — the conversation's on the left)*
 </Markdown>
@@ -101,6 +140,8 @@ honesty. Work through the conversation on the left — each step opens an activi
 <!-- ===================================================================
      THE DEBATE: YOUR QUICK TAKE  (activates prior experience; low friction)
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_debate_react">**Original only** — the revised conversation embeds `wj3_debate_react` instead.</Markdown>
 
 <Vertical id="wj2_debate_react">
 <Markdown>
@@ -129,6 +170,34 @@ feels natural. (You can always feel differently tomorrow — that's kind of the 
 </Markdown>
 </Vertical> <!-- wj2_debate_react -->
 
+<Markdown id="wj3_doc_wj3_debate_react">**Revised** — the instructors' stem, an "Other" option, and a box that appears only when Other is picked.</Markdown>
+
+<Vertical id="wj3_debate_react">
+<Markdown>
+## What's Your Take on Writer's Block?
+
+Lee, Richard, and Alma can't agree, and there's no official answer. Before you
+take the quiz, weigh in: do you think writer's block is real? Have you ever
+experienced it?
+
+Whatever your view, there's no wrong answer.
+</Markdown>
+<!-- Same stored-value contract as wj2_block_take: short semantic values, never the
+     sentences, because the prose is display text and gets copy-edited. "other" is the
+     only value whose meaning lives outside the legend, so it carries a companion
+     TextArea and every reader of this input has to read that too. -->
+<ChoiceInput id="wj3_block_take">
+<Key id="wj3_take_freeze"        value="freeze"       > It's real, and I've felt it — my brain just freezes up, even when I have ideas </Key>
+<Key id="wj3_take_anxiety"       value="anxiety"      > It's real for me, but it feels more like anxiety or fear of getting it wrong   </Key>
+<Key id="wj3_take_not_sure_real" value="not_sure_real"> Richard's kind of right; I'm not sure it's real                                </Key>
+<Key id="wj3_take_depends"       value="depends"      > It depends on what I'm being asked to write                                    </Key>
+<Key id="wj3_take_unsure"        value="unsure"       > I'm honestly not sure yet                                                      </Key>
+<Key id="wj3_take_other"         value="other"        > Something else — I'll explain                                                  </Key>
+</ChoiceInput>
+<TextArea id="wj3_take_other_text" rows="2" when="@wj3_block_take.value === 'other'"
+  placeholder="Say more…" />
+</Vertical> <!-- wj3_debate_react -->
+
 
 <!-- ===================================================================
      TASK 1a — "HOW DO YOU REALLY FEEL ABOUT WRITING?"  (26 statements)
@@ -146,368 +215,469 @@ feels natural. (You can always feel differently tomorrow — that's kind of the 
      carries, which names what each statement measures.
      =================================================================== -->
 
+<Markdown id="wj3_doc_wj2_survey">**Shared** — used by both the original and the revised journal; the header's intro paragraph and eight statements carry the instructors' revised wording, which both versions show.</Markdown>
+<Markdown id="wj3_doc_wj3_live_dimensions">**Revised** — three live dimension lines under the quiz header, drawn from the codes the items already carry and moving as each statement is answered; whether they show while answering, only between the parts, or only on request is still open (journal3-changes.md candidate 17).</Markdown>
+
 <Vertical id="wj2_survey">
 <Markdown>
 ## ✏️ The Quiz — Part 1: How Do You Really Feel About Writing?
 
-*No wrong answers, promise. Just go with your gut — this one's for you.*
-
-Pick your emoji response for each statement and we'll reveal where your attitude falls on a writing
-spectrum. Are you more about **expression** or **performance**? Each new statement appears once you
-answer the one before it.
+Pick an emoji response for each statement to help us discover where your
+attitude falls on a writing spectrum. Are you more about expression or
+evaluation? Growth or performance? Engagement or avoidance?
 </Markdown>
+<!-- Every screen where the lines appear carries the same closed reminder: a
+     <Use> of the one table, inside its own Collapsible so each starts closed
+     and opens independently. -->
+<Collapsible id="wj3_survey_dimensions" title="What the three lines measure">
+<Use ref="wj3_dimensions_table" />
+</Collapsible>
+
+<!-- LIVE DIMENSIONS. The three continuums the results screen reports, drawn here while the
+     student is still answering: a marker on each line that moves with every statement.
+
+     THE ARITHMETIC. Each item's code= is -2..2 and points toward the SECOND pole of its
+     dimension (Evaluation / Performance / Avoidance) -- see the CODES note below. The 15
+     items that point at the FIRST pole are reverseCoded and already carry NEGATED codes, so
+     nothing has to be flipped here: a PLAIN average of the member items is the dimension,
+     and `50 + 25 * average(...)` maps it onto the 0..100 line (-2 -> 0, 0 -> 50, 2 -> 100),
+     which is the same scale, with the same pole labels, that the student places themself on
+     later in wj3_now_input.
+
+     WHILE IT IS EMPTY. `average()` SKIPS items with no answer, so each line starts with no
+     marker at all (the placeholder text stands in for it), shows a position from the first
+     answer on, and re-averages over exactly the items answered so far. Nothing is stored:
+     these are display-only lines, computed at render time from the sNN codes, and they write
+     no field of their own.
+
+     MEMBERSHIPS are the ones in the results prompt's "THE THREE DIMENSIONS" legend below and
+     are listed there in the same order -- first-pole signals, then second-pole signals. s04,
+     s06, s12 and s16 each belong to two dimensions and point the same way in both, so they
+     appear in two lists.
+
+     OPEN DECISION. Showing a running score while the student answers is also a demand cue --
+     a marker visibly drifting toward "Evaluation" can be pushed back by later answers.
+     Whether this shows during the quiz (as here), only between Part 1 and Part 2, or only on
+     request, is the owner's call: journal3-changes.md candidate 17. -->
+<Vertical id="wj3_live_dimensions">
+<Markdown id="wj3_live_purpose_label">**Purpose**</Markdown>
+<NumberLineInput id="wj3_live_purpose" min="0" max="100" step="1" snap="step" display="true"
+                 initial="50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])"
+                 placeholder="Appears as you answer.">
+  <Tick id="wj3_live_purpose_expression" value="0"  >Expression</Tick>
+  <Tick id="wj3_live_purpose_evaluation" value="100">Evaluation</Tick>
+</NumberLineInput>
+<Markdown id="wj3_live_orientation_label">**Orientation**</Markdown>
+<NumberLineInput id="wj3_live_orientation" min="0" max="100" step="1" snap="step" display="true"
+                 initial="50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])"
+                 placeholder="Appears as you answer.">
+  <Tick id="wj3_live_orientation_growth"      value="0"  >Growth</Tick>
+  <Tick id="wj3_live_orientation_performance" value="100">Performance</Tick>
+</NumberLineInput>
+<Markdown id="wj3_live_experience_label">**Experience**</Markdown>
+<NumberLineInput id="wj3_live_experience" min="0" max="100" step="1" snap="step" display="true"
+                 initial="50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])"
+                 placeholder="Appears as you answer.">
+  <Tick id="wj3_live_experience_engagement" value="0"  >Engagement</Tick>
+  <Tick id="wj3_live_experience_avoidance"  value="100">Avoidance</Tick>
+</NumberLineInput>
+</Vertical> <!-- wj3_live_dimensions -->
 
 <Markdown when="@s26.value">
 **That's all 26 — nice work.** Head back to the chat on the left to keep going.
 </Markdown>
 
+<!-- CODES. Every option below carries an explicit code= : the number the response is
+     RECORDED as -- the survey sense of the word (an SPSS code, a Qualtrics recode value),
+     not a score and not a grade. Codes point toward the SECOND pole of the statement's
+     dimension (Evaluation, Performance, Avoidance), so a positive code always means
+     "further toward the second pole" however the statement happens to be worded.
+     Statements that point at the FIRST pole (Expression, Growth, Engagement) are therefore
+     REVERSE-CODED: agreeing with "Writing is a skill I want to get better at" (s01, a Growth
+     signal) is recorded as -1. Those 15 items say so twice over -- reverseCoded="true" on the
+     ChoiceInput states the intent, and the four code= values state the numbers. Either alone
+     would do the job (reverseCoded negates the default table by itself), but together they
+     check each other: a dropped minus sign on any one option, or a reverseCoded attribute
+     added to or lost from an item, makes the two disagree and the parser says so. Reversing
+     once, in the content, means the results prompt, the event stream, and any later analysis
+     all read the same numbers instead of each re-deriving which items were reversed. The
+     memberships are the ones listed under "THE THREE DIMENSIONS" in the results prompt below;
+     s04, s06, s12 and s16 each belong to two dimensions and point the same way in both. -->
+
+<!-- A new statement appears at the top of the pane; the OnShow flashes it so the
+     student sees where it landed without an instruction telling them to look. -->
 <Vertical id="wj2_item_26" when="@s25.value">
+<OnShow id="wj2_item_26_show"><Flash target="wj2_item_26" /></OnShow>
 <Markdown>
 **Question 26 of 26**  `██████████████████████████`
 
-I like it when I can focus and my writing flows.
+Sometimes I get in the zone and writing comes easily.
 </Markdown>
-<ChoiceInput id="s26">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s26" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_25" when="@s24.value">
+<OnShow id="wj2_item_25_show"><Flash target="wj2_item_25" /></OnShow>
 <Markdown>
 **Question 25 of 26**  `█████████████████████████░`
 
-There are some kinds of writing that I really like.
+I enjoy writing sometimes.
 </Markdown>
-<ChoiceInput id="s25">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s25" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_24" when="@s23.value">
+<OnShow id="wj2_item_24_show"><Flash target="wj2_item_24" /></OnShow>
 <Markdown>
 **Question 24 of 26**  `████████████████████████░░`
 
 I understand things better when I write about them.
 </Markdown>
-<ChoiceInput id="s24">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s24" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_23" when="@s22.value">
+<OnShow id="wj2_item_23_show"><Flash target="wj2_item_23" /></OnShow>
 <Markdown>
 **Question 23 of 26**  `███████████████████████░░░`
 
 I enjoy writing most when I get to decide what to write about.
 </Markdown>
-<ChoiceInput id="s23">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s23" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_22" when="@s21.value">
+<OnShow id="wj2_item_22_show"><Flash target="wj2_item_22" /></OnShow>
 <Markdown>
 **Question 22 of 26**  `██████████████████████░░░░`
 
 I find writing interesting.
 </Markdown>
-<ChoiceInput id="s22">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s22" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_21" when="@s20.value">
+<OnShow id="wj2_item_21_show"><Flash target="wj2_item_21" /></OnShow>
 <Markdown>
 **Question 21 of 26**  `█████████████████████░░░░░`
 
-I usually enjoy writing in school.
+I enjoy writing in school.
 </Markdown>
-<ChoiceInput id="s21">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s21" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_20" when="@s19.value">
+<OnShow id="wj2_item_20_show"><Flash target="wj2_item_20" /></OnShow>
 <Markdown>
 **Question 20 of 26**  `████████████████████░░░░░░`
 
-Writing feels really hard.
+Overall, writing is hard for me.
 </Markdown>
 <ChoiceInput id="s20">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_19" when="@s18.value">
+<OnShow id="wj2_item_19_show"><Flash target="wj2_item_19" /></OnShow>
 <Markdown>
 **Question 19 of 26**  `███████████████████░░░░░░░`
 
 When I write, I create content that I can be proud of.
 </Markdown>
-<ChoiceInput id="s19">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s19" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_18" when="@s17.value">
+<OnShow id="wj2_item_18_show"><Flash target="wj2_item_18" /></OnShow>
 <Markdown>
 **Question 18 of 26**  `██████████████████░░░░░░░░`
 
-It is important that I get a good grade on a writing assignment.
+It is important that I get good grades on writing assignments.
 </Markdown>
 <ChoiceInput id="s18">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_17" when="@s16.value">
+<OnShow id="wj2_item_17_show"><Flash target="wj2_item_17" /></OnShow>
 <Markdown>
 **Question 17 of 26**  `█████████████████░░░░░░░░░`
 
 I feel confident when I am writing.
 </Markdown>
-<ChoiceInput id="s17">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s17" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_16" when="@s15.value">
+<OnShow id="wj2_item_16_show"><Flash target="wj2_item_16" /></OnShow>
 <Markdown>
 **Question 16 of 26**  `████████████████░░░░░░░░░░`
 
-I like it when people compliment my writing skills.
+I like when people compliment my writing skills.
 </Markdown>
 <ChoiceInput id="s16">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_15" when="@s14.value">
+<OnShow id="wj2_item_15_show"><Flash target="wj2_item_15" /></OnShow>
 <Markdown>
 **Question 15 of 26**  `███████████████░░░░░░░░░░░`
 
 I find it difficult to communicate my ideas through writing.
 </Markdown>
 <ChoiceInput id="s15">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_14" when="@s13.value">
+<OnShow id="wj2_item_14_show"><Flash target="wj2_item_14" /></OnShow>
 <Markdown>
 **Question 14 of 26**  `██████████████░░░░░░░░░░░░`
 
 I dislike writing.
 </Markdown>
 <ChoiceInput id="s14">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_13" when="@s12.value">
+<OnShow id="wj2_item_13_show"><Flash target="wj2_item_13" /></OnShow>
 <Markdown>
 **Question 13 of 26**  `█████████████░░░░░░░░░░░░░`
 
 There are some subjects that I really enjoy writing about.
 </Markdown>
-<ChoiceInput id="s13">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s13" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_12" when="@s11.value">
+<OnShow id="wj2_item_12_show"><Flash target="wj2_item_12" /></OnShow>
 <Markdown>
 **Question 12 of 26**  `████████████░░░░░░░░░░░░░░`
 
-I like getting lots of shares or likes when I post something I have written.
+I like getting lots of shares or likes when I post something online.
 </Markdown>
 <ChoiceInput id="s12">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_11" when="@s10.value">
+<OnShow id="wj2_item_11_show"><Flash target="wj2_item_11" /></OnShow>
 <Markdown>
 **Question 11 of 26**  `███████████░░░░░░░░░░░░░░░`
 
 I prefer writing when it isn't required.
 </Markdown>
-<ChoiceInput id="s11">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s11" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_10" when="@s09.value">
+<OnShow id="wj2_item_10_show"><Flash target="wj2_item_10" /></OnShow>
 <Markdown>
 **Question 10 of 26**  `██████████░░░░░░░░░░░░░░░░`
 
-I feel it is important to know how to write well.
+It is important to know how to write well.
 </Markdown>
-<ChoiceInput id="s10">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s10" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_09" when="@s08.value">
+<OnShow id="wj2_item_09_show"><Flash target="wj2_item_09" /></OnShow>
 <Markdown>
 **Question 9 of 26**  `█████████░░░░░░░░░░░░░░░░░`
 
 Writing helps me learn.
 </Markdown>
-<ChoiceInput id="s09">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s09" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_08" when="@s07.value">
+<OnShow id="wj2_item_08_show"><Flash target="wj2_item_08" /></OnShow>
 <Markdown>
 **Question 8 of 26**  `████████░░░░░░░░░░░░░░░░░░`
 
 I get so involved in my writing that I often lose track of time.
 </Markdown>
-<ChoiceInput id="s08">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s08" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_07" when="@s06.value">
+<OnShow id="wj2_item_07_show"><Flash target="wj2_item_07" /></OnShow>
 <Markdown>
 **Question 7 of 26**  `███████░░░░░░░░░░░░░░░░░░░`
 
 I am too impatient to spend a lot of time writing.
 </Markdown>
 <ChoiceInput id="s07">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_06" when="@s05.value">
+<OnShow id="wj2_item_06_show"><Flash target="wj2_item_06" /></OnShow>
 <Markdown>
 **Question 6 of 26**  `██████░░░░░░░░░░░░░░░░░░░░`
 
 It upsets me when I get low grades on a writing assignment.
 </Markdown>
 <ChoiceInput id="s06">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_05" when="@s04.value">
+<OnShow id="wj2_item_05_show"><Flash target="wj2_item_05" /></OnShow>
 <Markdown>
 **Question 5 of 26**  `█████░░░░░░░░░░░░░░░░░░░░░`
 
 I like to write outside of school.
 </Markdown>
-<ChoiceInput id="s05">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s05" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_04" when="@s03.value">
+<OnShow id="wj2_item_04_show"><Flash target="wj2_item_04" /></OnShow>
 <Markdown>
 **Question 4 of 26**  `████░░░░░░░░░░░░░░░░░░░░░░`
 
 I worry that other people will criticize my writing.
 </Markdown>
 <ChoiceInput id="s04">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_03" when="@s02.value">
+<OnShow id="wj2_item_03_show"><Flash target="wj2_item_03" /></OnShow>
 <Markdown>
 **Question 3 of 26**  `███░░░░░░░░░░░░░░░░░░░░░░░`
 
 Writing is usually boring for me.
 </Markdown>
 <ChoiceInput id="s03">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
 <Vertical id="wj2_item_02" when="@s01.value">
+<OnShow id="wj2_item_02_show"><Flash target="wj2_item_02" /></OnShow>
 <Markdown>
 **Question 2 of 26**  `██░░░░░░░░░░░░░░░░░░░░░░░░`
 
 It is frustrating to have to write about a subject I did not choose.
 </Markdown>
 <ChoiceInput id="s02">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+  <Key value="strongly_agree"    code="2" > 💯 Strongly agree    </Key>
+  <Key value="agree"             code="1" > 🙂 Agree             </Key>
+  <Key value="disagree"          code="-1"> 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="-2"> 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 
@@ -517,11 +687,11 @@ It is frustrating to have to write about a subject I did not choose.
 
 Writing is a skill I want to get better at.
 </Markdown>
-<ChoiceInput id="s01">
-  <Key value="strongly_agree"   > 💯 Strongly agree    </Key>
-  <Key value="agree"            > 🙂 Agree             </Key>
-  <Key value="disagree"         > 🤔 Disagree          </Key>
-  <Key value="strongly_disagree"> 🙅 Strongly disagree </Key>
+<ChoiceInput id="s01" reverseCoded="true">
+  <Key value="strongly_agree"    code="-2"> 💯 Strongly agree    </Key>
+  <Key value="agree"             code="-1"> 🙂 Agree             </Key>
+  <Key value="disagree"          code="1" > 🤔 Disagree          </Key>
+  <Key value="strongly_disagree" code="2" > 🙅 Strongly disagree </Key>
 </ChoiceInput>
 </Vertical>
 </Vertical> <!-- wj2_survey -->
@@ -538,6 +708,8 @@ Writing is a skill I want to get better at.
      keys on (and what shows up in the event stream), so they must not be auto-generated
      hashes of the prose. The prompt's index legend below names them alongside the index.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_good_1_screen">**Original only** — the revised conversation embeds `wj3_good_screen` instead.</Markdown>
 
 <Vertical id="wj2_good_1_screen">
 <Markdown>
@@ -561,6 +733,8 @@ opinion. Being honest gives you the most accurate writing profile.
 </CapaProblem>
 </Vertical> <!-- wj2_good_1_screen -->
 
+<Markdown id="wj3_doc_wj2_good_2_screen">**Original only** — the revised conversation embeds `wj3_good_screen` instead.</Markdown>
+
 <Vertical id="wj2_good_2_screen">
 <Markdown>
 ## 🏆 The Quiz — Part 2: What Makes a Good Writer?
@@ -582,6 +756,8 @@ opinion. Being honest gives you the most accurate writing profile.
 </SortableGrader>
 </CapaProblem>
 </Vertical> <!-- wj2_good_2_screen -->
+
+<Markdown id="wj3_doc_wj2_good_3_screen">**Original only** — the revised conversation embeds `wj3_good_screen` instead.</Markdown>
 
 <Vertical id="wj2_good_3_screen">
 <Markdown>
@@ -606,6 +782,169 @@ opinion. Being honest gives you the most accurate writing profile.
 </Vertical> <!-- wj2_good_3_screen -->
 
 
+<Markdown id="wj3_doc_wj3_good_screen">**Revised** — five of the original's seven ranking sets on one screen, each set appearing once the one before it is submitted.</Markdown>
+
+<!-- Five sets of the source survey (survey-journals/writing_process_journal_2.olx,
+     questions 2-8) on ONE screen, revealed one at a time: set N+1 is `when=` set N's
+     grader has been submitted, so the pane is never a wall of drag boxes and the
+     student cannot skip ahead. The chat's single gate is set 5's submitCount, so every
+     set has to be submitted to advance. algorithm="survey" -> a ranking is never wrong;
+     submitting is the whole grade. Item ids are semantic and per-set, because the
+     results prompt reads the arrangement by id and needs to know which set it came from. -->
+
+<Vertical id="wj3_good_screen">
+<Markdown>
+## The Quiz — Part 2: What Makes a Good Writer?
+
+These are a matter of opinion, not right and wrong. Being honest will result
+in the most accurate writing profile.
+</Markdown>
+
+<!-- Decision point: the source survey has seven sets. Five is the instructors' minimum
+     and is where the screen starts to feel long, so sets 6 and 7 are commented out below
+     rather than deleted, in case the count is revisited. -->
+
+<Markdown when="@wj3_good_5_grader.submitCount &gt; 0">
+**That's all five sets.** Head back to the chat on the left to keep going.
+</Markdown>
+
+<!-- The sets are written newest-first: the last set at the top of the file, set 1 at
+     the bottom. A set appears when the one before it is submitted, and this
+     order puts each new set ABOVE the finished ones, where the student is
+     already looking, instead of below them at the end of a growing page. The
+     quiz items are written the same way for the same reason. -->
+<!-- Sets 6 and 7 of the source survey, held here in case the count is revisited.
+
+<Vertical id="wj3_good_7_set" when="@wj3_good_6_grader.submitCount &gt; 0">
+<Markdown>
+**What makes a good writer? (Set 7 of 7)**  `███████`
+</Markdown>
+<CapaProblem id="wj3_good_7_problem" title="What makes a good writer? (Set 7)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_7_grader" algorithm="survey">
+<SortableInput id="wj3_good_7" dragMode="whole">
+<Markdown id="wj3_good_7_standard_english" > Writing in Standard English, avoiding slang and informal language.      </Markdown>
+<Markdown id="wj3_good_7_open_to_explore"  > Being open to explore the subject and learn new things.                 </Markdown>
+<Markdown id="wj3_good_7_clear_ideas"      > Coming up with a clear understanding of the ideas one wants to express. </Markdown>
+<Markdown id="wj3_good_7_well_chosen_words"> Using well-chosen words and expressions that make writing interesting.  </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical>
+
+<Vertical id="wj3_good_6_set" when="@wj3_good_5_grader.submitCount &gt; 0">
+<Markdown>
+**What makes a good writer? (Set 6 of 7)**  `██████░`
+</Markdown>
+<CapaProblem id="wj3_good_6_problem" title="What makes a good writer? (Set 6)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_6_grader" algorithm="survey">
+<SortableInput id="wj3_good_6" dragMode="whole">
+<Markdown id="wj3_good_6_details_ideas"          > Providing details about the most important ideas.  </Markdown>
+<Markdown id="wj3_good_6_main_idea_focus"        > Focusing on the main idea and not going off topic. </Markdown>
+<Markdown id="wj3_good_6_different_ways_thinking"> Considering different ways to think about a topic. </Markdown>
+<Markdown id="wj3_good_6_time_for_ideas"         > Taking time to come up with good ideas.            </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical>
+
+-->
+
+<!-- Each set arrives above the finished ones; the OnShow flashes it so the student
+     sees the new set instead of hunting for it. -->
+<Vertical id="wj3_good_5_set" when="@wj3_good_4_grader.submitCount &gt; 0">
+<OnShow id="wj3_good_5_show"><Flash target="wj3_good_5_set" /></OnShow>
+<Markdown>
+**What makes a good writer? (Set 5 of 5)**  `█████`
+</Markdown>
+<CapaProblem id="wj3_good_5_problem" title="What makes a good writer? (Set 5)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_5_grader" algorithm="survey">
+<SortableInput id="wj3_good_5" dragMode="whole">
+<Markdown id="wj3_good_5_avoid_errors"    > Avoiding grammar and usage errors.                  </Markdown>
+<Markdown id="wj3_good_5_multiple_drafts" > Taking time to complete more than one draft.        </Markdown>
+<Markdown id="wj3_good_5_variety_patterns"> Using a wide variety of word and sentence patterns. </Markdown>
+<Markdown id="wj3_good_5_fix_unclear"     > Recognizing and fixing unclear language.            </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_5_set -->
+
+<Vertical id="wj3_good_4_set" when="@wj3_good_3_grader.submitCount &gt; 0">
+<OnShow id="wj3_good_4_show"><Flash target="wj3_good_4_set" /></OnShow>
+<Markdown>
+**What makes a good writer? (Set 4 of 5)**  `████░`
+</Markdown>
+<CapaProblem id="wj3_good_4_problem" title="What makes a good writer? (Set 4)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_4_grader" algorithm="survey">
+<SortableInput id="wj3_good_4" dragMode="whole">
+<Markdown id="wj3_good_4_peer_feedback"       > Giving good feedback to one's peers about their writing.                       </Markdown>
+<Markdown id="wj3_good_4_single_session_draft"> Completing a draft of what one is writing in a single session.                 </Markdown>
+<Markdown id="wj3_good_4_proofread"           > Proofreading one's own writing carefully.                                      </Markdown>
+<Markdown id="wj3_good_4_reorganize_clarity"  > Reorganizing what one has written to make it clearer and easier to understand. </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_4_set -->
+
+<Vertical id="wj3_good_3_set" when="@wj3_good_2_grader.submitCount &gt; 0">
+<OnShow id="wj3_good_3_show"><Flash target="wj3_good_3_set" /></OnShow>
+<Markdown>
+**What makes a good writer? (Set 3 of 5)**  `███░░`
+</Markdown>
+<CapaProblem id="wj3_good_3_problem" title="What makes a good writer? (Set 3)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_3_grader" algorithm="survey">
+<SortableInput id="wj3_good_3" dragMode="whole">
+<Markdown id="wj3_good_3_first_try"            > Producing good writing on the first try.                 </Markdown>
+<Markdown id="wj3_good_3_freewrite_ideas"      > Free-writing to brainstorm ideas.                        </Markdown>
+<Markdown id="wj3_good_3_experiment_expression"> Experimenting with different ways to express key points. </Markdown>
+<Markdown id="wj3_good_3_finish_quickly"       > Finishing writing tasks quickly.                         </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_3_set -->
+
+<Vertical id="wj3_good_2_set" when="@wj3_good_1_grader.submitCount &gt; 0">
+<OnShow id="wj3_good_2_show"><Flash target="wj3_good_2_set" /></OnShow>
+<Markdown>
+**What makes a good writer? (Set 2 of 5)**  `██░░░`
+</Markdown>
+<CapaProblem id="wj3_good_2_problem" title="What makes a good writer? (Set 2)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_2_grader" algorithm="survey">
+<SortableInput id="wj3_good_2" dragMode="whole">
+<Markdown id="wj3_good_2_long_enough"         > Making sure to write something that is long enough for the task. </Markdown>
+<Markdown id="wj3_good_2_outline_plan"        > Planning one's writing using an outline or graphic organizer.    </Markdown>
+<Markdown id="wj3_good_2_research_topic"      > Taking the time to research a topic before writing about it.     </Markdown>
+<Markdown id="wj3_good_2_spelling_punctuation"> Using correct spelling and punctuation.                          </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_2_set -->
+
+<Vertical id="wj3_good_1_set">
+<Markdown>
+**What makes a good writer? (Set 1 of 5)**  `█░░░░`
+</Markdown>
+<CapaProblem id="wj3_good_1_problem" title="What makes a good writer? (Set 1)" showAnswer="never" submitLabel="Submit">
+<Markdown>Drag to rank from **most important** (top) to **least important** (bottom), then press Submit:</Markdown>
+<SortableGrader id="wj3_good_1_grader" algorithm="survey">
+<SortableInput id="wj3_good_1" dragMode="whole">
+<Markdown id="wj3_good_1_sophisticated_words"  > Using sophisticated words and well-developed sentences.             </Markdown>
+<Markdown id="wj3_good_1_figure_out_thinking"  > Figuring out what one really thinks about a topic before writing.   </Markdown>
+<Markdown id="wj3_good_1_understand_assignment"> Taking the time to understand assignments before starting to write. </Markdown>
+<Markdown id="wj3_good_1_express_accurately"   > Expressing ideas accurately.                                        </Markdown>
+</SortableInput>
+</SortableGrader>
+</CapaProblem>
+</Vertical> <!-- wj3_good_1_set -->
+
+</Vertical> <!-- wj3_good_screen -->
+
+
 <!-- ===================================================================
      "WHAT YOUR WRITING VIBE SAYS ABOUT YOU"  (revised design doc: a playful
      explainer of the three writing relationships, shown after the quiz and
@@ -616,6 +955,8 @@ opinion. Being honest gives you the most accurate writing profile.
      Vertical so the chat's `wj2_sidebar <- wj2_vibe_explainer` and the
      pane's Flash still find it.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_vibe_explainer">**Original only** — the revised conversation embeds `wj3_dimensions` instead.</Markdown>
 
 <Vertical id="wj2_vibe_explainer">
 <Markdown>
@@ -654,6 +995,43 @@ results**. You deliver exactly what a prompt is looking for and keep your eye on
 </Vertical> <!-- wj2_vibe_explainer -->
 
 
+<Markdown id="wj3_doc_wj3_dimensions">**Revised** — shown BEFORE the quiz, in the course team's round-3 wording, so the student knows what the three moving lines measure while answering; names the dimensions as Purpose, Orientation and Experience in a table of ends.</Markdown>
+
+<!-- Read-only: the three dimensions the results place the student on, named the same
+     way here, in the results prompt and on the results screen. The Done is the chat's
+     gate, so the student cannot reach the results without passing through the key. -->
+
+<Vertical id="wj3_dimensions">
+<Markdown>
+## Understanding Your Relationship with Writing on Three Dimensions ✍️✨
+
+The quiz you are about to take is meant to help you understand your
+relationship with writing on three dimensions: **Purpose**, **Orientation**,
+and **Experience**. The two ends of each dimension are explained below. These
+are spectrums, so most writers don't land at either extreme, but if you land
+closer to Expression than Evaluation, for example, you probably think of
+writing more as a way to communicate than as a way to reach a goal.
+
+As you answer questions during the quiz, the markers on the three lines will
+move, showing how each answer impacts your relationship to writing as
+represented by the dimensions.
+
+</Markdown>
+<Use ref="wj3_dimensions_table" />
+<Done id="wj3_dimensions_done" label="Mark as read" />
+</Vertical> <!-- wj3_dimensions -->
+
+<Markdown id="wj3_doc_wj3_dimensions_table">**Revised** — the one table of the three dimensions, used by the explainer, the Dimensions tab, and a closed reminder on every screen where the lines appear. One block, so it can never disagree with itself.</Markdown>
+
+<Markdown id="wj3_dimensions_table">
+| Dimension | ← one end | the other end → |
+|---|---|---|
+| **Purpose** | **Expression:** I write to communicate, think, or express myself | **Evaluation:** I write to meet expectations, to get things done, or to earn a grade |
+| **Orientation** | **Growth:** I write to learn and improve | **Performance:** I write to show what I can do |
+| **Experience** | **Engagement:** Writing is something I can get involved in or enjoy | **Avoidance:** Writing is something I try to minimize, postpone, or get through |
+</Markdown>
+
+
 <!-- ===================================================================
      RESULTS — THREE ATTITUDE CONTINUUMS  (computer-generated placement)
      The Circle's tool reads the whole quiz and places the student on each of
@@ -661,6 +1039,8 @@ results**. You deliver exactly what a prompt is looking for and keep your eye on
      a single score or label. It reinforces the threshold concept: these are
      tendencies shaped by experience, not fixed traits.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_results">**Original only** — the revised conversation embeds `wj3_results` instead.</Markdown>
 
 <Vertical id="wj2_results">
 <Markdown>
@@ -807,9 +1187,266 @@ picture of how you relate to writing *right now*.
 </Vertical> <!-- wj2_results -->
 
 
+<Markdown id="wj3_doc_wj3_results">**Revised** — the three dimensions are drawn as lines, with a marker where the student's own answers put them, computed from the same codes as the live lines under the quiz header; Alma then explains the placements instead of restating them — she cites questions by number, reads a submitted default order as a real ranking, and closes with fixed text.</Markdown>
+
+<!-- The prompt is this journal's longest piece of authored text and the one place the
+     three dimensions, the 26 statements and the five ranking sets all have to agree.
+     Every id it names has to exist: the s01-s26 legend, the five set legends, and the
+     writer's-block take codes are the tool's whole picture of the student, and the
+     directions forbid citing anything absent from the data below it.
+     The closing paragraph is fixed text, not generated, so the takeaway is the same for
+     every student however the placement comes out.
+
+     WHERE vs WHY. The three lines above say WHERE the student landed and this prompt says
+     WHY, and it is told the positions are drawn for it and forbidden to name one -- so the
+     prose cannot disagree with the markers, because it makes no claim about position at
+     all. That split is forced: a prompt body is assembled from its text and the VALUES of
+     the blocks inside it (`<Ref>`), and nothing in it is interpolated -- a double-brace
+     expression reaches the model as its own source text -- while a display line stores no
+     value to Ref. There is no way today to hand a computed number to an LLMAction. If
+     that changes (an interpolated prompt body, or a block that stores an expression's
+     value), pass
+     `Math.round(50 + 25 * average([...]))` per dimension, exactly as the lines and the
+     journal page compute it, and let the model name the lean itself. -->
+
+<Vertical id="wj3_results">
+<Markdown id="wj3_results_intro">
+## Three Dimensions of Writing Personalities
+
+Here is where your answers put you on the three dimensions. These are
+spectrums, not labels — there is no good or bad end, just a picture of how you
+relate to writing right now.
+</Markdown>
+<Collapsible id="wj3_results_dimensions" title="What the three lines measure">
+<Use ref="wj3_dimensions_table" />
+</Collapsible>
+
+<!-- THE SAME LINES AS UNDER THE QUIZ HEADER, read once at the end instead of live: the
+     same 0..100 scale, the same pole labels, the same memberships, and the same
+     arithmetic (`50 + 25 * average(...)` over the items' codes, see the LIVE DIMENSIONS
+     note in wj2_survey). Math.round wraps it here only because showValue prints the
+     number: an average over fifteen codes is rarely an integer, and "61.667" beside a
+     line the student is meant to read as a picture is noise. The rounding is the same one
+     the journal page prints, so the number on the line, the number in the PDF and the
+     number the student quotes back are one integer. A student who answered nothing has no
+     position at all -- average() is absent, no marker is drawn, and the placeholder speaks
+     instead. -->
+<Markdown id="wj3_results_purpose_label">**Purpose**</Markdown>
+<NumberLineInput id="wj3_results_purpose" min="0" max="100" step="1" snap="step" display="true"
+                 initial="Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code]))"
+                 markerLabel="you"
+                 placeholder="No answers yet — take the quiz and your position appears here.">
+  <Tick id="wj3_results_purpose_expression" value="0"  >Expression</Tick>
+  <Tick id="wj3_results_purpose_evaluation" value="100">Evaluation</Tick>
+</NumberLineInput>
+<Markdown id="wj3_results_orientation_label">**Orientation**</Markdown>
+<NumberLineInput id="wj3_results_orientation" min="0" max="100" step="1" snap="step" display="true"
+                 initial="Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code]))"
+                 markerLabel="you"
+                 placeholder="No answers yet — take the quiz and your position appears here.">
+  <Tick id="wj3_results_orientation_growth"      value="0"  >Growth</Tick>
+  <Tick id="wj3_results_orientation_performance" value="100">Performance</Tick>
+</NumberLineInput>
+<Markdown id="wj3_results_experience_label">**Experience**</Markdown>
+<NumberLineInput id="wj3_results_experience" min="0" max="100" step="1" snap="step" display="true"
+                 initial="Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code]))"
+                 markerLabel="you"
+                 placeholder="No answers yet — take the quiz and your position appears here.">
+  <Tick id="wj3_results_experience_engagement" value="0"  >Engagement</Tick>
+  <Tick id="wj3_results_experience_avoidance"  value="100">Avoidance</Tick>
+</NumberLineInput>
+
+<Markdown id="wj3_results_ask">Alma has read the same answers. Press the button and she will say what she sees in the picture.</Markdown>
+<ActionButton id="wj3_results_btn" label="What does Alma see in this?">
+<LLMAction id="wj3_results_action" target="wj3_results_feedback">
+        You are the Writers' Circle quiz tool. A first-year college composition student just finished a
+        playful, Buzzfeed-style writing-attitudes quiz. They are looking at THREE continuums with their
+        own position marked on each. Your job is to read those answers back warmly, like a
+        personality-quiz result — never clinical, never a grade — and say what put them where the lines
+        show.
+
+        HOW THE QUIZ DATA IS ENCODED:
+        Part 1 answers arrive as one value per statement id (s01-s26): the student's chosen agreement
+        level, written out as strongly_agree / agree / disagree / strongly_disagree (blank = not
+        answered).
+        Part 2 answers are drag-to-rank orderings. Each arrives as {"arrangement": [i, j, k, l]}, a list of
+        item indices in the order the student ranked them, HIGHEST priority first and LOWEST priority last.
+        Each set has its own item legend below (index 0-3 = the item as originally listed). So if a set's
+        arrangement is [2,0,3,1], the student ranked item 2 highest, then item 0, then item 3, and item 1
+        lowest. An empty arrangement means the set was not ranked. A submitted arrangement in the
+        original order IS a ranking -- the student agreed with the order shown -- and counts like any
+        other.
+
+        PART 1 STATEMENTS (id -- statement -- which continuum end AGREEING pulls toward):
+        s01 want to get better -> Growth. s02 frustrated writing on assigned topics -> Avoidance.
+        s03 writing is boring -> Avoidance. s04 worry others will criticize -> Avoidance (and Evaluation).
+        s05 like to write outside school -> Engagement. s06 upset by low grades -> Evaluation.
+        s07 too impatient to spend time writing -> Avoidance. s08 lose track of time writing -> Engagement.
+        s09 writing helps me learn -> Expression. s10 important to know how to write well -> Growth.
+        s11 prefer writing when it isn't required -> Engagement/Expression.
+        s12 like shares/likes when posting something online -> Evaluation.
+        s13 enjoy some subjects to write about -> Engagement. s14 dislike writing -> Avoidance.
+        s15 hard to communicate ideas in writing -> Avoidance.
+        s16 like compliments on my writing skills -> Evaluation/Performance.
+        s17 feel confident when writing -> (confidence; the opposite of anxiety-driven Avoidance).
+        s18 important to get good grades on writing assignments -> Evaluation.
+        s19 create content I'm proud of -> Expression.
+        s20 writing is hard for me overall -> Avoidance. s21 enjoy writing in school -> Engagement.
+        s22 find writing interesting -> Engagement. s23 enjoy writing most when I choose the topic -> Engagement/Expression.
+        s24 understand things better when I write -> Expression. s25 enjoy writing sometimes -> Engagement.
+        s26 sometimes get in the zone and writing comes easily -> Engagement.
+
+        WHERE THEY LAND IS ALREADY DRAWN, AND NOT BY YOU. Three lines sit on the screen directly
+        above your text, one per dimension, each with a marker labelled "you" and the position
+        printed beside it. A position runs 0 to 100: 0 is the dimension's FIRST pole (Expression,
+        Growth, Engagement), 100 its SECOND (Evaluation, Performance, Avoidance), 50 the middle.
+        Those numbers are computed from the very answers you are reading, and the student is
+        looking at them. You are NOT given them. So never state, guess or imply a position: no
+        numbers, no "you lean strongly toward Expression", no "you're right in the middle", no
+        overall verdict on a dimension, and no scale drawn in text. Your job is the WHY, not the
+        WHERE -- which of their own answers pull toward which end, and how strongly they said it.
+        "Learning by writing and choosing your own topics pull hard toward the Expression end,
+        while caring about grades pulls the other way" is right; "you land toward Expression" is
+        not.
+
+        THE THREE DIMENSIONS (the names the student just read on the explainer screen; use these
+        same names):
+        1. PURPOSE -- EXPRESSION vs. EVALUATION. Expression = writing to think, learn, communicate,
+           and make something you're proud of. Evaluation = writing mainly to satisfy teachers, get grades, and
+           earn reactions/approval. (Expression signals: s09, s19, s24, s11, s23. Evaluation signals:
+           s06, s12, s16, s18, s04.)
+        2. ORIENTATION -- GROWTH vs. PERFORMANCE. Growth = writing to improve over time; you believe
+           skill is built. Performance = writing mainly to demonstrate competence and be seen as good. (Growth signals:
+           s01, s10, and generally valuing practice/drafting in Part 2. Performance signals: s16, s12,
+           s06, and valuing being correct/finished over improving.)
+        3. EXPERIENCE -- ENGAGEMENT vs. AVOIDANCE. Engagement = writing as enjoyable involvement
+           (flow, interest, losing track of time). Avoidance = writing tangled up with anxiety, difficulty, or dislike
+           you'd rather manage or escape. (Engagement signals: s05, s08, s13, s21, s22, s25, s26, s17.
+           Avoidance signals: s02, s03, s04, s07, s14, s15, s20.)
+
+        WHAT PART 2 ("what makes a good writer") TELLS YOU:
+        Ranking meaning-focused skills HIGHEST -- understanding the assignment, expressing ideas
+        accurately, figuring out what you think, researching, brainstorming, multiple drafts, well-chosen
+        words -- leans toward Expression and Growth. Ranking surface/compliance skills highest -- finishing
+        quickly, writing long enough, correct spelling, avoiding grammar errors -- leans toward Evaluation
+        and Performance. Use this as a secondary signal that should agree with or gently complicate Part 1.
+
+        PART 2 ITEM LEGENDS (index -> item id -> item; lower/higher position in the student's arrangement
+        = higher/lower priority):
+        Set 1: 0 = wj3_good_1_sophisticated_words, sophisticated words and well-developed sentences
+        (Performance/craft); 1 = wj3_good_1_figure_out_thinking, figure out what you really think about a
+        topic before writing (Expression/Growth); 2 = wj3_good_1_understand_assignment, understand
+        assignments before starting to write (Growth); 3 = wj3_good_1_express_accurately, express ideas
+        accurately (Expression).
+        Set 2: 0 = wj3_good_2_long_enough, write something long enough for the task (Evaluation);
+        1 = wj3_good_2_outline_plan, plan with an outline or graphic organizer (Growth);
+        2 = wj3_good_2_research_topic, research the topic before writing (Growth);
+        3 = wj3_good_2_spelling_punctuation, correct spelling and punctuation (Evaluation).
+        Set 3: 0 = wj3_good_3_first_try, produce good writing on the first try (Performance);
+        1 = wj3_good_3_freewrite_ideas, free-write to brainstorm ideas (Expression);
+        2 = wj3_good_3_experiment_expression, experiment with different ways to express key points
+        (Expression/Growth); 3 = wj3_good_3_finish_quickly, finish writing tasks quickly (Performance).
+        Set 4: 0 = wj3_good_4_peer_feedback, give good feedback to peers about their writing
+        (Growth/Engagement); 1 = wj3_good_4_single_session_draft, complete a draft in a single session
+        (Performance); 2 = wj3_good_4_proofread, proofread one's own writing carefully
+        (Evaluation/Growth); 3 = wj3_good_4_reorganize_clarity, reorganize what one has written to make
+        it clearer (Growth).
+        Set 5: 0 = wj3_good_5_avoid_errors, avoid grammar and usage errors (Evaluation);
+        1 = wj3_good_5_multiple_drafts, complete more than one draft (Growth);
+        2 = wj3_good_5_variety_patterns, a wide variety of word and sentence patterns
+        (Expression/craft); 3 = wj3_good_5_fix_unclear, recognize and fix unclear language
+        (Growth/Expression).
+
+        THE STUDENT'S QUIZ:
+        Part 1 answers (statement id = chosen agreement level; a blank means the statement was not
+        answered):
+        s01 = <Ref target="s01" />
+        s02 = <Ref target="s02" />
+        s03 = <Ref target="s03" />
+        s04 = <Ref target="s04" />
+        s05 = <Ref target="s05" />
+        s06 = <Ref target="s06" />
+        s07 = <Ref target="s07" />
+        s08 = <Ref target="s08" />
+        s09 = <Ref target="s09" />
+        s10 = <Ref target="s10" />
+        s11 = <Ref target="s11" />
+        s12 = <Ref target="s12" />
+        s13 = <Ref target="s13" />
+        s14 = <Ref target="s14" />
+        s15 = <Ref target="s15" />
+        s16 = <Ref target="s16" />
+        s17 = <Ref target="s17" />
+        s18 = <Ref target="s18" />
+        s19 = <Ref target="s19" />
+        s20 = <Ref target="s20" />
+        s21 = <Ref target="s21" />
+        s22 = <Ref target="s22" />
+        s23 = <Ref target="s23" />
+        s24 = <Ref target="s24" />
+        s25 = <Ref target="s25" />
+        s26 = <Ref target="s26" />
+        Part 2, set 1 ranking (arrangement): <Ref id="wj3_res_ref_g1" target="wj3_good_1" />
+        Part 2, set 2 ranking (arrangement): <Ref id="wj3_res_ref_g2" target="wj3_good_2" />
+        Part 2, set 3 ranking (arrangement): <Ref id="wj3_res_ref_g3" target="wj3_good_3" />
+        Part 2, set 4 ranking (arrangement): <Ref id="wj3_res_ref_g4" target="wj3_good_4" />
+        Part 2, set 5 ranking (arrangement): <Ref id="wj3_res_ref_g5" target="wj3_good_5" />
+
+        Their opening take on writer's block (freeze = brain freezes even with ideas; anxiety = fear of
+        getting it wrong; not_sure_real = not sure writer's block is real; depends = depends on the task;
+        unsure = undecided; other = something else, explained in the note that follows):
+        take = <Ref id="wj3_res_ref_take" target="wj3_block_take" />
+        take note (only if take = other) = <Ref id="wj3_res_ref_take_other" target="wj3_take_other_text" />
+
+        DIRECTIONS:
+        If the student left the entire quiz blank (no answers anywhere), say in one friendly line that
+        there are no answers to read yet and invite them to take the quiz, then stop.
+        Otherwise, address the student as "you" and write Markdown with this exact shape:
+        - A short warm opening line (one sentence) that nods to the three dimensions they just read
+          about -- Purpose, Orientation, Experience -- and to the three lines they are looking at.
+        - Then a "### " subheading for each of the three dimensions, in this order: "### Purpose:
+          Expression ↔ Evaluation", "### Orientation: Growth ↔ Performance", "### Experience:
+          Engagement ↔ Avoidance". Under each:
+            * Two or three sentences explaining what put them where the line shows, by quoting a
+              couple of the student's OWN answers (e.g., that they strongly agreed writing helps
+              them learn, or disagreed that writing is boring) and saying which end of THAT
+              dimension each answer pulls toward. Only cite statements whose id actually appears in
+              the data above with a value; NEVER attribute an answer to a statement they did not
+              answer, and never invent or assume a response. If a statement is absent from the data,
+              they did not answer it. When you cite a statement, write it as (Question N), e.g.
+              (Question 9) -- never the id.
+            * If their answers on a dimension pull both ways, say so plainly -- a mixed picture is a
+              real result and the line will be sitting near the middle.
+        - Then a short paragraph beginning "**What you seem to value in good writing:**" drawing on their
+          Part 2 priorities in one or two sentences (again, only the ones they actually ranked).
+        - If the student answered only a few statements overall, keep every reading tentative and say
+          so in plain language (e.g., "with only a few answers in, this is just a rough first read").
+        - End with two sentences reminding them that these are tendencies shaped by experience, not fixed
+          traits — that where they are today is not where they have to stay — and inviting them to think
+          about a specific moment that might explain where they landed (which is what they'll do next).
+        Keep it playful, kind, and specific. Do NOT give a single overall label like "good writer" or
+        "bad writer." Do NOT rank them against other people. Do NOT tell them any placement is the
+        "right" one.
+</LLMAction>
+</ActionButton>
+<LLMFeedback id="wj3_results_feedback" render="markdown" />
+<Markdown>
+Your results are a representation of your relationship with writing based on
+the way you answered the questions and ranked the writing priorities. These
+tendencies are shaped by the writing you've been asked to do, the feedback
+you've gotten, and the topics you've been handed. Now that you are more aware
+of your relationship with writing, you can be more intentional about what you
+want your relationship with writing to be.
+</Markdown>
+
+</Vertical> <!-- wj3_results -->
+
+
 <!-- ===================================================================
      REFLECT ON YOUR PLACEMENT  (the design document's reflection prompt)
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_placement_reflect">**Original only** — the revised conversation leaves `wj3_results` in the pane and asks the question in the chat.</Markdown>
 
 <Vertical id="wj2_placement_reflect">
 <Markdown>
@@ -833,10 +1470,312 @@ in this journal — a few honest sentences are plenty.
      a word count, so it is defined here as a standalone block (not inside a right-pane screen).
      The live counter rides with the box: the chat's `wait wordcount(...) >= 20` renders nothing
      while unsatisfied, so without it the student has no way to see why Continue hasn't appeared. -->
+<Markdown id="wj3_doc_wj2_placement_input">**Original only** — the revised conversation inlines `wj3_fit_input` instead.</Markdown>
+
 <Vertical id="wj2_placement_input">
 <TextArea id="wj2_placement_text" rows="6" placeholder="The part that feels most accurate is... One moment that might explain it is... A year from now I'd like to..." />
 <Markdown id="wj2_placement_count">*{{wordcount(@wj2_placement_text.value)}} words (20 minimum)*</Markdown>
 </Vertical>
+
+
+<Markdown id="wj3_doc_wj3_fit_input">**Revised** — asks the same question as a yes / no / sort of choice with an optional note, so the answer costs one click. The student's own placement follows as its own chat turn (`wj3_now_input`).</Markdown>
+
+<!-- Chat-inline (no [display=...] on its embed), so it sits in the conversation where
+     Alma asks, with wj3_results still in the pane beside it. The chat gates on the
+     choice and on all three scales; the note is genuinely optional and nothing waits
+     on it. The scales carry no notes of their own — the fit note already asks why —
+     and wj3_future seeds itself from where the student puts the points here. -->
+
+<Vertical id="wj3_fit_input">
+<ChoiceInput id="wj3_fit">
+  <Key id="wj3_fit_yes"     value="yes"    > Yes     </Key>
+  <Key id="wj3_fit_no"      value="no"     > No      </Key>
+  <Key id="wj3_fit_sort_of" value="sort_of"> Sort of </Key>
+</ChoiceInput>
+<Markdown>*Want to say why? Optional.*</Markdown>
+<TextArea id="wj3_fit_text" rows="3" placeholder="It fits because… / It misses because…" />
+</Vertical> <!-- wj3_fit_input -->
+
+<Markdown id="wj3_doc_wj3_now_input">**Revised** — the student's own placement on the three scales, inline in the chat as its own turn after the fit question, each line carrying a thin "quiz" marker where the quiz put them so "does it fit?" is a visible comparison; "a year from now" is seeded from these values.</Markdown>
+
+<!-- Its own chat turn rather than part of wj3_fit_input: three lines with
+     their labels are a screenful in the chat column, so the fit question
+     gets answered on its own before these appear.
+
+     THE QUIZ'S MARKER IS ON EACH LINE (the same expression the results lines draw,
+     labelled "quiz"), which primes the student toward it by design: "does it fit?" is a
+     comparison, and a comparison needs both points visible. The alternative on the table
+     is asking for the self-placement BEFORE the results (journal3-changes.md candidate
+     18), which removes these markers and the anchoring with them. -->
+<Vertical id="wj3_now_input">
+<Markdown id="wj3_now_instructions">*Put yourself on each line.*</Markdown>
+<Collapsible id="wj3_now_dimensions" title="What the lines mean">
+<Use ref="wj3_dimensions_table" />
+</Collapsible>
+<Markdown id="wj3_now_purpose_label">**Purpose**</Markdown>
+<NumberLineInput id="wj3_now_purpose" min="0" max="100" step="1" snap="step"
+                 reference="Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code]))" referenceLabel="quiz">
+  <Tick id="wj3_now_purpose_expression" value="0"  >Expression</Tick>
+  <Tick id="wj3_now_purpose_evaluation" value="100">Evaluation</Tick>
+</NumberLineInput>
+<Markdown id="wj3_now_orientation_label">**Orientation**</Markdown>
+<NumberLineInput id="wj3_now_orientation" min="0" max="100" step="1" snap="step"
+                 reference="Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code]))" referenceLabel="quiz">
+  <Tick id="wj3_now_orientation_growth"      value="0"  >Growth</Tick>
+  <Tick id="wj3_now_orientation_performance" value="100">Performance</Tick>
+</NumberLineInput>
+<Markdown id="wj3_now_experience_label">**Experience**</Markdown>
+<NumberLineInput id="wj3_now_experience" min="0" max="100" step="1" snap="step"
+                 reference="Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code]))" referenceLabel="quiz">
+  <Tick id="wj3_now_experience_engagement" value="0"  >Engagement</Tick>
+  <Tick id="wj3_now_experience_avoidance"  value="100">Avoidance</Tick>
+</NumberLineInput>
+</Vertical> <!-- wj3_now_input -->
+
+
+<Markdown id="wj3_doc_wj3_future">**Revised** — a new screen with no original: three scales, one per dimension, each starting from where the student just put themselves, moved to where they would like to be a year from now, with a sentence or two under each.</Markdown>
+
+<!-- Three scales, one per dimension, named and ordered the way the explainer and the
+     results name them. Each scale starts where the student put themselves on the same
+     dimension in wj3_fit_input, and keeps that placement as a fixed "now" marker, so
+     the question is how far they want to move rather than where they stand. The chat's
+     gate is all three points moved or touched plus a 10-word floor on all three notes.
+     The chat's wait renders nothing while it is unsatisfied, so each note carries its
+     own live count until its floor is met and then drops it — the floor is visible, and
+     10 never reads as a target. -->
+
+<Vertical id="wj3_future">
+<Markdown id="wj3_future_intro">
+## A Year From Now
+
+For each dimension, move the point to where you'd like to be a year from now, and say
+why — a sentence or two each. The thin marker shows where you just put yourself.
+</Markdown>
+<Collapsible id="wj3_future_dimensions" title="What the lines mean">
+<Use ref="wj3_dimensions_table" />
+</Collapsible>
+<Markdown id="wj3_future_purpose_label">**Purpose**</Markdown>
+<NumberLineInput id="wj3_future_purpose" min="0" max="100" step="1" snap="step"
+                 initial="@wj3_now_purpose.value" reference="@wj3_now_purpose.value" referenceLabel="now">
+  <Tick id="wj3_future_purpose_expression" value="0"  >Expression</Tick>
+  <Tick id="wj3_future_purpose_evaluation" value="100">Evaluation</Tick>
+</NumberLineInput>
+<TextArea id="wj3_future_purpose_note" rows="2" />
+<Markdown id="wj3_future_purpose_count" when="wordcount(@wj3_future_purpose_note.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_purpose_note.value)}} of 10 words so far.*</Markdown>
+<Markdown id="wj3_future_orientation_label">**Orientation**</Markdown>
+<NumberLineInput id="wj3_future_orientation" min="0" max="100" step="1" snap="step"
+                 initial="@wj3_now_orientation.value" reference="@wj3_now_orientation.value" referenceLabel="now">
+  <Tick id="wj3_future_orientation_growth"      value="0"  >Growth</Tick>
+  <Tick id="wj3_future_orientation_performance" value="100">Performance</Tick>
+</NumberLineInput>
+<TextArea id="wj3_future_orientation_note" rows="2" />
+<Markdown id="wj3_future_orientation_count" when="wordcount(@wj3_future_orientation_note.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_orientation_note.value)}} of 10 words so far.*</Markdown>
+<Markdown id="wj3_future_experience_label">**Experience**</Markdown>
+<NumberLineInput id="wj3_future_experience" min="0" max="100" step="1" snap="step"
+                 initial="@wj3_now_experience.value" reference="@wj3_now_experience.value" referenceLabel="now">
+  <Tick id="wj3_future_experience_engagement" value="0"  >Engagement</Tick>
+  <Tick id="wj3_future_experience_avoidance"  value="100">Avoidance</Tick>
+</NumberLineInput>
+<TextArea id="wj3_future_experience_note" rows="2" />
+<Markdown id="wj3_future_experience_count" when="wordcount(@wj3_future_experience_note.value) &lt; 10">*A sentence or two — {{wordcount(@wj3_future_experience_note.value)}} of 10 words so far.*</Markdown>
+</Vertical> <!-- wj3_future -->
+
+
+<Markdown id="wj3_doc_wj3_warmup">**Revised** — the two-minute freewrite as the writer's-block tool, required (the chat waits for the timer): introduced from the chat after Richard asks for the story, with the rules, where the technique comes from (Elbow, Macrorie, Brande) and links to the books for anyone who wants more. The Write screen that follows shows what they wrote.</Markdown>
+
+<!-- The freewrite itself is the ORIGINAL block, referenced not copied, so the warm-up a
+     student does here is the same wj2_freewrite either version prints. Nothing gates on
+     it: the chat embeds this screen and walks straight on. -->
+
+<Vertical id="wj3_warmup">
+<Markdown id="wj3_warmup_title">
+## Two-Minute Freewrite
+
+**Richard just asked:**
+</Markdown>
+<!-- The ask is the thing students lose track of once the clock is running
+     (a test reader wrote about video editing), so it sits at the top, in
+     Richard's own bubble, before any instruction. -->
+<TalkBubble id="wj3_warmup_ask" who="Richard" face="serious">
+<Markdown id="wj3_warmup_ask_text">Tell us a story of a moment, an experience, or a piece of feedback about writing that made you feel like you were a good or a bad writer. What happened?</Markdown>
+</TalkBubble>
+<Markdown id="wj3_warmup_intro">
+Two minutes, and everyone does it. To get you started, start the clock and
+write about any writing memory that comes to mind: a comment on a paper, a
+grade, something you were proud of, the night before a deadline.
+
+- **Keep going.** If you run out, write "I'm stuck" until the next thing comes.
+- **Don't fix anything.** Spelling, grammar, whether it's any good: not now. The
+  box won't let you delete. That's the point, not a bug.
+- **Try not to read it back** until the time is up.
+
+Focus on the writing. The clock shows *approximate* time remaining, so as not
+to distract you.
+</Markdown>
+<Use ref="wj2_freewrite_timer" />
+<Markdown id="wj3_warmup_origin">
+**Where this comes from.** [Peter Elbow](https://en.wikipedia.org/wiki/Peter_Elbow)
+made freewriting famous in *Writing Without Teachers* (1973), a book he wrote
+after his own writing froze so badly that he left graduate school. His idea: the
+part of you that produces words and the part that judges them can't work at the
+same time, so give the producer a few minutes alone. The word itself was coined
+by his colleague Ken Macrorie. Forty years earlier, Dorothea Brande had proposed
+something close in *Becoming a Writer* (1934): fifteen minutes every morning, as
+fast as you can, before the judging part of your mind is fully awake.
+</Markdown>
+<Collapsible id="wj3_warmup_more" title="Want to go deeper?">
+<Markdown id="wj3_warmup_links">
+Brande's book opens not with technique but with four kinds of stuck writer: the
+one who cannot start, the one-book author who cannot repeat an early success, the
+one who produces something good once a year, and the one who starts well and
+loses the thread. Ninety years ago she was doing what this quiz does, sorting
+writers by where they get stuck rather than by talent. The first of her four is
+the one this chat started with, "the difficulty of writing at all": the words, as
+she puts it, "simply will not begin."
+
+The freewrite is only Elbow's first chapter. The rest of *Writing Without
+Teachers* describes a teacherless writing class: a few people who meet every week,
+read their work aloud, and tell each other what it did to them as readers rather
+than what is wrong with it. That is more or less the group chat we are in here.
+
+Both books are short, plain-spoken, and free to read:
+
+- Peter Elbow, [*Writing Without Teachers*](https://archive.org/details/writingwithoutte0000elbo) (1973), on the Internet Archive.
+- Dorothea Brande, [*Becoming a Writer*](https://archive.org/details/becomingwriter00bran) (1934), on the Internet Archive.
+- Wikipedia on [free writing](https://en.wikipedia.org/wiki/Free_writing) and its history.
+</Markdown>
+</Collapsible>
+</Vertical> <!-- wj3_warmup -->
+
+
+<Markdown id="wj3_doc_wj3_write">**Revised** — the story is written in the pane, not the chat: 150 words is a piece of writing. What the student wrote in the two minutes sits above the box as raw material, readable and copyable but not editable, without the timer around it. The 150-word floor keeps its rising messages.</Markdown>
+
+<!-- The story gets the pane, not the chat column: a box that grows inside a
+     scrolling chat moves under the writer. The freewrite is shown with
+     Ref format="text": as typed, breaks kept, selectable, with none of the
+     timer's machinery; the chat's wait on 150 words is the gate. -->
+
+<Vertical id="wj3_write">
+<Markdown id="wj3_write_intro">
+## Your Story
+
+Tell it like a story, not a summary: what happened, how it felt in the moment,
+and how it has shaped your writing since. At least 150 words.
+</Markdown>
+<Markdown id="wj3_write_freewrite_heading" when="wordcount(@wj2_freewrite.value) &gt; 0">
+**What you wrote in the two minutes.** Take anything you want from it.
+</Markdown>
+<Ref id="wj3_write_freewrite_text" target="wj2_freewrite" format="text" when="wordcount(@wj2_freewrite.value) &gt; 0" />
+<Markdown id="wj3_write_freewrite_empty" when="@wj2_freewrite_timer.expired &amp;&amp; wordcount(@wj2_freewrite.value) === 0">
+*Nothing came in the two minutes. That happens. Start here instead, with the part that matters most.*
+</Markdown>
+<Markdown id="wj3_write_box_label">**Your story:**</Markdown>
+<TextArea id="wj3_story_text" rows="12" placeholder="Write your story here." />
+<Markdown when="wordcount(@wj3_story_text.value) === 0 &amp;&amp; wordcount(@wj2_freewrite.value) &gt; 0">
+*Your two minutes are above. The story goes here; start with the part that matters most.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &lt; 150 &amp;&amp; !(wordcount(@wj3_story_text.value) === 0 &amp;&amp; wordcount(@wj2_freewrite.value) &gt; 0)">
+*Keep going — {{wordcount(@wj3_story_text.value)}} of 150 words so far.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &gt;= 150 &amp;&amp; wordcount(@wj3_story_text.value) &lt; 300">
+*Continue is open. If there's more to the story, keep writing — the more you give Alma, the more she has to work with.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &gt;= 300 &amp;&amp; wordcount(@wj3_story_text.value) &lt; 600">
+*That's a full story. Alma is going to have plenty to say.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &gt;= 600 &amp;&amp; wordcount(@wj3_story_text.value) &lt; 1000">
+*Impressive — that's more than all three of them wrote put together.*
+</Markdown>
+<Markdown when="wordcount(@wj3_story_text.value) &gt;= 1000">
+*A thousand words. Honestly, we're a little flabbergasted, and delighted. Continue whenever you're ready.*
+</Markdown>
+</Vertical> <!-- wj3_write -->
+
+
+<Markdown id="wj3_doc_wj3_alma_response">**Revised** — Alma's response moves into 3a and reads the fit answer and the three year-from-now answers alongside the story.</Markdown>
+
+<Vertical id="wj3_alma_response">
+<Markdown id="wj3_response_intro">
+## What Alma Hears in Your Story
+
+When you're happy with your story, press the button. **Alma** — who kicked off the whole conversation —
+will read your story alongside your quiz results and reflect back what she notices, connecting your
+experience to where you landed on the three dimensions. She won't rewrite your story or grade it; she
+just listens closely and asks one question back, the way a good writing group would.
+</Markdown>
+<LLMFeedback id="wj3_response_feedback" render="markdown" />
+<ActionButton id="wj3_response_btn" label="Hear what Alma noticed in my story">
+<LLMAction id="wj3_response_action" target="wj3_response_feedback">
+        You are Alma, a warm, perceptive peer in a first-year college Writers' Circle, responding to a
+        fellow student who just read aloud the story of an experience that shaped how they feel about
+        writing. (You are the one who started this whole conversation in the group chat and who shared
+        your own story about red-pen feedback and writing in two languages.) The whole point of this
+        journal is the threshold concept that writing attitudes are shaped by identity and prior
+        experience, not by a fixed "born writer" trait. Your job is to listen closely and build on the
+        writing profile the quiz started — NOT to rewrite, grade, correct, or praise generically.
+
+        WHAT YOU KNOW ABOUT THIS WRITER:
+        Their earlier quick take on writer's block: <Ref id="wj3_resp_ref_take" target="wj3_block_take" />
+        (that answer is coded: freeze = it's real and my brain freezes even when I have ideas;
+        anxiety = it's real for me, but more like anxiety or fear of getting it wrong;
+        not_sure_real = Richard's kind of right, I'm not sure it's real; depends = it depends on what
+        I'm asked to write; unsure = I'm honestly not sure yet; other = they chose "something else" and
+        explained:
+        <Ref id="wj3_resp_ref_take_other" target="wj3_take_other_text" />
+        blank = they didn't answer.)
+        The results the quiz tool gave them (their placement on the three dimensions — Purpose,
+        Orientation, Experience):
+        <Ref id="wj3_resp_ref_results" target="wj3_results_feedback" />
+        Whether that placement fit them (yes / no / sort_of; blank = they didn't answer):
+        <Ref id="wj3_resp_ref_fit" target="wj3_fit" />
+        Their optional note on why it fit or missed: <Ref id="wj3_resp_ref_fit_text" target="wj3_fit_text" />
+        Where they put themselves on each dimension and where they said they would like to be a
+        year from now. Each dimension is a 0-100 line: 0 is the first name, 100 is the second, and
+        a blank number means they did not place themselves.
+        Purpose (0 = Expression, 100 = Evaluation): now <Ref id="wj3_resp_ref_now_p" target="wj3_now_purpose" />,
+        a year from now <Ref id="wj3_resp_ref_future_p_num" target="wj3_future_purpose" />, because:
+        <Ref id="wj3_resp_ref_future_p" target="wj3_future_purpose_note" />
+        Orientation (0 = Growth, 100 = Performance): now <Ref id="wj3_resp_ref_now_o" target="wj3_now_orientation" />,
+        a year from now <Ref id="wj3_resp_ref_future_o_num" target="wj3_future_orientation" />, because:
+        <Ref id="wj3_resp_ref_future_o" target="wj3_future_orientation_note" />
+        Experience (0 = Engagement, 100 = Avoidance): now <Ref id="wj3_resp_ref_now_e" target="wj3_now_experience" />,
+        a year from now <Ref id="wj3_resp_ref_future_e_num" target="wj3_future_experience" />, because:
+        <Ref id="wj3_resp_ref_future_e" target="wj3_future_experience_note" />
+        THEIR STORY (the most important thing — weight it heavily and quote from it):
+        <Ref id="wj3_resp_ref_story" target="wj3_story_text" />
+
+        DIRECTIONS:
+        FIRST decide whether a real story is present. Only if THEIR STORY above is blank or just a
+        fragment (roughly under 15 words) should you gently invite them to tell the whole story and then
+        stop. If they have written a real story, respond to it directly — do NOT open with any line
+        suggesting you are still waiting to hear it ("I'd love to hear the whole story", "whenever you're
+        ready", etc.); they have already shared it, so react to what they actually wrote.
+        When a real story is present, address the writer as "you" and write 4-6 sentences of warm Markdown that:
+        - Name one specific, concrete thing from THEIR story and quote a few of their own words back to
+          them, so they know they were truly heard.
+        - Point out how the EXPERIENCE in their story seems to have shaped an attitude toward writing —
+          explicitly connecting it to where the quiz placed them (for example, an experience that could
+          explain a lean toward Avoidance, or toward Expression). If their story complicates or
+          contradicts their quiz placement, say so honestly and with interest; that tension is valuable,
+          not a problem.
+        - Reinforce the threshold concept in plain language: that this feeling was learned from an
+          experience, which means it isn't fixed — attitudes can shift with new experiences and practice.
+        - End with exactly ONE genuine, open question that invites them to think further (for example,
+          about what experience might start to shift the feeling, or about their own answer to whether
+          writers are born or made). Do not stack multiple questions.
+        Never tell them they are a good or bad writer. Never rewrite their story or suggest edits. Never
+        invent details they didn't share. Speak in your own warm, first-person voice as Alma, a fellow
+        writer in the circle — not as an evaluator or a grader.
+</LLMAction>
+</ActionButton>
+<!-- Alma ends on a question. The box is optional and gates nothing; it is
+     here so a student who wants to keep the thought going has somewhere to
+     put it, and it travels with the journal. -->
+<Markdown id="wj3_response_reply_prompt" when="@wj3_response_feedback.value">
+**Alma ended with a question.** If it started a thought, write it down here. Optional, and it goes in your journal.
+</Markdown>
+<TextArea id="wj3_response_reply" rows="4" when="@wj3_response_feedback.value" placeholder="Your answer to Alma's question, if you want to keep thinking." />
+</Vertical> <!-- wj3_alma_response -->
 
 
 <!-- ===================================================================
@@ -847,6 +1786,8 @@ in this journal — a few honest sentences are plenty.
      three peers' stories, the student's own story, Alma's response, and the
      wrap-up all live here in one self-paced flow.
      =================================================================== -->
+
+<Markdown id="wj3_doc_wj2_meeting">**Original only** — the revised conversation runs the meeting's parts from the chat: `wj3_warmup`, `wj3_write`, `wj3_alma_response`.</Markdown>
 
 <Vertical id="wj2_meeting">
 
@@ -1022,6 +1963,8 @@ export as a PDF for your course system.
      here are the SAME nodes as on the working screens, so they always agree.
      =================================================================== -->
 
+<Markdown id="wj3_doc_wj2_print">**Original only** — the revised review build exports through `wj3_print`.</Markdown>
+
 <Vertical id="wj2_print">
 
 <!-- The controls: on screen only. print="false" -> class print-hide, so the
@@ -1167,5 +2110,182 @@ they can change. That's the groundwork for the writing you'll do next in this co
 <Use ref="wj2_response_feedback" />
 
 </Vertical> <!-- wj2_print -->
+
+
+<Markdown id="wj3_doc_wj3_print">**Revised** — the same inverted-triangle export, reading the revised fields and all five ranking sets.</Markdown>
+
+<!-- The revised journal is one part, not two, so this page covers the whole of it. Same
+     print rules as wj2_print: everything must be MOUNTED at print time, so no
+     Collapsible, no Tabs, no UseHistory; when= is fine. Same order — controls (hidden
+     from the PDF), then what the student wrote, then the structured answers, then the
+     generated text last. <Use> is a DAG reference, so the boards and the feedback here
+     are the same nodes the student worked on and can never disagree with them. -->
+
+<!-- The whole structure is always on the page, with a dash wherever nothing
+     has been written yet: students open this tab early to see what goes
+     where, and a page that grows section by section reads as broken. -->
+<Vertical id="wj3_print">
+
+<Vertical id="wj3_print_controls" print="false">
+
+<Markdown>
+## Print &amp; Submit
+
+Here is your whole journal on one page, in the order your instructor will read it: your writing first.
+Read it over; if you want to change an answer, go back to that step and edit it, then come back.
+Everything below updates to match.
+
+When it looks right, click the box and the **Export as PDF** button will appear. Save the file, then upload
+it to your course system.
+</Markdown>
+
+<CheckboxInput id="wj3_completion_page">
+<Markdown>**When you're happy with your entry, confirm you're done.**</Markdown>
+<Key id="wj3_finished" value="wj3_finished">I don't need to make any more changes.</Key>
+</CheckboxInput>
+
+<ActionButton id="wj3_print_btn" label="Export as PDF" when="@wj3_completion_page.value.length &gt; 0">
+<PrintAction id="wj3_print_action" />
+</ActionButton>
+
+<Markdown id="wj3_complete_md" when="@wj3_completion_page.value.length &gt; 0">
+## Journal Complete
+
+In this journal you noticed something writers rarely stop to name: **how you actually feel about writing,
+and where those feelings came from.** You took the quiz, saw where you landed on three dimensions,
+said whether the placement fit, named where you'd like to be a year from now, listened to how experience
+shaped three other writers, and told the story of an experience that shaped *you.*
+
+Hold onto the big idea: these are **tendencies shaped by experience, not fixed traits** — which means
+they can change. That's the groundwork for the writing you'll do next in this course.
+</Markdown>
+
+</Vertical> <!-- wj3_print_controls -->
+
+<!-- THREE NUMBERS PER DIMENSION: where the quiz put them, where they put themselves, and
+     where they want to be. The quiz number is the same Math.round(50 + 25 * average(...))
+     the results lines draw, so the page and the lines cannot print different numbers, and
+     it is guarded with isNumber() because average() over an untouched quiz is absent and
+     50 + 25 * absent is NaN. It is spelled out inline rather than read off a block
+     because nothing stores it -- a display line computes its position and keeps none.
+     Markdown interpolation re-parses its expressions on every dispatch (see
+     notes/live-feedback-scoping.md #2), which is why the live screens keep big expressions
+     in attributes; this page is rendered once, on the way to a PDF, so the cost is fine
+     here. -->
+<Markdown>
+# Writing Journal 3: How Do You Feel About Writing?
+
+## My story — an experience that shaped me as a writer
+</Markdown>
+<Ref id="wj3_print_story" target="wj3_story_text" format="text" />
+<Markdown when="!isFilled(@wj3_story_text.value)">—</Markdown>
+<Markdown>
+## Does the placement fit?
+
+**{{isFilled(@wj3_fit.value) ? @wj3_fit.value : '—'}}**
+</Markdown>
+<Ref id="wj3_print_fit_text" target="wj3_fit_text" format="text" />
+<Markdown when="!isFilled(@wj3_fit_text.value)">—</Markdown>
+<Markdown>
+## A year from now
+
+**Purpose:** quiz {{isNumber(average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) ? Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) : '—'}}, now {{isFilled(@wj3_now_purpose.value) ? @wj3_now_purpose.value : '—'}}, a year from now {{isFilled(@wj3_future_purpose.value) ? @wj3_future_purpose.value : '—'}} (0 = Expression, 100 = Evaluation)
+</Markdown>
+<Ref id="wj3_print_future_purpose_note" target="wj3_future_purpose_note" format="text" />
+<Markdown when="!isFilled(@wj3_future_purpose_note.value)">—</Markdown>
+<Markdown>
+**Orientation:** quiz {{isNumber(average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) ? Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) : '—'}}, now {{isFilled(@wj3_now_orientation.value) ? @wj3_now_orientation.value : '—'}}, a year from now {{isFilled(@wj3_future_orientation.value) ? @wj3_future_orientation.value : '—'}} (0 = Growth, 100 = Performance)
+</Markdown>
+<Ref id="wj3_print_future_orientation_note" target="wj3_future_orientation_note" format="text" />
+<Markdown when="!isFilled(@wj3_future_orientation_note.value)">—</Markdown>
+<Markdown>
+**Experience:** quiz {{isNumber(average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) ? Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) : '—'}}, now {{isFilled(@wj3_now_experience.value) ? @wj3_now_experience.value : '—'}}, a year from now {{isFilled(@wj3_future_experience.value) ? @wj3_future_experience.value : '—'}} (0 = Engagement, 100 = Avoidance)
+</Markdown>
+<Ref id="wj3_print_future_experience_note" target="wj3_future_experience_note" format="text" />
+<Markdown when="!isFilled(@wj3_future_experience_note.value)">—</Markdown>
+
+<Markdown>
+## My two-minute freewrite
+
+*Unedited, by design.*
+</Markdown>
+<Ref id="wj3_print_freewrite" target="wj2_freewrite" format="text" />
+<Markdown when="!isFilled(@wj2_freewrite.value)">—</Markdown>
+
+<Markdown>
+---
+
+## Where I started: is writer's block real?
+</Markdown>
+<Use ref="wj3_block_take" />
+<Markdown when="@wj3_block_take.value === 'other'">
+**What I said instead:** {{@wj3_take_other_text.value}}
+</Markdown>
+
+<Markdown>
+## What makes a good writer — how I ranked them
+
+*Most important at the top of each set.*
+</Markdown>
+<Markdown>**Set 1:**</Markdown>
+<Use ref="wj3_good_1" />
+<Markdown>**Set 2:**</Markdown>
+<Use ref="wj3_good_2" />
+<Markdown>**Set 3:**</Markdown>
+<Use ref="wj3_good_3" />
+<Markdown>**Set 4:**</Markdown>
+<Use ref="wj3_good_4" />
+<Markdown>**Set 5:**</Markdown>
+<Use ref="wj3_good_5" />
+
+<Markdown>
+## How I feel about writing — all 26 statements
+
+1. Writing is a skill I want to get better at. — **{{@s01.value}}**
+2. It is frustrating to have to write about a subject I did not choose. — **{{@s02.value}}**
+3. Writing is usually boring for me. — **{{@s03.value}}**
+4. I worry that other people will criticize my writing. — **{{@s04.value}}**
+5. I like to write outside of school. — **{{@s05.value}}**
+6. It upsets me when I get low grades on a writing assignment. — **{{@s06.value}}**
+7. I am too impatient to spend a lot of time writing. — **{{@s07.value}}**
+8. I get so involved in my writing that I often lose track of time. — **{{@s08.value}}**
+9. Writing helps me learn. — **{{@s09.value}}**
+10. It is important to know how to write well. — **{{@s10.value}}**
+11. I prefer writing when it isn't required. — **{{@s11.value}}**
+12. I like getting lots of shares or likes when I post something online. — **{{@s12.value}}**
+13. There are some subjects that I really enjoy writing about. — **{{@s13.value}}**
+14. I dislike writing. — **{{@s14.value}}**
+15. I find it difficult to communicate my ideas through writing. — **{{@s15.value}}**
+16. I like when people compliment my writing skills. — **{{@s16.value}}**
+17. I feel confident when I am writing. — **{{@s17.value}}**
+18. It is important that I get good grades on writing assignments. — **{{@s18.value}}**
+19. When I write, I create content that I can be proud of. — **{{@s19.value}}**
+20. Overall, writing is hard for me. — **{{@s20.value}}**
+21. I enjoy writing in school. — **{{@s21.value}}**
+22. I find writing interesting. — **{{@s22.value}}**
+23. I enjoy writing most when I get to decide what to write about. — **{{@s23.value}}**
+24. I understand things better when I write about them. — **{{@s24.value}}**
+25. I enjoy writing sometimes. — **{{@s25.value}}**
+26. Sometimes I get in the zone and writing comes easily. — **{{@s26.value}}**
+</Markdown>
+
+<Markdown>
+---
+
+## Where the quiz placed me — three dimensions
+</Markdown>
+<Use ref="wj3_results_feedback" />
+
+<Markdown>
+## What Alma heard in my story
+</Markdown>
+<Use ref="wj3_response_feedback" />
+<Markdown>
+**My answer to Alma's question**
+</Markdown>
+<Ref id="wj3_print_response_reply" target="wj3_response_reply" format="text" />
+<Markdown when="!isFilled(@wj3_response_reply.value)">—</Markdown>
+
+</Vertical> <!-- wj3_print -->
 
 </Vertical> <!-- wj2_activities_part1 -->

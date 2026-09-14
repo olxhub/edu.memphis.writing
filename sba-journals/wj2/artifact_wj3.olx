@@ -1,0 +1,85 @@
+<!-- My Writing Journal (running artifact) — the REVISED Writing Journal 3a -->
+
+<!-- The revised twin of wj2_artifact (wj2/artifact.olx), mounted as the My Journal tab
+     of the review build. It is a separate file rather than a second block in
+     artifact.olx because an OLX file has exactly one root node, and the original file's
+     root is wj2_artifact — adding a sibling there would mean restructuring shipping
+     content for the sake of the review.
+
+     Same five sections as the original, over the revised fields, plus the
+     year-from-now answers, which the original has no equivalent of. Collapsibles are
+     browsable but never printable (they render their children only when expanded), so
+     exporting is wj3_print's job, not this tab's. -->
+
+<Vertical id="wj3_artifact">
+
+  <Markdown id="wj3_artifact_intro">
+## My Writing Journal — Entry 2
+
+This tab gathers your work in one place as you go, so you can see the whole journal at a glance — your
+quiz results, whether the placement fit, where you'd like to be a year from now, the story you told, and
+what the Circle heard in it. Come back any time to review what you have built.
+
+*Submitting is handled on the **Print &amp; Submit** tab — that's where you'll confirm you're done and
+export your PDF.*
+  </Markdown>
+
+  <Collapsible id="wj3_artifact_take" title="Where I started: is writer's block real?">
+    <Markdown>**My first take, before the quiz:**</Markdown>
+    <!-- <Use>, not <Ref>: a Ref renders the stored value, which is a code like `freeze`;
+         <Use> re-renders the choices, showing the sentence the student picked. The one
+         code with no sentence behind it is `other`, so its note follows. -->
+    <Use ref="wj3_block_take" />
+    <Markdown when="@wj3_block_take.value === 'other'">**What I said instead:** {{@wj3_take_other_text.value}}</Markdown>
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_results" title="1. My writing personality — three dimensions">
+    <Markdown>**Where the quiz placed me:**</Markdown>
+    <Ref id="wj3_art_results" target="wj3_results_feedback" />
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_fit" title="2. Does it fit?">
+    <Markdown>**My answer:** {{isFilled(@wj3_fit.value) ? @wj3_fit.value : '—'}}</Markdown>
+    <Ref id="wj3_art_fit_text" target="wj3_fit_text" format="text" />
+    <Markdown when="!isFilled(@wj3_fit_text.value)">—</Markdown>
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_future" title="3. A year from now">
+    <!-- The three numbers are interpolated rather than <Ref>-ed so each dimension reads as one
+         sentence; the note underneath stays a <Ref>, the way the other sections show prose.
+         The quiz number is the expression the results lines draw, guarded with isNumber()
+         because an untouched quiz has no average and 50 + 25 * absent is NaN; nothing stores
+         it, since a display line computes its position and keeps none. Interpolation
+         re-parses per dispatch (notes/live-feedback-scoping.md #2), and a Collapsible renders
+         its children only while it is open, so this costs nothing until the student opens the
+         section. -->
+    <Markdown id="wj3_art_future_p_line">**Purpose:** quiz {{isNumber(average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) ? Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) : '—'}}, now {{isFilled(@wj3_now_purpose.value) ? @wj3_now_purpose.value : '—'}}, a year from now {{isFilled(@wj3_future_purpose.value) ? @wj3_future_purpose.value : '—'}} (0 = Expression, 100 = Evaluation)</Markdown>
+    <Ref id="wj3_art_future_p" target="wj3_future_purpose_note" format="text" />
+    <Markdown when="!isFilled(@wj3_future_purpose_note.value)">—</Markdown>
+    <Markdown id="wj3_art_future_o_line">**Orientation:** quiz {{isNumber(average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) ? Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) : '—'}}, now {{isFilled(@wj3_now_orientation.value) ? @wj3_now_orientation.value : '—'}}, a year from now {{isFilled(@wj3_future_orientation.value) ? @wj3_future_orientation.value : '—'}} (0 = Growth, 100 = Performance)</Markdown>
+    <Ref id="wj3_art_future_o" target="wj3_future_orientation_note" format="text" />
+    <Markdown when="!isFilled(@wj3_future_orientation_note.value)">—</Markdown>
+    <Markdown id="wj3_art_future_e_line">**Experience:** quiz {{isNumber(average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) ? Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) : '—'}}, now {{isFilled(@wj3_now_experience.value) ? @wj3_now_experience.value : '—'}}, a year from now {{isFilled(@wj3_future_experience.value) ? @wj3_future_experience.value : '—'}} (0 = Engagement, 100 = Avoidance)</Markdown>
+    <Ref id="wj3_art_future_e" target="wj3_future_experience_note" format="text" />
+    <Markdown when="!isFilled(@wj3_future_experience_note.value)">—</Markdown>
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_freewrite" title="4. My two-minute freewrite">
+    <Markdown>*Unedited, by design.*</Markdown>
+    <Ref id="wj3_art_freewrite" target="wj2_freewrite" format="text" />
+    <Markdown when="!isFilled(@wj2_freewrite.value)">—</Markdown>
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_story" title="5. My story — an experience that shaped me as a writer">
+    <Ref id="wj3_art_story" target="wj3_story_text" format="text" />
+    <Markdown when="!isFilled(@wj3_story_text.value)">—</Markdown>
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_response" title="6. What Alma heard in my story">
+    <Ref id="wj3_art_response" target="wj3_response_feedback" />
+    <Markdown>**My answer to Alma's question:**</Markdown>
+    <Ref id="wj3_art_response_reply" target="wj3_response_reply" format="text" />
+    <Markdown when="!isFilled(@wj3_response_reply.value)">—</Markdown>
+  </Collapsible>
+
+</Vertical>
