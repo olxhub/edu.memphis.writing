@@ -1560,7 +1560,7 @@ why — a sentence or two each. The thin marker shows where you just put yoursel
 </Vertical> <!-- wj3_future -->
 
 
-<Markdown id="wj3_doc_wj3_warmup">**Revised** — the two-minute freewrite as the writer's-block tool: introduced from the chat, optional, with the rules, where the technique comes from (Elbow, Macrorie, Brande) and links to the books for anyone who wants more. The story box that follows draws on it.</Markdown>
+<Markdown id="wj3_doc_wj3_warmup">**Revised** — the two-minute freewrite as the writer's-block tool, required (the chat waits for the timer): introduced from the chat after Richard asks for the story, with the rules, where the technique comes from (Elbow, Macrorie, Brande) and links to the books for anyone who wants more. The Write screen that follows shows what they wrote.</Markdown>
 
 <!-- The freewrite itself is the ORIGINAL block, referenced not copied, so the warm-up a
      student does here is the same wj2_freewrite either version prints. Nothing gates on
@@ -1570,8 +1570,9 @@ why — a sentence or two each. The thin marker shows where you just put yoursel
 <Markdown id="wj3_warmup_intro">
 ## Two-Minute Freewrite
 
-**Optional, and only two minutes.** You're about to tell a story about a moment
-that shaped how you feel about writing. This is a way to find it.
+**Two minutes, and everyone does it.** Richard just asked for your story about a
+moment that shaped how you feel about writing. This is how you find it before you
+write it.
 
 **How it works.** Start the clock and write about any writing memory that
 comes to mind: a comment on a paper, a grade, something you were proud of, the
@@ -1620,23 +1621,33 @@ Both books are short, plain-spoken, and free to read:
 </Vertical> <!-- wj3_warmup -->
 
 
-<Markdown id="wj3_doc_wj3_story_input">**Revised** — the journal entry is written in the chat, with a 150-word floor and messages that keep rising past it.</Markdown>
+<Markdown id="wj3_doc_wj3_write">**Revised** — the story is written in the pane, not the chat: 150 words is a piece of writing. What the student wrote in the two minutes sits above the box as raw material, readable and copyable but not editable, without the timer around it. The 150-word floor keeps its rising messages.</Markdown>
 
-<!-- Chat-inline (no [display=...] on its embed): the student writes where the three
-     peers just told their stories, not off in the pane. The live count sits inside the
-     first tier's sentence rather than under the box, so 150 reads as a floor and not a
-     target; the tiers above it never show a number. The gate is the chat's wait. -->
+<!-- The story gets the pane, not the chat column: a box that grows inside a
+     scrolling chat moves under the writer. The freewrite is interpolated as
+     Markdown text, so it is on screen and selectable with none of the timer's
+     machinery; the chat's wait on 150 words is the gate. -->
 
-<Vertical id="wj3_story_input">
-<Markdown>**Write your story in this box.** Tell it like a story, not a summary —
-what happened, how it felt, and how it has shaped your writing since. If you did
-the freewrite, pull anything you want from it.</Markdown>
-<TextArea id="wj3_story_text" rows="10" placeholder="Write your story here." />
-<!-- The box starts empty even when the freewrite is full, so the first count
-     line speaks to that case: it names the freewrite words and says the story
-     itself goes here. -->
+<Vertical id="wj3_write">
+<Markdown id="wj3_write_intro">
+## Your Story
+
+Tell it like a story, not a summary: what happened, how it felt in the moment,
+and how it has shaped your writing since. At least 150 words.
+</Markdown>
+<Markdown id="wj3_write_freewrite_heading" when="wordcount(@wj2_freewrite.value) &gt; 0">
+**What you wrote in the two minutes.** Take anything you want from it.
+</Markdown>
+<Markdown id="wj3_write_freewrite_text" when="wordcount(@wj2_freewrite.value) &gt; 0">
+{{@wj2_freewrite.value}}
+</Markdown>
+<Markdown id="wj3_write_freewrite_empty" when="@wj2_freewrite_timer.expired &amp;&amp; wordcount(@wj2_freewrite.value) === 0">
+*Nothing came in the two minutes. That happens. Start here instead, with the part that matters most.*
+</Markdown>
+<Markdown id="wj3_write_box_label">**Your story:**</Markdown>
+<TextArea id="wj3_story_text" rows="12" placeholder="Write your story here." />
 <Markdown when="wordcount(@wj3_story_text.value) === 0 &amp;&amp; wordcount(@wj2_freewrite.value) &gt; 0">
-*You've got {{wordcount(@wj2_freewrite.value)}} words from the freewrite. The story itself goes in this box — start with the part that matters most.*
+*Your two minutes are above. The story goes here; start with the part that matters most.*
 </Markdown>
 <Markdown when="wordcount(@wj3_story_text.value) &lt; 150 &amp;&amp; !(wordcount(@wj3_story_text.value) === 0 &amp;&amp; wordcount(@wj2_freewrite.value) &gt; 0)">
 *Keep going — {{wordcount(@wj3_story_text.value)}} of 150 words so far.*
@@ -1653,7 +1664,7 @@ the freewrite, pull anything you want from it.</Markdown>
 <Markdown when="wordcount(@wj3_story_text.value) &gt;= 1000">
 *A thousand words. Honestly, we're a little flabbergasted, and delighted. Continue whenever you're ready.*
 </Markdown>
-</Vertical> <!-- wj3_story_input -->
+</Vertical> <!-- wj3_write -->
 
 
 <Markdown id="wj3_doc_wj3_alma_response">**Revised** — Alma's response moves into 3a and reads the fit answer and the three year-from-now answers alongside the story.</Markdown>
@@ -1744,7 +1755,7 @@ just listens closely and asks one question back, the way a good writing group wo
      wrap-up all live here in one self-paced flow.
      =================================================================== -->
 
-<Markdown id="wj3_doc_wj2_meeting">**Original only** — the revised conversation runs the meeting's parts from the chat: `wj3_warmup`, `wj3_story_input`, `wj3_alma_response`.</Markdown>
+<Markdown id="wj3_doc_wj2_meeting">**Original only** — the revised conversation runs the meeting's parts from the chat: `wj3_warmup`, `wj3_write`, `wj3_alma_response`.</Markdown>
 
 <Vertical id="wj2_meeting">
 

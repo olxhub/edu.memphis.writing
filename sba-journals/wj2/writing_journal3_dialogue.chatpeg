@@ -169,7 +169,9 @@ Alma: Yeah, later. For now let's stay locked in.
 
 Lee: ok real talk though. you all just wrote whole stories and I'm looking at the blank box again. this is the exact thing I was talking about at the start [face=concerned]
 
-Alma: ok so this is where I tell you the one trick that actually got me writing again. it's called freewriting. two minutes. you don't stop, you don't fix anything, you don't even read it back until the time's up [face=explaining]
+Richard: Hey, what about you? Tell us a story of a moment, an experience, or a piece of feedback about writing that made you feel like you were a good or a bad writer. What happened? Tell it like a story, not a summary. Make sure to share the way you felt in the moment and how that moment has influenced your feelings about writing. Don't be lazy. Write at least as much as we did
+
+Alma: wait. before you write a word of that. this is where I tell you the one trick that actually got me writing again. it's called freewriting. two minutes. you don't stop, you don't fix anything, you don't even read it back until the time's up [face=explaining]
 
 Richard: two minutes of typing garbage. how is that writing [face=suspicious]
 
@@ -177,19 +179,20 @@ Alma: that's the point. the guy who made it famous, Peter Elbow, couldn't write 
 
 Lee: ok that is the most relatable thing I have ever heard about a professor [face=cheeky]
 
-Alma: it's optional. but it's two minutes, and you're about to write a story anyway. I'd do it [face=smile]
-
-Richard: fine. if Lee does it I'll do it [face=serious]
-
-Lee: deal [face=cheeky]
+Alma: everyone does this one. two minutes, then the story [face=smile]
 
 ::wj3_warmup [display=target:wj3_sidebar label="Two-minute freewrite"]
 
+// Required: the chat waits for the timer, not for words, so a student who
+// froze for two minutes still moves on to the story with an empty page and
+// no penalty. What they wrote is shown on the next screen.
+--- wait @wj2_freewrite_timer.expired ---
+
 Lee: ok that was weirdly freeing. I have like 80 words of chaos and two sentences I actually want to keep [face=smileBig]
 
-Richard: Hey, what about you? Tell us a story of a moment, an experience, or a piece of feedback about writing that made you feel like you were a good or a bad writer. What happened? Tell it like a story, not a summary. Make sure to share the way you felt in the moment and how that moment has influenced your feelings about writing. Don't be lazy. Write at least as much as we did
+Alma: ok. let's see what you wrote. no judgment. now make it the story [face=smile]
 
-::wj3_story_input
+::wj3_write [display=target:wj3_sidebar label="Your story"]
 
 --- wait wordcount(@wj3_story_text.value) >= 150 ---
 
