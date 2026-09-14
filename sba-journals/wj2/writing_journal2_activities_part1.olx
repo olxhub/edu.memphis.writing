@@ -1567,23 +1567,29 @@ why — a sentence or two each. The thin marker shows where you just put yoursel
      it: the chat embeds this screen and walks straight on. -->
 
 <Vertical id="wj3_warmup">
-<Markdown id="wj3_warmup_intro">
+<Markdown id="wj3_warmup_title">
 ## Two-Minute Freewrite
 
-**Two minutes, and everyone does it.** Richard just asked for your story about a
-moment that shaped how you feel about writing. This is how you find it before you
-write it.
-
-**How it works.** Start the clock and write about any writing memory that
-comes to mind: a comment on a paper, a grade, something you were proud of, the
-night before a deadline. Then:
+**Richard just asked:**
+</Markdown>
+<!-- The ask is the thing students lose track of once the clock is running
+     (a test reader wrote about video editing), so it sits at the top, in
+     Richard's own bubble, before any instruction. -->
+<TalkBubble id="wj3_warmup_ask" who="Richard" face="serious">
+<Markdown id="wj3_warmup_ask_text">Tell us a story of a moment, an experience, or a piece of feedback about writing that made you feel like you were a good or a bad writer. What happened?</Markdown>
+</TalkBubble>
+<Markdown id="wj3_warmup_intro">
+Two minutes, and everyone does it. To get you started, start the clock and
+write about any writing memory that comes to mind: a comment on a paper, a
+grade, something you were proud of, the night before a deadline.
 
 - **Keep going.** If you run out, write "I'm stuck" until the next thing comes.
 - **Don't fix anything.** Spelling, grammar, whether it's any good: not now. The
   box won't let you delete. That's the point, not a bug.
 - **Try not to read it back** until the time is up.
 
-When the clock stops, read what you have. Pull anything you like into your story.
+Focus on the writing. The clock shows *approximate* time remaining, so as not
+to distract you.
 </Markdown>
 <Use ref="wj2_freewrite_timer" />
 <Markdown id="wj3_warmup_origin">
