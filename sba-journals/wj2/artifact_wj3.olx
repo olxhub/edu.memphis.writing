@@ -60,11 +60,16 @@ export your PDF.*
     <Ref id="wj3_art_future_e" target="wj3_future_experience_note" format="text" />
   </Collapsible>
 
-  <Collapsible id="wj3_artifact_story" title="4. My story — an experience that shaped me as a writer">
+  <Collapsible id="wj3_artifact_freewrite" title="4. My two-minute freewrite" when="@wj2_freewrite.value">
+    <Markdown>*Unedited, by design.*</Markdown>
+    <Ref id="wj3_art_freewrite" target="wj2_freewrite" format="text" />
+  </Collapsible>
+
+  <Collapsible id="wj3_artifact_story" title="5. My story — an experience that shaped me as a writer">
     <Ref id="wj3_art_story" target="wj3_story_text" format="text" />
   </Collapsible>
 
-  <Collapsible id="wj3_artifact_response" title="5. What Alma heard in my story">
+  <Collapsible id="wj3_artifact_response" title="6. What Alma heard in my story">
     <Ref id="wj3_art_response" target="wj3_response_feedback" />
   </Collapsible>
 
