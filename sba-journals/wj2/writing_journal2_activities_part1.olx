@@ -226,6 +226,12 @@ Pick an emoji response for each statement to help us discover where your
 attitude falls on a writing spectrum. Are you more about expression or
 evaluation? Growth or performance? Engagement or avoidance?
 </Markdown>
+<!-- Every screen where the lines appear carries the same closed reminder: a
+     <Use> of the one table, inside its own Collapsible so each starts closed
+     and opens independently. -->
+<Collapsible id="wj3_survey_dimensions" title="What the three lines measure">
+<Use ref="wj3_dimensions_table" />
+</Collapsible>
 
 <!-- LIVE DIMENSIONS. The three continuums the results screen reports, drawn here while the
      student is still answering: a marker on each line that moves with every statement.
@@ -1010,14 +1016,20 @@ As you answer questions during the quiz, the markers on the three lines will
 move, showing how each answer impacts your relationship to writing as
 represented by the dimensions.
 
+</Markdown>
+<Use ref="wj3_dimensions_table" />
+<Done id="wj3_dimensions_done" label="Mark as read" />
+</Vertical> <!-- wj3_dimensions -->
+
+<Markdown id="wj3_doc_wj3_dimensions_table">**Revised** — the one table of the three dimensions, used by the explainer, the Dimensions tab, and a closed reminder on every screen where the lines appear. One block, so it can never disagree with itself.</Markdown>
+
+<Markdown id="wj3_dimensions_table">
 | Dimension | ← one end | the other end → |
 |---|---|---|
 | **Purpose** | **Expression:** I write to communicate, think, or express myself | **Evaluation:** I write to meet expectations, to get things done, or to earn a grade |
 | **Orientation** | **Growth:** I write to learn and improve | **Performance:** I write to show what I can do |
 | **Experience** | **Engagement:** Writing is something I can get involved in or enjoy | **Avoidance:** Writing is something I try to minimize, postpone, or get through |
 </Markdown>
-<Done id="wj3_dimensions_done" label="Mark as read" />
-</Vertical> <!-- wj3_dimensions -->
 
 
 <!-- ===================================================================
@@ -1205,6 +1217,9 @@ Here is where your answers put you on the three dimensions. These are
 spectrums, not labels — there is no good or bad end, just a picture of how you
 relate to writing right now.
 </Markdown>
+<Collapsible id="wj3_results_dimensions" title="What the three lines measure">
+<Use ref="wj3_dimensions_table" />
+</Collapsible>
 
 <!-- THE SAME LINES AS UNDER THE QUIZ HEADER, read once at the end instead of live: the
      same 0..100 scale, the same pole labels, the same memberships, and the same
@@ -1494,6 +1509,9 @@ in this journal — a few honest sentences are plenty.
      18), which removes these markers and the anchoring with them. -->
 <Vertical id="wj3_now_input">
 <Markdown id="wj3_now_instructions">*Put yourself on each line.*</Markdown>
+<Collapsible id="wj3_now_dimensions" title="What the lines mean">
+<Use ref="wj3_dimensions_table" />
+</Collapsible>
 <Markdown id="wj3_now_purpose_label">**Purpose**</Markdown>
 <NumberLineInput id="wj3_now_purpose" min="0" max="100" step="1" snap="step"
                  reference="Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code]))" referenceLabel="quiz">
@@ -1533,6 +1551,9 @@ in this journal — a few honest sentences are plenty.
 For each dimension, move the point to where you'd like to be a year from now, and say
 why — a sentence or two each. The thin marker shows where you just put yourself.
 </Markdown>
+<Collapsible id="wj3_future_dimensions" title="What the lines mean">
+<Use ref="wj3_dimensions_table" />
+</Collapsible>
 <Markdown id="wj3_future_purpose_label">**Purpose**</Markdown>
 <NumberLineInput id="wj3_future_purpose" min="0" max="100" step="1" snap="step"
                  initial="@wj3_now_purpose.value" reference="@wj3_now_purpose.value" referenceLabel="now">

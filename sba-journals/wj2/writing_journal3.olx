@@ -75,6 +75,14 @@ lang: en-Latn-US
       <Use ref="wj3_print" />
     </Vertical>
 
+    <!-- Reference material, shown once the explainer has been read. It sits
+         LAST because the chat's closing command opens Print & Submit by tab
+         index, and a tab that appears part-way through would shift every
+         index after it. -->
+    <Vertical id="wj3_dimensions_tab" title="The Dimensions" when="@wj3_dimensions_done.value">
+      <Use ref="wj3_dimensions_table" />
+    </Vertical>
+
   </Tabs>
 </Cast>
 
