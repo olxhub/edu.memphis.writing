@@ -80,9 +80,24 @@ Richard: lmao fine, I'll bite. still not sure about this writer's block stuff th
 
 Take the Quiz
 -------------
-::wj2_survey [display=target:wj3_sidebar label="The quiz — part 1"]
 
-Alma: ok, you've got the quiz on the right. it gives you one statement at a time. Don't overthink it. work through all of them and it'll unlock the next part [face=explaining]
+// The explainer comes BEFORE the quiz: the three lines move as the student
+// answers, and the course team wanted them to know what the lines mean while
+// that happens. Lee's prediction lands here so the lines can test it.
+
+Alma: ok, quiz time. first, a quick look at what it actually measures. then the questions [face=explaining]
+
+::wj3_dimensions [display=target:wj3_sidebar label="Your relationship with writing on three dimensions"]
+
+Lee: I already know I'm going to be dramatically self-expression [face=cheeky]
+
+Richard: it's less ridiculous than I expected [face=serious]
+
+--- wait @wj3_dimensions_done.value ---
+
+Alma: ok, here it is. one statement at a time. don't overthink it [face=smile]
+
+::wj2_survey [display=target:wj3_sidebar label="The quiz — part 1"]
 
 --- wait @s26.value ---
 
@@ -94,7 +109,7 @@ Lee: ok this was weirdly kind of fun. some of these were calling me out lol [fac
 What Makes Good Writing?
 ------------------------
 
-Alma: ok, part 2. now it's not about how you feel, it's about what you think makes writing actually good. drag the four into order on the right, most at the top and least at the bottom, then hit Submit [face=explaining]
+Alma: ok, part 2. now it's not about how you feel, it's about what you think actually makes writing good [face=explaining]
 
 Richard: finally, a section for people who care about doing it right [face=serious]
 
@@ -104,22 +119,11 @@ Richard: finally, a section for people who care about doing it right [face=serio
 
 Lee: of course ranking is your favorite part, Richard [face=cheeky]
 
-Your Writing Personality
------------------
-
-Alma: ok so those three lines that kept moving while you answered? they're the actual thing. here's what they mean [face=explaining]
-
-::wj3_dimensions [display=target:wj3_sidebar label="Your relationship with writing on three dimensions"]
-
-Lee: I don't even need the explanation. mine has been parked on Expression the whole time [face=cheeky]
-
-Richard: it's less ridiculous than I expected [face=serious]
-
---- wait @wj3_dimensions_done.value ---
-
 Your Results
 ------------
 ::wj3_results [display=target:wj3_sidebar label="Three dimensions of writing personalities"]
+
+Lee: mine has been parked on Expression the whole time. called it [face=cheeky]
 
 Alma: so that's where your answers put you. want to hear what I see in them? [face=smile]
 

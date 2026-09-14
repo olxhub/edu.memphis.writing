@@ -989,7 +989,7 @@ results**. You deliver exactly what a prompt is looking for and keep your eye on
 </Vertical> <!-- wj2_vibe_explainer -->
 
 
-<Markdown id="wj3_doc_wj3_dimensions">**Revised** — names the three dimensions as Purpose, Orientation and Experience, in a table of ends rather than three writer types.</Markdown>
+<Markdown id="wj3_doc_wj3_dimensions">**Revised** — shown BEFORE the quiz, in the course team's round-3 wording, so the student knows what the three moving lines measure while answering; names the dimensions as Purpose, Orientation and Experience in a table of ends.</Markdown>
 
 <!-- Read-only: the three dimensions the results place the student on, named the same
      way here, in the results prompt and on the results screen. The Done is the chat's
@@ -997,14 +997,18 @@ results**. You deliver exactly what a prompt is looking for and keep your eye on
 
 <Vertical id="wj3_dimensions">
 <Markdown>
-## Your Relationship with Writing on Three Dimensions ✍️✨
+## Understanding Your Relationship with Writing on Three Dimensions ✍️✨
 
-The three lines that moved as you answered are three dimensions of your
-relationship with writing: **Purpose**, **Orientation**, and **Experience**.
-The two ends of each are explained below. These are spectrums, so most
-writers don't land at either extreme — but if you land closer to Expression
-than Evaluation, you probably think of writing more as a way to communicate
-than as a way to reach a goal.
+The quiz you are about to take is meant to help you understand your
+relationship with writing on three dimensions: **Purpose**, **Orientation**,
+and **Experience**. The two ends of each dimension are explained below. These
+are spectrums, so most writers don't land at either extreme, but if you land
+closer to Expression than Evaluation, for example, you probably think of
+writing more as a way to communicate than as a way to reach a goal.
+
+As you answer questions during the quiz, the markers on the three lines will
+move, showing how each answer impacts your relationship to writing as
+represented by the dimensions.
 
 | Dimension | ← one end | the other end → |
 |---|---|---|
