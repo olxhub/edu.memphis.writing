@@ -1747,6 +1747,13 @@ just listens closely and asks one question back, the way a good writing group wo
         writer in the circle — not as an evaluator or a grader.
 </LLMAction>
 </ActionButton>
+<!-- Alma ends on a question. The box is optional and gates nothing; it is
+     here so a student who wants to keep the thought going has somewhere to
+     put it, and it travels with the journal. -->
+<Markdown id="wj3_response_reply_prompt" when="@wj3_response_feedback.value">
+**Alma ended with a question.** If it started a thought, write it down here. Optional, and it goes in your journal.
+</Markdown>
+<TextArea id="wj3_response_reply" rows="4" when="@wj3_response_feedback.value" placeholder="Your answer to Alma's question, if you want to keep thinking." />
 </Vertical> <!-- wj3_alma_response -->
 
 
@@ -2243,6 +2250,10 @@ they can change. That's the groundwork for the writing you'll do next in this co
 ## What Alma heard in my story
 </Markdown>
 <Use ref="wj3_response_feedback" />
+<Markdown when="@wj3_response_reply.value">
+**My answer to Alma's question**
+</Markdown>
+<Ref id="wj3_print_response_reply" target="wj3_response_reply" format="text" when="@wj3_response_reply.value" />
 
 </Vertical> <!-- wj3_print -->
 

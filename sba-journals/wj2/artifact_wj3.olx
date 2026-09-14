@@ -71,6 +71,8 @@ export your PDF.*
 
   <Collapsible id="wj3_artifact_response" title="6. What Alma heard in my story">
     <Ref id="wj3_art_response" target="wj3_response_feedback" />
+    <Markdown when="@wj3_response_reply.value">**My answer to Alma's question:**</Markdown>
+    <Ref id="wj3_art_response_reply" target="wj3_response_reply" format="text" when="@wj3_response_reply.value" />
   </Collapsible>
 
 </Vertical>
