@@ -1256,7 +1256,7 @@ relate to writing right now.
   <Tick id="wj3_results_experience_avoidance"  value="100">Avoidance</Tick>
 </NumberLineInput>
 
-<Markdown id="wj3_results_ask">Alma has read the same answers. Press the button and she will say what she sees in the picture.</Markdown>
+<Markdown id="wj3_results_ask">Press the button and Alma will read the same answers you gave and say what she sees in the picture. Give her a minute or two: she reads everything before she says anything.</Markdown>
 <ActionButton id="wj3_results_btn" label="What does Alma see in this?">
 <LLMAction id="wj3_results_action" target="wj3_results_feedback">
         You are the Writers' Circle quiz tool. A first-year college composition student just finished a
@@ -1699,9 +1699,10 @@ and how it has shaped your writing since. At least 150 words.
 ## What Alma Hears in Your Story
 
 When you're happy with your story, press the button. **Alma** — who kicked off the whole conversation —
-will read your story alongside your quiz results and reflect back what she notices, connecting your
-experience to where you landed on the three dimensions. She won't rewrite your story or grade it; she
-just listens closely and asks one question back, the way a good writing group would.
+will read it alongside your quiz results and reflect back what she notices, connecting your experience
+to where you landed on the three dimensions. Give her a minute or two; she reads the whole thing before
+she answers. She won't rewrite your story or grade it; she just listens closely and asks one question
+back, the way a good writing group would.
 </Markdown>
 <LLMFeedback id="wj3_response_feedback" render="markdown" />
 <ActionButton id="wj3_response_btn" label="Hear what Alma noticed in my story">
