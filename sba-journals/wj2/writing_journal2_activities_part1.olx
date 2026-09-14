@@ -1630,9 +1630,9 @@ Both books are short, plain-spoken, and free to read:
 <Markdown id="wj3_doc_wj3_write">**Revised** — the story is written in the pane, not the chat: 150 words is a piece of writing. What the student wrote in the two minutes sits above the box as raw material, readable and copyable but not editable, without the timer around it. The 150-word floor keeps its rising messages.</Markdown>
 
 <!-- The story gets the pane, not the chat column: a box that grows inside a
-     scrolling chat moves under the writer. The freewrite is interpolated as
-     Markdown text, so it is on screen and selectable with none of the timer's
-     machinery; the chat's wait on 150 words is the gate. -->
+     scrolling chat moves under the writer. The freewrite is shown with
+     Ref format="text": as typed, breaks kept, selectable, with none of the
+     timer's machinery; the chat's wait on 150 words is the gate. -->
 
 <Vertical id="wj3_write">
 <Markdown id="wj3_write_intro">
@@ -1644,9 +1644,7 @@ and how it has shaped your writing since. At least 150 words.
 <Markdown id="wj3_write_freewrite_heading" when="wordcount(@wj2_freewrite.value) &gt; 0">
 **What you wrote in the two minutes.** Take anything you want from it.
 </Markdown>
-<Markdown id="wj3_write_freewrite_text" when="wordcount(@wj2_freewrite.value) &gt; 0">
-{{@wj2_freewrite.value}}
-</Markdown>
+<Ref id="wj3_write_freewrite_text" target="wj2_freewrite" format="text" when="wordcount(@wj2_freewrite.value) &gt; 0" />
 <Markdown id="wj3_write_freewrite_empty" when="@wj2_freewrite_timer.expired &amp;&amp; wordcount(@wj2_freewrite.value) === 0">
 *Nothing came in the two minutes. That happens. Start here instead, with the part that matters most.*
 </Markdown>
@@ -2147,37 +2145,35 @@ they can change. That's the groundwork for the writing you'll do next in this co
 # Writing Journal 3: How Do You Feel About Writing?
 
 ## My story — an experience that shaped me as a writer
-
-{{@wj3_story_text.value}}
-
+</Markdown>
+<Ref id="wj3_print_story" target="wj3_story_text" format="text" />
+<Markdown>
 ## Does the placement fit?
 
 **{{@wj3_fit.value}}**
-
-{{@wj3_fit_text.value}}
-
+</Markdown>
+<Ref id="wj3_print_fit_text" target="wj3_fit_text" format="text" />
+<Markdown>
 ## A year from now
 
 **Purpose:** quiz {{isNumber(average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) ? Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code])) : '—'}}, now {{@wj3_now_purpose.value}}, a year from now {{@wj3_future_purpose.value}} (0 = Expression, 100 = Evaluation)
-
-{{@wj3_future_purpose_note.value}}
-
-**Orientation:** quiz {{isNumber(average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) ? Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) : '—'}}, now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)
-
-{{@wj3_future_orientation_note.value}}
-
-**Experience:** quiz {{isNumber(average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) ? Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) : '—'}}, now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)
-
-{{@wj3_future_experience_note.value}}
 </Markdown>
+<Ref id="wj3_print_future_purpose_note" target="wj3_future_purpose_note" format="text" />
+<Markdown>
+**Orientation:** quiz {{isNumber(average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) ? Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code])) : '—'}}, now {{@wj3_now_orientation.value}}, a year from now {{@wj3_future_orientation.value}} (0 = Growth, 100 = Performance)
+</Markdown>
+<Ref id="wj3_print_future_orientation_note" target="wj3_future_orientation_note" format="text" />
+<Markdown>
+**Experience:** quiz {{isNumber(average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) ? Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code])) : '—'}}, now {{@wj3_now_experience.value}}, a year from now {{@wj3_future_experience.value}} (0 = Engagement, 100 = Avoidance)
+</Markdown>
+<Ref id="wj3_print_future_experience_note" target="wj3_future_experience_note" format="text" />
 
 <Markdown when="@wj2_freewrite.value">
-## My two-minute warm-up freewrite
+## My two-minute freewrite
 
 *Unedited, by design.*
-
-{{@wj2_freewrite.value}}
 </Markdown>
+<Ref id="wj3_print_freewrite" target="wj2_freewrite" format="text" when="@wj2_freewrite.value" />
 
 <Markdown>
 ---
