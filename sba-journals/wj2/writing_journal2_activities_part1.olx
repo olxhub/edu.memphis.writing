@@ -1234,7 +1234,7 @@ relate to writing right now.
 <Markdown id="wj3_results_purpose_label">**Purpose**</Markdown>
 <NumberLineInput id="wj3_results_purpose" min="0" max="100" step="1" snap="step" display="true"
                  initial="Math.round(50 + 25 * average([@s09.code, @s19.code, @s24.code, @s11.code, @s23.code, @s06.code, @s12.code, @s16.code, @s18.code, @s04.code]))"
-                 markerLabel="you" showValue="true"
+                 markerLabel="you"
                  placeholder="No answers yet — take the quiz and your position appears here.">
   <Tick id="wj3_results_purpose_expression" value="0"  >Expression</Tick>
   <Tick id="wj3_results_purpose_evaluation" value="100">Evaluation</Tick>
@@ -1242,7 +1242,7 @@ relate to writing right now.
 <Markdown id="wj3_results_orientation_label">**Orientation**</Markdown>
 <NumberLineInput id="wj3_results_orientation" min="0" max="100" step="1" snap="step" display="true"
                  initial="Math.round(50 + 25 * average([@s01.code, @s10.code, @s16.code, @s12.code, @s06.code]))"
-                 markerLabel="you" showValue="true"
+                 markerLabel="you"
                  placeholder="No answers yet — take the quiz and your position appears here.">
   <Tick id="wj3_results_orientation_growth"      value="0"  >Growth</Tick>
   <Tick id="wj3_results_orientation_performance" value="100">Performance</Tick>
@@ -1250,7 +1250,7 @@ relate to writing right now.
 <Markdown id="wj3_results_experience_label">**Experience**</Markdown>
 <NumberLineInput id="wj3_results_experience" min="0" max="100" step="1" snap="step" display="true"
                  initial="Math.round(50 + 25 * average([@s05.code, @s08.code, @s13.code, @s21.code, @s22.code, @s25.code, @s26.code, @s17.code, @s02.code, @s03.code, @s04.code, @s07.code, @s14.code, @s15.code, @s20.code]))"
-                 markerLabel="you" showValue="true"
+                 markerLabel="you"
                  placeholder="No answers yet — take the quiz and your position appears here.">
   <Tick id="wj3_results_experience_engagement" value="0"  >Engagement</Tick>
   <Tick id="wj3_results_experience_avoidance"  value="100">Avoidance</Tick>
